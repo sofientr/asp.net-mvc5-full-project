@@ -1,0 +1,121 @@
+﻿@model Inspinia_MVC5.Models.Prix_Achat
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Prix_Achat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Libelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libelle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PU_TTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PU_TTC)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+
+        <dt>
+            Catégorie
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categorie1.Libelle)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.DEVIS_FOURNISSEURS.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_FOURNISSEURS.Designation)
+        </dd>*@
+
+        <dt>
+            Devise
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Devise1.Nom_Devise)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.FOURNISSEURS.CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FOURNISSEURS.CODE)
+        </dd>*@
+
+        <dt>
+            Marque
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marque1.Nom_marque)
+        </dd>
+
+        <dt>
+            Sous-Catégorie
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sous_Categorie1.Libelle)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.TVA.Valeur_TVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TVA.Valeur_TVA)
+        </dd>*@
+
+        <dt>
+            Unite
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unite1.Valeur_Unite)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

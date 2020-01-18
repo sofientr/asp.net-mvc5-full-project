@@ -1,0 +1,3016 @@
+﻿@{ 
+    double somme = 0;
+    
+}
+<link href="~/Content/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/select2.min.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    #Tableau {
+        /*margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        border: 1px solid #000000;*/
+        width: 2000px;
+    }
+    #TableauCAISSON {
+        width: 2800px;
+    }
+    #Tab {
+        width: 1500px;
+    }
+    #TabSST {
+        width: 1500px;
+    }
+</style>
+<style>
+    .divScroll {
+        overflow: auto;
+        /*height: 200px;*/
+        /*width: 800px;*/
+    }
+</style>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>
+            COMMANDE CLIENTS
+        </h2>
+        <ol class="breadcrumb">
+            <li><a>Vente</a> </li>
+            <li class="active">
+                @if (ViewBag.Mode == "Edit")
+                {
+                    <strong>Modifier une commande client</strong>
+                }
+                @if (ViewBag.Mode == "Create")
+                {
+                    <strong>Nouvelle commande client</strong>
+                }
+                @if (ViewBag.Mode == "Aff")
+                {
+                    <strong>Afficher une commande client</strong>
+                }
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    @using (Html.BeginForm("SendCommande", "Vente", new { Mode = ViewBag.Mode, Code = ViewBag.Code }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <div class="row" style="margin-bottom: 20px; margin-right: 0px;">
+            <button class="btn btn-primary pull-right" type="submit">
+                <span class="bold">Enregistrer</span>
+            </button>
+            <button class="btn btn-warning pull-right" type="button" style="margin-right: 5px;"
+                    id="DeleteBtn" onclick="Delete();">
+                <span class="bold">Supprimer</span>
+            </button>
+            <button class="btn btn-success pull-right" type="button" style="margin-right: 5px;" @if (ViewBag.Mode == "Create") { @: disabled
+                    }
+                    id="PrintBTN">
+                <span class="bold">Imprimer</span>
+            </button>
+            @{
+                if (ViewBag.Code != "")
+                {
+                    int code = int.Parse(ViewBag.Code);
+                    Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+                    Inspinia_MVC5.Models.BONS_LIVRAISONS_CLIENTS bl = db.BONS_LIVRAISONS_CLIENTS.Where(t => t.COMMANDE_CLIENT == code).FirstOrDefault();
+                    if (bl != null)
+                    {
+                        <div class="btn-group pull-right" style="margin-right: 5px;">
+                            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" disabled>
+                                Transformer <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li id="VersBonLivraison" onclick="VersBonLivraison();"><a href="#">Bon livraison client</a></li>
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="btn-group pull-right" style="margin-right: 5px;">
+                            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" @if (ViewBag.Mode == "Create" || ViewBag.EnEcours != null) { @: disabled
+                                    }>
+                                Transformer <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li id="VersBonLivraison" onclick="VersBonLivraison();"><a href="#">Bon livraison client</a></li>
+                            </ul>
+                        </div>
+                    }
+                }
+            }
+
+            <div class="btn-group pull-right" style="margin-right: 5px;">
+                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" @if (ViewBag.Mode == "Create") { @: disabled
+                        }>
+                    Pièces Liées <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    @if (Model.DEVIS_CLIENTS != null)
+                    {
+                        <li><a href="/Vente/FormDevis?Mode=Edit&Code=@Model.DEVIS_CLIENTS.ID">@Model.DEVIS_CLIENTS.CODE</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" style="text-align: initial;">
+                        NUMERO
+                    </label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" readonly="true" name="numero" id="numero" value="@ViewBag.Numero" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" style="text-align: initial;">
+                        DATE
+                    </label>
+                    <div class="col-lg-10">
+                        <div class="input-group date">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            <input type="text" class="form-control" name="date" id="date" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" style="padding-left: 0px; text-align: initial;">
+                        DESIGNATION
+                    </label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" name="designation" id="designation">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" style="text-align: initial;">
+                        PAIEMENT
+                    </label>
+                    <div class="col-lg-10">
+                        <select class="form-control" name="modePaiement" id="modePaiement" required>
+                            <option value=""></option>
+                            <option value="Chèque">Chèque</option>
+                            <option value="Espèce">Espèce</option>
+                            <option value="Virement bancaire">Virement bancaire</option>
+                            <option value="Carte bancaire">Carte bancaire</option>
+                            <option value="A terme">A terme</option>
+                            <option value="Traite">Traite</option>
+
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" style="padding-left: 0px; text-align: initial;">
+                        CLIENT
+                    </label>
+                    <div class="col-lg-10">
+                        <select class="form-control" name="client" id="client" required></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" style="padding-left: 0px; text-align: initial;">
+                        CODE
+                    </label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" readonly="true" name="codeClient" id="codeClient"
+                               required>
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" style="padding-left: 0px; text-align: initial;">
+                            SOCIETE
+                        </label>
+                        <div class="col-lg-10">
+                            <select class="form-control" name="Societes" id="Societes"></select>
+                        </div>
+                    </div>
+                </div>*@
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" style="padding-left: 0px; text-align: initial;">
+                        TIERS
+                    </label>
+                    <div class="col-lg-10">
+                        <select class="form-control" id="Tiers" name="Tiers" required><option>---SelectTiers---</option></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" style="padding-left: 0px; text-align: initial;">
+                        REMISE %
+                    </label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" name="remise" id="remise" value="0" min="0" required>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="hr-line-dashed">
+        </div>
+        <div class="row">
+            <div class="col-lg-10">
+                <strong>Totaux</strong>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">
+                TOTAL HT
+            </label>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" readonly="true" name="totalHT" id="totalHT">
+            </div>
+            <label class="col-lg-2 control-label">
+                NET HT
+            </label>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" readonly="true" name="NetHT" id="NetHT">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">
+                TOTAL TVA
+            </label>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" readonly="true" name="totalTVA" id="totalTVA">
+            </div>
+            <label class="col-lg-2 control-label">
+                TOTAL TTC
+            </label>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" readonly="true" name="TotalTTC" id="TotalTTC">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">
+            </label>
+            <div class="col-lg-4">
+            </div>
+            <label class="col-lg-2 control-label">
+                NET A PAYE
+            </label>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" readonly="true" name="netAPaye" id="netAPaye"
+                       style="font-size: x-large;">
+            </div>
+        </div>
+        <input type="hidden" name="WithPrint" id="WithPrint" />
+        <div class="hr-line-dashed">
+        </div>
+        <div class="row">
+            <div class="col-lg-10">
+                <strong>Lignes</strong>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+        <div class="divScroll">
+            <table class="table table-striped table-bordered table-hover dataTables-example"
+                   id="Tableau">
+                <thead>
+                    <tr>
+                        <th style="width:150px;">
+                            ARTICLE
+                        </th>
+                        <th>
+                            DESCRIPTION
+                        </th>
+
+                        <th style="width:150px;">
+                            MARQUE
+                        </th>
+                        <th style="width:150px;">
+                            UNITE
+                        </th>
+                        <th style="width:150px;">
+                            DEVISE
+                        </th>
+                        <th style="width:150px;">
+                            CATEGORIE
+                        </th>
+                        <th style="width:150px;">
+                            SOUS_CATEGORIE
+                        </th>
+                        <th>
+                            STOCK
+                        </th>
+                        <th style="width:90px;">
+                            QTE
+                        </th>
+                        <th>
+                            PUHT
+                        </th>
+                        <th>
+                            REMISE
+                        </th>
+                        <th>
+                            PTHT
+                        </th>
+                        <th style="width:90px;">
+                            TVA
+                        </th>
+
+                        <th>
+                            TTC
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <select class="form-control" id="articles"></select>
+                        </td>
+                        @*<td>
+                                <input type="text" class="form-control" id="descriptionProduit" />
+                            </td>*@
+                        <td>
+                            <textarea id="descriptionProduit">
+                            </textarea>
+                        </td>
+                        <td>
+                            <select class="form-control" id="marque"></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id="unite"></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id="devise"></select>
+                        </td>
+                        <td>
+                            <select class="form-control" id="categorie"></select>
+                        </td>
+                        <td>
+                            <select id="Sous_Categorie" name="Sous_Categorie" style="width:140px; height:35px;"><option>---Select Categorie---</option></select>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="StockProduit" readonly="true" />
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="QuantiteProduit" value="1" min="1" />
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="PUHTProduit" min="0" />
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="RemiseProduit" value="0" min="0" />
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="PTHTProduit" readonly="true" />
+                        </td>
+                        @*<td>
+                            <input type="number" class="form-control" id="TVAProduit" min="0" />
+                            </td>*@
+                        <td>
+                            <select class="form-control" id="TVAProduit"></select>
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="TTCProduit" readonly="true" />
+                        </td>
+                        <td style="display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px;
+                        border-top-width: 0px;">
+                            <button class="btn btn-info btn-circle" type="button" onclick="AddRow()" id="FirstBTN"
+                                    disabled>
+                                <i class="fa fa-check"></i>
+                            </button>
+                            <button class="btn btn-warning btn-circle" type="button" disabled>
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                </tfoot>
+            </table>
+        </div>
+        <div class="ibox ">
+            <div class="ibox-title">
+                <h5>CUISINE</h5>
+                <span class="label label-primary">C</span>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+
+
+                </div>
+
+            </div>
+            <div class="ibox-content">
+
+                <div class="divScroll">
+                    @*<button class="btn btn-primary pull-right" type="button" onclick="location.href='@Url.Action("FormDevis", "Achat", new { Mode = "Create", Code = "-1" ,Devisclt=ViewBag.Code}, null)'">
+                            <span class="bold">DevisFrs</span>
+                        </button>*@
+                    <table class="table table-striped table-bordered table-hover dataTables-example" id="TableauCAISSON">
+                        <thead>
+                            <tr>
+                                <th style="width:150px;">
+                                    QTE
+                                </th>
+                                <th style="width:150px;">
+                                    CAISSSON
+                                </th>
+                                <th>
+                                    SOUS_CAISSON
+                                </th>
+                                <th style="width:150px;">
+                                    Type caisson
+                                </th>
+                                <th style="width:150px;">
+                                    CREV CAISSON
+                                </th>
+                                <th>
+                                    MARGE PRIX ACHAT
+                                </th>
+                                <th style="width:150px;">
+                                    PUHTACHAT
+                                </th>
+                                <th style="width:150px;">
+                                    ACCESSOIRE
+                                </th>
+                                <th style="width:150px;">
+                                    MARGE
+                                </th>
+                                <th style="width:150px;">
+                                    PRIX_VENTE CAISSON
+                                </th>
+                                <th style="width:150px;">
+                                    FACADE
+                                </th>
+                                <th style="width:150px;">
+                                    SOUS_FACADE
+                                </th>
+                                <th style="width:150px;">
+                                    Type Facade
+                                </th>
+                                <th>
+                                    Marge Facade
+                                </th>
+
+                                <th style="width:150px;">
+                                    PRIX Achat Facade
+                                </th>
+
+                                @*<th>
+                                        REMISE
+                                    </th>*@
+                                <th>
+                                    PRIX VENTE Facade
+                                </th>
+
+                                <th>
+                                    PTHT SANS MARGE
+                                </th>
+                                <th>
+                                    PTHT AVEC MARGE
+                                </th>
+                                <th style="width:90px;">
+                                    TVA
+                                </th>
+                                <th>
+                                    PTTC
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                    <input type="number" class="form-control" id="QuantiteCAISSON" name="QuantiteCAISSON" value="1" min="1" />
+                                </td>
+                                <td>
+                                    <select class="form-control" id="CAISSON" name="CAISSON">
+                                        <option></option>
+                                    </select>
+
+
+                                </td>
+
+                                <td>
+                                    <select class="form-control" id="SSCAISSON"><option></option></select>
+                                </td>
+                                <td>
+                                    <select class="form-control" id="MP"><option></option></select>
+                                </td>
+                                <td>
+
+                                    <input type="number" class="form-control" id="CREVCAISSON" name="CREVCAISSON" value="0" min="0" readonly></input>
+
+                                </td>
+                                <td> <input type="number" class="form-control" name="MARGEPRIXACHAT" id="MARGEPRIXACHAT" value="0" min="0" /></td>
+
+                                <td> <input type="number" class="form-control" name="PRIXACHAT" id="PRIXACHAT" value="0" min="0" readonly /></td>
+                                <td> <input type="number" class="form-control" name="ACC" id="ACC" value="0" min="0" readonly /></td>
+                                <td>
+
+                                    <input type="number" class="form-control" id="POURCENTAGE" name="POURCENTAGE" value="0" min="0"></input>
+
+                                </td>
+                                <td> <input type="number" class="form-control" name="PRIXVENTECAISSON" id="PRIXVENTECAISSON" value="0" min="0" readonly /></td>
+
+                                <td>
+                                    <select class="form-control" name="FACADE" id="FACADE"></select>
+                                </td>
+                                <td>
+                                    <select class="form-control" name="SOUSFACADE" id="SOUSFACADE"></select>
+                                </td>
+                                <td>
+                                    <select class="form-control" id="MPP"><option></option></select>
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="QuantiteFACADE" value="1" min="1" />
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="PRIXFACADE" value="0" min="0" readonly />
+                                </td>
+
+
+                                <td>
+                                    <input type="number" class="form-control" id="PTHTFACADE" name="PTHTFACADE" value="0" readonly="true" />
+                                </td>
+
+
+                                <td>
+                                    <input type="number" class="form-control" id="PTHTSSMARGE" name="PTHTSSMARGE" value="0" readonly="true" />
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="PTHTAVECMARGE" name="PTHTAVECMARGE" value="0" readonly="true" />
+                                </td>
+                                <td>
+                                    <select class="form-control" id="TVACUISINE" name="TVACUISINE"><option>0</option></select>
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="PTTCCUISINE" name="PTTCCUISINE" value="" readonly="true" />
+                                </td>
+                                <td style="display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px;
+                                border-top-width: 0px;" required>
+                                    <button class="btn btn-info btn-circle" type="button" onclick="AddRowCuisine()" id="FirstBTN">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                    <button class="btn btn-warning btn-circle" type="button" disabled>
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+
+
+                        </tfoot>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        if ((ViewBag.Mode == "Edit") || (ViewBag.Mode == "Aff") || (ViewBag.Mode == "Create"))
+        {
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Services</h5>
+                    <span class="label label-primary">S</span>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+
+
+                    </div>
+
+                </div>
+                <div class="ibox-content">
+
+                    <div>
+                        <div class="divScroll">
+
+                            <table class="table table-striped table-bordered table-hover dataTables-example" id="Tab">
+                                <thead>
+                                    <tr>
+
+                                        <th style="width:160px;">
+                                            REF_SERVICE
+                                        </th>
+                                        <th>
+                                            DES_SERVICE
+                                        </th>
+                                        <th>
+                                            UNITE
+                                        </th>
+                                        <th>
+                                            QTE
+                                        </th>
+
+                                        <th>
+                                            PUHT
+                                        </th>
+                                        <th>
+                                            REMISE
+                                        </th>
+                                        <th>
+                                            PTHT
+                                        </th>
+                                        <th style="width:90px;">
+                                            TVA
+                                        </th>
+                                        <th>
+                                            PTTC
+                                        </th>
+                                        <th style="width:200px;">
+                                            RESSOURCES
+                                        </th>
+
+                                        <th>
+
+                                        </th>
+
+
+                                    </tr>
+                                    <tr>
+                                        <th colspan="8" style="text-align:right">Coût services:</th>
+                                        <th><input type="text" class="form-control" readonly="true" name="NettotalTTCSERV" id="NettotalTTCSERV" value="0" required></th>
+                                        <th></th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody></tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>
+                                            <select type="text" class="form-control" id="SERVICE" />
+                                        </td>
+                                        <td>
+                                            <textarea id="descriptionSERVICE">
+                                        </textarea>
+                                        </td>
+                                        <td>
+                                            <input class="form-control" id="uniteSERVICE" value="H" />
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="QuantiteSERVICE" value="1" min="1" />
+
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="PUHTSERVICE" min="0" />
+
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="RemiseSERVICE" value="0" min="0" />
+
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="PTHTSERVICE" readonly="true" />
+
+                                        </td>
+                                        <td>
+                                            <select class="form-control" id="TVASERVICE"><option>19</option></select>
+
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="TTCSERVICE" readonly="true" />
+
+                                        </td>
+                                        <td>
+
+                                            <select type="text" id="RESSOURCE" data-placeholder="Choose a Country..." class="chosen-select" multiple style="width:350px;" tabindex="4"></select>
+
+                                        </td>
+                                        <td style="display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px;
+                                border-top-width: 0px;" required>
+                                            <button class="btn btn-info btn-circle" type="button" onclick="AddRow2()" id="FirstBTN2">
+                                                <i class="fa fa-check"></i>
+                                            </button>
+                                            <button class="btn btn-warning btn-circle" type="button" disabled>
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                </tfoot>
+
+                            </table>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>SOUS_TRAITANCE</h5>
+                    <span class="label label-primary">S_T</span>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+
+
+                    </div>
+
+                </div>
+                <div class="ibox-content">
+
+                    <div>
+                        <div class="divScroll">
+
+                            <table class="table table-striped table-bordered table-hover dataTables-example" id="TabSST">
+                                <thead>
+                                    <tr>
+
+                                        <th style="width:160px;">
+                                            REF_SERVICE
+                                        </th>
+                                        <th>
+                                            DES_SERVICE
+                                        </th>
+                                        <th>
+                                            UNITE
+                                        </th>
+                                        <th>
+                                            QTE
+                                        </th>
+
+                                        <th>
+                                            PUHT
+                                        </th>
+                                        <th>
+                                            Marge
+                                        </th>
+                                        <th>
+                                            PUHTVente
+                                        </th>
+                                        <th>
+                                            REMISE
+                                        </th>
+                                        <th>
+                                            PTHT
+                                        </th>
+                                        <th style="width:90px;">
+                                            TVA
+                                        </th>
+                                        <th>
+                                            PTTC
+                                        </th>
+                                        <th style="width:200px;">
+                                            SOUS_TRAITANCE
+                                        </th>
+
+                                        <th>
+
+                                        </th>
+
+
+                                    </tr>
+                                    <tr>
+                                        <th colspan="8" style="text-align:right">Coût sous_Traitance:</th>
+                                        <th><input type="text" class="form-control" readonly="true" name="NettotalTTCSSTRAIT" id="NettotalTTCSSTRAIT" value="0" required></th>
+                                        <th></th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody></tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>
+                                            <select type="text" class="form-control" id="SERVICESOUSTRAITANCE" />
+                                        </td>
+                                        <td>
+                                            <textarea id="descriptionSOUSTRAITANCE">
+                                        </textarea>
+                                        </td>
+                                        <td>
+                                            <input class="form-control" id="uniteSOUSTRAITANCE" value="H" />
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="QuantiteSOUSTRAITANCE" value="1" min="1" />
+
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="PUHTSOUSTRAITANCE" min="0" />
+
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="margeSOUSTRAITANCE" value="0" min="0" disabled />
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="PUHTProduitSOUSTRAITANCE2" min="0" />
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="RemiseSOUSTRAITANCE" value="0" min="0" />
+
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="PTHTSOUSTRAITANCE" readonly="true" />
+
+                                        </td>
+                                        <td>
+                                            <select class="form-control" id="TVASOUSTRAITANCE"><option>19</option></select>
+
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="TTCSOUSTRAITANCE" readonly="true" />
+
+                                        </td>
+                                        <td>
+                                            <select type="text" id="SOUSTRAITANCE" data-placeholder="Choose a Country..." class="chosen-select" multiple style="width:350px;" tabindex="4"></select>
+                                        </td>
+                                        <td style="display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px;
+                                             border-top-width: 0px;" required>
+                                            <button class="btn btn-info btn-circle" type="button" onclick="AddRow3()" id="FirstBTN3">
+                                                <i class="fa fa-check"></i>
+                                            </button>
+                                            <button class="btn btn-warning btn-circle" type="button" disabled>
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                </tfoot>
+
+                            </table>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            @*<div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Ressources Humaines</h5>
+                    <span class="label label-primary">RH</span>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ibox-content">
+                    <div>
+                        <div>
+                            @if (ViewBag.id != null)
+                            {
+
+                                <button class="btn btn-warning  pull-right" type="button" style="width : 40px" onclick="HeuresPlanification(@ViewBag.id);">
+                                    <i class="fa fa-area-chart" aria-hidden="true"></i>
+                                </button>
+                                <button class="btn btn-primary pull-right" type="button" onclick="location.href='@Url.Action("Index", "Personnels",null, null)'">
+                                    <span class="bold">Personnels</span>
+                                </button>
+                            }
+                        </div>
+                        <table class="table table-striped table-bordered table-hover dataTables-example" id="example">
+                            <thead>
+                                <tr>
+
+                                    <th>
+                                        Tâche
+                                    </th>
+                                    <th>
+                                        Date Début planifiée
+                                    </th>
+                                    <th>
+                                        Date fin planifiée
+                                    </th>
+                                    <th>
+                                        Durée planifiée (H)
+                                    </th>
+                                    <th>
+                                        Employé
+                                    </th>
+                                    <th>
+                                        Progrés actuel
+                                    </th>
+                                    <th>
+                                        Coût Vente (HT)
+                                    </th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (ViewBag.id != null)
+                                {
+                                    int code = ViewBag.id;
+                                    Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+                                    List<Inspinia_MVC5.Models.Tasks> task_list = db.Tasks.Where(t => t.ProjetTechniquesID == code).ToList();
+                                    foreach (var item in task_list)
+                                    {
+                                        <tr>
+
+
+                                            <td>
+                                                @item.Text
+                                            </td>
+                                            <td>
+                                                @item.planned_start
+                                            </td>
+                                            <td>
+                                                @item.planned_end
+                                            </td>
+                                            <td>
+                                                @item.duration_h_planning
+                                            </td>
+                                            <td>
+                                                @db.Personnels.Find(item.owner_id).Nom
+                                            </td>
+                                            <td>
+                                                @(item.Progress * 100)%
+                                            </td>
+                                            @{
+                                                double c1 = (double)db.Personnels.Find(item.owner_id).Cout_hor;
+                                                string c4 = item.duration_h_planning.ToString();
+                                                int c2 = int.Parse(c4);
+                                                double c3 = c1 * c2;
+                                                somme = somme + c3;
+                                                //db.Personnels.Find(item.owner_id).Cout_hor * item.duration_h_planning
+                                            }
+                                            <td>
+                                                @c3
+                                            </td>
+                                            @*<td>
+
+                                                    <button class="btn btn-danger  dim" type="button" style="width : 40px" onclick="HeuresPlanification(@item.ID);">
+
+                                                        <i class="fa fa-area-chart" aria-hidden="true"></i>
+
+                                                    </button>
+
+                                                </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="6" style="text-align:right">Coût installation:</th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                </div>
+            </div>*@
+        }
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Traçabilité</h5>
+                <span class="label label-primary">T</span>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+
+
+                </div>
+
+            </div>
+            <div class="ibox-content">
+
+                <div>
+                    <div class="divScroll">
+
+                        <table class="table table-striped table-bordered table-hover dataTables-example">
+                            <thead>
+                                <tr>
+
+                                    <th style="width:160px;">
+                                        Employer
+                                    </th>
+                                    <th>
+                                        Role
+                                    </th>
+                                    <th>
+                                        Societé
+                                    </th>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Ajoute
+                                    </th>
+
+                                    <th>
+                                        Modification
+                                    </th>
+
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody></tbody>
+                            <tfoot>
+                                @if (ViewBag.idd != null)
+                                {
+                                    int iddevis = ViewBag.idd;
+                                    Inspinia_MVC5.Models.MED_TRABELSI db11 = new Inspinia_MVC5.Models.MED_TRABELSI();
+                                    List<Inspinia_MVC5.Models.Tracabilite_Commande_Client> Tracabilite_Commande_Client = db11.Tracabilite_Commande_Client.Where(t => t.Id_Commande == iddevis).ToList();
+                                    foreach (var item in Tracabilite_Commande_Client)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @db11.Inscription.Where(f => f.InsriID == item.Personnel).FirstOrDefault().NOM
+                                            </td>
+                                            <td>
+                                                @db11.Inscription.Where(f => f.InsriID == item.Personnel).FirstOrDefault().Direction
+                                            </td>
+                                            <td>
+                                                @db11.SocieteLogo.Where(f => f.id == item.Societe).FirstOrDefault().Nom_Societe
+                                            </td>
+                                            <td>
+                                                @item.Date
+                                            </td>
+                                            <td>
+                                                @if (item.Ajoute_Par == true)
+                                                {
+                                                    <span class="label label-primary">Ajoutée</span>
+
+                                                }
+
+                                            </td>
+                                            <td>
+                                                @if (item.Modifie_Par == true)
+                                                {
+                                                    <span class="label label-warning-light">Modifiée</span>
+
+                                                }
+                                            </td>
+
+                                        </tr>
+
+                                    }
+                                }
+
+                            </tfoot>
+
+                        </table>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+    }
+</div>
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+    @Styles.Render("~/plugins/awesomeCheckboxStyles")
+    @Styles.Render("~/plugins/clockpickerStyles")
+    @Styles.Render("~/plugins/dateRangeStyles")
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+    @Styles.Render("~/plugins/switcheryStyles")
+    @Styles.Render("~/plugins/jasnyBootstrapStyles")
+    @Styles.Render("~/plugins/nouiSliderStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/Content/plugins/ionRangeSlider/ionRangeStyles")
+    @Styles.Render("~/plugins/imagecropperStyles")
+    @Styles.Render("~/Content/plugins/colorpicker/colorpickerStyles")
+    @Styles.Render("~/plugins/select2Styles")
+    @Styles.Render("~/plugins/touchSpinStyles")
+}
+@section Scripts {
+    <script src="~/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+    <script src="~/js/select2.min.js" type="text/javascript"></script>
+    @Scripts.Render("~/plugins/select2")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/dataTables")
+    @Scripts.Render("~/plugins/sweetAlert")
+
+    @Scripts.Render("~/plugins/iCheck")
+    @Scripts.Render("~/plugins/ionRange")
+    @Scripts.Render("~/plugins/nouiSlider")
+    @Scripts.Render("~/plugins/jasnyBootstrap")
+    @Scripts.Render("~/plugins/switchery")
+    @Scripts.Render("~/plugins/chosen")
+    @Scripts.Render("~/plugins/knob")
+    @Scripts.Render("~/plugins/imagecropper")
+    @Scripts.Render("~/plugins/colorpicker")
+    @Scripts.Render("~/plugins/clockpicker")
+    @Scripts.Render("~/plugins/dateRange")
+    @Scripts.Render("~/plugins/touchSpin")
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#Li-Vente").attr("class", "active");
+        $("#ul-Vente").attr("class", "nav nav-second-level collapse in");
+        $("#ul-Vente").attr("aria-expanded", "true");
+        RemplirListe();
+        RemplirListe2();
+        RemplirListe3();
+        RemplirListe4();
+        RemplirListe5();
+        RemplirListe6();
+        RemplirListe11();
+        RemplirListe12();
+        RemplirListe13();
+        RemplirListe14();
+        RemplirListe15();
+        RemplirListe16();
+
+        $("#date").datepicker({
+            format: 'dd/mm/yyyy'
+        });
+        $("#client").select2();
+        $("#marque").select2();
+        $("#descriptionProduit").select2();
+        $("#articles").select2();
+        $("#SERVICE").select2();
+        $("#RESSOURCE").select2();
+        $("#SERVICESOUSTRAITANCE").select2();
+        $("#SOUSTRAITANCE").select2();
+        //$("#articles").select2();
+        $("#TVAProduit").select2();
+        $("#TVACUISINE").select2();
+        $("#TVASERVICE").select2();
+        $("#TVASOUSTRAITANCE").select2();
+        $("#TVAProduit1").select2();
+        $("#unite").select2();
+        $("#devise").select2();
+        $("#categorie").select2();
+        $("#Sous_Categorie").select2();
+        $("#societe").select2();
+        $("#SSCAISSON").select2();
+        $("#CAISSON").select2();
+        $("#MP").select2();
+        $("#MPP").select2();
+        $("#FACADE").select2();
+        $("#SOUSFACADE").select2();
+        $("#modePaiement").select2();
+        //$("#TVAProduit").select2();
+        //$("#marque").select2();
+        //$("#unite").select2();
+        //$("#devise").select2();
+        //$("#categorie").select2();
+        //$("#Societes").select2();
+        var Mode = "@ViewBag.Mode";
+        var client = "@Model.CLIENT";
+        //var Societes = "@Model.Societes";
+        //******************************************************************
+        $('#TVACUISINE').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+
+
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllTVA",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('#TVACUISINE').append($('<option>', {
+                        value: item.Valeur_TVA,
+                        text: item.Valeur_TVA
+                    }));
+                });
+            }
+        });
+        $('#CAISSON').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllCAISSON",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('#CAISSON').append($('<option>', {
+                        value: item.ID,
+                        text: item.TYPE_CAISSON1
+                    }));
+                    //if (Mode == "Edit") {
+                    //    $("#SERVICE").val(fournisseur).trigger("change");
+                    //}
+                    //if (Mode == "Aff") {
+                    //    $("#SERVICE").val(fournisseur).trigger("change");
+                    //}
+                });
+            }
+        });
+        $('#FACADE').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllFACADE",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('#FACADE').append($('<option>', {
+                        value: item.ID,
+                        text: item.REF_FAC
+                    }));
+                    //if (Mode == "Edit") {
+                    //    $("#SERVICE").val(fournisseur).trigger("change");
+                    //}
+                    //if (Mode == "Aff") {
+                    //    $("#SERVICE").val(fournisseur).trigger("change");
+                    //}
+                });
+            }
+        });
+        $('#SOUSFACADE').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllSSFACADE",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('#SOUSFACADE').append($('<option>', {
+                        value: item.ID,
+                        text: item.TYPE_FACADE1
+                    }));
+                    //if (Mode == "Edit") {
+                    //    $("#SERVICE").val(fournisseur).trigger("change");
+                    //}
+                    //if (Mode == "Aff") {
+                    //    $("#SERVICE").val(fournisseur).trigger("change");
+                    //}
+                });
+            }
+        });
+         $(document).on("change", "#FACADE", function (e) {
+            debugger;
+            var FACADE = this.value;
+             var ddlProducts = $("#SOUSFACADE");
+            $.ajax({
+                //cache: false,
+                type: "GET",
+                url: '@Url.Action("GetSSFACADEbyId", "Vente")',
+                data: { "id": FACADE },
+                success: function (data) {
+                    ddlProducts.html('');
+                    $.each(data, function (id, option) {
+                        ddlProducts.append($('<option></option>').val(option.id).html(option.name));
+                    });
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Found error to load product!!.');
+                }
+            });
+
+
+        });
+         $(document).on("change", "#SOUSFACADE", function (e) {
+            debugger;
+            var SSFACADE = this.value;
+             var FACADE = $("#FACADE").val();
+            $.ajax({
+                //cache: false,
+                type: "GET",
+                url: '@Url.Action("GetFACDEEbyIdTYPEFACADE", "Vente")',
+                data: {
+                    SSFACADE: SSFACADE,
+                    FACADE: FACADE
+                },
+                success: function (response) {
+                   
+                    $("#PRIXFACADE").val(response);
+                    $("#PTHTFACADE").val(response);
+                    var PRIXACHAT = $("#PRIXACHAT").val();
+                    PRIXACHAT = parseFloat(PRIXACHAT);
+                    var PRIXVENTECAISSON = $("#PRIXVENTECAISSON").val();
+                    PRIXVENTECAISSON = parseFloat(PRIXVENTECAISSON);
+                    var QuantiteFACADE = $("#QuantiteFACADE").val();
+                    QuantiteFACADE = parseFloat(QuantiteFACADE);
+                    var PRIXFACADE = parseFloat($('#PRIXFACADE').val());
+                    var PTHTFACADE = PRIXFACADE * QuantiteFACADE;
+                    PTHTFACADE = parseFloat(PTHTFACADE);
+                    $('#PTHTFACADE').val(PTHTFACADE.toFixed(3));
+                    var QuantiteCAISSON = parseFloat($('#QuantiteCAISSON').val());
+                    QuantiteCAISSON = parseFloat(QuantiteCAISSON);
+                    var PTHTSSMARGE = QuantiteCAISSON * (PRIXACHAT + PTHTFACADE);
+                    PTHTSSMARGE = parseFloat(PTHTSSMARGE);
+                    $('#PTHTSSMARGE').val(PTHTSSMARGE.toFixed(3));
+                    var PTHTAVECMARGE = QuantiteCAISSON * (PRIXVENTECAISSON + PTHTFACADE);
+                    PTHTAVECMARGE = parseFloat(PTHTAVECMARGE);
+                    $('#PTHTAVECMARGE').val(PTHTAVECMARGE.toFixed(3));
+                    var TVACUISINE = $('#TVACUISINE').val();
+                    TVACUISINE = parseFloat(TVACUISINE);
+                    var MontantTVACUISINE = (PTHTAVECMARGE * TVACUISINE) / 100;
+                    var TTCCUISINE = PTHTAVECMARGE + MontantTVACUISINE;
+                    $('#PTTCCUISINE').val(TTCCUISINE.toFixed(3));
+                    
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Found error to load product!!.');
+                }
+            });
+        });
+        $(document).on("change", "#SSCAISSON", function (e) {
+            debugger;
+            var SSCAISSON = this.value;
+            var ddlProducts = $("#MP");
+            $.ajax({
+                //cache: false,
+                type: "GET",
+                url: '@Url.Action("GetMPIdSSCAISSON", "Vente")',
+                data: { "id": SSCAISSON },
+                success: function (data) {
+                    debugger;
+                    ddlProducts.html('');
+                    $('#MP').append($('<option>', {
+                        value: "",
+                        text: ""
+                    }));
+                    $.each(data, function (id, option) {
+                        ddlProducts.append($('<option></option>').val(option.id).html(option.name));
+                    });
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Found error to load product!!.');
+                }
+            });
+
+
+        });
+        $(document).on("change", "#SOUSFACADE", function (e) {
+            var SSCAISSON = this.value;
+            var ddlProducts = $("#MPP");
+            $.ajax({
+                //cache: false,
+                type: "GET",
+                url: '@Url.Action("GetMPIdSOUSFACADE", "Vente")',
+                data: { "id": SSCAISSON },
+                success: function (data) {
+                    ddlProducts.html('');
+                    $('#MPP').append($('<option>', {
+                        value: "",
+                        text: ""
+                    }));
+                    $.each(data, function (id, option) {
+                        ddlProducts.append($('<option></option>').val(option.id).html(option.name));
+                    });
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Found error to load product!!.');
+                }
+            });
+
+
+        });
+        $(document).on("change", "#MP", function (e) {
+            var MP = this.value;
+            var SSCAISSON = $("#SSCAISSON").val();
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("GetPHTSSCAISSONbyId", "Vente")',
+                data: {
+                    SSCAISSON: SSCAISSON,
+                    MP: MP,
+                },
+                success: function (response) {
+                    $("#CREVCAISSON").val(response.ptht);
+                    $("#PRIXACHAT").val(response.ptht);
+                    var PRIXACHAT = $("#PRIXACHAT").val();
+                    PRIXACHAT = parseFloat(PRIXACHAT);
+                    $("#ACC").val(response.Acc);
+                    $("#MARGEPRIXACHAT").val(0);
+                    $("#POURCENTAGE").val(0);
+                    var PRIXVENTECAISSON = ((response.ptht) + (response.Acc));
+                    PRIXVENTECAISSON = parseFloat(PRIXVENTECAISSON);
+                    $("#PRIXVENTECAISSON").val(PRIXVENTECAISSON);
+                    var QuantiteFACADE = $("#QuantiteFACADE").val();
+                    QuantiteFACADE = parseFloat(QuantiteFACADE);
+                    var PRIXFACADE = parseFloat($('#PRIXFACADE').val());
+                    var PTHTFACADE = PRIXFACADE * QuantiteFACADE;
+                    PTHTFACADE = parseFloat(PTHTFACADE);
+                    $('#PTHTFACADE').val(PTHTFACADE.toFixed(3));
+                    var QuantiteCAISSON = parseFloat($('#QuantiteCAISSON').val());
+                    QuantiteCAISSON = parseFloat(QuantiteCAISSON);
+                    var PTHTSSMARGE = QuantiteCAISSON * (PRIXACHAT + PTHTFACADE);
+                    PTHTSSMARGE = parseFloat(PTHTSSMARGE);
+                    $('#PTHTSSMARGE').val(PTHTSSMARGE.toFixed(3));
+                    var PTHTAVECMARGE = QuantiteCAISSON * (PRIXVENTECAISSON + PTHTFACADE);
+                    PTHTAVECMARGE = parseFloat(PTHTAVECMARGE);
+                    $('#PTHTAVECMARGE').val(PTHTAVECMARGE.toFixed(3));
+                    var TVACUISINE = $('#TVACUISINE').val();
+                    TVACUISINE = parseFloat(TVACUISINE);
+                    var MontantTVACUISINE = (PTHTAVECMARGE * TVACUISINE) / 100;
+                    var TTCCUISINE = PTHTAVECMARGE + MontantTVACUISINE;
+                    $('#PTTCCUISINE').val(TTCCUISINE.toFixed(3));
+
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Found error to load product!!.');
+                }
+            });
+
+
+        });
+        
+        $(document).on("change", "#CAISSON", function (e) {
+            
+            var caisson = this.value;
+            var ddlProducts = $("#SSCAISSON");
+            $.ajax({
+                //cache: false,
+                type: "GET",
+                url: '@Url.Action("GetCAISSONbyTypeId", "Vente")',
+                data: { "id": caisson },
+                success: function (data) {
+                    ddlProducts.html('');
+                    $('#SSCAISSON').append($('<option>', {
+                        value: "",
+                        text: ""
+                    }));
+                    $.each(data, function (id, option) {
+                      
+                        ddlProducts.append($('<option></option>').val(option.id).html(option.name));
+                    });
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Found error to load product!!.');
+                }
+            });
+
+
+        });
+        $('#SERVICE').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllSERVICE",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('#SERVICE').append($('<option>', {
+                        value: item.ID,
+                        text: item.NOM
+                    }));
+                    //if (Mode == "Edit") {
+                    //    $("#SERVICE").val(fournisseur).trigger("change");
+                    //}
+                    //if (Mode == "Aff") {
+                    //    $("#SERVICE").val(fournisseur).trigger("change");
+                    //}
+                });
+            }
+        });
+        $('#SERVICESOUSTRAITANCE').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllSERVICE",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('#SERVICESOUSTRAITANCE').append($('<option>', {
+                        value: item.ID,
+                        text: item.NOM
+                    }));
+                    //if (Mode == "Edit") {
+                    //    $("#SERVICE").val(fournisseur).trigger("change");
+                    //}
+                    //if (Mode == "Aff") {
+                    //    $("#SERVICE").val(fournisseur).trigger("change");
+                    //}
+                });
+            }
+        });
+        $('#RESSOURCE').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllRESSOURCE",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('#RESSOURCE').append($('<option>', {
+                        value: item.PersonnelId,
+                        text: item.Nom
+                    }));
+                  
+                });
+            }
+        });
+        $('#SOUSTRAITANCE').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllSOUSTRAITANCE",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('#SOUSTRAITANCE').append($('<option>', {
+                        value: item.ID,
+                        text: item.NOM
+                    }));
+
+                });
+            }
+        });
+
+        var client2 = "@ViewBag.client";
+        $('#client').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllClient",
+            success: function (response) {
+
+                $.each(response, function (i, item) {
+                    $('#client').append($('<option>', {
+                        value: item.ID,
+                        text: item.NOM
+
+                    }));
+
+
+                  if (client2 != "" && client2 != null)
+                  {
+                   $("#client").val(client2).trigger("change");
+                  }
+                    if (Mode == "Edit") {
+                        $("#client").val(client).trigger("change");
+                    }
+                    if (Mode == "Aff") {
+                        $("#client").val(client).trigger("change");
+                    }
+                });
+            }
+        });
+        //-------------------------------------------------------
+        //$('#Societes').append($('<option>', {
+        //    value: "",
+        //    text: ""
+        //}));
+
+        //$.ajax({
+        //    type: 'POST',
+        //    url: "/Vente/GetAllSocietes",
+        //    success: function (response) {
+
+        //        $.each(response, function (i, item) {
+        //            $('#Societes').append($('<option>', {
+        //                value: item.SociID,
+        //                text: item.NOM
+
+        //            }));
+
+        //            if (Mode == "Edit") {
+        //                $("#Societes").val(Societes).trigger("change");
+        //            }
+        //            if (Mode == "Aff") {
+        //                $("#Societes").val(Societes).trigger("change");
+        //            }
+        //        });
+        //    }
+        //});
+        //---------------------------
+        if (Mode == "Create") {
+            $("#DeleteBtn").attr("disabled", true);
+        }
+        if (Mode == "Edit") {
+            RemplirTableau4();
+            RemplirTableau5();
+            RemplirTableauCuisine();
+            var remise = "@Model.REMISE";
+            $("#remise").val(parseFloat(remise.replace(",", ".")));
+            var designation = decodeHtml("@Model.Designation");
+            $("#designation").val(designation);
+
+            var codeFournisseur = "@ViewBag.CODE_FOURNISSEUR";
+            var date = "@Model.DATE";
+            date = date.replace(" 00:00:00", "");
+            var modePaiement = "@Model.MODE_PAIEMENT";
+            modePaiement = modePaiement.replace("&#232;", "è");
+            modePaiement = modePaiement.replace("&#233;", "é");
+            $("#date").val(date);
+            //
+            var totalHT = "@Model.THT";
+            var NetHT = "@Model.NHT";
+            var totalTVA = "@Model.TTVA";
+            var TotalTTC = "@Model.TTC";
+            var netAPaye = "@Model.TNET";
+
+            totalHT = parseFloat(totalHT);
+            NetHT = parseFloat(NetHT);
+            totalTVA = parseFloat(totalTVA);
+            TotalTTC = parseFloat(TotalTTC);
+            netAPaye = parseFloat(netAPaye);
+
+            $("#totalHT").val(totalHT.toFixed(3));
+            $("#NetHT").val(NetHT.toFixed(3));
+            $("#totalTVA").val(totalTVA.toFixed(3));
+            $("#TotalTTC").val(TotalTTC.toFixed(3));
+            $("#netAPaye").val(netAPaye.toFixed(3));
+            $("#client").val(client).trigger("change");
+            $("#codeClient").val(codeClient);
+            $("#modePaiement option").each(function (i, item) {
+                if ($(this).attr("value") == modePaiement) {
+                    $(this).attr("selected", true);
+                }
+            });
+            //
+            RemplirTableau();
+
+
+                }
+        if (Mode == "Aff") {
+
+            RemplirTableau4();
+            RemplirTableau5();
+            RemplirTableauCuisine();
+            document.getElementById('date').disabled = true;
+            document.getElementById('client').disabled = true;
+            document.getElementById('Tiers').disabled = true;
+            document.getElementById('modePaiement').disabled = true;
+            document.getElementById('designation').disabled = true;
+            document.getElementById('remise').disabled = true;
+
+            var remise = "@Model.REMISE";
+            var designation = decodeHtml("@Model.Designation");
+            $("#designation").val(designation);
+            $("#remise").val(parseFloat(remise.replace(",", ".")));
+            var codeFournisseur = "@ViewBag.CODE_FOURNISSEUR";
+            var date = "@Model.DATE";
+            date = date.replace(" 00:00:00", "");
+            var modePaiement = "@Model.MODE_PAIEMENT";
+            modePaiement = modePaiement.replace("&#232;", "è");
+            modePaiement = modePaiement.replace("&#233;", "é");
+            $("#date").val(date);
+
+            var totalHT = "@Model.THT";
+            var NetHT = "@Model.NHT";
+            var totalTVA = "@Model.TTVA";
+            var TotalTTC = "@Model.TTC";
+            var netAPaye = "@Model.TNET";
+
+            totalHT = parseFloat(totalHT);
+            NetHT = parseFloat(NetHT);
+            totalTVA = parseFloat(totalTVA);
+            TotalTTC = parseFloat(TotalTTC);
+            netAPaye = parseFloat(netAPaye);
+
+            $("#totalHT").val(totalHT.toFixed(3));
+            $("#NetHT").val(NetHT.toFixed(3));
+            $("#totalTVA").val(totalTVA.toFixed(3));
+            $("#TotalTTC").val(TotalTTC.toFixed(3));
+            $("#netAPaye").val(netAPaye.toFixed(3));
+            $("#client").val(client).trigger("change");
+            $("#codeClient").val(codeClient);
+            $("#modePaiement option").each(function (i, item) {
+                if ($(this).attr("value") == modePaiement) {
+                    $(this).attr("selected", true);
+                }
+            });
+
+            RemplirTableau2();
+
+
+        }
+        //******************************************************************
+        $(document).on("keydown", "input[type=number][data-modif!=edited]", function (e) {
+            var Qte = $("#QuantiteProduit").val();
+            Qte = parseFloat(Qte);
+            var marque = $('#marque').val();
+            var unite = $('#unite').val();
+            var PRIX_VENTE_HT = parseFloat($('#PUHTProduit').val());
+            var PrixTotHTSansRemise = Qte * PRIX_VENTE_HT;
+            var Remise = $("#RemiseProduit").val();
+            Remise = parseFloat(Remise);
+            var MontantRemise = (PrixTotHTSansRemise * Remise) / 100;
+            var PTHTProduit = PrixTotHTSansRemise - MontantRemise;
+            $('#PTHTProduit').val(PTHTProduit.toFixed(3));
+            var TVA = $('#TVAProduit').val();
+            TVA = parseFloat(TVA);
+            var MontantTVA = (PTHTProduit * TVA) / 100;
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#TTCProduit').val(TTCProduit.toFixed(3));
+
+
+            var Qte1 = $("#QuantiteSERVICE").val();
+            Qte1 = parseFloat(Qte1);
+            var PRIX_VENTE_HT1 = parseFloat($('#PUHTSERVICE').val());
+            var PrixTotHTSansRemise1 = Qte1 * PRIX_VENTE_HT1;
+            var Remise1 = $("#RemiseSERVICE").val();
+            Remise1 = parseFloat(Remise1);
+            var MontantRemise1 = (PrixTotHTSansRemise1 * Remise1) / 100;
+            var PTHTProduit1 = PrixTotHTSansRemise1 - MontantRemise1;
+            $('#PTHTSERVICE').val(PTHTProduit1.toFixed(3));
+            var TVA1 = $('#TVASERVICE').val();
+            TVA1 = parseFloat(TVA1);
+
+            var MontantTVA1 = (PTHTProduit1 * TVA1) / 100;
+
+            var TTCProduit1 = PTHTProduit1 + MontantTVA1;
+
+            $('#TTCSERVICE').val(TTCProduit1.toFixed(3));
+        });
+        $(document).on("keyup", "input[type=number][data-modif!=edited]", function (e) {
+            var Qte = $("#QuantiteProduit").val();
+            Qte = parseFloat(Qte);
+            var marque = $('#marque').val();
+            var unite = $('#unite').val();
+            var PRIX_VENTE_HT = parseFloat($('#PUHTProduit').val());
+            var PrixTotHTSansRemise = Qte * PRIX_VENTE_HT;
+            var Remise = $("#RemiseProduit").val();
+            Remise = parseFloat(Remise);
+            var MontantRemise = (PrixTotHTSansRemise * Remise) / 100;
+            var PTHTProduit = PrixTotHTSansRemise - MontantRemise;
+            $('#PTHTProduit').val(PTHTProduit.toFixed(3));
+            var TVA = $('#TVAProduit').val();
+            TVA = parseFloat(TVA);
+            var MontantTVA = (PTHTProduit * TVA) / 100;
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#TTCProduit').val(TTCProduit.toFixed(3));
+
+            var Qte1 = $("#QuantiteSERVICE").val();
+            Qte1 = parseFloat(Qte1);
+            var PRIX_VENTE_HT1 = parseFloat($('#PUHTSERVICE').val());
+            var PrixTotHTSansRemise1 = Qte1 * PRIX_VENTE_HT1;
+            var Remise1 = $("#RemiseSERVICE").val();
+            Remise1 = parseFloat(Remise1);
+            var MontantRemise1 = (PrixTotHTSansRemise1 * Remise1) / 100;
+            var PTHTProduit1 = PrixTotHTSansRemise1 - MontantRemise1;
+            $('#PTHTSERVICE').val(PTHTProduit1.toFixed(3));
+            var TVA1 = $('#TVASERVICE').val();
+            TVA1 = parseFloat(TVA1);
+
+            var MontantTVA1 = (PTHTProduit1 * TVA1) / 100;
+
+            var TTCProduit1 = PTHTProduit1 + MontantTVA1;
+
+            $('#TTCSERVICE').val(TTCProduit1.toFixed(3));
+        });
+        //******************************Fournisseur****************************
+        $(document).on("keydown", "input[data-modif=edited]", function (e) {
+            var Qte = $("#NEW_QTE").val();
+            Qte = parseFloat(Qte);
+            var marque = $('#NEW_MARQUE').val();
+            var unite = $('#NEW_UNITE').val();
+            var PRIX_VENTE_HT = parseFloat($('#NEW_PUHT').val());
+            var PrixTotHTSansRemise = Qte * PRIX_VENTE_HT;
+            var Remise = $("#NEW_REMISE").val();
+            Remise = parseFloat(Remise);
+            var MontantRemise = (PrixTotHTSansRemise * Remise) / 100;
+            var PTHTProduit = PrixTotHTSansRemise - MontantRemise;
+                $('#NEW_PTHT').text(PTHTProduit.toFixed(3));
+                var TVA = $('#NEW_TVA').val();
+            TVA = parseFloat(TVA);
+            var MontantTVA = (PTHTProduit * TVA) / 100;
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#NEW_PTCT').text(TTCProduit.toFixed(3));
+        });
+        $(document).on("keyup", "input[data-modif=edited]", function (e) {
+            var Qte = $("#NEW_QTE").val();
+            Qte = parseFloat(Qte);
+            var marque = $('#NEW_MARQUE').val();
+            var unite = $('#NEW_UNITE').val();
+            var PRIX_VENTE_HT = parseFloat($('#NEW_PUHT').val());
+            var PrixTotHTSansRemise = Qte * PRIX_VENTE_HT;
+            var Remise = $("#NEW_REMISE").val();
+            Remise = parseFloat(Remise);
+            var MontantRemise = (PrixTotHTSansRemise * Remise) / 100;
+            var PTHTProduit = PrixTotHTSansRemise - MontantRemise;
+            $('#NEW_PTHT').text(PTHTProduit.toFixed(3));
+            var TVA = $('#NEW_TVA').val();
+            TVA = parseFloat(TVA);
+            var MontantTVA = (PTHTProduit * TVA) / 100;
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#NEW_PTCT').text(TTCProduit.toFixed(3));
+        });
+        //******************************************************************
+        $(document).on("click", "#Tableau tbody tr td", function (e) {
+            var index = this.cellIndex;
+            var html = this.innerText;
+            var Parent = this.parentNode.id;
+            var locked = $("#" + Parent).attr("data-locked");
+
+
+                var CELL_QTE = $("#Tableau tbody tr[id=" + Parent + "] td")[8];
+                var CELL_PUHT = $("#Tableau tbody tr[id=" + Parent + "] td")[9];
+                var CELL_REMISE = $("#Tableau tbody tr[id=" + Parent + "] td")[10];
+                var CELL_PTHT = $("#Tableau tbody tr[id=" + Parent + "] td")[11];
+                var CELL_TVA = $("#Tableau tbody tr[id=" + Parent + "] td")[12];
+                var CELL_PTTC = $("#Tableau tbody tr[id=" + Parent + "] td")[13];
+
+                var TXT_QTE = $(CELL_QTE).html();
+                var TXT_PUHT = $(CELL_PUHT).html();
+                var TXT_REMISE = $(CELL_REMISE).html();
+                var TXT_PTHT = $(CELL_PTHT).html();
+                var TXT_TVA = $(CELL_TVA).html();
+                var TXT_PTCT = $(CELL_PTTC).html();
+
+                if (index == 8 && $(this).html().indexOf("number") < 0 && locked != "true") {
+                    $(this).html("");
+                    $(this).append("<input type='number' class='form-control' id='NEW_QTE' value='" + html + "' data-modif='edited'>");
+                    //-----------------------------------------------------------------
+                    $(CELL_PTHT).html("");
+                    $(CELL_PTHT).append("<strong id='NEW_PTHT'>" + TXT_PTHT + "</strong>");
+                    $(CELL_PTTC).html("");
+                    $(CELL_PTTC).append("<strong id='NEW_PTCT'>" + TXT_PTCT + "</strong>");
+                    //-----------------------------------------------------------------
+
+                    $(CELL_PUHT).html("");
+                    $(CELL_PUHT).append("<input type='number' class='form-control' id='NEW_PUHT' value='" + TXT_PUHT + "' data-modif='edited'>");
+
+                    $(CELL_REMISE).html("");
+                    $(CELL_REMISE).append("<input type='number' class='form-control' id='NEW_REMISE' value='" + TXT_REMISE + "' data-modif='edited'>");
+
+                    $(CELL_TVA).html("");
+                    $(CELL_TVA).append("<select type='number' class='form-control' id='NEW_TVA' value='" + TXT_TVA + "' data-modif='edited'></select>");
+                    //-----------------------------------------------------------------
+
+                    $("#BtnRow_" + Parent).attr("disabled", false);
+                    LockRow(Parent);
+                    RemplirListeNewTva();
+                }
+                if (index == 9 && $(this).html().indexOf("number") < 0 && locked != "true") {
+                    $(this).html("");
+                    $(this).append("<input type='number' class='form-control' id='NEW_PUHT' value='" + html + "' data-modif='edited'>");
+                    $(CELL_PTHT).html("");
+                    $(CELL_PTHT).append("<strong id='NEW_PTHT'>" + TXT_PTHT + "</strong>");
+                    $(CELL_PTTC).html("");
+                    $(CELL_PTTC).append("<strong id='NEW_PTCT'>" + TXT_PTCT + "</strong>");
+                    //-----------------------------------------------------------------
+                    $(CELL_QTE).html("");
+                    $(CELL_QTE).append("<input type='number' class='form-control' id='NEW_QTE' value='" + TXT_QTE + "' data-modif='edited'>");
+
+
+                    $(CELL_REMISE).html("");
+                    $(CELL_REMISE).append("<input type='number' class='form-control' id='NEW_REMISE' value='" + TXT_REMISE + "' data-modif='edited'>");
+
+                    $(CELL_TVA).html("");
+                    $(CELL_TVA).append("<select type='number' class='form-control' id='NEW_TVA' value='" + TXT_TVA + "' data-modif='edited'></select>");
+                    //-----------------------------------------------------------------
+                    $("#BtnRow_" + Parent).attr("disabled", false);
+                    LockRow(Parent);
+                    RemplirListeNewTva();
+
+                }
+                if (index == 10 && $(this).html().indexOf("number") < 0 && locked != "true") {
+                    $(this).html("");
+                    $(this).append("<input type='number' class='form-control' id='NEW_REMISE' value='" + html + "' data-modif='edited'>");
+                    $(CELL_PTHT).html("");
+                    $(CELL_PTHT).append("<strong id='NEW_PTHT'>" + TXT_PTHT + "</strong>");
+                    $(CELL_PTTC).html("");
+                    $(CELL_PTTC).append("<strong id='NEW_PTCT'>" + TXT_PTCT + "</strong>");
+                    //-----------------------------------------------------------------
+                    $(CELL_QTE).html("");
+                    $(CELL_QTE).append("<input type='number' class='form-control' id='NEW_QTE' value='" + TXT_QTE + "' data-modif='edited'>");
+
+
+                    $(CELL_PUHT).html("");
+                    $(CELL_PUHT).append("<input type='number' class='form-control' id='NEW_PUHT' value='" + TXT_PUHT + "' data-modif='edited'>");
+
+                    $(CELL_TVA).html("");
+                    $(CELL_TVA).append("<select type='number' class='form-control' id='NEW_TVA' value='" + TXT_TVA + "' data-modif='edited'></select>");
+                    //-----------------------------------------------------------------
+                    $("#BtnRow_" + Parent).attr("disabled", false);
+                    LockRow(Parent);
+                    RemplirListeNewTva();
+
+                }
+                if (index == 12 && $(this).html().indexOf("number") < 0 && locked != "true") {
+                    $(this).html("");
+                    $(this).append("<select type='number' class='form-control' id='NEW_TVA' value='" + html + "' data-modif='edited'></select>");
+                    $(CELL_PTHT).html("");
+                    $(CELL_PTHT).append("<strong id='NEW_PTHT'>" + TXT_PTHT + "</strong>");
+                    $(CELL_PTTC).html("");
+                    $(CELL_PTTC).append("<strong id='NEW_PTCT'>" + TXT_PTCT + "</strong>");
+                    //-----------------------------------------------------------------
+                    $(CELL_QTE).html("");
+                    $(CELL_QTE).append("<input type='number' class='form-control' id='NEW_QTE' value='" + TXT_QTE + "' data-modif='edited'>");
+
+
+                    $(CELL_PUHT).html("");
+                    $(CELL_PUHT).append("<input type='number' class='form-control' id='NEW_PUHT' value='" + TXT_PUHT + "' data-modif='edited'>");
+
+                    $(CELL_REMISE).html("");
+                    $(CELL_REMISE).append("<input type='number' class='form-control' id='NEW_REMISE' value='" + TXT_REMISE + "' data-modif='edited'>");
+                    //-----------------------------------------------------------------
+                    $("#BtnRow_" + Parent).attr("disabled", false);
+                    LockRow(Parent);
+                    RemplirListeNewTva();
+
+                }
+        });
+    });
+    //--------------------------------------------------------------------------
+    function LockRow(parampassed) {
+        $("#Tableau tbody tr").each(function (i, item) {
+            if ($(this).attr("id") != parampassed) {
+                $(this).attr("data-locked", true);
+            }
+        });
+    }
+    //--------------------------------------------------------------------------
+        function RemplirListe13() {
+
+            $('#TVASERVICE').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllTVA",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#TVASERVICE').append($('<option>', {
+                            value: item.Valeur_TVA,
+                            text: item.Valeur_TVA
+                        }));
+                    });
+                }
+            });
+        }
+        function RemplirListe12() {
+            $('#RESSOURCE').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllRESSOURCE",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#RESSOURCE').append($('<option>', {
+                            value: item.PersonnelId,
+                            text: item.Nom
+                        }));
+                    });
+                }
+            });
+        }
+        function RemplirListe11() {
+            $('#SERVICE').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllSERVICE",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#SERVICE').append($('<option>', {
+                            value: item.ID,
+                            text: item.REF
+                        }));
+                    });
+                }
+            });
+        }
+        function RemplirListe14() {
+            $('#SERVICESOUSTRAITANCE').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllSERVICE",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#SERVICESOUSTRAITANCE').append($('<option>', {
+                            value: item.ID,
+                            text: item.REF
+                        }));
+                    });
+                }
+            });
+        }
+        function RemplirListe15() {
+            $('#SOUSTRAITANCE').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllSOUSTRAITANCE",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#SOUSTRAITANCE').append($('<option>', {
+                            value: item.PersonnelId,
+                            text: item.Nom
+                        }));
+                    });
+                }
+            });
+        }
+        function RemplirListe16() {
+
+            $('#TVASOUSTRAITANCE').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllTVA",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#TVASOUSTRAITANCE').append($('<option>', {
+                            value: item.Valeur_TVA,
+                            text: item.Valeur_TVA
+                        }));
+                    });
+                }
+            });
+        }
+    function RemplirListe() {
+        $('#articles').find('option').remove();
+        $('#articles').append($('<option>', {
+            value: "0",
+            text: ""
+        }));
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllProduct",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('#articles').append($('<option>', {
+                        value: item.Product_ID,
+                        text: item.Libelle
+                    }));
+                });
+            }
+        });
+        }
+        //--------------------------------------------------------------------------
+        function RemplirListe2() {
+
+            $('#TVAProduit').find('option').remove();
+            $('#TVAProduit').append($('<option>', {
+                value: "0",
+                text: ""
+            }));
+
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllTVA",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#TVAProduit').append($('<option>', {
+                            value: item.Valeur_TVA,
+                            text: item.Valeur_TVA
+                        }));
+                    });
+                }
+            });
+                }
+                //--------------------------------------------------------------------------
+                function RemplirListeNewTva() {
+
+                    $('#NEW_TVA').find('option').remove();
+                    $('#NEW_TVA').append($('<option>', {
+                        value: "0",
+                        text: ""
+                    }));
+
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "/Vente/GetAllTVA",
+                        success: function (response) {
+                            $.each(response, function (i, item) {
+                                $('#NEW_TVA').append($('<option>', {
+                                    value: item.Valeur_TVA,
+                                    text: item.Valeur_TVA
+                                }));
+                            });
+                        }
+                    });
+                }
+        //------------------------------------------------------------------------------------------
+        function RemplirListe3() {
+            $('#marque').find('option').remove();
+            $('#marque').append($('<option>', {
+                value: "0",
+                text: ""
+            }));
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllMarque",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#marque').append($('<option>', {
+                            value: item.Nom_marque,
+                            text: item.Nom_marque
+                        }));
+                    });
+                }
+            });
+        }
+        //--------------------------------------------------------------------------
+        function RemplirListe4() {
+            $('#unite').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllUnite",
+                success: function (response) {
+
+                    $.each(response, function (i, item) {
+                        $('#unite').append($('<option>', {
+                            value: item.Valeur_Unite,
+                            text: item.Valeur_Unite
+
+                        }));
+
+                    });
+                }
+            });
+        }
+        //--------------------------------------------------------------------------
+        function RemplirListe5() {
+            $('#devise').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllDevise",
+                success: function (response) {
+
+                    $.each(response, function (i, item) {
+                        $('#devise').append($('<option>', {
+                            value: item.Nom_Devise,
+                            text: item.Nom_Devise
+
+                        }));
+
+                    });
+                }
+            });
+        }
+        //--------------------------------------------------------------------------------------
+        function RemplirListe6() {
+            $('#categorie').find('option').remove();
+            $('#categorie').append($('<option>', {
+                value: "0",
+                text: ""
+            }));
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllCategorie",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#categorie').append($('<option>', {
+                            value: item.CentreID,
+                            text: item.Libelle
+                        }));
+                    });
+                }
+            });
+        }
+        //**************************** CHANGE TVA******************
+         $(document).on("change", "#TVAProduit", function (e) {
+
+
+            var Qte = $("#QuantiteProduit").val();
+            Qte = parseFloat(Qte);
+            var PRIX_VENTE_HT = parseFloat($('#PUHTProduit').val());
+            var PrixTotHTSansRemise = Qte * PRIX_VENTE_HT;
+            var Remise = $("#RemiseProduit").val();
+            Remise = parseFloat(Remise);
+            var MontantRemise = (PrixTotHTSansRemise * Remise) / 100;
+            var PTHTProduit = PrixTotHTSansRemise - MontantRemise;
+            $('#PTHTProduit').val(PTHTProduit.toFixed(3));
+
+            var TVA = $(this).val();
+            TVA = parseFloat(TVA);
+            var MontantTVA = (PTHTProduit * TVA) / 100;
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#TTCProduit').val(TTCProduit.toFixed(3));
+
+                });
+      $(document).on("change", "#NEW_TVA", function (e) {
+             var Qte = $("#NEW_QTE").val();
+            Qte = parseFloat(Qte);
+            var marque = $('#NEW_MARQUE').val();
+            var unite = $('#NEW_UNITE').val();
+            var PRIX_VENTE_HT = parseFloat($('#NEW_PUHT').val());
+            var PrixTotHTSansRemise = Qte * PRIX_VENTE_HT;
+            var Remise = $("#NEW_REMISE").val();
+            Remise = parseFloat(Remise);
+            var MontantRemise = (PrixTotHTSansRemise * Remise) / 100;
+            var PTHTProduit = PrixTotHTSansRemise - MontantRemise;
+            $('#NEW_PTHT').text(PTHTProduit.toFixed(3));
+            var TVA = $('#NEW_TVA').val();
+            TVA = parseFloat(TVA);
+            var MontantTVA = (PTHTProduit * TVA) / 100;
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#NEW_PTCT').text(TTCProduit.toFixed(3));
+
+                });
+    //--------------------------------------------------------------------------
+    $(document).on("change", "#articles", function (e) {
+        $('#descriptionProduit').val("");
+        $('#marque').val("");
+        $('#unite').val("");
+        $('#devise').val("");
+        $('#categorie').val("");
+        $('#Sous_Categorie').val("");
+        $('#StockProduit').val("");
+        $('#PUHTProduit').val("");
+        $('#TVAProduit').val("");
+        $('#PTHTProduit').val("");
+        $('#TTCProduit').val("");
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetProductByID?ID=" + this.value,
+            success: function (response) {
+                $('#descriptionProduit').val(response.Designation);
+                $('#marque').val(response.Marque);
+                $('#unite').val(response.Unite);
+                $('#devise').val(response.Devise);
+                $('#categorie').val(response.Categorie);
+               var selectedItemValue = $('#categorie').val();
+
+            var ddlProducts = $("#Sous_Categorie");
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: '@Url.Action("GetsousByCategoryId", "Vente")',
+                data: { "id": selectedItemValue },
+                success: function (data) {
+                ddlProducts.html('');
+                $.each(data, function (id, option) {
+                ddlProducts.append($('<option></option>').val(option.id).html(option.name));
+                });
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                alert('Found error to load sous categorie!!.');
+                }
+                });
+                $('#StockProduit').val(response.Stock);
+                $('#PUHTProduit').val(response.PU_HT_Sans_Remise);
+                $('#TVAProduit').val(response.Valeur_TVA);
+                //var Qte = $("#QuantiteProduit").val();
+                //Qte = parseFloat(Qte);
+                //var PRIX_VENTE_HT = parseFloat(response.PRIX_VENTE_HT);
+                //var PrixTotHTSansRemise = Qte * PRIX_VENTE_HT;
+                //var Remise = $("#RemiseProduit").val();
+                //Remise = parseFloat(Remise);
+                //var MontantRemise = (PrixTotHTSansRemise * Remise) / 100;
+                //var PTHTProduit = PrixTotHTSansRemise - MontantRemise;
+                $('#PTHTProduit').val(response.PU_HT_Avec_Remise);
+                //var TVA = $('#TVAProduit').val();
+                //TVA = parseFloat(TVA);
+                //var MontantTVA = (PTHTProduit * TVA) / 100;
+                //var TTCProduit = PTHTProduit + MontantTVA;
+                //$('#TTCProduit').val(TTCProduit);
+                $('#TTCProduit').val(response.PU_TTC);
+                var MaxQuantite = $("#StockProduit").val();
+                MaxQuantite = parseInt(MaxQuantite);
+                if (MaxQuantite > 0) {
+                    $("#QuantiteProduit").attr("max", MaxQuantite);
+                }
+            }
+        });
+        $('#FirstBTN').attr("disabled", false);
+    });
+    //--------------------------------------------------------------------------
+    $(document).on("change", "#client", function (e) {
+        $("#codeClient").val("");
+        if (this.value != "") {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetClientByID?ID=" + this.value,
+                success: function (response) {
+                    $("#codeClient").val(response.CODE);
+                }
+            });
+        }
+});
+                 //*****************************************************************************************************
+        $(document).on("change", "#categorie", function (e) {
+        //$("#categorie").change(function () {
+
+            var selectedItemValue = $(this).val();
+
+            var ddlProducts = $("#Sous_Categorie");
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: '@Url.Action("GetsousByCategoryId", "Vente")',
+                data: { "id": selectedItemValue },
+                success: function (data) {
+                ddlProducts.html('');
+                $.each(data, function (id, option) {
+                    ddlProducts.append($('<option style="width:140px; height:35px;"></option>').val(option.id).html(option.name));
+                });
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                alert('Found error to load sous categorie!!.');
+                }
+                });
+                });
+        //*****************************************************************************************************
+        //--------------------------------------------------------------------------
+        // $(document).on("change", "#Societes", function (e) {
+        //        //$('#Societes').on('change', function () {
+        //    $("#codeSoc").val("");
+        //    if (this.value != "") {
+        //        $.ajax({
+        //            type: 'POST',
+        //            url: "/Vente/GetSocByID?ID=" + this.value,
+        //            success: function (response) {
+        //                $("#codeSoc").val(response.CODE_ACCES);
+        //            }
+        //        });
+        //    }
+        //});
+         //*****************************************************************************************************
+        $("#client").change(function () {
+
+            var selectedItemValue = $(this).val();
+
+            var ddlProducts = $("#Tiers");
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: '@Url.Action("GetTiersBySocietesId", "Vente")',
+                data: { "id": selectedItemValue },
+                success: function (data) {
+                ddlProducts.html('');
+                $.each(data, function (id, option) {
+                ddlProducts.append($('<option></option>').val(option.id).html(option.name));
+                });
+                },
+                //error: function (xhr, ajaxOptions, thrownError) {
+                //alert('Found error to load product!!.');
+                //}
+                });
+                });
+    //--------------------------------------------------------------------------
+    $(document).on("keyup", "#remise", function (e) {
+        var remise = $("#remise").val();
+        var totalHT = $("#totalHT").val();
+        var totalTVA = window.totalTVA;
+        totalHT = parseFloat(totalHT);
+        totalTVA = parseFloat(totalTVA);
+        var NewTotalTva = totalTVA - ((totalTVA * remise) / 100);
+        NewTotalTva = parseFloat(NewTotalTva);
+        $("#totalTVA").val(NewTotalTva.toFixed(3));
+        var NetHT = totalHT - ((totalHT * remise) / 100);
+        NetHT = parseFloat(NetHT);
+        $("#NetHT").val(NetHT.toFixed(3));
+        var TotalTTC = NetHT + NewTotalTva;
+        $("#TotalTTC").val(TotalTTC.toFixed(3));
+        $("#netAPaye").val(TotalTTC.toFixed(3));
+    });
+    //--------------------------------------------------------------------------
+        function AddRowCuisine() {
+
+            var QuantiteCAISSON = $('#QuantiteCAISSON').val();
+            var CAISSON = $('#CAISSON').val();
+            var LIB_CAISSON = $("#CAISSON option:selected").text();
+            var SSCAISSON = $('#SSCAISSON').val();
+            var LIB_SSCAISSON = $("#SSCAISSON option:selected").text();
+            var IDTYPCAISSON = $('#MP').val();
+            var TYPCAISSON = $("#MP option:selected").text();
+            var CREVCAISSON = $('#CREVCAISSON').val();
+            var MARGEPRIXACHAT = $('#MARGEPRIXACHAT').val();
+            var PRIXACHAT = $('#PRIXACHAT').val();
+            var ACC = $('#ACC').val();
+            var POURCENTAGE = $('#POURCENTAGE').val();
+            var PRIXVENTECAISSON = $('#PRIXVENTECAISSON').val();
+            //var PRIXVENTECAISSON = $('#PRIXVENTECAISSON').val();
+            var FACADE = $('#FACADE').val();
+            var LIB_FACADE = $("#FACADE option:selected").text();
+            var SOUSFACADE = $('#SOUSFACADE').val();
+            var LIB_SOUSFACADE = $("#SOUSFACADE option:selected").text();
+            var IDTYPFACADE = $('#MPP').val();
+            var TYPFACADE = $("#MPP option:selected").text();
+            var QuantiteFACADE = $('#QuantiteFACADE').val();
+            var PRIXFACADE = $('#PRIXFACADE').val();
+            var PTHTFACADE = $('#PTHTFACADE').val();
+            var PTHTSSMARGE = $('#PTHTSSMARGE').val();
+            var PTHTAVECMARGE = $('#PTHTAVECMARGE').val();
+            var TVACUISINE = $('#TVACUISINE').val();
+            var PTTCCUISINE = $('#PTTCCUISINE').val();
+            var data = {
+                QuantiteCAISSON: QuantiteCAISSON,
+                CAISSON: CAISSON,
+                LIB_CAISSON: LIB_CAISSON,
+                SSCAISSON: SSCAISSON,
+                LIB_SSCAISSON: LIB_SSCAISSON,
+                IDTYPCAISSON: IDTYPCAISSON,
+                TYPCAISSON: TYPCAISSON,
+                IDTYPFACADE: IDTYPFACADE,
+                TYPFACADE: TYPFACADE,
+                CREVCAISSON: CREVCAISSON,
+                MARGEPRIXACHAT: MARGEPRIXACHAT,
+                PRIXACHAT: PRIXACHAT,
+                ACC: ACC,
+                POURCENTAGE: POURCENTAGE,
+                PRIXVENTECAISSON: PRIXVENTECAISSON,
+                FACADE: FACADE,
+                LIB_FACADE: LIB_FACADE,
+                SOUSFACADE: SOUSFACADE,
+                LIB_SOUSFACADE: LIB_SOUSFACADE,
+                QuantiteFACADE: QuantiteFACADE,
+                PRIXFACADE: PRIXFACADE,
+                PTHTFACADE: PTHTFACADE,
+                PTHTSSMARGE: PTHTSSMARGE,
+                PTHTAVECMARGE: PTHTAVECMARGE,
+                TVACUISINE: TVACUISINE,
+                PTTCCUISINE: PTTCCUISINE,
+            };
+
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/AddLineDevisCuisine",
+                data: data,
+                success: function (response) {
+                    RemplirTableauCuisine();
+
+
+
+                }
+            });
+        }
+    function AddRow() {
+        var StockProduit = $("#StockProduit").val();
+        var Quantite_Produit = $('#QuantiteProduit').val();
+        Quantite_Produit1 = parseInt(Quantite_Produit);
+        StockProduit1 = parseInt(StockProduit);
+        var StockProduit2 = StockProduit1 - Quantite_Produit1;
+        $("#StockProduit").val(StockProduit2);
+        var StockProduit3 = $("#StockProduit").val();
+        if (Quantite_Produit1 > StockProduit1) {
+            alert("Quantité commandée est dépassé la quantité en stock");
+            $("#StockProduit").val(StockProduit1);
+        }
+        else {
+            var ID_Produit = $('#articles').val();
+            var LIB_Produi = $("#articles option:selected").text();
+            var Description_Produit = $('#descriptionProduit').val();
+            var marque = $("#marque option:selected").text();
+            var unite = $("#unite option:selected").text();
+            var devise = $("#devise option:selected").text();
+            var categorie = $("#categorie option:selected").text();
+            var sous_categorie = $("#Sous_Categorie option:selected").text();
+            //var StockProduit = $("#StockProduit").val();
+            //var Quantite_Produit = $('#QuantiteProduit').val();
+            var PUHT_Produit = $('#PUHTProduit').val();
+            var Remise_Produit = $('#RemiseProduit').val();
+            var PTHT_Produit = $('#PTHTProduit').val();
+            var TVA_Produit = $("#TVAProduit option:selected").text();
+            var TTC_Produit = $('#TTCProduit').val();
+            var data = {
+                ID_Produit: ID_Produit,
+                LIB_Produi: LIB_Produi,
+                Description_Produit: Description_Produit,
+                marque: marque,
+                unite: unite,
+                devise: devise,
+                categorie: categorie,
+                sous_categorie: sous_categorie,
+                StockProduit: StockProduit3,
+                Quantite_Produit: Quantite_Produit,
+                PUHT_Produit: PUHT_Produit,
+                Remise_Produit: Remise_Produit,
+                PTHT_Produit: PTHT_Produit,
+                TVA_Produit: TVA_Produit,
+                TTC_Produit: TTC_Produit
+            };
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/AddLineCommande",
+                data: data,
+                success: function (response) {
+                    RemplirTableau();
+                }
+            });
+        }
+        }
+        function AddRow2() {
+            var ID_Produit = $("#SERVICE").val();
+            var LIB_Produi = $("#SERVICE option:selected").text();
+            var Description_Produit = $('#descriptionSERVICE').val();
+            var unite = $('#uniteSERVICE').val();
+            var Quantite_Produit = $('#QuantiteSERVICE').val();
+            var PUHT_Produit = $('#PUHTSERVICE').val();
+            var Remise_Produit = $('#RemiseSERVICE').val();
+            var PTHT_Produit = $('#PTHTSERVICE').val();
+            var TVA_Produit = $("#TVASERVICE option:selected").text();
+            var TTC_Produit = $('#TTCSERVICE').val();
+            var RESSOURCE = $("#RESSOURCE").val();
+            var RESSOURCE2 = $("#RESSOURCE option:selected").text();
+
+
+            var data1 = {
+                ID_Produit: ID_Produit,
+                LIB_Produi: LIB_Produi,
+                Description_Produit: Description_Produit,
+                unite: unite,
+                Quantite_Produit: Quantite_Produit,
+                PUHT_Produit: PUHT_Produit,
+                Remise_Produit: Remise_Produit,
+                PTHT_Produit: PTHT_Produit,
+                TVA_Produit: TVA_Produit,
+                TTC_Produit: TTC_Produit,
+                RESSOURCE: RESSOURCE,
+                RESSOURCE2: RESSOURCE2,
+
+            };
+
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/AddLineSERVICE",
+                data: data1,
+                success: function (response) {
+                    RemplirTableau4();
+
+                }
+            });
+        }
+    //--------------------------------------------------------------------------
+        function RemplirTableau4() {
+            $("#Tab tbody").empty();
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllLinSERVICE",
+                success: function (response1) {
+
+                    $.each(response1, function (i, item) {
+                        debugger;
+                        var line = "<tr id='" + item.ID + "'><td>" + item.REFSERVICE + "</td><td>" + item.DescriptionSERVICE + "</td><td>" + item.UNITE + "</td><td>" + item.QUANTITE + "</td><td>" + item.PRIX_VENTE_HT + "</td><td>" + item.REMISE + "</td><td>" + item.PTHT + "</td><td>" + item.TVA + "</td><td>" + item.TTC + "</td><td>" + item.RESSOURCE2 + "</td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow2(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+                        $("#Tab tbody").append(line);
+
+
+                    });
+                    if (Mode == "Aff") {
+                        $("#Tab tfoot").empty();
+                    }
+                    else {
+                        $("#Tab tfoot").replaceWith("<tfoot><tr><tr><td><select type='text' class='form-control' id='SERVICE'/></td><td><textarea id='descriptionSERVICE'></textarea></td><td><input class='form-control' id='uniteSERVICE' value='H'/></td><td><input type='number' class='form-control' id='QuantiteSERVICE' value='1' min='1'/></td><td><input type='number' class='form-control' id='PUHTSERVICE' min='0' /></td><td><input type='number' class='form-control' id='RemiseSERVICE' value='0' min='0'/></td><td><input type='number' class='form-control' id='PTHTSERVICE' readonly='true'/></td><td><select class='form-control' id='TVASERVICE'><option>19</option></select></td><td><input type='number' class='form-control' id='TTCSERVICE' readonly='true'/></td><td><select type='text' id='RESSOURCE' data-placeholder='Choose a Country...' class='chosen-select' multiple style='width:350px;' tabindex='4'></select></td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='AddRow2()'  id='FirstBTN'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' disabled> <i class='fa fa-times'></i> </button> </td> </tr> </tfoot>");
+                        $("#SERVICE").select2();
+                        $("#RESSOURCE").select2();
+                        $("#TVASERVICE").select2();
+                        RemplirListe11();
+                        RemplirListe12();
+                        RemplirListe13();
+                    }
+
+                }
+            });
+
+            UpdatePrice();
+
+        }
+        function RemplirTableau5() {
+            $("#TabSST tbody").empty();
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllLinSERVICESOUSTRAITANCE",
+                success: function (response1) {
+                    $.each(response1, function (i, item) {
+                        var line = "<tr id='" + item.ID + "'><td>" + item.REFSERVICE + "</td><td>" + item.DescriptionSERVICE + "</td><td>" + item.UNITE + "</td><td>" + item.QUANTITE + "</td><td>" + item.PRIX_VENTE_HT + "</td><td>" + item.Marge + "</td><td>" + item.PRIX_VENTE_HT2 + "</td><td>" + item.REMISE + "</td><td>" + item.PTHT + "</td><td>" + item.TVA + "</td><td>" + item.TTC + "</td><td>" + item.SOUS_TRAITANCE2 + "</td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow3(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+                        $("#TabSST tbody").append(line);
+                    });
+                    if (Mode == "Aff") {
+                        $("#TabSST tfoot").empty();
+                    }
+                    else {
+                        $("#TabSST tfoot").replaceWith("<tfoot><tr><tr><td><select type='text' class='form-control' id='SERVICESOUSTRAITANCE'/></td><td><textarea id='descriptionSOUSTRAITANCE'></textarea></td><td><input class='form-control' id='uniteSOUSTRAITANCE' value='H'/></td><td><input type='number' class='form-control' id='QuantiteSOUSTRAITANCE' value='1' min='1'/></td><td><input type='number' class='form-control' id='PUHTSOUSTRAITANCE' min='0' /></td><td><input type = 'number' class= 'form-control' id = 'PUHTProduitSOUSTRAITANCE2' value = '0' min = '0'/></td ><td><input type='number' class='form-control' id='RemiseSOUSTRAITANCE' value='0' min='0' /></td><td><input type='number' class='form-control' id='RemiseSOUSTRAITANCE' value='0' min='0'/></td><td><input type='number' class='form-control' id='PTHTSOUSTRAITANCE' readonly='true'/></td><td><select class='form-control' id='TVASOUSTRAITANCE'><option>19</option></select></td><td><input type='number' class='form-control' id='TTCSOUSTRAITANCE' readonly='true'/></td><td><select type='text' id='SOUSTRAITANCE' data-placeholder='Choose a Country...' class='chosen-select' multiple style='width:350px;' tabindex='4'></select></td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='AddRow3()'  id='FirstBTN'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' disabled> <i class='fa fa-times'></i> </button> </td> </tr> </tfoot>");
+                        $("#SERVICESOUSTRAITANCE").select2();
+                        $("#SOUSTRAITANCE").select2();
+                        $("#TVASOUSTRAITANCE").select2();
+                        RemplirListe14();
+                        RemplirListe15();
+                        RemplirListe16();
+                    }
+                }
+            });
+
+            UpdatePrice();
+
+        }
+        //function RemplirTableauCuisine() {
+        //    $("#TableauCAISSON tbody").empty();
+        //    $.ajax({
+        //        type: 'POST',
+        //        url: "/Vente/GetAllLineCuisinecmd",
+        //        success: function (response) {
+        //            $.each(response, function (i, item) {
+        //                var line = "<tr><td>" + item.QuantiteCAISSON + "</td><td>" + item.LIB_CAISSON + "</td><td>" + item.LIB_SSCAISSON + "</td><td>" + item.TYPCAISSON + "</td><td>" + item.CREVCAISSON + "</td><td>" + item.MARGEPRIXACHAT + "</td><td>" + item.PRIXACHAT + "</td><td>" + item.ACC + "</td><td>" + item.POURCENTAGE + "</td><td>" + item.PRIXVENTECAISSON + "</td><td>" + item.LIB_FACADE + "</td><td>" + item.LIB_SOUSFACADE + "</td><td>" + item.TYPFACADE + "</td><td>" + item.QuantiteFACADE + "</td><td>" + item.PRIXFACADE + "</td><td>" + item.PTHTFACADE + "</td><td>" + item.PTHTSSMARGE + "</td><td>" + item.PTHTAVECMARGE + "</td><td>" + item.TVACUISINE + "</td><td>" + item.PTTCCUISINE + "</td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+        //                $("#TableauCAISSON tbody").append(line);
+        //            });
+        //            $("#TableauCAISSON tfoot").replaceWith("<tfoot><tr><td><input type='number' class='form-control' id='QuantiteCAISSON' name='QuantiteCAISSON' value='1' min='1' /></td><td><select class='form-control' id='CAISSON' name='CAISSON'><option></option></select></td><td><select class='form-control' id='SSCAISSON'><option></option></select></td><td><select class='form-control' id='MP' name='MP'><option></option></select></td><td><input type='number' class='form-control' id='CREVCAISSON' name='CREVCAISSON' value='0' min='0' readonly></input></td><td> <input type='number' class='form-control' name='MARGEPRIXACHAT' id='MARGEPRIXACHAT' value='0' min='0' /></td><td><input type='number' class='form-control' name='PRIXACHAT' id='PRIXACHAT' value='0' min='0' readonly /></td><td> <input type='number' class='form-control' name='ACC' id='ACC' value='0' min='0' readonly /></td><td><input type='number' class='form-control' id='POURCENTAGE' name='POURCENTAGE' value='0' min='0'></input></td><td> <input type='number' class='form-control' name='PRIXVENTECAISSON' id='PRIXVENTECAISSON' value='0' min='0' readonly /></td><td><select class='form-control' name='FACADE' id='FACADE'></select></td><td><select class='form-control' name='SOUSFACADE' id='SOUSFACADE'></select></td><td><select class='form-control' id='MP' name='MP'><option></option></select></td><td><input type='number' class='form-control' id='QuantiteFACADE' value='1' min='1' /></td><td><input type='number' class='form-control' id='PRIXFACADE' value='0' min='0' readonly /></td><td><input type='number' class='form-control' id='PTHTFACADE' name='PTHTFACADE' value='0' readonly='true' /></td><td><input type='number' class='form-control' id='PTHTSSMARGE' name='PTHTSSMARGE' value='' readonly='true' /></td><td><input type='number' class='form-control' id='PTHTAVECMARGE' name='PTHTAVECMARGE' value='' readonly='true' /></td> <td><select class= 'form-control' id ='TVACUISINE' name = 'TVACUISINE'> <option>0</option></select ></td ><td><input type='number' class='form-control' id='PTTCCUISINE' name='PTTCCUISINE' value='' readonly='true' /></td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px;border-top-width: 0px;' required><button class='btn btn-info btn-circle' type='button' onclick='AddRowCuisine()' id='FirstBTN'><i class='fa fa-check'></i></button><button class='btn btn-warning btn-circle' type='button' disabled><i class='fa fa-times'></i></button></td></tr></tfoot>");
+        //            RemplirListe17();
+        //            RemplirListe18();
+        //            RemplirListe19();
+        //            RemplirListeTVACUISINE();
+        //        }
+        //    });
+        //    UpdatePrice();
+        //}
+        function RemplirTableauCuisine() {
+            $("#TableauCAISSON tbody").empty();
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllLineCuisinecmd",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        var line = "<tr><td>" + item.QuantiteCAISSON + "</td><td>" + item.LIB_CAISSON + "</td><td>" + item.LIB_SSCAISSON + "</td><td>" + item.TYPCAISSON + "</td><td>" + item.CREVCAISSON + "</td><td>" + item.MARGEPRIXACHAT + "</td><td>" + item.PRIXACHAT + "</td><td>" + item.ACC + "<button class='btn btn-xs btn-success' type='button' onclick='AffAccessoire2(\"" + item.ID + "\")' ;'><i class= 'fa fa-search-plus' ></i></button></td><td>" + item.POURCENTAGE + "</td><td>" + item.PRIXVENTECAISSON + "</td><td>" + item.LIB_FACADE + "</td><td>" + item.LIB_SOUSFACADE + "</td><td>" + item.TYPFACADE + "</td><td>" + item.QuantiteFACADE + "</td><td>" + item.PRIXFACADE + "</td><td>" + item.PTHTFACADE + "</td><td>" + item.PTHTSSMARGE + "</td><td>" + item.PTHTAVECMARGE + "</td><td>" + item.TVACUISINE + "</td><td>" + item.PTTCCUISINE + "</td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRowCuisine(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+                        $("#TableauCAISSON tbody").append(line);
+                    });
+                    $("#TableauCAISSON tfoot").replaceWith("<tfoot><tr><td><input type='number' class='form-control' id='QuantiteCAISSON' name='QuantiteCAISSON' value='1' min='1' /></td><td><select class='form-control' id='CAISSON' name='CAISSON'><option></option></select></td><td><select class='form-control' id='SSCAISSON'><option></option></select></td><td><select class='form-control' id='MP' name='MP'><option></option></select></td><td><input type='number' class='form-control' id='CREVCAISSON' name='CREVCAISSON' value='0' min='0' readonly></input></td><td> <input type='number' class='form-control' name='MARGEPRIXACHAT' id='MARGEPRIXACHAT' value='0' min='0' /></td><td><input type='number' class='form-control' name='PRIXACHAT' id='PRIXACHAT' value='0' min='0' readonly /></td><td><input type='number' class='form-control' name='ACC' id='ACC' value='0' min='0'  readonly /> <button class='btn btn-info btn-circle' id='AffAcc' type='button' onclick='AffAccessoire();' disabled><i class= 'fa fa-plus' ></i></button ></td><td><input type='number' class='form-control' id='POURCENTAGE' name='POURCENTAGE' value='0' min='0'></input></td><td> <input type='number' class='form-control' name='PRIXVENTECAISSON' id='PRIXVENTECAISSON' value='0' min='0' readonly /></td><td><select class='form-control' name='FACADE' id='FACADE'></select></td><td><select class='form-control' name='SOUSFACADE' id='SOUSFACADE'></select></td><td><select class='form-control' id='TYPESOUSFACADE' name='TYPESOUSFACADE'><option></option></select></td><td><input type='number' class='form-control' id='QuantiteFACADE' value='0' min='0' /></td><td><input type='number' class='form-control' id='PRIXFACADE' value='0' min='0' readonly /></td><td><input type='number' class='form-control' id='PTHTFACADE' name='PTHTFACADE' value='0' readonly='true' /></td><td><input type='number' class='form-control' id='PTHTSSMARGE' name='PTHTSSMARGE' value='' readonly='true' /></td><td><input type='number' class='form-control' id='PTHTAVECMARGE' name='PTHTAVECMARGE' value='' readonly='true' /></td> <td><select class= 'form-control' id ='TVACUISINE' name = 'TVACUISINE'> <option>0</option></select ></td ><td><input type='number' class='form-control' id='PTTCCUISINE' name='PTTCCUISINE' value='' readonly='true' /></td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px;border-top-width: 0px;' required><button class='btn btn-info btn-circle' type='button' onclick='AddRowCuisine()' id='FirstBTN'><i class='fa fa-check'></i></button><button class='btn btn-warning btn-circle' type='button' disabled><i class='fa fa-times'></i></button></td></tr></tfoot>");
+                    $("#SSCAISSON").select2();
+                    $("#CAISSON").select2();
+                    $("#MP").select2();
+                    $("#TVACUISINE").select2();
+                    $("#TYPESOUSFACADE").select2();
+                    $("#FACADE").select2();
+                    $("#SOUSFACADE").select2();
+                    RemplirListe17();
+                    RemplirListe18();
+                    //RemplirListe19();
+                    RemplirListeTVACUISINE();
+                }
+            });
+            UpdatePrice();
+        }
+    function RemplirTableau() {
+        $("#Tableau tbody").empty();
+           $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllLineCommande",
+                success: function (response) {
+                $.each(response, function (i, item) {
+                    var line = "<tr id='" + item.ID + "'><td>" + item.LIBELLE + "</td><td>" + item.DESIGNATION + "</td><td>" + item.MARQUE + "</td><td>" + item.UNITE + "</td><td>" + item.DEVISE + "</td><td>" + item.CATEGORIE + "</td><td>" + item.Sous_CATEGORIE + "</td><td>" + item.STOCK + "</td><td>" + item.QUANTITE + "</td><td>" + item.PRIX_VENTE_HT + "</td><td>" + item.REMISE + "</td><td>" + item.PTHT + "</td><td>" + item.TVA + "</td><td>" + item.TTC + "</td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+                    $("#Tableau tbody").append(line);
+                });
+                $("#Tableau tfoot").replaceWith("<tfoot> <tr> <td> <select class='form-control' id='articles'> </select> </td> <td><textarea name='descriptionProduit' id='descriptionProduit'></textarea ></td><td> <select class='form-control' id='marque'> </select> </td><td> <select class='form-control' id='unite'> </select> </td><td> <select class='form-control' id='devise'> </select> </td><td> <select class='form-control' id='categorie'> </select> </td><td> <select class='form-control' name='Sous_Categorie' id='Sous_Categorie'> </select> </td><td> <input type='text' class='form-control' id='StockProduit' readonly='true' /> </td> <td> <input type='number' class='form-control' id='QuantiteProduit' value='1' min='1'/> </td> <td> <input type='number' class='form-control' id='PUHTProduit' min='0'/> </td> <td> <input type='number' class='form-control' id='RemiseProduit' value='0' min='0' /> </td> <td> <input type='number' class='form-control' id='PTHTProduit' readonly='true' /> </td> <td> <select class='form-control' id='TVAProduit'></select> </td> <td> <input type='number' class='form-control' id='TTCProduit' readonly='true' /> </td> <td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='AddRow()'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' disabled> <i class='fa fa-times'></i> </button> </td> </tr> </tfoot>");
+                var MaxQuantite = $("#StockProduit").val();
+                MaxQuantite = parseInt(MaxQuantite);
+                if (MaxQuantite > 0) {
+                    $("#QuantiteProduit").attr("max", MaxQuantite);
+                }
+                RemplirListe();
+                RemplirListe2();
+                RemplirListe3();
+                RemplirListe4();
+                RemplirListe5();
+                RemplirListe6();
+            }
+        });
+        if (Mode == "Create") {
+            UpdatePrice();
+        }
+    }
+    //--------------------------------------------------------------------------
+        function decodeHtml(html) {
+            var txt = document.createElement("textarea");
+            txt.innerHTML = html;
+            return txt.value;
+        }
+    function RemplirTableau2() {
+
+        $("#Tableau tbody").empty();
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllLineCommande",
+            success: function (response) {
+                $.each(response, function (i, item) {
+
+                    var line = "<tr id='" + item.ID + "'><td>" + item.LIBELLE + "</td><td>" + item.DESIGNATION + "</td><td>" + item.MARQUE + "</td><td>" + item.UNITE + "</td><td>" + item.DEVISE + "</td><td>" + item.CATEGORIE + "</td><td>" + item.Sous_CATEGORIE + "</td><td>" + item.STOCK + "</td><td>" + item.QUANTITE + "</td><td>" /*+ item.QUANTITELiv + "</td><td>" + item.QUANTITERES + "</td><td>" */ + item.PRIX_VENTE_HT + "</td><td>" + item.REMISE + "</td><td>" + item.PTHT + "</td><td>" + item.TVA + "</td><td>" + item.TTC + "</td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+                    $("#Tableau tbody").append(line);
+                });
+                $("#Tableau tfoot").empty();
+                var MaxQuantite = $("#StockProduit").val();
+                MaxQuantite = parseInt(MaxQuantite);
+                if (MaxQuantite > 0) {
+                    $("#QuantiteProduit").attr("max", MaxQuantite);
+                }
+                RemplirListe();
+                RemplirListe2();
+                RemplirListe3();
+                RemplirListe4();
+                RemplirListe5();
+                RemplirListe6();
+            }
+        });
+    }
+    //---------------------------------------------------------------------------
+    function EditRow(parampassed) {
+        var ID_Produit = parampassed;
+        var Quantite_Produit = $('#NEW_QTE').val();
+        var PUHT_Produit = $('#NEW_PUHT').val();
+        var Remise_Produit = $('#NEW_REMISE').val();
+        var PTHT_Produit = $('#NEW_PTHT').text();
+        var TVA_Produit = $('#NEW_TVA').val();
+        var TTC_Produit = $('#NEW_PTCT').text();
+        var data = {
+            ID_Produit: ID_Produit,
+            Quantite_Produit: Quantite_Produit,
+            PUHT_Produit: PUHT_Produit,
+            Remise_Produit: Remise_Produit,
+            PTHT_Produit: PTHT_Produit,
+            TVA_Produit: TVA_Produit,
+            TTC_Produit: TTC_Produit
+        };
+        $.ajax({
+            type: 'POST',
+            data: data,
+            url: "/Vente/EditLineCommande",
+            success: function (response) {
+                RemplirTableau();
+            }
+        });
+    }
+    //---------------------------------------------------------------------------
+        function DeleteRow(parampassed) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/DeleteLineCommande?parampassed=" + parampassed,
+                success: function (response) {
+                    RemplirTableau();
+                }
+            });
+        }
+        function DeleteRow2(parampassed) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/DeleteLineService?parampassed=" + parampassed,
+                success: function (response) {
+                    RemplirTableau4();
+                }
+            });
+        }
+    //---------------------------------------------------------------------------
+    function UpdatePrice() {
+        var remise = $("#remise").val();
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/UpdatePriceCommande?remise=" + remise,
+            success: function (response) {
+                 var totalHT = response.totalHT;
+                var totalTVA = response.totalTVA;
+                var totalHTSERV = response.totalHTSERV;
+                var totalTVASERV = response.totalTVASERV;
+                var totalHTSERVSST = response.totalHTSERVSST;
+                var totalTVASERVSST = response.totalTVASERVSST;
+                var totalHTCuisine = response.totalHTCuisine;
+                var totalTVACuisine = response.totalTVACuisine;
+                window.totalTVA = totalTVA;
+                totalHT = parseFloat(totalHT);
+                totalHT1 = parseFloat(totalHT) + parseFloat(totalHTSERV) + parseFloat(totalHTSERVSST);
+                totalTVA = parseFloat(totalTVA);
+                window.totalTVASERV = totalTVASERV;
+                totalHTSERV = parseFloat(totalHTSERV);
+                totalTVASERV = parseFloat(totalTVASERV);
+                totalHTSERVSST = parseFloat(totalHTSERVSST);
+                totalTVASERVSST = parseFloat(totalTVASERVSST);
+                totalHTCuisine = parseFloat(totalHTCuisine);
+                totalTVACuisine = parseFloat(totalTVACuisine);
+                $("#totalHT").val(totalHT1.toFixed(3));
+                var NewTotalTva = totalTVA - ((totalTVA * remise) / 100) + totalTVASERV - ((totalTVASERV * remise) / 100) + totalTVASERVSST - ((totalTVASERVSST * remise) / 100) + totalTVACuisine - ((totalTVACuisine * remise) / 100);
+                NewTotalTva = parseFloat(NewTotalTva);
+                var NEWtotalTVASERV = totalTVASERV - ((totalTVASERV * remise) / 100);
+                NEWtotalTVASERV = parseFloat(NEWtotalTVASERV);
+                var NEWtotalTVASERVSST = totalTVASERVSST - ((totalTVASERVSST * remise) / 100);
+                NEWtotalTVASERVSST = parseFloat(NEWtotalTVASERVSST);
+                $("#totalTVA").val(NewTotalTva.toFixed(3));
+                var NetHT = totalHT - ((totalHT * remise) / 100) + (totalHTSERV - ((totalHTSERV * remise) / 100)) + (totalHTSERVSST - ((totalHTSERVSST * remise) / 100)) + (totalHTCuisine - ((totalHTCuisine * remise) / 100)) ;
+                NetHT = parseFloat(NetHT);
+                var NettotalHTSERV = totalHTSERV - ((totalHTSERV * remise) / 100);
+                NettotalHTSERV = parseFloat(NettotalHTSERV);
+                var NettotalHTSERV1 = totalHTSERV - ((totalHTSERV * remise) / 100) + (totalHTSERVSST - ((totalHTSERVSST * remise) / 100));
+                NettotalHTSERV1 = parseFloat(NettotalHTSERV1);
+                $("#NettotalHTSERV").val(NettotalHTSERV1.toFixed(3));
+                var NettotalHTSERVSST = totalHTSERVSST - ((totalHTSERVSST * remise) / 100);
+                NettotalHTSERVSST = parseFloat(NettotalHTSERVSST);
+                
+
+                $("#NetHT").val(NetHT);
+                var tva1 = $("#TVAProduit1").val();
+                tva1 = parseFloat(tva1);
+               
+
+
+               
+                var netAPaye = NetHT + NewTotalTva  /*+ NEWtotalTVASERV + NettotalHTSERV + NEWtotalTVASERVSST + NettotalHTSERVSST*/;
+                    var TotalHTMI = totalHT + totalHTSERV + totalHTSERVSST;
+                
+                var NettotalTTCSERV = NEWtotalTVASERV + NettotalHTSERV;
+                var NettotalTTCSSTRAIT = NEWtotalTVASERVSST + NettotalHTSERVSST;
+
+                var TotalTTC = NetHT + NewTotalTva /*+ NEWtotalTVASERV + NEWtotalTVASERVSST*//*+ NEWtotalTVASERV + NEWtotalTVASERVSST*/;
+                $("#TotalTTC").val(TotalTTC.toFixed(3));
+                $("#TotalTTC1").val(TotalTTC.toFixed(3));
+                $("#TotalHTMI").val(TotalHTMI.toFixed(3));
+                $("#NettotalTTCSERV").val(NettotalTTCSERV.toFixed(3));
+                $("#NettotalTTCSSTRAIT").val(NettotalTTCSSTRAIT.toFixed(3));
+                
+                $("#netAPaye").val(netAPaye.toFixed(3));
+            }
+        });
+    }
+    //---------------------------------------------------------------------------
+    $("#PrintBTN").click(function () {
+        $("#WithPrint").val("true");
+        $("form").attr("target", "_blank");
+        $("form").submit();
+        $("#WithPrint").val("false");
+        $("form").attr("target", "_self");
+    });
+    //---------------------------------------------------------------------------
+    $("#DeleteBtn").click(function () {
+        Delete();
+    });
+    function Delete() {
+        var parampassed = "@ViewBag.Code";
+        swal({
+            title: "Voulez vous Supprimer cet elément ?",
+            text: "Attention : cette action est irréversible ! Voulez-vous continuer ?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, continuer!",
+            cancelButtonText: "Non, annuler SVP!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+            function (isConfirm) {
+                if (isConfirm) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/DeleteCommande?parampassed=" + parampassed,
+                success: function (response) {
+                            swal("Supprimer!", "Votre Commande interne est supprimer avec succés.", "success");
+                            setTimeout(function () {
+                                window.location.href = "/Vente/Commandes";
+                            }, 3500);
+                        }
+                    });
+
+                } else {
+                    swal("Annuler", "La suppression est annulée :)", "error");
+                }
+            });
+
+
+        var preloader = $('<div>', { 'class': 'preloader' }).appendTo('body');
+        $(this)
+               .ajaxStart(function () {
+                   preloader.fadeIn();
+               })
+               .ajaxStop(function () {
+                   preloader.delay(800).fadeOut();
+               });
+    }
+    //---------------------------------------------------------------------------
+    $('form').validate({
+        rules: {
+            client: {
+                required: true
+            }
+        }
+    });
+    //---------------------------------------------------------------------------
+        $("#VersBonLivraison").click(function () {
+        VersBonLivraison();
+    });
+        function VersBonLivraison() {
+
+            var parampassed = "@ViewBag.Code";
+
+        var Conf = confirm("Voulez vous transformer cette commande en bon de livraison ?");
+        if (Conf == true) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/CommandeVersBonLivraison?parampassed=" + parampassed,
+                success: function (response) {
+                    window.location.href = "/Vente/FormBonLivraison?Mode=Editcmd&Code=" + response;
+                }
+            });
+        }
+        var preloader = $('<div>', { 'class': 'preloader' }).appendTo('body');
+        $(this)
+               .ajaxStart(function () {
+                   preloader.fadeIn();
+               })
+               .ajaxStop(function () {
+                   preloader.delay(800).fadeOut();
+               });
+    }
+    //--------------------------------------------------------------------------------
+    $("#VersFacture").click(function () {
+        VersFacture();
+    });
+    function VersFacture() {
+        var parampassed = "@ViewBag.Code";
+        var Conf = confirm("Voulez vous transformer cette commande en facture ?");
+        if (Conf == true) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/CommandeVersfacture?parampassed=" + parampassed,
+                success: function (response) {
+                    window.location.href = "/Vente/FormFacture?Mode=Edit&Code=" + response;
+                }
+            });
+        }
+        var preloader = $('<div>', { 'class': 'preloader' }).appendTo('body');
+        $(this)
+               .ajaxStart(function () {
+                   preloader.fadeIn();
+               })
+               .ajaxStop(function () {
+                   preloader.delay(800).fadeOut();
+               });
+        }
+        var config = {
+            '.chosen-select': {},
+            '.chosen-select-deselect': { allow_single_deselect: true },
+            '.chosen-select-no-single': { disable_search_threshold: 10 },
+            '.chosen-select-no-results': { no_results_text: 'Oops, nothing found!' },
+            '.chosen-select-width': { width: "95%" }
+        }
+        for (var selector in config) {
+            $(selector).chosen(config[selector]);
+        }
+
+
+    </script>
+
+}

@@ -1,0 +1,304 @@
+﻿@{
+	ViewBag.Title = "Dashboard";
+}
+<style type="text/css">
+
+	#tt {
+		margin: auto;
+	}
+</style>
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>Dashboard</h2>
+		<ol class="breadcrumb">
+			<li>
+				<a href="@Url.Action("Dashboard_1", "Dashboards")">Home</a>
+			</li>
+
+		</ol>
+	</div>
+	<div class="col-lg-2">
+	</div>
+</div>
+
+
+@{Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+	int projClotures = db.PROJET_TECHNIQUE.Where(p => p.EnCourExecution == "Cloturé").Count();
+	int projEnCours = db.PROJET_TECHNIQUE.Where(p => p.EnCourExecution == "en cours").Count();
+	int projInities = db.PROJET_TECHNIQUE.Where(p => p.EnCourExecution == "Initié").Count();
+	int projTotal = db.PROJET_TECHNIQUE.Count();
+	decimal pourcentEnCours = 0;
+	decimal pourcentClotures = 0; //(double) (projClotures / projTotal) * 100;
+								  //int projEnRetard = db.ProjetTechniques.Where(p => DateTime.Compare(p.DateFin, p.DateFinReel) < 0).Count();
+								  //decimal pourcentRetard = 0;
+	if (projTotal != 0)
+	{
+		pourcentEnCours = Decimal.Divide(projEnCours, projTotal) * 100;
+		pourcentClotures = Decimal.Divide(projClotures, projTotal) * 100;
+		//pourcentRetard = Decimal.Divide(projEnRetard, projTotal) * 100;
+		//string pourcentCloturess = pourcentClotures.ToString(".###");
+	}
+	double perte = 0;
+	List<Inspinia_MVC5.Models.ProjetTechniques> listeProj = db.ProjetTechniques.ToList();
+	foreach (Inspinia_MVC5.Models.ProjetTechniques pt in listeProj)
+	{
+		double cout_reel = pt.CoutReel;
+		double cout_plan = pt.Cout;
+		List<Inspinia_MVC5.Models.Tasks> tasks = db.Tasks.Where(t => t.ProjetTechniquesID == pt.ProjetTechniqueId).ToList();
+		foreach (Inspinia_MVC5.Models.Tasks t in tasks)
+		{
+			cout_plan += (double)(t.duration_h_planning * db.Personnels.Find(t.owner_id).Cout_hor);
+			cout_reel += (double)(t.duration_h * db.Personnels.Find(t.owner_id).Cout_hor);
+		}
+		perte += cout_plan - cout_reel;
+	}
+}
+
+
+<div class="wrapper wrapper-content">
+	<div class="row">
+
+		<div class="col-lg-3">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<span class="label label-danger pull-right">Clôturé</span>
+					<h5>Projets clôturés</h5>
+				</div>
+				<div class="ibox-content">
+					<h1 class="no-margins">@projClotures</h1>
+					<div class="stat-percent font-bold text-danger">@pourcentClotures% <i class="fa fa-check-square-o"></i></div>
+					<small>Projets</small>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<span class="label label-primary pull-right">En Cours</span>
+					<h5>Projets en cours</h5>
+				</div>
+				<div class="ibox-content">
+					<h1 class="no-margins">@projEnCours</h1>
+					<div class="stat-percent font-bold text-navy">@pourcentEnCours% <i class="fa fa-level-up"></i></div>
+					<small>Projets en cours</small>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<span class="label label-warning pull-right">Totale</span>
+					<h5>Projets Techniques</h5>
+				</div>
+				<div class="ibox-content">
+					<h1 class="no-margins">@projTotal</h1>
+					@*<div class="stat-percent font-bold text-warning">@projTotal% <i class="fa fa-warning"></i></div>*@
+					@*<small>Projets en retard</small>*@
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+
+	<div class="row">
+		<div class="col-lg-7">
+			<div class="ibox float-e-margins">
+				<div class="ibox-content">
+					<div>
+
+						<h3 class="font-bold no-margins">
+							Statistique affaires commerciales obtenues
+						</h3>
+
+					</div>
+
+					<div class="m-t-sm">
+
+						<div class="row">
+							<div class="col-md-8">
+								<div>
+									<canvas id="lineChart" height="180"></canvas>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<ul class="stat-list m-t-lg">
+									<li>
+										<h2 class="no-margins">@ViewBag.tot</h2>
+										<small>total de la dernière année</small>
+
+									</li>
+									<li>
+										<h2 class="no-margins ">@ViewBag.moins</h2>
+										<small>total du mois actuel</small>
+										<div class="progress progress-mini">
+											@{int c = 0; if (ViewBag.tot != 0 ){  c = (ViewBag.moins * 100) / ViewBag.tot; } }
+											<div class="progress-bar" style="width: @c%;">@ViewBag.moins</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+					@*<div class="m-t-md">
+							<small class="pull-right">
+								<i class="fa fa-clock-o"> </i>
+								Update on 16.07.2015
+							</small>
+							<small>
+								<strong>Analysis of sales:</strong> The value has been changed over time, and last month reached a level over $50,000.
+							</small>
+						</div>*@
+
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4" id="tt">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>Statistique affaires commerciales</h5>
+
+				</div>
+				<div class="ibox-content">
+					<div class="flot-chart">
+						<div class="flot-chart-pie-content" id="flot-pie-chart"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+@section Scripts {
+	@Scripts.Render("~/plugins/flot")
+	@Scripts.Render("~/plugins/flot")
+	@Scripts.Render("~/plugins/chartJs")
+	@Scripts.Render("~/plugins/peity")
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			var date = ["Janvier", "Février", "Mars", "Avril", "Mai", " Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+			debugger;
+			var acc =@ViewBag.acctu - 1;
+			var a = @ViewBag.acctu - 1 - 1; if(a < 0){ a = 12 -(1-@ViewBag.acctu)-1 };
+			var aa = @ViewBag.acctu - 1 - 2; if (aa < 0) { aa  = 12 (-2-@ViewBag.acctu )-1};
+			var aaa = @ViewBag.acctu - 1 - 3; if (aaa < 0) { aaa = 12-(3 -@ViewBag.acctu )-1};
+			var aaaa = @ViewBag.acctu - 1 - 4; if (aaaa< 0) { aaaa= 12 -(4-@ViewBag.acctu )-1};
+			var aaaaa = @ViewBag.acctu - 1 - 5; if (aaaaa< 0) { aaaaa= 12 -(5-@ViewBag.acctu)-1 };
+			var aaaaaa = @ViewBag.acctu - 1 - 6; if (aaaaaa < 0) { aaaaaa = 12 -( 6-@ViewBag.acctu )-1};
+			var aaaaaaa = @ViewBag.acctu - 1 - 7; if (aaaaaaa< 0) { aaaaaaa = 12 -(7-@ViewBag.acctu )-1};
+			var aaaaaaaa = @ViewBag.acctu - 1 - 8; if (aaaaaaaa  < 0) { aaaaaaaa = 12 -(8-@ViewBag.acctu )-1};
+			var aaaaaaaaa = @ViewBag.acctu - 1 - 9; if (aaaaaaaaa < 0) { aaaaaaaaa= 12-(9 -@ViewBag.acctu )-1};
+			var aaaaaaaaaa = @ViewBag.acctu - 1 - 10; if (aaaaaaaaaa < 0) { aaaaaaaaaa= 12-(10 -@ViewBag.acctu )-1};
+			var aaaaaaaaaaa = @ViewBag.acctu - 1 - 11; if (aaaaaaaaaaa < 0) { aaaaaaaaaaa =12-( 11 -@ViewBag.acctu )-1};
+
+			debugger;
+			var lineData = {
+				labels: [date[aaaaaaaaaaa], date[aaaaaaaaaa], date[aaaaaaaaa], date[aaaaaaaa], date[aaaaaaa], date[aaaaaa], date[aaaaa], date[aaaa], date[aaa], date[aa], date[a], date[acc]],
+				datasets: [
+					//{
+					//	label: "Example dataset",
+					//	fillColor: "rgba(220,220,220,0.5)",
+					//	strokeColor: "rgba(220,220,220,1)",
+					//	pointColor: "rgba(220,220,220,1)",
+					//	pointStrokeColor: "#fff",
+					//	pointHighlightFill: "#fff",
+					//	pointHighlightStroke: "rgba(220,220,220,1)",
+					//	data: [2, 5,6,7, 8,9,10,1,11,15,3,4]
+					//},
+					{
+						label: "Example dataset",
+						fillColor: "rgba(26,179,148,0.5)",
+						strokeColor: "rgba(26,179,148,0.7)",
+						pointColor: "rgba(26,179,148,1)",
+						pointStrokeColor: "#fff",
+						pointHighlightFill: "#fff",
+						pointHighlightStroke: "rgba(26,179,148,1)",
+						data: [@ViewBag.moinsddddddddddd,@ViewBag.moinsdddddddddd,@ViewBag.moinsddddddddd,@ViewBag.moinsdddddddd,@ViewBag.moinsddddddd,@ViewBag.moinsdddddd, @ViewBag.moinsddddd,@ViewBag.moinsdddd, @ViewBag.moinsddd, @ViewBag.moinsdd,@ViewBag.moinsd, @ViewBag.moins]
+
+					}
+				]
+			};
+
+			var lineOptions = {
+				scaleShowGridLines: true,
+				scaleGridLineColor: "rgba(0,0,0,.05)",
+				scaleGridLineWidth: 1,
+				bezierCurve: true,
+				bezierCurveTension: 0.4,
+				pointDot: true,
+				pointDotRadius: 4,
+				pointDotStrokeWidth: 1,
+				pointHitDetectionRadius: 20,
+				datasetStroke: true,
+				datasetStrokeWidth: 2,
+				datasetFill: true,
+				responsive: true,
+			};
+
+
+			var ctx = document.getElementById("lineChart").getContext("2d");
+			var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
+
+
+		});
+
+		$(document).ready(function () {
+
+
+			@{//
+				List<Inspinia_MVC5.Models.AffaireCommerciales> Liste = db.AffaireCommerciales.Where(p=>p.AffaireObtenue=="Obtenue").ToList();
+				List<Inspinia_MVC5.Models.AffaireCommerciales> Liste1 = db.AffaireCommerciales.Where(p => p.AffaireObtenue == "Non Obtenue").ToList();
+				List<Inspinia_MVC5.Models.AffaireCommerciales> Liste2 = db.AffaireCommerciales.Where(p => p.AffaireObtenue == "regret").ToList();
+				List<Inspinia_MVC5.Models.AffaireCommerciales> Liste3 = db.AffaireCommerciales.Where(p => p.AffaireObtenue == "Annulée").ToList();
+
+}
+
+
+
+			var data = [{
+				label: "Obtenue",
+				data: @Liste.Count(),
+				color: "#1ab394",
+			}, {
+					label: "regret",
+					data: @Liste2.Count(),
+					color: "#79d2c0",
+			}, {
+					label: "Non Obtenue",
+					data: @Liste1.Count(),
+					color: "#bababa",
+			}, {
+					label: "Annulée",
+					data: @Liste3.Count(),
+					color: "#d3d3d3" ,
+			}];
+
+				var plotObj = $.plot($("#flot-pie-chart"), data, {
+				series: {
+					pie: {
+						show: true
+					}
+					},
+				grid: {
+					hoverable: true
+				},
+				tooltip: true,
+				tooltipOpts: {
+					content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+					shifts: {
+						x: 20,
+						y: 0
+					},
+					defaultTheme: false
+				}
+				})
+		});
+
+	</script>
+}

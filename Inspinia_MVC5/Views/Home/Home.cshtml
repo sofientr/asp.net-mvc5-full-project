@@ -1,0 +1,16 @@
+﻿@model IEnumerable<object>
+@{
+    List<Inspinia_MVC5.Models.Centres_couts> lstCentrescouts = Model.ToList()[0] as List<Inspinia_MVC5.Models.Centres_couts>;
+   
+
+}
+
+
+
+
+<h2>centres couts</h2>
+@foreach (var item in lstCentrescouts)
+{
+
+    <li> @item.Catégorie</li>
+}

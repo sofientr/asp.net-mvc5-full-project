@@ -1,0 +1,12 @@
+﻿@{ 
+    Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+    List<Inspinia_MVC5.Models.SocieteLogo> task_list = db.SocieteLogo.ToList();
+    if (task_list.Count()!=0)
+    {
+       Html.Action("Tour", "Societes");
+    }
+    else
+    {
+        Html.Action("Login", "Societes");
+    }
+}

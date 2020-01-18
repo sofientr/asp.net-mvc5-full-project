@@ -1,0 +1,762 @@
+﻿@model Inspinia_MVC5.Models.Prix_Achat
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Create</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+            <li class="active">
+                <strong>Create</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Creation Nouveau Article</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <h2>
+                        Validation Wizard Form
+                    </h2>
+                    <p>
+                        This example show how to use Steps with jQuery Validation plugin.
+                    </p>
+
+
+
+                    <form id="form" action="Create" class="wizard-big" method="post">
+                        @Html.AntiForgeryToken()
+
+
+                        <h1>Information Générale</h1>
+                        <fieldset>
+                            <h2>Article</h2>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label>Designation *</label>
+                                        @Html.TextBoxFor(model => model.Designation, new { @class = "form-control required" })
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Marque *</label>
+
+                                        @Html.DropDownList("Marque", (IEnumerable<SelectListItem>)ViewBag.Marque, new { @class = "chosen-select ", style = "width: 100%" })
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Fournisseur *</label>
+
+                                        @Html.DropDownList("Fournisseur", (IEnumerable<SelectListItem>)ViewBag.Fournisseur, new { @class = "chosen-select", style = "width: 100%" })
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>N° Offre de Prix *</label>
+
+                                        @Html.TextBoxFor(model => model.N_Offre_de_Prix, new { @class = "form-control required", type = "number" })
+
+
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Durée de validité*</label>
+
+                                        @Html.TextBoxFor(model => model.Duree_de_validite, new { @class = "form-control required" })
+                                    </div>
+                                    <div class="form-group" id="data_2">
+                                        @Html.LabelFor(model => model.Date_offre_de_prix, "Date_offre", new { @class = "control-label col-md-2" })
+
+                                        <div class="input-group date">
+
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span> @Html.EditorFor(model => model.Date_offre_de_prix, new { @class = "input-group-addon form-control" })
+                                            @Html.ValidationMessageFor(model => model.Date_offre_de_prix)
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Unité*</label>
+
+                                        @Html.DropDownList("Unite", (IEnumerable<SelectListItem>)ViewBag.Unite, new { @class = "chosen-select", style = "width: 100%" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="text-center">
+                                        <div style="margin-top: 20px">
+                                            <i class="fa fa-sign-in" style="font-size: 180px;color: #e5e5e5 "></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <h1>Classement</h1>
+                        <fieldset>
+                            <h2>Information de classement</h2>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Categorie, "Categorie", new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("Categorie", (IEnumerable<SelectListItem>)ViewBag.Categorie, new { @class = "chosen-select", style = "width: 100%" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Sous_Categorie, "S_Categorie", new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <select id="Sous_Categorie" name="Sous_Categorie"><option>---Select Categorie---</option></select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="text-center">
+                                        <div style="margin-top: 20px">
+                                            <i class="fa fa-sign-in" style="font-size: 180px;color: #e5e5e5 "></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <h1>Prix</h1>
+                        <fieldset>
+                            <h2>Information Prix</h2>
+                            <div class="row">
+                                <div class="col-lg-6">
+
+                                    @*<div class="form-group">
+            <label>Devise*</label>
+            @Html.DropDownList("Devise", (IEnumerable<SelectListItem>)ViewBag.Devise, new { @class = "chosen-select", style = "width: 100%", @id = "Devise" })
+            @Html.ValidationMessageFor(model => model.Devise)
+
+        </div*@
+                                    <div class="form-group">
+
+                                        @*<div class="col-sm-10">*@
+                                        <label class="radio-inline">
+                                            <input type="radio" id="choix1" name="type" value="TND" onclick="func();" /><label>TND</label>   
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" id="choix2" name="type" value="Euro" onclick="func();" /><label>Euro</label>  
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" id="choix3" name="type" value="USD" onclick="func();" /><label>USD</label>
+                                        </label>
+
+
+                                        @*</div>*@
+                                    </div>
+                                    <div class="form-group">
+                                        <label>PUHT*</label>
+                                        <div class="input-group m-b">
+                                            @Html.TextBoxFor(model => model.PU_HT_Sans_Remise, new { @class = "form-control required" })
+                                            <span class="input-group-addon">
+                                                <label>TND</label>
+                                            </span>
+                                        </div>
+                                        </div>
+                                        @*<div class="form-group">
+                                            <div class="input-group m-b">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-addon">.00</span>
+                                            </div>
+                                        </div>*@
+
+                                    <div class="form-group">
+                                        <label>Prix après conversion HT</label>
+                                        <div class="input-group m-b">
+                                           <input class="form-control" name="Prix_Convert" id="Prix_Convert" type="text" readonly="readonly">
+                                            <span class="input-group-addon">
+                                                <label id="dev">TND</label>
+                                            </span>
+                                        </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>TVA *</label>
+                                            @Html.DropDownList("Valeur_TVA", (IEnumerable<SelectListItem>)ViewBag.Valeur_TVA, new { @class = "chosen-select", style = "width: 100%" })
+                                        </div>
+                                        <div class="form-group">
+                                            <label>PUTTC *</label>
+                                            @Html.TextBoxFor(model => model.PU_TTC, new { @class = "form-control", @readonly = "readonly" })
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="text-center">
+                                            <div style="margin-top: 20px">
+                                                <i class="fa fa-sign-in" style="font-size: 180px;color: #e5e5e5 "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+</fieldset>
+                        <h1>Remise</h1>
+                        <fieldset>
+                            <h2>Information Remise</h2>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>Taux de remise *</label>
+                                        @Html.EditorFor(model => model.Remise, new { @class = "form-control required" })
+                                    </div>
+                                    <div class="form-group">
+                                        <label>PUHT AR*</label>
+                                        @Html.TextBoxFor(model => model.PU_HT_Avec_Remise, new { @class = "form-control", @readonly = "readonly" })
+
+
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <div class="text-center">
+                                            <div style="margin-top: 20px">
+                                                <i class="fa fa-sign-in" style="font-size: 180px;color: #e5e5e5 "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/plugins/wizardStepsStyles")
+    @Styles.Render("~/plugins/awesomeCheckboxStyles")
+    @Styles.Render("~/plugins/clockpickerStyles")
+    @Styles.Render("~/plugins/dateRangeStyles")
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+    @Styles.Render("~/plugins/switcheryStyles")
+    @Styles.Render("~/plugins/jasnyBootstrapStyles")
+    @Styles.Render("~/plugins/nouiSliderStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/Content/plugins/ionRangeSlider/ionRangeStyles")
+    @Styles.Render("~/plugins/imagecropperStyles")
+    @Styles.Render("~/Content/plugins/colorpicker/colorpickerStyles")
+    @Styles.Render("~/plugins/select2Styles")
+    @Styles.Render("~/plugins/touchSpinStyles")
+    @Styles.Render("~/plugins/tagInputsStyles")
+    @Styles.Render("~/plugins/duallistStyles")
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/plugins/validate")
+    @Scripts.Render("~/plugins/iCheck")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/ionRange")
+    @Scripts.Render("~/plugins/nouiSlider")
+    @Scripts.Render("~/plugins/jasnyBootstrap")
+    @Scripts.Render("~/plugins/switchery")
+    @Scripts.Render("~/plugins/chosen")
+    @Scripts.Render("~/plugins/knob")
+    @Scripts.Render("~/plugins/imagecropper")
+    @Scripts.Render("~/plugins/colorpicker")
+    @Scripts.Render("~/plugins/clockpicker")
+    @Scripts.Render("~/plugins/dateRange")
+    @Scripts.Render("~/plugins/select2")
+    @Scripts.Render("~/plugins/touchSpin")
+    @Scripts.Render("~/plugins/tagInputs")
+    @Scripts.Render("~/plugins/duallist")
+    @Scripts.Render("~/plugins/wizardSteps")
+
+<script type="text/javascript">
+
+        function verifier() {
+            if (document.getSelectListItem("Devise").value == "$") {
+
+                document.getElementById('Taux_Devise').style.visibility = "visible";
+
+                document.getElementById('Taux_Devise').value = "1 euro=2.95";
+
+
+            }
+            if (document.SelectListItem("Devise").value == "€") {
+
+                document.getElementById('Taux_Devise').style.visibility = "visible";
+                document.getElementById('Taux_Devise1').style.visibility = "visible";
+                document.getElementById('Taux_Devise').value = "1 dollar =2.60";
+
+
+            }
+        }
+
+        function func() {
+            debugger;
+            var type = document.getElementsByName("type");
+            amount = $('#PU_HT_Sans_Remise').val();
+            alert(amount);
+            from = "TND";
+            alert(from);
+            if (type[0].checked) {
+                to = "TND";
+                $('#dev').text('TND');
+                alert(to);
+
+            }
+            if (type[1].checked) {
+                to = "EUR";
+                $('#dev').text('EUR');
+                alert($('#dev'));
+
+            }
+            if (type[2].checked) {
+                to = "USD";
+                $('#dev').text('USD');
+                //document.getElementById('dev').val = 'Dolars'; 
+                alert(to);
+
+            }
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("CurrencyConversion", "Prix_Achat")',
+                data: "{fromCurrency:'" + from + "',toCurrency:'" + to + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                alert(data);
+                $('#currency_converter_result').html(data);
+                change = parseFloat(data) * parseFloat(amount);
+                alert(change);
+                $("#Prix_Convert").val(change);
+
+                }
+                
+            });
+            alert($('#currency_converter_result'));
+            
+        }
+
+
+
+
+
+
+        $(document).ready(function () {
+
+
+        $("#wizard").steps();
+            $("#form").steps({
+                bodyTag: "fieldset",
+                onStepChanging: function (event, currentIndex, newIndex) {
+                    // Always allow going backward even if the current step contains invalid fields!
+                    if (currentIndex > newIndex) {
+                        return true;
+                    }
+
+                    // Forbid suppressing "Warning" step if the user is to young
+                    if (newIndex === 3 && Number($("#age").val()) < 18) {
+                        return false;
+                    }
+
+                    var form = $(this);
+
+                    // Clean up if user went backward before
+                    if (currentIndex < newIndex) {
+                        // To remove error styles
+                        $(".body:eq(" + newIndex + ") label.error", form).remove();
+                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                    }
+
+                    // Disable validation on fields that are disabled or hidden.
+                    form.validate().settings.ignore = ":disabled,:hidden";
+
+                    // Start validation; Prevent going forward if false
+                    return form.valid();
+                },
+                onStepChanged: function (event, currentIndex, priorIndex) {
+                    // Suppress (skip) "Warning" step if the user is old enough.
+                    if (currentIndex === 2 && Number($("#age").val()) >= 18) {
+                        $(this).steps("next");
+                    }
+
+                    // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                    if (currentIndex === 2 && priorIndex === 3) {
+                        $(this).steps("previous");
+                    }
+                },
+                onFinishing: function (event, currentIndex) {
+                    var form = $(this);
+
+                    // Disable validation on fields that are disabled.
+                    // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                    form.validate().settings.ignore = ":disabled";
+
+                    // Start validation; Prevent form submission if false
+                    return form.valid();
+                },
+                onFinished: function (event, currentIndex) {
+                    var form = $(this);
+
+                    form.submit();
+                }
+            }).validate({
+                errorPlacement: function (error, element) {
+                    element.before(error);
+                },
+                rules: {
+                    confirm: {
+                        equalTo: "#password"
+                    }
+                }
+                });
+
+            $('.chosen-select').chosen({ width: "100%" });
+            $('#data_1 .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+            $('#data_2 .input-group.date').datepicker({
+                format: 'dd/mm/yyyy',
+                startView: 1,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            $('#data_3 .input-group.date').datepicker({
+                startView: 2,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            $('#data_4 .input-group.date').datepicker({
+                minViewMode: 1,
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true,
+                todayHighlight: true
+            });
+
+
+
+            $("#Categorie").change(function () {
+
+            var selectedItemValue = $(this).val();
+
+            var ddlProducts = $("#Sous_Categorie");
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: '@Url.Action("GetsousByCategoryId", "Prix_Achat")',
+                data: { "id": selectedItemValue },
+                success: function (data) {
+                ddlProducts.html('');
+                $.each(data, function (id, option) {
+                ddlProducts.append($('<option></option>').val(option.id).html(option.name));
+                });
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                alert('Found error to load product!!.');
+                }
+                });
+                });
+            var pttc = 0;
+            var Pht = 0;
+            $("#PU_HT_Sans_Remise").mouseleave(function () {
+                
+                Pht = $("#PU_HT_Sans_Remise").val();
+                tva = $("#Valeur_TVA option:selected").text();
+
+                if (Pht != 0) {
+
+
+
+                    pttc = parseInt(Pht) + ((parseInt(Pht) / 100) * tva);
+
+                    $("#PU_TTC").val(pttc);
+                }
+
+
+            });
+
+
+
+            @*$("#Devise").change(function () {
+
+                amount = $('#PU_HT_Sans_Remise').val();
+                from = "TND";
+                to = $("#Devise option:selected").text();;
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("CurrencyConversion", "Prix_Achat")',
+                    data: "{fromCurrency:'" + from + "',toCurrency:'" + to + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        alert(data);
+                        $('#currency_converter_result').html(data);
+                        change = parseFloat(data) * parseFloat(amount);
+                        $("#Prix_Convert").val(change);
+
+                    }
+                });
+
+            })*@
+            $("#Valeur_TVA").change(function () {
+
+
+                var tva = $("#Valeur_TVA option:selected").text();
+
+                if (Pht != 0) {
+
+                    pttc = parseInt(Pht) + ((parseInt(Pht) / 100) * tva);
+
+                    $("#PU_TTC").val(pttc);
+                }
+            });
+
+            $("#Remise").mouseleave(function () {
+
+
+                var Remise = $("#Remise").val();
+
+
+                if (Pht != 0) {
+
+                    var Puhtar = parseInt(Pht) - ((parseInt(Pht) * parseInt(Remise)) / 100);
+                    var pttcar = parseInt(pttc) - ((parseInt(pttc) * parseInt(Remise)) / 100);
+                    $("#PU_TTC_Avec_Remise").val(pttcar);
+                    $("#PU_HT_Avec_Remise").val(Puhtar);
+                }
+            });
+            //**************************************************
+            $("#Devise'").onStepChanged(function () {
+
+
+
+
+
+                if (document.getSelectListItem("Devise").value == "$") {
+
+                    document.getElementById('Taux_Devise').style.visibility = "visible";
+
+                    document.getElementById('Taux_Devise').value ="1 euro=2.95";
+
+
+                }
+                if (document.SelectListItem("Devise").value == "€") {
+
+                    document.getElementById('Taux_Devise').style.visibility = "visible";
+                    document.getElementById('Taux_Devise1').style.visibility = "visible";
+                    document.getElementById('Taux_Devise').value = "1 dollar =2.60";
+
+
+                }
+            });
+
+
+            var elem = document.querySelector('.js-switch');
+            var switchery = new Switchery(elem, { color: '#1AB394' });
+
+            var elem_2 = document.querySelector('.js-switch_2');
+            var switchery_2 = new Switchery(elem_2, { color: '#ED5565' });
+
+            var elem_3 = document.querySelector('.js-switch_3');
+            var switchery_3 = new Switchery(elem_3, { color: '#1AB394' });
+
+            var elem_4 = document.querySelector('.js-switch_4');
+            var switchery_4 = new Switchery(elem_4, { color: '#f8ac59' });
+            switchery_4.disable();
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+
+            $('.demo1').colorpicker();
+
+            var divStyle = $('.back-change')[0].style;
+            $('#demo_apidemo').colorpicker({
+                color: divStyle.backgroundColor
+            }).on('changeColor', function (ev) {
+                divStyle.backgroundColor = ev.color.toHex();
+            });
+
+            $('.clockpicker').clockpicker();
+
+            $('input[name="daterange"]').daterangepicker();
+
+            $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+
+            $('#reportrange').daterangepicker({
+                format: 'MM/DD/YYYY',
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment(),
+                minDate: '01/01/2012',
+                maxDate: '12/31/2015',
+                dateLimit: { days: 60 },
+                showDropdowns: true,
+                showWeekNumbers: true,
+                timePicker: false,
+                timePickerIncrement: 1,
+                timePicker12Hour: true,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                opens: 'right',
+                drops: 'down',
+                buttonClasses: ['btn', 'btn-sm'],
+                applyClass: 'btn-primary',
+                cancelClass: 'btn-default',
+                separator: ' to ',
+                locale: {
+                    applyLabel: 'Submit',
+                    cancelLabel: 'Cancel',
+                    fromLabel: 'From',
+                    toLabel: 'To',
+                    customRangeLabel: 'Custom',
+                    daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    firstDay: 1
+                }
+            }, function (start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+            });
+
+
+            $(".select2_demo_1").select2();
+            $(".select2_demo_2").select2();
+            $(".select2_demo_3").select2({
+                placeholder: "Select a state",
+                allowClear: true
+            });
+
+            $(".touchspin1").TouchSpin({
+                buttondown_class: 'btn btn-white',
+                buttonup_class: 'btn btn-white'
+            });
+
+            $(".touchspin2").TouchSpin({
+                min: 0,
+                max: 100,
+                step: 0.1,
+                decimals: 2,
+                boostat: 5,
+                maxboostedstep: 10,
+                postfix: '%',
+                buttondown_class: 'btn btn-white',
+                buttonup_class: 'btn btn-white'
+            });
+
+            $(".touchspin3").TouchSpin({
+                verticalbuttons: true,
+                buttondown_class: 'btn btn-white',
+                buttonup_class: 'btn btn-white'
+            });
+
+            $('.tagsinput').tagsinput({
+                tagClass: 'label label-primary'
+            });
+
+            $('.dual_select').bootstrapDualListbox({
+                selectorMinimalHeight: 160
+            });
+
+
+
+
+            $("#basic_slider").noUiSlider({
+                start: 40,
+                behaviour: 'tap',
+                connect: 'upper',
+                range: {
+                    'min': 20,
+                    'max': 80
+                }
+            });
+
+            $("#range_slider").noUiSlider({
+                start: [40, 60],
+                behaviour: 'drag',
+                connect: true,
+                range: {
+                    'min': 20,
+                    'max': 80
+                }
+            });
+
+            $("#drag-fixed").noUiSlider({
+                start: [40, 60],
+                behaviour: 'drag-fixed',
+                connect: true,
+                range: {
+                    'min': 20,
+                    'max': 80
+                }
+            });
+
+        });
+
+</script>
+
+
+}

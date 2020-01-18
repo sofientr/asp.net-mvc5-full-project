@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.Direction>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Index</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Direction</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Liste des Directions</h5>
+                    <div class="ibox-tools">
+                        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-xs" })
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <table class="table table-striped">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nom)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Budget)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Année)
+                            </th>
+
+                            <th>
+                                Société
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            if ( item.CoordonneesSoc.Nom_Soc.Equals(Session["Nom_Soc"].ToString()))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nom)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Budget)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Année)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CoordonneesSoc.Nom_Soc)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Details", "Details", new { id = item.DiretionID }, new { @class = "btn btn-primary btn-sm" })
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.DiretionID }, new { @class = "btn btn-white btn-sm" })
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.DiretionID }, new { @class = "btn btn-white btn-sm" })
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

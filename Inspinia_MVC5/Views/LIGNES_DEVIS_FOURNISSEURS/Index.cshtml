@@ -1,0 +1,208 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.LIGNES_DEVIS_FOURNISSEURS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>
+            Liste des articles
+        </h2>
+        <ol class="breadcrumb">
+            <li><a>Achat</a> </li>
+            <li class="active"><strong>Liste des articles</strong> </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title" style="padding-top: 4px;">
+                    <h5 style="padding-top: 10px;">
+                        Liste des articles
+                    </h5>
+                    <div class="ibox-tools">
+                        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-xs" })
+                    </div>
+                </div>
+
+                <div class="ibox-content" style="overflow:auto">
+                    <table class="table table-striped table-bordered table-hover dataTables-example">
+                        <thead>
+                            <tr>
+                                <th>
+                                    REF
+                                </th>
+                                <th>
+                                    DES
+                                </th>
+                                <th>
+                                    Code Projet
+                                </th>
+                                <th>
+                                    Date
+                                </th>
+                                <th>
+                                    QTE
+                                </th>
+                                <th>
+                                    PUHT
+                                </th>
+                                <th>
+                                    %REM
+                                </th>
+                                <th>
+                                    FR
+                                </th>
+                                <th>
+                                    PTHTR
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TVA)
+                                </th>
+                                <th>
+                                    PTTC
+                                </th>
+                                <th>
+                                    N°DE
+                                </th>
+                                <th>
+                                    M
+                                </th>
+
+
+                                <th>
+                                    U
+                                </th>
+                                <th>
+                                    Stock
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Libelle_Prd)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DESIGNATION_PRODUIT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DEVIS_FOURNISSEURS.Designation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DEVIS_FOURNISSEURS.DATE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.QUANTITE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PRIX_UNITAIRE_HT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.REMISE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DEVIS_FOURNISSEURS.FOURNISSEURS.NOM)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TOTALE_HT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TVA)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TOTALE_TTC)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DEVIS_CLIENT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Marque)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Unite)
+                                </td>
+                                @{
+                                    string lib = item.Libelle_Prd;
+                                    Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+                                    Inspinia_MVC5.Models.Prix_Achat Prix_Achat = db.Prix_Achat.Where(t => t.Libelle == lib).FirstOrDefault();
+                                    if (Prix_Achat != null)
+                                    {
+                                        <td style="background-color: wheat;">
+                                            @Prix_Achat.Stock
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td></td>
+                                    }
+                                }
+
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary btn-sm" })
+                                    @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-white btn-sm" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-white btn-sm" })
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+@section Scripts {
+    @Scripts.Render("~/plugins/dataTables")
+    <script type="text/javascript">
+            $(document).ready(function () {
+
+                $('.dataTables-example').DataTable({
+                    pageLength: 25,
+                    dom: '<"html5buttons"B>lTfgitp',
+                    buttons: [
+                        { extend: 'copy' },
+                        { extend: 'csv', title: 'liste des fournisseurs' },
+                        { extend: 'excel', title: 'liste des fournisseurs' },
+                        { extend: 'pdf', title: 'liste des fournisseurs' },
+
+                        {
+                            extend: 'print',
+                            customize: function (win) {
+                                $(win.document.body).addClass('white-bg');
+                                $(win.document.body).css('font-size', '10px');
+
+                                $(win.document.body).find('table')
+                                        .addClass('compact')
+                                        .css('font-size', 'inherit');
+                            }
+                        }
+                    ]
+
+                });
+
+
+
+            });
+
+    </script>
+}
+
+
+
+

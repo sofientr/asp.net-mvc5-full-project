@@ -1,0 +1,213 @@
+﻿@model Inspinia_MVC5.Models.Decaissement
+
+@{
+    ViewBag.Title = "Edit";
+}
+@{ 
+    int etat = (int)Model.etat;
+
+}
+@{
+    int monEtat = 0;
+}
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Edit</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+            <li class="active">
+                <strong>Edit</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+			@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary"})
+        </div>
+    </div>
+</div>
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Edit Decaissement</h5>
+                </div>
+                <div class="ibox-content">
+
+				@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.DecaissID)
+
+      
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Date)
+                @Html.ValidationMessageFor(model => model.Date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Prix, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Prix)
+                @Html.ValidationMessageFor(model => model.Prix)
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mo_pay, "Modalité de paiement ", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Mo_pay", new List<SelectListItem>
+                        {
+                              new SelectListItem{ Text="Chéque", Value = "Chéque" },
+                              new SelectListItem{ Text="Espèce", Value = "Espèce" },
+
+                         },
+                         new { @class = "form-control m-b" })
+
+                @Html.ValidationMessageFor(model => model.Mo_pay)
+            </div>
+        </div>
+
+        
+
+       
+
+        <div class="form-group">
+            <div>
+                    @Html.HiddenFor(model => model.etat)
+
+                <input type="checkbox" class="js-switch_3" id="e" name="e" />
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.CentreID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.CatID)
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Demandeur, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Demandeur, new { htmlAttributes = new { @readonly = "", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Demandeur)
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-primary" />
+				@Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-white"})
+            </div>
+        </div>
+    </div>
+}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+@section Styles {
+    @Styles.Render("~/plugins/awesomeCheckboxStyles")
+    @Styles.Render("~/plugins/clockpickerStyles")
+    @Styles.Render("~/plugins/dateRangeStyles")
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+    @Styles.Render("~/plugins/switcheryStyles")
+    @Styles.Render("~/plugins/jasnyBootstrapStyles")
+    @Styles.Render("~/plugins/nouiSliderStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/Content/plugins/ionRangeSlider/ionRangeStyles")
+    @Styles.Render("~/plugins/imagecropperStyles")
+    @Styles.Render("~/Content/plugins/colorpicker/colorpickerStyles")
+    @Styles.Render("~/plugins/select2Styles")
+    @Styles.Render("~/plugins/touchSpinStyles")
+
+
+}
+
+
+@section Scripts {
+   
+    
+
+@Scripts.Render("~/plugins/iCheck")
+@Scripts.Render("~/plugins/dataPicker")
+@Scripts.Render("~/plugins/ionRange")
+@Scripts.Render("~/plugins/nouiSlider")
+@Scripts.Render("~/plugins/jasnyBootstrap")
+@Scripts.Render("~/plugins/switchery")
+@Scripts.Render("~/plugins/chosen")
+@Scripts.Render("~/plugins/knob")
+@Scripts.Render("~/plugins/imagecropper")
+@Scripts.Render("~/plugins/colorpicker")
+@Scripts.Render("~/plugins/clockpicker")
+@Scripts.Render("~/plugins/dateRange")
+@Scripts.Render("~/plugins/select2")
+@Scripts.Render("~/plugins/touchSpin")
+@Scripts.Render("~/bundles/jquery")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        debugger;
+        $('#e').change(function () {
+            if (this.checked) {
+                alert("demande validée");
+                $("#etat").val("1");
+            } else {
+                alert("demande en attente");
+                $("#etat").val("0");
+            }
+            });
+
+        var elem = document.querySelector('.js-switch');
+        var switchery = new Switchery(elem, { color: '#1AB394' });
+
+        var elem_2 = document.querySelector('.js-switch_2');
+        var switchery_2 = new Switchery(elem_2, { color: '#ED5565' });
+
+        var elem_3 = document.querySelector('.js-switch_3');
+        var switchery_3 = new Switchery(elem_3, { color: '#1AB394' });
+
+
+      
+
+
+    });
+
+
+        
+</script>
+}
+
+

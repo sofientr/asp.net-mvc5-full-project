@@ -1,0 +1,323 @@
+﻿@model Inspinia_MVC5.Models.Prix_Achat
+
+@{
+    ViewBag.Title = "Edit";
+}
+<link href="~/Content/select2.min.css" rel="stylesheet" type="text/css" />
+
+<h2>Modifier Stock</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4></h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Product_ID)
+
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            <b>Réf</b>
+        </div>
+        @*@Html.LabelFor(model => model.Libelle, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.Libelle, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.Libelle, "", new { @class = "text-danger" })
+        </div>
+        @*</div>
+            <div class="form-group">*@
+        @Html.LabelFor(model => model.Designation, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.Designation, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Marque, "Marque", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.DropDownList("Marque", null, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+            @Html.ValidationMessageFor(model => model.Marque, "", new { @class = "text-danger" })
+        </div>
+        @*</div>
+
+            <div class="form-group">*@
+        @Html.LabelFor(model => model.Categorie, "Categorie", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.DropDownList("Categorie", null, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+            @Html.ValidationMessageFor(model => model.Categorie, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Sous_Categorie, "Sous_Categorie", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.DropDownList("Sous_Categorie", null, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+            @Html.ValidationMessageFor(model => model.Sous_Categorie, "", new { @class = "text-danger" })
+        </div>
+        @*</div>
+
+            <div class="form-group">*@
+        @Html.LabelFor(model => model.Unite, "Unite", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.DropDownList("Unite", null, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+            @Html.ValidationMessageFor(model => model.Unite, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Stock, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.Stock, "Stock", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Stock, "", new { @class = "text-danger" })
+
+        </div>
+        @*<input class="form-control" name="stock" id="stock" value="model.Stock" hidden  />*@
+
+        @*</div>
+        <div class="form-group">*@
+        <div class="control-label col-md-2">
+            <b>Limite stock pour alerte</b>
+        </div>
+        @if (ViewBag.stockAlert != null)
+        {
+            <div class="col-md-1">
+                <input class="form-control" name="stockalert" id="stockalert" value="@ViewBag.stockAlert" />
+            </div>
+        }
+        else
+        {
+            <div class="col-md-1">
+                <input class="form-control" name="stockalert" id="stockalert" value="0" />
+            </div>
+        }
+        <div class="control-label col-md-2">
+            <b>Par Stock Totale</b>
+        </div>
+        <div class="col-md-1">
+            <input type="checkbox" />
+
+        </div>
+        <div class="control-label col-md-1">
+            <b>Par Depot</b>
+        </div>
+        <div class="col-md-1">
+            <input type="checkbox" />
+
+        </div>
+    </div>
+   
+    <table class="table table-hover" style="width:740px;" id="Tableau" align="center">
+        <thead>
+        <th>
+            Dépot
+        </th>
+        <th></th>
+        <th>Rayons</th>
+        <th></th>
+        <th>Quantité</th>
+        <th></th>
+        <th></th>
+        </thead>
+        <tbody>
+
+
+        <td style="width:120px;">
+            <select class="form-control" name="depot" id="depot"></select>
+        </td>
+        <td style="width:30px;"></td>
+        <td style="width:120px;">
+
+            <select class="form-control" name="rayon" id="rayon"></select>
+        </td>
+        <td style="width:30px;"></td>
+        <td>
+            <input type="number" class="form-control" name="qte" id="qte" style="width:80px;" />
+        </td>
+        <td style="width:30px;"></td>
+        <td>
+            <button class="btn btn-info btn-circle" type="button" onclick="AddRow()" id="FirstBTN">
+                <i class="fa fa-check"></i>
+            </button>
+            <button class="btn btn-warning btn-circle" type="button" disabled>
+                <i class="fa fa-times"></i>
+            </button>
+        </td>
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Transférer stock" class="btn btn-primary pull-right" />
+            <input type="button" value="Corriger le stock" class="btn btn-primary pull-right" style="margin-right: 5px;" onclick="CorrigerStock();">
+        </div>
+        <div class="col-md-offset-2 col-md-10">
+        </div>
+    </div>
+    <div class="form-group">
+
+    </div>
+</div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    @section Styles {
+        @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+        @Styles.Render("~/plugins/sweetAlertStyles")
+
+    }
+    @section Scripts {
+
+        <script src="~/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+        <script src="~/js/select2.min.js" type="text/javascript"></script>
+        @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="~/Scripts/bootstrap.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+
+        @Scripts.Render("~/plugins/select2")
+        @Scripts.Render("~/plugins/dataPicker")
+        @Scripts.Render("~/plugins/dataTables")
+        @Scripts.Render("~/plugins/sweetAlert")
+
+
+        <script type="text/javascript">
+        $("#depot").select2();
+        $("#rayon").select2();
+        Remplirdepot();
+        Remplirrayon();
+        RemplirTableau();
+        function CorrigerStock() {
+            var id = "@ViewBag.id";
+            var stock = $("#Stock").val();
+            alert(stock);
+            $.ajax({
+                type: 'POST',
+                url: "/Prix_Achat1/EditStock?id=" + id + "&stock=" + stock,
+                success: function (response) {
+                    window.location.href = "/Prix_Achat1/Index";
+                }
+            });
+        }
+        function RemplirTableau() {
+            $("#Tableau tbody").empty();
+
+            $.ajax({
+                type: 'POST',
+                url: "/Prix_Achat1/GetAllDepotRayon",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Prix_Achat1/GetDepotRayon?depot=" + item.depot + "&rayon="+item.rayon,
+                            success: function (data) {
+                                var line = "<tr id='" + item.ID + "'><td style='width:120px;'>" + data.libdepo + "</td><td style='width:30px;'></td><td style='width:120px;'>" + data.librayon + "</td><td style='width:30px;'></td><td>" + item.QUANTITE + "</td><td style='width:30px;'></td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+                                $("#Tableau tbody").append(line);
+                            }
+                        });
+
+                        //var line = "<tr id='" + item.ID + "'><td style='width:120px;'>" + item.depot + "</td><td style='width:30px;'></td><td style='width:120px;'>" + item.rayon + "</td><td style='width:30px;'></td><td>" + item.QUANTITE + "</td><td style='width:30px;'></td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+                        //$("#Tableau tbody").append(line);
+                    });
+                    $("#Tableau tfoot").replaceWith("<tfoot> <tr>  <td style='width:120px;'> <select class='form-control' name='depot' id='depot'></select> </td> <td style='width:30px;'></td><td style='width:120px;'> <select class='form-control' name='rayon' id='rayon'></select></td><td style='width:30px;'></td><td> <input type='number' class='form-control' name='qte' id='qte'/></td><td style='width:30px;'></td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='AddRow()'  id='FirstBTN'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' disabled> <i class='fa fa-times'></i> </button> </td> </tr></tfoot>");
+                    $("#depot").select2();
+                    $("#rayon").select2();
+                    Remplirdepot();
+                    Remplirrayon();
+                }
+            });
+
+
+        }
+        function AddRow() {
+            var depot = $('#depot').val();
+            var rayon = $('#rayon').val();
+            var qte = $('#qte').val();
+            var stock = $("#Stock").val();
+            var data = {
+                depot: depot,
+                rayon: rayon,
+                qte: qte,
+                stock: stock,
+            };
+            $.ajax({
+                type: 'POST',
+                url: "/Prix_Achat1/AddLinedépot",
+                data: data,
+                success: function (response) {
+                    if (response == "NO") {
+                        RemplirTableau();
+                        alert("Quantité transférée est supérieure à stock !!!");
+                    }
+                    else {
+                        RemplirTableau();
+                    }
+                }
+            });
+        }
+        function DeleteRow(parampassed) {
+            $.ajax({
+                type: 'POST',
+                url: "/Prix_Achat1/DeleteLineDepotRayon?parampassed=" + parampassed,
+                success: function (response) {
+                    RemplirTableau();
+                }
+            });
+        }
+
+        function Remplirdepot() {
+            $('#depot').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+
+            $.ajax({
+                type: 'POST',
+                url: "/Prix_Achat1/GetAlldépot",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#depot').append($('<option>', {
+                            value: item.Id,
+                            text: item.Dépot1
+
+                        }));
+
+
+
+                    });
+                }
+            });
+        }
+        function Remplirrayon() {
+            $('#rayon').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+
+            $.ajax({
+                type: 'POST',
+                url: "/Prix_Achat1/GetAllrayon",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#rayon').append($('<option>', {
+                            value: item.Id,
+                            text: item.Rayon
+
+                        }));
+
+
+
+                    });
+                }
+            });
+        }
+        </script>
+
+    }

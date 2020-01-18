@@ -1,0 +1,185 @@
+﻿@model Inspinia_MVC5.Models.FOURNISSEURS
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>FOURNISSEURS</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.CODE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                <input type="text" class="form-control" readonly="true" name="CODE" id="CODE" value="@ViewBag.Numero">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NOM, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.NOM, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.NOM, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ADRESSE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.ADRESSE, new { htmlAttributes = new { @class = "form-control"} })
+                @Html.ValidationMessageFor(model => model.ADRESSE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TELEPHONE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.TELEPHONE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TELEPHONE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FAX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.FAX, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FAX, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EMAIL, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SITE_WEB, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.SITE_WEB, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SITE_WEB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ID_FISCAL, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                <input type="text" class="form-control" name="ID_FISCAL" id="ID_FISCAL">
+                <span class="help-block m-b-none">ID fiscal / Clé / Catégorie / Numéro établissement (Exemple : 1234567/S/M/000 )</span>
+
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.AI, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.AI, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AI, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.NIS, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.NIS, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NIS, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RC, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.RC, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RC, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RIB, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.RIB, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RIB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CONTACT, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.CONTACT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CONTACT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.Etat, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.Etat)
+                        @Html.ValidationMessageFor(model => model.Etat, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @*<input type="button" value="Create" class="btn btn-primary" onclick="update_frs()" />*@
+                @*@Html.ActionLink("Cancel", "FormDevis", new { Mode = ViewBag.Mode, Code = ViewBag.Code, Date = ViewBag.Date, numero = ViewBag.numeroo, designation = ViewBag.designation, modePaiement = ViewBag.modePaiement, client = ViewBag.client, codeClient = ViewBag.codeClient, Tiers = ViewBag.Tiers, remise = ViewBag.remise }, null)*@
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript" src="~/Scripts/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="~/Scripts/plugins/validate/jquery.validate.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#ID_FISCAL").mask("9999999*/a/a/999");
+
+    });
+    @*function update_frs() {
+         var mode = "@ViewBag.Mode";
+        var code = "@ViewBag.Code";
+        var Date = "@ViewBag.Date";
+        var numero="@ViewBag.numeroo";
+        var designation = decodeHtml("@ViewBag.designation");
+        var modePaiement = decodeHtml("@ViewBag.modePaiement");
+        var client = decodeHtml("@ViewBag.client");
+        var codeClient="@ViewBag.codeClient";
+        var Tiers = decodeHtml("@ViewBag.Tiers");
+        var remise ="@ViewBag.remise";
+        $.ajax({
+            type: 'POST',
+
+            url: "/Achat/AddFournisseur?Code=" + CODE.value + "&NOM=" + NOM.value + "&Adresse=" + ADRESSE.value + "&TELEPHONE=" + TELEPHONE.value + "&FAX=" + FAX.value + "&EMAIL=" + EMAIL.value + "&SITE_WEB=" + SITE_WEB.value + "&ID_FISCAL=" + ID_FISCAL.value + "&RC=" + RC.value + "&RIB=" + RIB.value + "&CONTACT=" + CONTACT.value,
+            success: function (response) {
+
+                $("#Code").val("");
+                $("#NOM").val("");
+                $("#ADRESSE").val("");
+                $("#TELEPHONE").val("");
+                $("#FAX").val("");
+                $("#EMAIL").val("");
+                $("#RIB").val("");
+                $("#RC").val("");
+                $("#NIS").val("");
+                $("#CONTACT").val("");
+                $("#AI").val("");
+                $("#ID_FISCAL").val("");
+                $("#SITE_WEB").val("");
+
+                window.location.href = "/Achat/FormDevis?Mode=" + mode + "&Code=" + code + "&Date=" + Date + "&numero=" + numero + "&designation=" + designation + "&modePaiement=" + modePaiement + "&client=" + client + "&codeClient=" + codeClient + "&Tiers=" + Tiers + "&remise=" + remise;
+            }
+        });
+    }*@
+    function decodeHtml(html) {
+        var txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+    }
+</script>
+
+

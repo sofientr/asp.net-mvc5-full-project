@@ -1,0 +1,247 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.PROJET_TECHNIQUE>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type="text/css">
+
+    .divScroll {
+        overflow: auto;
+    }
+
+    #Tableau {
+        width: 3000px;
+    }
+</style>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Projets Techniques</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight" id="overflowTest">
+    <div class="divScroll">
+        <div class="col-lg-12">
+            <div class="row">
+
+                <div class="ibox float-e-margins" style="width:3050px;">
+                    <div class="ibox-title">
+                        <h5>Liste des Projets Techniques</h5>
+                        @*<div class="ibox-tools">
+                                @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-xs" })
+                            </div>*@
+                    </div>
+
+                    <form action="Index" method="post">
+                        <div class="ibox-content">
+                            <table class="table table-striped table-bordered table-hover dataTables-example" id="Tableau">
+                                <tr>
+                                    <th>
+                                        Réf Projet
+                                    </th>
+                                    <th>
+                                        Ref Affaire
+                                    </th>
+                                    <th>
+                                        Ref Offre de prix
+                                    </th>
+                                    <th>
+                                        Pièces Liées
+                                        (CMD,BL,FACTURE)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Designation)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Description)
+                                    </th>
+                                    <th>
+                                        Réf Client
+                                    </th>
+
+                                    <th>
+                                        coût
+                                    </th>
+                                    <th>
+                                       En cour d'exécution
+                                    </th>
+
+                                    <th>
+                                       Date de livraison
+                                    </th>
+
+
+
+                                    <th>
+                                        Responsable Commercial
+                                    </th>
+                                    <th>
+                                        Responsable Technique
+                                    </th>
+                                    <th>
+                                        Coordinateur Commercial
+                                    </th>
+                                    <th>
+                                        Coordinateur Réalisation
+                                    </th>
+                                    <th></th>
+                                </tr>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @*@Html.DisplayFor(modelItem => item.Reference)*@
+                                        </td>
+                                        <td>
+                                            @*href="/AffaireCommerciales/Details?id=@item.AffaireCommerciales.AffaireCommercialeId"*@
+
+                                            <a onclick="affaire(@item.AffaireCommerciales.AffaireCommercialeId);">@item.AffaireCommerciales.Reference</a>
+                                        </td>
+                                        <td>
+                                            @{
+                                                Inspinia_MVC5.Models.MED_TRABELSI db11 = new Inspinia_MVC5.Models.MED_TRABELSI();
+                                                Inspinia_MVC5.Models.DEVIS_CLIENTS DEVIS_CLIENTS = db11.DEVIS_CLIENTS.Where(t => t.Id_AffaireCommerciale == item.AffaireCommerciales.AffaireCommercialeId).FirstOrDefault();
+
+                                                Inspinia_MVC5.Models.COMMANDES_CLIENTS COMMANDES_CLIENTS = db11.COMMANDES_CLIENTS.Where(t => t.DEVIS_CLIENT == DEVIS_CLIENTS.ID).FirstOrDefault();
+
+                                            }
+                                            @if (DEVIS_CLIENTS != null)
+                                            {
+
+                                                <a onclick="Devis(@DEVIS_CLIENTS.ID)">@DEVIS_CLIENTS.CODE</a>
+
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (COMMANDES_CLIENTS != null)
+                                            {
+                                                Inspinia_MVC5.Models.BONS_LIVRAISONS_CLIENTS BONS_LIVRAISONS_CLIENTS = db11.BONS_LIVRAISONS_CLIENTS.Where(t => t.COMMANDE_CLIENT == COMMANDES_CLIENTS.ID).FirstOrDefault();
+
+                                                <a onclick="Commande(@COMMANDES_CLIENTS.ID)">@COMMANDES_CLIENTS.CODE</a><br />
+                                                if (BONS_LIVRAISONS_CLIENTS != null)
+                                                {
+                                                    Inspinia_MVC5.Models.FACTURES_CLIENTS FACTURES_CLIENTS = db11.FACTURES_CLIENTS.Where(t => t.BON_LIVRAISON_CLIENT == BONS_LIVRAISONS_CLIENTS.ID).FirstOrDefault();
+
+                                                    <a onclick="BonLivraison(@BONS_LIVRAISONS_CLIENTS.ID)">@BONS_LIVRAISONS_CLIENTS.CODE</a><br />
+                                                    if (FACTURES_CLIENTS != null)
+                                                    {
+                                                        <a onclick="BonLivraison(@FACTURES_CLIENTS.ID)">@FACTURES_CLIENTS.CODE</a><br />
+                                                    }
+                                                }
+                                            }
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Designation)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Description)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CLIENTS.NOM)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Cout)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EnCourExecution)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DateLivraison)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Personnels3.Nom)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Personnels.Nom)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Personnels1.Nom)
+                                        </td>
+
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Personnels2.Nom)
+
+                                        </td>
+                                        <td>
+
+                                            <button class="btn btn-primary btn-circle" type="button" onclick="location.href='@Url.Action("Edit", "PROJET_TECHNIQUE", new {id = item.ProjetTechniqueId}, null)'">
+                                                <i class="fa fa-pencil-square-o" style="margin-right: 2px;"></i>
+                                            </button>
+                                            @if (COMMANDES_CLIENTS != null)
+                                            {
+                                                Inspinia_MVC5.Models.BONS_LIVRAISONS_CLIENTS BONS_LIVRAISONS_CLIENTS = db11.BONS_LIVRAISONS_CLIENTS.Where(t => t.COMMANDE_CLIENT == COMMANDES_CLIENTS.ID).FirstOrDefault();
+                                                if (BONS_LIVRAISONS_CLIENTS != null)
+                                                {
+                                                    <button class="btn btn-info btn-circle" type="button" style="width : 40px" onclick="location.href='@Url.Action("Delete", "PROJET_TECHNIQUE", new {id = item.ProjetTechniqueId}, null)'" disabled>
+                                                        <i class="fa fa-trash" style="margin-right: 2px;"></i>
+                                                    </button>
+                                                }
+                                                else
+                                                {
+                                                    <button class="btn btn-info btn-circle" type="button" style="width : 40px" onclick="location.href='@Url.Action("Delete", "PROJET_TECHNIQUE", new {id = item.ProjetTechniqueId}, null)'">
+                                                        <i class="fa fa-trash" style="margin-right: 2px;"></i>
+                                                    </button>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <button class="btn btn-info btn-circle" type="button" style="width : 40px" onclick="location.href='@Url.Action("Delete", "PROJET_TECHNIQUE", new {id = item.ProjetTechniqueId}, null)'">
+                                                    <i class="fa fa-trash" style="margin-right: 2px;"></i>
+                                                </button>
+                                            }
+                                            <button class="btn btn-warning btn-circle" type="button" style="width : 40px" onclick="location.href='@Url.Action("Details", "PROJET_TECHNIQUE", new {id = item.ProjetTechniqueId}, null)'">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+
+}
+@section Scripts {
+    @Scripts.Render("~/plugins/dataTables")
+    <script type="text/javascript" src="~/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.responsive.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+    @Scripts.Render("~/plugins/sweetAlert")
+
+    <script type="text/javascript">
+
+    </script>
+    }
+        <script>
+            function affaire(id)
+        {
+                window.open("/AffaireCommerciales/Details?id=" + id);
+            }
+        function Devis(id) {
+                window.open("/Vente/FormDevis?Mode=Edit&Code=" + id);
+            }
+
+        function Commande(id) {
+                window.open("/Vente/FormCommande?Mode=Edit&Code=" + id);
+            }
+
+        function BonLivraison(id) {
+                window.open("/Vente/FormBonLivraison?Mode=Edit&Code=" + id);
+            }
+    </script>

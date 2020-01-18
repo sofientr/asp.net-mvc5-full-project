@@ -1,0 +1,569 @@
+﻿<link href="~/Content/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+<link href="~/Content/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
+<link href="~/Content/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
+<style type="text/css">
+
+    #Tableau {
+        /*margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        border: 1px solid #000000;*/
+        width: 1250px;
+    }
+
+    .divScroll {
+        overflow: auto;
+        /*height: 200px;*/
+        /*width: 800px;*/
+    }
+</style>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>
+            FACTURES
+        </h2>
+        <ol class="breadcrumb">
+            <li><a>Vente</a> </li>
+            <li class="active"><strong>FACTURE</strong> </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title" style="padding-top: 4px;">
+                    <h5 style="padding-top: 10px;">
+                        Liste des Factures clients
+                    </h5>
+                    <div class="ibox-tools">
+                        <div class="col-lg-3">
+                            <div class="input-group date">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                <input type="text" class="form-control" name="date2" id="date2" required>@ViewBag.date
+                            </div>
+
+                        </div>
+                        <button class="btn btn-success" type="button" style="width : 40px" onclick="Btn_Aff_Date();">
+                            <i class="fa fa-search"></i>
+                        </button>
+
+                        <button class="btn btn-success " type="button" onclick="location.href='@Url.Action("FormFacture", "Vente", new { Mode = "Create", Code = "-1" }, null)'">
+                            <i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;&nbsp;<span class="bold">Ajouter</span>
+                        </button>
+
+                        <div class="btn-group pull-right" style="margin-right: 5px;">
+                            <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+                                <i class="fa fa-print" aria-hidden="true"></i>Imprimer <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li id="Pardate" onclick="Pardate();"><a href="#">Par Date</a></li>
+                                <li id="paretat" onclick="paretat();"><a href="#">Par Etat</a></li>
+                                <li id="Parclt" onclick="Parclt();"><a href="#">Par Client</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="divScroll">
+                    <table class="table table-striped table-bordered table-hover dataTables-example" id="Tableau">
+                        <thead style="background-color:aliceblue" ;>
+                            <tr>
+                                <th colspan="3" align="center">
+
+                                </th>
+                                <th colspan="@ViewBag.count" align="center" style="background-color:aliceblue" ;>
+                                    <center>Bien et Services</center>
+                                </th>
+                                <th colspan="@ViewBag.count" align="center" style="background-color:aliceblue" ;>
+                                    <center>Immobilisation  </center>
+                                </th>
+                            </tr>
+                            <tr>
+
+                                @{
+
+                                    <th>
+                                        NUMERO
+                                    </th>
+                                    <th>
+                                        Client
+                                    </th>
+                                    <th>
+                                        DATE
+                                    </th>
+
+                                    Inspinia_MVC5.Models.Tr db = new Inspinia_MVC5.Models.Tr();
+                                    List<Inspinia_MVC5.Models.TVA> task_progress = db.TVA.ToList();
+
+                                    foreach (Inspinia_MVC5.Models.TVA item1 in task_progress)
+                                    {
+                                        <th id="@item1.Valeur_TVA" class="sum">
+                                            HT @item1.Valeur_TVA %
+                                        </th>
+                                        <th id="@item1.Valeur_TVA" class="sum">
+                                            TVA @item1.Valeur_TVA %
+                                        </th>
+                                    }
+                                    foreach (Inspinia_MVC5.Models.TVA item1 in task_progress)
+                                    {
+                                        <th id="@item1.Valeur_TVA" class="sum">
+                                            HT @item1.Valeur_TVA %
+                                        </th>
+                                        <th id="@item1.Valeur_TVA" class="sum">
+                                            TVA @item1.Valeur_TVA %
+                                        </th>
+                                    }
+
+                                }
+                            </tr>
+                        </thead>
+
+
+
+                        <tbody>
+                            @foreach (dynamic item in Model)
+                            {
+                            <tr id="@item.ID">
+                                <td>
+                                    @item.CODE
+                                </td>
+                                <td>
+                                    @item.CODE
+                                </td>
+                                <td>
+                                    @if (item.DateDeclar != null)
+                                    {
+
+                                        @String.Format("{0:MM/yyyy}", item.DateDeclar)
+                                    }
+                                    else
+                                    {
+                                        @item.DateDeclar
+                                    }
+                                </td>
+
+
+                                @{
+                                    //string id1 = item.ID;
+                                    int id = item.ID;
+                                    decimal ht1 = 0;
+                                    decimal tva = 0;
+                                    decimal httva = 0;
+                                    decimal ht123 = 0;
+                                    List<Inspinia_MVC5.Models.LIGNES_FACTURES_CLIENTS> lignes = db.LIGNES_FACTURES_CLIENTS.Where(f => f.FACTURE_CLIENT == id).ToList();
+                                    List<Inspinia_MVC5.Models.TVA> task_progress1 = db.TVA.ToList();
+                                    Inspinia_MVC5.Models.FACTURES_CLIENTS fact = db.FACTURES_CLIENTS.Where(f => f.ID == id).FirstOrDefault();
+                                    if (fact.Bien_service == true)
+                                    {
+                                        foreach (Inspinia_MVC5.Models.TVA item1 in task_progress1)
+                                        {
+                                            int tva1 = int.Parse(item1.Valeur_TVA);
+                                            List<Inspinia_MVC5.Models.LIGNES_FACTURES_CLIENTS> lignes1 = db.LIGNES_FACTURES_CLIENTS.Where(f => f.TVA == tva1 && f.FACTURE_CLIENT == id).ToList();
+                                            if (lignes1.Count != 0)
+                                            {
+                                                foreach (Inspinia_MVC5.Models.LIGNES_FACTURES_CLIENTS ligne in lignes1)
+                                                {
+                                                    ht1 = ht1 + (decimal)ligne.TOTALE_HT;
+                                                    tva = tva + (decimal)ligne.TVA;
+                                                    httva = ht1 * tva / 100;
+                                                    ht123 = ht123 + (decimal)ligne.TOTALE_HT;
+
+
+                                                }
+                                                double httva1 = (double)(httva * 1000);
+                                                string httva11 = (httva1 / 1000.0).ToString();
+
+                                                double ht1231 = (double)(ht123 * 1000);
+                                                string ht1232 = (ht1231 / 1000.0).ToString();
+                                                <td style="background-color: wheat;">
+                                                    @ht1232
+                                                </td>
+                                                <td style="background-color: wheat;">
+                                                    @httva11
+                                                </td>
+
+                                            }
+                                            else
+                                            {
+
+                                                <td>
+                                                    0,000
+                                                </td>
+                                                <td>
+                                                    0,000
+
+                                                </td>
+                                            }
+
+
+                                        }
+
+
+                                    }
+                                    int count1 = ViewBag.count;
+                                    for (int i1 = 0; i1 < count1; i1++)
+                                    {
+                                        <td>
+                                            0,000
+                                        </td>
+
+
+                                    }
+
+
+                                    if (fact.immobilisation == true)
+                                    {
+                                        int count = ViewBag.count;
+                                        for (int i = 0; i < count; i++)
+                                        {
+                                            <td>
+                                                0,000
+                                            </td>
+
+                                        }
+
+                                        foreach (Inspinia_MVC5.Models.TVA item1 in task_progress1)
+                                        {
+                                            //foreach (Inspinia_MVC5.Models.LIGNES_FACTURES_CLIENTS ligne in lignes)
+                                            //{
+                                            int tva1 = int.Parse(item1.Valeur_TVA);
+                                            decimal ht12 = 0;
+                                            decimal tva12 = 0;
+                                            decimal ht122 = 0;
+                                            decimal httva12 = 0;
+                                            //Inspinia_MVC5.Models.LIGNES_FACTURES_CLIENTS ligne = db.LIGNES_FACTURES_CLIENTS.Where(f => f.TVA == tva1 && f.FACTURE_CLIENT == id).FirstOrDefault();
+                                            List<Inspinia_MVC5.Models.LIGNES_FACTURES_CLIENTS> lignes1 = db.LIGNES_FACTURES_CLIENTS.Where(f => f.TVA == tva1 && f.FACTURE_CLIENT == id).ToList();
+                                            if (lignes1.Count != 0)
+                                            {
+
+                                                foreach (Inspinia_MVC5.Models.LIGNES_FACTURES_CLIENTS ligne in lignes1)
+                                                {
+
+                                                    ht12 = (decimal)ligne.TOTALE_HT;
+                                                    tva12 = (decimal)ligne.TVA;
+                                                    httva12 = httva12 + (ht12 * tva12 / 100);
+                                                    ht122 = ht122 + (decimal)ligne.TOTALE_HT;
+
+
+                                                }
+                                                double httva1 = (double)(httva * 1000);
+                                                string httva11 = (httva1 / 1000.0).ToString();
+
+                                                double ht1221 = (double)(ht122 * 1000);
+                                                string ht1222 = (ht1221 / 1000.0).ToString();
+                                                <td style="background-color: wheat;">
+                                                    @ht1222
+
+                                                </td>
+                                                <td style="background-color: wheat;">
+                                                    @httva11
+
+                                                </td>
+
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    0,000
+                                                </td>
+                                                <td>
+                                                    0,000
+                                                </td>
+
+
+                                            }
+
+                                        }
+                                    }
+
+                                }
+
+
+                            </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+
+                                <th colspan="3" style="text-align:right">Total:</th>
+
+                                @{
+                                    int count2 = ViewBag.count;
+                                    for (int i = 0; i < count2 * 2; i++)
+
+                                    {
+                                        <th></th>
+                                    }
+                                }
+
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+@section Scripts {
+    <script type="text/javascript" src="~/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.responsive.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+    @Scripts.Render("~/plugins/dataTables")
+    @Scripts.Render("~/plugins/select2")
+    @Scripts.Render("~/plugins/dataPicker")
+    <script type="text/javascript">
+        $("#date2").datepicker({
+            format: 'dd/mm/yyyy'
+        });
+       // var table = $('#Tableau').DataTable();
+        $('#Tableau tbody').on('contextmenu', 'tr', function (event) {
+
+        if (event.button == 2) {
+            window.myValue = $(this).attr('id');
+            event.preventDefault();
+            //var Width = $("#NavigationBar").width();
+            $(".custom-menu").finish().toggle(100).css({
+                top: event.pageY + "px",
+                left: (event.pageX) -/* Width */+ "px"
+            });
+        }
+    });
+    $(document).bind("mousedown", function (e) {
+        if (!$(e.target).parents(".custom-menu").length > 0) {
+            $(".custom-menu").hide(100);
+        }
+    });
+    
+    $("#PrintBtn").click(function () {
+        window.open("/Vente/PrintAllFactureClient", '_blank');
+    });
+        function Btn_Edit_click(MyValue) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/verifieValiditeFac?id=" + MyValue,
+                success: function (response) {
+                    if (response == "NO") {
+                        window.location.href = "/Vente/FormFacture?Mode=Edit&Code=" + MyValue;
+                    }
+                    else {
+                        window.location.href = window.location.href;
+                        alert("Facture validée");
+                    }
+                }
+            });
+
+        }
+          function Btn_Aff_Date() {
+            //var date = $("#date").val();
+            var date2 = $("#date2").val();
+           var date11 = "@ViewBag.date";
+            @*var date22 = "@ViewBag.Date2";*@
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/FacturePrdate?date2=" + date2,
+                success: function (response) {
+                    $("#date2").val(date11);
+                    window.location.href = "/Vente/FacturePrdate?date2=" + date2;
+                }
+            });
+        }
+        function Btn_Aff_click(MyValue) {
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/verifieValiditeFac?id=" + MyValue,
+                success: function (response) {
+                    if (response == "NO") {
+                        window.location.href = window.location.href;
+                        alert("Facture pas encore validée ou non payée");
+                    }
+                    else {
+                        window.location.href = "/Vente/FormFacture?Mode=Aff&Code=" + MyValue;
+                    }
+                }
+
+            });
+        }
+        function Delete(MyValue) {
+        var Conf = confirm("Voulez vous Supprimer cet elément ?");
+        if (Conf == true) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/DeleteFacture?parampassed=" + MyValue,
+                success: function (response) {
+                    window.location = "/Vente/Facture";
+                }
+            });
+        }
+        var preloader = $('<div>', { 'class': 'preloader' }).appendTo('body');
+        $(this)
+               .ajaxStart(function () {
+                   preloader.fadeIn();
+               })
+               .ajaxStop(function () {
+                   preloader.delay(800).fadeOut();
+               });
+        }
+        function Retenue(MyValue) {
+            var Conf = confirm("voulez vous imprimer un retenue à la source ?");
+            if (Conf == true) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Vente/PrintRetenue?Code=" + MyValue,
+                    success: function (response) {
+                        window.location = "/Vente/PrintRetenue?Code=" + MyValue;
+                    }
+                });
+            }
+            var preloader = $('<div>', { 'class': 'preloader' }).appendTo('body');
+            $(this)
+                   .ajaxStart(function () {
+                       preloader.fadeIn();
+                   })
+                   .ajaxStop(function () {
+                       preloader.delay(800).fadeOut();
+                   });
+        }
+        function Pardate() {
+            var parampassed = "@ViewBag.Code";
+            var Conf = confirm("Voulez vous imprimer cette facture par Date ?");
+            if (Conf == true) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Vente/PrintAllFactureClient?parampassed=" + parampassed,
+                    success: function (response) {
+                        window.location.href = "/Vente/PrintAllFactureClient?Code=" + parampassed;
+                    //    if (response == "NO") {
+                    //        window.location.href = window.location.href;
+                    //        alert("Facture pas encore validée");
+                    //    }
+                    //    else {
+                    //        window.location.href = "/Vente/FormAvoir?Mode=Edit&Code=" + response;
+                    //    }
+                    }
+                });
+            }
+        }
+        function paretat() {
+            var parampassed = "@ViewBag.Code";
+            var Conf = confirm("Voulez vous imprimer cette facture par Etat ?");
+            if (Conf == true) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Vente/PrintAllFactureClientParetat?parampassed=" + parampassed,
+                    success: function (response) {
+                        window.location.href = "/Vente/PrintAllFactureClientParetat?Code=" + parampassed;
+                        //    if (response == "NO") {
+                        //        window.location.href = window.location.href;
+                        //        alert("Facture pas encore validée");
+                        //    }
+                        //    else {
+                        //        window.location.href = "/Vente/FormAvoir?Mode=Edit&Code=" + response;
+                        //    }
+                    }
+                });
+            }
+        }
+            function Parclt() {
+                var parampassed = "@ViewBag.Code";
+                var Conf = confirm("Voulez vous imprimer cette facture par Client ?");
+                if (Conf == true) {
+                    $.ajax({
+                        type: 'POST',
+                        url: "/Vente/PrintAllFactureClientParclt?parampassed=" + parampassed,
+                        success: function (response) {
+                            window.location.href = "/Vente/PrintAllFactureClientParclt?Code=" + parampassed;
+                            //    if (response == "NO") {
+                            //        window.location.href = window.location.href;
+                            //        alert("Facture pas encore validée");
+                            //    }
+                            //    else {
+                            //        window.location.href = "/Vente/FormAvoir?Mode=Edit&Code=" + response;
+                            //    }
+                        }
+                    });
+                }
+
+
+        }
+        $(document).ready(function () {
+
+        $("#Li-Vente").attr("class", "active");
+        $("#ul-Vente").attr("class", "nav nav-second-level collapse in");
+        $("#ul-Vente").attr("aria-expanded", "true");
+        var Action = "@ViewBag.MODE";
+        if (Action == "Create") {
+            setTimeout(function () {
+                toastr.options = {
+                    closeButton: true,
+                    progressBar: true,
+                    showMethod: 'slideDown',
+                    timeOut: 3000
+                };
+                toastr.success('Ajout avec Succés', '');
+
+            }, 1300);
+        }
+        if (Action == "Edit") {
+            setTimeout(function () {
+                toastr.options = {
+                    closeButton: true,
+                    progressBar: true,
+                    showMethod: 'slideDown',
+                    timeOut: 3000
+                };
+                toastr.success('Modification avec Succés', '');
+
+            }, 1300);
+            }
+            $('#Tableau').DataTable({
+                initComplete: function () {
+
+                    this.api().column(2).every(function () {
+                        var column = this;
+                        var select = $('<select><option value=""></option></select>')
+                            .appendTo($(column.footer()).empty())
+                            .on('change', function () {
+                                var val = $.fn.dataTable.util.escapeRegex($(this).val());
+                                column
+                                    .search(val ? '^' + val + '$' : '', true, false)
+                                    .draw();
+                            });
+                        column.data().unique().sort().each(function (d, j) {
+                            select.append('<option value="' + d + '">' + d + '</option>')
+
+                        });
+                    });
+                },
+                "footerCallback": function (row, data, start, end, display) {
+                    var api = this.api(), data;
+                    // Remove the formatting to get integer data for summation
+                    var intVal = function (i) {
+                        return typeof i === 'string' ?
+                            i.replace(/[\$,]/g, '') * 1 :
+                            typeof i === 'number' ?
+                                i : 0;
+                    };
+
+                    api.columns('.sum', { page: 'current' }).every(function () {
+                        var sum = this
+                            .data()
+                            .reduce(function (a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0);
+
+                        this.footer().innerHTML = sum / 1000;
+                    });
+                }
+
+            });
+    });
+    </script>
+}

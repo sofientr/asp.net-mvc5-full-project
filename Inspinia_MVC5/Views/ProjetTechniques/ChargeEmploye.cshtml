@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.Personnels>
+
+@{
+    ViewBag.Title = "Charge des Employés";
+}
+@* @Inspinia_MVC5.Models.ScaffoldingContext db = new Inspinia_MVC5.Models.ScaffoldingContext();*@
+@{
+
+    List<Inspinia_MVC5.Models.Tasks> t = (List<Inspinia_MVC5.Models.Tasks>)Session["charge_emp"];
+    int idProj = (int)Session["pt_id"];
+}
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>ChargeEmploye</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Personnel</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>List of Personnel</h5>
+                    <div class="ibox-tools">
+                        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-xs" })
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <table class="table table-striped">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nom)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Role)
+                            </th>
+                            <th>
+                                Charge total
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nom)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Role)
+                                </td>
+                                <td>
+                                    @*@foreach (Inspinia_MVC5.Models.Task task in Inspinia_MVC5.Models.Tas)*@
+                                    @{ 
+                                        double sum = 0;
+                                        List<Inspinia_MVC5.Models.Tasks> sous = t.FindAll(p => p.owner_id == item.PersonnelId && p.ProjetTechniquesID==idProj);
+                                        foreach (Inspinia_MVC5.Models.Tasks tsk in sous){
+                                            sum += tsk.duration_h * item.Cout_hor;
+                                        }
+}                                   @sum
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Details", "Details", new { id = item.PersonnelId }, new { @class = "btn btn-primary btn-sm" })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.PersonnelId }, new { @class = "btn btn-white btn-sm" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.PersonnelId }, new { @class = "btn btn-white btn-sm" })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

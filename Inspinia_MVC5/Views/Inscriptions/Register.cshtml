@@ -1,0 +1,194 @@
+﻿@model Inspinia_MVC5.Models.Inscription
+
+@{
+    Layout = "~/Views/Shared/_Layout_2.cshtml";
+}
+@*<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Registry</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name">IN+</h1>
+
+            </div>
+            <h3>Register to IN+</h3>
+            <p>Cette demande d'inscription va etre valider par l'administrateur</p>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Create Inscription</h5>
+                            </div>
+                            <div class="ibox-content">
+
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-horizontal">
+                                        @Html.ValidationSummary(true)
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.NOM, new { @class = "control-label col-md-2" })
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.NOM)
+                                                @Html.ValidationMessageFor(model => model.NOM)
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.Email)
+                                                @Html.ValidationMessageFor(model => model.Email)
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2">
+                                                <input type="submit" value="Create" class="btn btn-primary" />
+
+                                                @Html.ActionLink("Cancel", "Login", "Societes", null, new { @class = "btn btn-white" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+</body>
+
+</html>
+
+
+
+@{
+    Layout = null;
+}*@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Registry</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+        <div>
+            <div>
+
+                <div class="login-word">
+                    <span class="second-word">SUN</span><span class="first-word">VIT</span>
+                </div>
+                <div class="middle-box text-center lockscreen animated fadeInDown">
+                    <div>
+                        <div class="m-b-md">
+                            <img alt="image" class="img-circle circle-border" src="~/Images/LOGOIN.jpg">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+            <h3>Créer un compte</h3>
+            <p>Votre demande sera validé par l'administrateur</p>
+            @*<form class="m-t" role="form" action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" required="">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email" required="">
+                </div>*@
+                @*<div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" required="">
+                </div>*@
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true)
+
+                        <div class="form-group">
+                           
+                                @Html.EditorFor(model => model.NOM,new { htmlAttributes = new { @class = "form-control", placeholder = "Nom & Prénom", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.NOM)
+                            
+                        </div>
+
+
+
+                        <div class="form-group">
+                           
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email", type = "email", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Email)
+                           
+                        </div>
+
+                        @*<div class="form-group">
+                            <div class="col-md-offset-2">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+
+                            </div>
+                        </div>*@
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" required=""><i></i> Accepter les termes et la politique
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary block full-width m-b">S'inscrire</button>
+                }
+                <p class="text-muted text-center"><small>Vous avez déjà un compte?</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="@Url.Action("Login", "Societes")">Login</a>
+            @*</form>*@
+            <p class="m-t"> <small>Copyright IT © 2018</small> </p>
+        </div>
+    </div>
+</body>
+
+</html>

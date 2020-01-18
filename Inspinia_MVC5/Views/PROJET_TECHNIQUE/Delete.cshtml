@@ -1,0 +1,124 @@
+﻿@model Inspinia_MVC5.Models.PROJET_TECHNIQUE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PROJET_TECHNIQUE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Reference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+       
+        <dt>
+            @Html.DisplayNameFor(model => model.Cout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnCourExecution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnCourExecution)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AffaireObtenue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AffaireObtenue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateLivraison)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateLivraison)
+        </dd>
+
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLIENTS.NOM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLIENTS.NOM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Personnels.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personnels.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Personnels1.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personnels1.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Personnels2.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personnels2.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Personnels3.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personnels3.Nom)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

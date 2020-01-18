@@ -1,0 +1,178 @@
+﻿@model Inspinia_MVC5.Models.LIGNES_FACTURES_FOURNISSEURS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LIGNES_FACTURES_FOURNISSEURS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DESIGNATION_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESIGNATION_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUANTITE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUANTITE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIX_UNITAIRE_HT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIX_UNITAIRE_HT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REMISE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REMISE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TOTALE_REMISE_HT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOTALE_REMISE_HT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TOTALE_HT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOTALE_HT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TVA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TOTALE_TTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOTALE_TTC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categorie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categorie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sous_Categorie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sous_Categorie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Devise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Devise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_offre_de_prix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_offre_de_prix)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duree_de_validite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duree_de_validite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N_Offre_de_Prix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N_Offre_de_Prix)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Libelle_Prd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libelle_Prd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FACTURES_FOURNISSEURS.CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FACTURES_FOURNISSEURS.CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prix_Achat1.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prix_Achat1.Designation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

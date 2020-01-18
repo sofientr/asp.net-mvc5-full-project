@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.PrefixeTable>
+@{
+    int id = ViewBag.id;
+    Inspinia_MVC5.Models.Tr db = new Inspinia_MVC5.Models.Tr();
+    List<Inspinia_MVC5.Models.PrefixeTable> list = db.PrefixeTable.Where(f => f.Id_Ste == id).ToList();
+}
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_Table)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_Ste)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prefixe)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+@foreach (var item in list)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_Table)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_Ste)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prefixe)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "PrefixeEditValidation", "SocieteLogoes", new { id = item.Id }) |*@
+            <button class="btn btn-info  dim" type="button" style="width : 40px" onclick="location.href='@Url.Action("PrefixeEditValidation", "SocieteLogoes", new { id = item.Id,idprefixe=id })'"><i class="fa fa-pencil-square-o" style="margin-right: 2px;"></i></button>
+                @*@Html.ActionLink("Details", "Details", "SocieteLogoes", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", "SocieteLogoes", new { id=item.Id })*@
+</td>
+    </tr>
+}
+</table>

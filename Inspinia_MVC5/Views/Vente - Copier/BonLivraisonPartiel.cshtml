@@ -1,0 +1,298 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.BONS_LIVRAISONS_PART_CLIENTS>
+
+<script>
+
+    function checkAll(ele) {
+        var checkboxes = document.getElementsByTagName('input');
+        if (ele.checked) {
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].type == 'checkbox') {
+                    checkboxes[i].checked = true;
+                }
+            }
+        } else {
+            for (var i = 0; i < checkboxes.length; i++) {
+                console.log(i)
+                if (checkboxes[i].type == 'checkbox') {
+                    checkboxes[i].checked = false;
+                }
+            }
+        }
+    }
+    function check(elee) {
+        
+        if (elee.checked) {
+            document.getElementById('facturation').disabled = false;
+
+        }
+        else {
+            document.getElementById('facturation').disabled = true;
+
+        }
+    }
+</script>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        @*<h2>Index</h2>*@
+        <ol class="breadcrumb">
+            @*<li class="active">
+                    <strong>AffaireCommerciale</strong>
+                </li>*@
+        </ol>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight" id="overflowTest">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>List des bons livraisons partiels</h5>
+
+                </div>
+
+                @using (Html.BeginForm("BonLivraisonParVersfacture", "Vente", new { Mode = ViewBag.Mode, Code = ViewBag.Code }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+                <div class="row" style="margin-bottom: 20px; margin-right: 0px;">
+                    <input type="submit" class="btn btn-primary pull-right" value="Facturation" onclick="return confirm('Voulez vous transformer ce bon de livraison en facture?')" id="facturation" disabled />
+               @* <button class="btn btn-success pull-right" type="button" style="margin-right: 5px;"
+                    id="PrintBTN">
+                <span class="bold">Imprimer</span>
+                </button>*@
+    @if (ViewBag.VALIDER)
+    {
+                
+                <button class="btn btn-warning dim pull-right" type="button" disabled title="Validée"
+                        style="height: 28px; padding-bottom: 3px; padding-top: 3px;">
+                    <i class="fa fa-check"></i>
+                </button>
+
+}
+else
+{
+        <button class="btn btn-primary dim pull-right" type="button" title="Validée" style="height: 28px;
+                    padding-bottom: 3px; padding-top: 3px;" id="ValidateBtn" onclick="Validate();">
+    <i class="fa fa-check"></i>
+</button>
+
+}
+                </div>
+                <div class="ibox-content">
+                    <table class="table table-striped table-bordered table-hover dataTables-example">
+                        <tr>
+
+                            <th>
+                                <INPUT type="checkbox" onchange="checkAll(this)" name="chk[]" />
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CODE)
+                            </th>
+                            @*<th>
+                                @Html.DisplayNameFor(model => model.Code_Article)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DESIGNATION_PRODUIT)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.QTELIV)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.QTERES)
+                            </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.DATE)
+                            </th>
+                            <th>
+                                Code BL-CLIENT
+                            </th>
+                            <th>
+                             Valider
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+
+                            <td>
+                                @if (item.Etat == true || item.VALIDER == false)
+                                {
+                                    <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" value="@Html.DisplayFor(modelItem => item.ID)" disabled />
+                                }
+                                else
+                                {
+                                    <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" value="@Html.DisplayFor(modelItem => item.ID)" onchange="check(this)" />
+
+                                }
+
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CODE)
+                            </td>
+                            
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DATE)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BONS_LIVRAISONS_CLIENTS.CODE)
+                            </td>
+                            <td>
+                                @if (item.VALIDER == true)
+                                {
+                                    <span class="label label-primary">VALIDÉE</span>
+                                }
+                                else
+                                {
+                                    <span class="label label-warning-light">NON VALIDEE</span>
+                                }
+                            </td>
+                            <td>
+                                @*@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |*@
+                                <button class="btn btn-primary dim" type="button" style="width : 40px" onclick="Btn_Edit_click(@item.ID);">
+                                    <i class="fa fa-pencil-square-o" style="margin-right: 2px;"></i>
+                                </button>
+                                @*@Html.ActionLink("Details", "Details", new { id = item.ID }) |*@
+                                <button class="btn btn-warning  dim" type="button" style="width : 40px" onclick="Btn_Aff_click(@item.ID);">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                @*@Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+                                <button class="btn btn-info  dim" type="button" style="width : 40px" onclick="Delete(@item.ID);" disabled>
+                                    <i class="fa fa-trash" style="margin-right: 2px;"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        }
+
+                    </table>
+                   
+
+                </div>
+
+                }
+               
+            </div>
+            </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/plugins/dataTables")
+<script type="text/javascript">
+    
+    $(document).ready(function () {
+        //var select = document.getElementsByName("affComId").values;
+        //alert(select);
+        //$("#facturation").attr("disabled", true);
+        //if (document.getElementById('#aff').checked == true) {
+        //    alert("hhy");
+        //}
+
+    });
+    //---------------------------------------------------------------------------
+    function Btn_Edit_click(MyValue) {
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/FormBonLivraisonPart?Mode=Edit&Code=" + MyValue,
+            success: function (response) {
+                //if (response == "NO") {
+                    window.location.href = "/Vente/FormBonLivraisonPart?Mode=Edit&Code=" + MyValue;
+                //}
+                //else {
+                //    window.location.href = window.location.href;
+                //    alert("Bon de livraison validée");
+                //}
+            }
+        });
+    }
+    function Btn_Aff_click(MyValue) {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/verifieValiditeBl?id=" + MyValue,
+            success: function (response) {
+                if (response == "NO") {
+                    window.location.href = window.location.href;
+                    alert("Bon de livraison pas encore validée");
+                }
+                else {
+                    window.location.href = "/Vente/FormBonLivraisonPar?Mode=Aff&Code=" + MyValue;
+                }
+            }
+
+        });
+    }
+    function Delete(MyValue)
+    {
+        var Conf = confirm("Voulez vous Supprimer cet elément ?");
+        if (Conf == true) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/DeleteBonLaivraisonPart?parampassed=" + MyValue,
+                success: function (response) {
+                    window.location = "/Vente/BonLivraisonPartiel";
+                }
+            });
+        }
+        var preloader = $('<div>', { 'class': 'preloader' }).appendTo('body');
+        $(this)
+            .ajaxStart(function () {
+                preloader.fadeIn();
+            })
+            .ajaxStop(function () {
+                preloader.delay(800).fadeOut();
+            });
+    }
+
+
+        var VALIDER = "@ViewBag.VALIDER";
+        debugger;
+    function Validate() {
+        var parampassed = "@ViewBag.Code";
+        var Conf = confirm("Voulez vous Valider ce bon de livraison ?");
+        if (Conf == true) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/validateBonLivraison?parampassed=" + parampassed + "&type=false",
+                success: function (response) {
+                    window.location = "/Vente/BonLivraison";
+                }
+            });
+        }
+        var preloader = $('<div>', { 'class': 'preloader' }).appendTo('body');
+        $(this)
+            .ajaxStart(function () {
+                preloader.fadeIn();
+            })
+            .ajaxStop(function () {
+                preloader.delay(800).fadeOut();
+            });
+    }
+
+        // function VersFacture() {
+        //        debugger;
+
+        //        var type = document.getElementsByName("affComId");
+
+        //        var Conf = confirm("Voulez vous transformer ce bon de livraison en facture ?");
+        //        if (Conf == true) {
+        //            $.ajax({
+        //                type: 'POST',
+        //                url: "/Vente/BonLivraisonParVersfacture?type=" + type.values,
+        //                success: function (response) {
+
+        //                        window.location.href = "/Vente/FormFacture?Mode=Edit&Code=" + response;
+
+        //                }
+        //            });
+        //        }
+        //}
+
+
+</script>
+}

@@ -1,0 +1,154 @@
+﻿@model Inspinia_MVC5.Models.Projets
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Create</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+            <li class="active">
+                <strong>Create</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+			@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary"})
+        </div>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Create Projets</h5>
+                </div>
+                <div class="ibox-content">
+
+				@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CODE, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CODE)
+                @Html.ValidationMessageFor(model => model.CODE)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NOM_PROJET, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NOM_PROJET)
+                @Html.ValidationMessageFor(model => model.NOM_PROJET)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TYPE, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TYPE)
+                @Html.ValidationMessageFor(model => model.TYPE)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DEBUT, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DEBUT)
+                @Html.ValidationMessageFor(model => model.DEBUT)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FIN, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FIN)
+                @Html.ValidationMessageFor(model => model.FIN)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MONTANT_HT, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MONTANT_HT)
+                @Html.ValidationMessageFor(model => model.MONTANT_HT)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TVA, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TVA)
+                @Html.ValidationMessageFor(model => model.TVA)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GARANTIE, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GARANTIE)
+                @Html.ValidationMessageFor(model => model.GARANTIE)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Budget, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Budget)
+                @Html.ValidationMessageFor(model => model.Budget)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SociID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SociID)
+                @Html.ValidationMessageFor(model => model.SociID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DecaissID, "DecaissID", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("DecaissID", String.Empty)
+                @Html.ValidationMessageFor(model => model.DecaissID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TiersID, "TiersID", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TiersID", String.Empty)
+                @Html.ValidationMessageFor(model => model.TiersID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+				@Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-white"})
+            </div>
+        </div>
+    </div>
+}
+
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+ 

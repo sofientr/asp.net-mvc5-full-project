@@ -1,0 +1,281 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.Horaire>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    @using (Html.BeginForm("Valider", "Tableau_Horaire", new { id = ViewBag.id }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+
+    }
+</div>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-8">
+        <h2>Tableau Horaire</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Dashboard_1", "Dashboards")">Home</a>
+            </li>
+            <li>
+                Tableau Horaire
+            </li>
+            <li class="active">
+                DE<strong> @(((DateTime)ViewBag.Date_Deb).ToString("dd/MM/yyyy")) </strong> A<strong> @(((DateTime)ViewBag.Date_Fin).ToString("dd/MM/yyyy"))</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInDown">
+        <div class="col-lg-3">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Liste Des Horaires</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div id='external-events'>
+                        <p>Veuillez selectionner l'horaire à paramétrer.</p>
+                        <table class="table">
+                            <tr>
+                                <th>
+
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Horaire1)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Debut)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Sortie)
+                                </th>
+                                @*<th>
+                        @Html.DisplayNameFor(model => model.Tableau_Horaire.Nom)
+                    </th>*@
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" value="@item.id" />
+
+                                    </td>
+
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Horaire1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Debut)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Sortie)
+                                    </td>
+                                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Tableau_Horaire.Nom)
+                        </td>*@
+
+                                </tr>
+
+                            }
+
+                        </table>
+
+
+
+                    </div>
+                    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success pull-top" })
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-3">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Jour de la semaine</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div id='external-events'>
+                        <p>Veuillez affecter les jours de travail.</p>
+                        <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="lundi" id="lundi" value="lundi" checked />lundi <br />
+                        <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" value="Mardi" checked />Mardi <br />
+                        <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" value="Mercredi" checked />Mercredi <br />
+                        <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" value="jeudi" checked />jeudi <br />
+                        <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" value="vendredi" checked />vendredi <br />
+                        <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" value="Samedi" checked />Samedi <br />
+                        <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" value="Dimanche" checked />Dimanche <br />
+                        <div class="row">
+                            <button class="btn btn-success pull-right" type="submit" style="margin-right: 5px;" id="valider">
+                                <span class="bold">Valider</span>
+                            </button>
+
+
+
+                        </div>
+
+                        @*<p class="m-t">
+            <input type='checkbox' id='drop-remove' class="i-checks" checked /> <label for='drop-remove'>remove after drop</label>
+        </p>*@
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Striped Table </h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    @Styles.Render("~/plugins/fullCalendarStyles")
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+}
+@section Scripts {
+    <script type="text/javascript" src="~/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.responsive.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+    @Scripts.Render("~/plugins/dataTables")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/plugins/fullCalendar")
+    @Scripts.Render("~/plugins/iCheck")
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+
+            /* initialize the external events
+             -----------------------------------------------------------------*/
+
+
+            $('#external-events div.external-event').each(function () {
+
+                // store data so the calendar knows to render an event upon drop
+                $(this).data('event', {
+                    title: $.trim($(this).text()), // use the element's text as the event title
+                    stick: true // maintain when user navigates (see docs on the renderEvent method)
+                });
+
+                // make the event draggable using jQuery UI
+                $(this).draggable({
+                    zIndex: 1111999,
+                    revert: true,      // will cause the event to go back to its
+                    revertDuration: 0  //  original position after the drag
+                });
+
+            });
+
+
+            /* initialize the calendar
+             -----------------------------------------------------------------*/
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                editable: true,
+                droppable: true, // this allows things to be dropped onto the calendar
+                drop: function () {
+                    // is the "remove after drop" checkbox checked?
+                    if ($('#drop-remove').is(':checked')) {
+                        // if so, remove the element from the "Draggable Events" list
+                        $(this).remove();
+                    }
+                },
+          
+            });
+
+
+        });
+    </script>
+    <script type="text/javascript">
+        function checkAll(ele) {
+            var checkboxes = document.getElementsByTagName('input');
+            if (ele.checked) {
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].type == 'checkbox') {
+                        checkboxes[i].checked = true;
+                    }
+                }
+            } else {
+                for (var i = 0; i < checkboxes.length; i++) {
+                    console.log(i)
+                    if (checkboxes[i].type == 'checkbox') {
+                        checkboxes[i].checked = false;
+                    }
+                }
+            }
+        }
+        function check(elee) {
+
+            if (elee.checked) {
+                document.getElementById('facturation').disabled = false;
+
+            }
+            else {
+                document.getElementById('facturation').disabled = true;
+
+            }
+        }
+
+    </script>
+}

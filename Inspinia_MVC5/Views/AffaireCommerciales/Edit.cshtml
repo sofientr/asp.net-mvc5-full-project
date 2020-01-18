@@ -1,0 +1,458 @@
+﻿<link href="~/Content/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/select2.min.css" rel="stylesheet" type="text/css" />
+@model Inspinia_MVC5.Models.AffaireCommerciales
+
+@{
+	ViewBag.Title = "Edit";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-sm-4">
+		<h2>Edit</h2>
+		<ol class="breadcrumb">
+			<li>
+				@Html.ActionLink("List", "Index")
+			</li>
+			<li class="active">
+				<strong>Edit</strong>
+			</li>
+		</ol>
+	</div>
+	<div class="col-sm-8">
+		<div class="title-action">
+			@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+		</div>
+	</div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>Edit AffaireCommerciale</h5>
+				</div>
+				<div class="ibox-content">
+
+					@using (Html.BeginForm())
+					{
+						@Html.AntiForgeryToken()
+
+						<div class="form-horizontal">
+
+							@Html.ValidationSummary(true)
+							@Html.HiddenFor(model => model.AffaireCommercialeId)
+
+							<div class="form-group">
+								@Html.LabelFor(model => model.Reference, new { @class = "control-label col-md-2" })
+								<div class="col-md-10">
+									@Html.EditorFor(model => model.Reference, new { @readonly = "Readonly" })
+									@Html.ValidationMessageFor(model => model.Reference)
+								</div>
+							</div>
+
+							<div class="form-group">
+								@Html.LabelFor(model => model.Designation, new { @class = "control-label col-md-2" })
+								<div class="col-md-10">
+									@if (ViewBag.Designation != "" && ViewBag.Designation != null)
+									{
+										<input type="text" class="form-control" id="Designation" name="Designation" value="@ViewBag.Designation" />
+									}
+									else
+									{
+										@Html.EditorFor(model => model.Designation)
+										@Html.ValidationMessageFor(model => model.Designation)
+									}
+
+								</div>
+							</div>
+
+							<div class="form-group">
+								@Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+								<div class="col-md-10">
+									@if (ViewBag.Description != "" && ViewBag.Description != null)
+									{
+										<input type="text" class="form-control" id="Description" name="Description" value="@ViewBag.Description" />
+									}
+									else
+									{
+										@Html.EditorFor(model => model.Description)
+										@Html.ValidationMessageFor(model => model.Description)
+									}
+								</div>
+							</div>
+
+							@*<div class="form-group">
+									@Html.LabelFor(model => model.DateDebut, new { @class = "control-label col-md-2" })
+									<div class="col-md-10">
+										@Html.EditorFor(model => model.DateDebut)
+										@Html.ValidationMessageFor(model => model.DateDebut)
+									</div>
+								</div>
+
+								<div class="form-group">
+									@Html.LabelFor(model => model.DateFin, new { @class = "control-label col-md-2" })
+									<div class="col-md-10">
+										@Html.EditorFor(model => model.DateFin)
+										@Html.ValidationMessageFor(model => model.DateFin)
+									</div>
+								</div>*@
+
+							<div class="form-group">
+								@Html.LabelFor(model => model.Delai_de_Soumission, new { @class = "control-label col-md-2" })
+								<div class="col-md-10">
+									@if (ViewBag.Delai_de_Soumission != "" && ViewBag.Delai_de_Soumission != null)
+									{
+										<input type="text" class="form-control" id="Delai_de_Soumission" name="Delai_de_Soumission" value="@ViewBag.Delai_de_Soumission" />
+									}
+									else
+									{
+										@Html.EditorFor(model => model.Delai_de_Soumission)
+										@Html.ValidationMessageFor(model => model.Delai_de_Soumission)
+									}
+								</div>
+							</div>
+							<div class="form-group">
+								@Html.LabelFor(model => model.Date_de_Soumission, new { @class = "control-label col-md-2" })
+								<div class="col-md-10">
+									@if (ViewBag.Date_de_Soumission != "" && ViewBag.Date_de_Soumission != null)
+									{
+										<input type="text" class="form-control" id="Date_de_Soumission" name="Date_de_Soumission" value="@ViewBag.Date_de_Soumission" />
+									}
+									else
+									{
+										@Html.EditorFor(model => model.Date_de_Soumission)
+										@Html.ValidationMessageFor(model => model.Date_de_Soumission)
+									}
+								</div>
+							</div>
+							<div class="form-group">
+								@Html.LabelFor(model => model.DateConsultation, new { @class = "control-label col-md-2" })
+								<div class="col-md-10">
+									@if (ViewBag.DateConsultation != "" && ViewBag.DateConsultation != null)
+									{
+										<input type="text" class="form-control" id="DateConsultation" name="DateConsultation" value="@ViewBag.DateConsultation" />
+									}
+									else
+									{
+										@Html.EditorFor(model => model.DateConsultation)
+										@Html.ValidationMessageFor(model => model.DateConsultation)
+									}
+								</div>
+							</div>
+							<div class="form-group">
+								@Html.LabelFor(model => model.EtatSoum, new { @class = "control-label col-md-2" })
+								<div class="col-md-10">
+									@Html.DropDownList("EtatSoum", new List<SelectListItem>
+					{
+
+						 new SelectListItem{ Text="Soumissioné", Value = "Soumissioné" },
+						 new SelectListItem{ Text="Non Soumissioné", Value = "Non Soumissioné" },
+
+
+					 },
+						new { @class = "form-control m-b" })
+									@Html.ValidationMessageFor(model => model.EtatSoum)
+								</div>
+							</div>
+							<div class="form-group">
+								@Html.LabelFor(model => model.faisabilite, new { @class = "control-label col-md-2" })
+								<div class="col-md-10">
+									@Html.DropDownList("faisabilite", new List<SelectListItem>
+					{
+
+						 new SelectListItem{ Text="Oui", Value = "Oui" },
+						 new SelectListItem{ Text="Non", Value = "Non" },
+
+
+					 },
+						new { @class = "form-control m-b" })
+									@Html.ValidationMessageFor(model => model.faisabilite)
+								</div>
+							</div>
+							<div class="form-group">
+								@Html.LabelFor(model => model.AffaireObtenue, new { @class = "control-label col-md-2" })
+								<div class="col-md-10">
+									@Html.DropDownList("AffaireObtenue", new List<SelectListItem>
+					{
+
+						 new SelectListItem{ Text="Obtenue", Value = "Obtenue" },
+						 new SelectListItem{ Text="Non Obtenue", Value = "Non Obtenue" },
+						 new SelectListItem{ Text="regret", Value = "regret" },
+						 new SelectListItem{ Text="Annulée", Value = "Annulée" },
+
+					 },
+					  new { @class = "form-control m-b" })
+									@Html.ValidationMessageFor(model => model.AffaireObtenue)
+								</div>
+							</div>
+							@*new { @class = "form-control m-b" })
+												  @Html.ValidationMessageFor(model => model.EnCourExecution)
+											  </div>
+										  </div>
+										  <div class="form-group">
+											  @Html.LabelFor(model => model.EnCourExecution, new { @class = "control-label col-md-2" })
+											  <div class="col-md-10">
+												  @Html.DropDownList("EnCourExecution", new List<SelectListItem>
+								  {
+								new SelectListItem{ Text="", Value = "" },
+									   new SelectListItem{ Text="Conclu", Value = "Conclu" },
+									   new SelectListItem{ Text="en cours", Value = "en cours" },
+
+
+								   },*@
+
+							<div class="form-group">
+								@Html.LabelFor(model => model.Importance, new { @class = "control-label col-md-2" })
+								<div class="col-md-10">
+									@if (ViewBag.Importance != "" && ViewBag.Importance != null)
+									{
+										<input type="text" class="form-control" id="Importance" name="Importance" value="@ViewBag.Importance" />
+									}
+									else
+									{
+										@Html.EditorFor(model => model.Importance)
+										@Html.ValidationMessageFor(model => model.Importance)
+									}
+								</div>
+							</div>
+							<div class="form-group">
+								@Html.LabelFor(model => model.NbHeurePrepOffre, new { @class = "control-label col-md-2" })
+								<div class="col-md-10">
+									@if (ViewBag.NbHeurePrepOffre != "" && ViewBag.NbHeurePrepOffre != null)
+									{
+										<input type="text" class="form-control" id="NbHeurePrepOffre" name="NbHeurePrepOffre" value="@ViewBag.NbHeurePrepOffre" />
+									}
+									else
+									{
+										@Html.EditorFor(model => model.NbHeurePrepOffre)
+										@Html.ValidationMessageFor(model => model.NbHeurePrepOffre)
+									}
+								</div>
+							</div>
+							@*<div class="form-group">
+									@Html.LabelFor(model => model.Cout, new { @class = "control-label col-md-2" })
+									<div class="col-md-10">
+										@Html.EditorFor(model => model.Cout)
+										@Html.ValidationMessageFor(model => model.Cout)
+									</div>
+								</div>*@
+
+							<div class="form-group">
+								@Html.LabelFor(model => model.ClientId, "ClientId", new { @class = "control-label col-md-2" })
+								<div class="col-md-9">
+									@Html.DropDownList("ClientId", null, new { @class = "form-control m-b" })
+									@Html.ValidationMessageFor(model => model.ClientId)
+								</div>
+								<div class="col-md-1">
+									<a href="javascript:void(0);" class="TIERS"><button class="btn btn-outline btn-primary dim" type="button"><i class="fa fa-plus"></i></button></a>
+
+								</div>
+							</div>
+
+							<div class="form-group">
+								@Html.LabelFor(model => model.PersonnelId, "Responsable Commerciale", new { @class = "control-label col-md-2" })
+								<div class="col-md-9">
+									@Html.DropDownList("PersonnelId", null, new { @class = "form-control m-b" })
+									@Html.ValidationMessageFor(model => model.PersonnelId)
+								</div>
+								<div class="col-md-1">
+									<a href="javascript:void(0);" class="PERSONNELS"><button class="btn btn-outline btn-primary dim" type="button"><i class="fa fa-plus"></i></button></a>
+								</div>
+							</div>
+							<div class="form-group">
+								@Html.LabelFor(model => model.ResponsableTechnique, "Responsable Technique", new { @class = "control-label col-md-2" })
+								<div class="col-md-9">
+									@Html.DropDownList("ResponsableTechnique", null, new { @class = "form-control m-b" })
+									@Html.ValidationMessageFor(model => model.ResponsableTechnique)
+								</div>
+
+								<div class="col-md-1">
+									<a href="javascript:void(0);" class="PERSONNELS"><button class="btn btn-outline btn-primary dim" type="button"><i class="fa fa-plus"></i></button></a>
+								</div>
+							</div>
+							<div class="form-group">
+								@Html.LabelFor(model => model.CoordinateurCommerciale, "Coordinateur Commerciale", new { @class = "control-label col-md-2" })
+								<div class="col-md-9">
+									@Html.DropDownList("CoordinateurCommerciale", null, new { @class = "form-control m-b" })
+									@Html.ValidationMessageFor(model => model.CoordinateurCommerciale)
+								</div>
+
+								<div class="col-md-1">
+									<a href="javascript:void(0);" class="PERSONNELS"><button class="btn btn-outline btn-primary dim" type="button"><i class="fa fa-plus"></i></button></a>
+								</div>
+							</div>
+							<div class="form-group">
+								@Html.LabelFor(model => model.CoordinateurRealisation, "Coordinateur Réalisation", new { @class = "control-label col-md-2" })
+								<div class="col-md-9">
+									@Html.DropDownList("CoordinateurRealisation", null, new { @class = "form-control m-b" })
+									@Html.ValidationMessageFor(model => model.CoordinateurRealisation)
+								</div>
+
+								<div class="col-md-1">
+									<a href="javascript:void(0);" class="PERSONNELS"><button class="btn btn-outline btn-primary dim" type="button"><i class="fa fa-plus"></i></button></a>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-offset-2 col-md-10">
+
+									<input type="submit" value="Save" class="btn btn-primary" />
+
+									@Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-white" })
+								</div>
+							</div>
+						</div>
+						<div id='myModal' class='modal'>
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div id='myModalContent'>
+
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					}
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section scripts
+{
+	@Scripts.Render("~/plugins/dataPicker")
+	<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+	<script src="~/Scripts/bootstrap.js"></script>
+	<script src="~/Scripts/bootstrap.min.js"></script>
+	@Scripts.Render("~/plugins/select2")
+	@Scripts.Render("~/plugins/dataTables")
+
+	<script type="text/javascript">
+        var Mode = "@ViewBag.Mode";
+        var id="@ViewBag.id";
+        $("#ClientId").select2();
+        $("#PersonnelId").select2();
+        $("#ResponsableTechnique").select2();
+        $("#CoordinateurCommerciale").select2();
+        $("#CoordinateurRealisation").select2();
+        $("#AffaireObtenue").select2();
+        $("#EtatSoum").select2();
+        $("#faisabilite").select2();
+
+        $("#DateConsultation").datepicker({
+            format: 'dd/mm/yyyy'
+        });
+        $("#DateLivraison").datepicker({
+            format: 'dd/mm/yyyy'
+        });
+        $("#Delai_de_Soumission").datepicker({
+            format: 'dd/mm/yyyy'
+        });
+        $("#Date_de_Soumission").datepicker({
+            format: 'dd/mm/yyyy'
+        });
+	</script>
+	<script>
+
+		//var PartielView = '/AffaireCommerciales/Tiers';
+		$(function () {
+			$(".TIERS").click(function () {
+				var Designation = $("#Designation").val();
+				var Description = $("#Description").val();
+				var Delai_de_Soumission = $("#Delai_de_Soumission").val();
+				var Date_de_Soumission = $("#Date_de_Soumission").val();
+				var DateConsultation = $("#DateConsultation").val();
+				var EtatSoum = $("#EtatSoum").val();
+				var faisabilite = $("#faisabilite").val();
+				var AffaireObtenue = $("#AffaireObtenue").val();
+				var Importance = $("#Importance").val();
+				var NbHeurePrepOffre = $("#NbHeurePrepOffre").val();
+				var ClientId = $("#ClientId").val();
+				var PersonnelId = $("#PersonnelId").val();
+				var ResponsableTechnique = $("#ResponsableTechnique").val();
+				var CoordinateurCommerciale = $("#CoordinateurCommerciale").val();
+				var CoordinateurRealisation = $("#CoordinateurRealisation").val();
+				var PartielView = '/AffaireCommerciales/Tiers?Mode=' + Mode + '&id=' + id + '&Designation=' + Designation + '&Description=' + Description + '&Delai_de_Soumission=' + Delai_de_Soumission + '&Date_de_Soumission=' + Date_de_Soumission + '&DateConsultation=' + DateConsultation + '&EtatSoum=' + EtatSoum + '&faisabilite=' + faisabilite + '&AffaireObtenue=' + AffaireObtenue + '&Importance=' + Importance + '&NbHeurePrepOffre=' + NbHeurePrepOffre + '&ClientId=' + ClientId + '&PersonnelId=' + PersonnelId + '&ResponsableTechnique=' + ResponsableTechnique + '&CoordinateurCommerciale=' + CoordinateurCommerciale + '&CoordinateurRealisation=' + CoordinateurRealisation;
+				var $buttonClicked = $(this);
+				var options = { "backdrop": "static", keyboard: true };
+				$.ajax({
+					type: "GET",
+					url: PartielView,
+					contentType: "application/json; charset=utf-8",
+					data: "",
+					datatype: "json",
+					success: function (data) {
+						debugger;
+						$('#myModalContent').html(data);
+						$('#myModal').modal(options);
+						$('#myModal').modal('show');
+
+					},
+					error: function () {
+						alert("Dynamic content load failed.");
+					}
+				});
+			});
+
+			$("#closbtn").click(function () {
+				$('#myModal').modal('hide');
+			});
+		});
+
+
+	</script>
+
+
+	<script>
+
+		var PartielView1 = '/AffaireCommerciales/Personnels';
+		$(function () {
+			$(".PERSONNELS").click(function () {
+				var Designation = $("#Designation").val();
+				var Description = $("#Description").val();
+				var Delai_de_Soumission = $("#Delai_de_Soumission").val();
+				var Date_de_Soumission = $("#Date_de_Soumission").val();
+				var DateConsultation = $("#DateConsultation").val();
+				var EtatSoum = $("#EtatSoum").val();
+				var faisabilite = $("#faisabilite").val();
+				var AffaireObtenue = $("#AffaireObtenue").val();
+				var Importance = $("#Importance").val();
+				var NbHeurePrepOffre = $("#NbHeurePrepOffre").val();
+				var ClientId = $("#ClientId").val();
+				var PersonnelId = $("#PersonnelId").val();
+				var ResponsableTechnique = $("#ResponsableTechnique").val();
+				var CoordinateurCommerciale = $("#CoordinateurCommerciale").val();
+				var CoordinateurRealisation = $("#CoordinateurRealisation").val();
+				var PartielView = '/AffaireCommerciales/Personnels?Mode=' + Mode + '&id=' + id + '&Designation=' + Designation + '&Description=' + Description + '&Delai_de_Soumission=' + Delai_de_Soumission + '&Date_de_Soumission=' + Date_de_Soumission + '&DateConsultation=' + DateConsultation + '&EtatSoum=' + EtatSoum + '&faisabilite=' + faisabilite + '&AffaireObtenue=' + AffaireObtenue + '&Importance=' + Importance + '&NbHeurePrepOffre=' + NbHeurePrepOffre + '&ClientId=' + ClientId + '&PersonnelId=' + PersonnelId + '&ResponsableTechnique=' + ResponsableTechnique + '&CoordinateurCommerciale=' + CoordinateurCommerciale + '&CoordinateurRealisation=' + CoordinateurRealisation;
+				var $buttonClicked = $(this);
+				var options = { "backdrop": "static", keyboard: true };
+				$.ajax({
+					type: "GET",
+					url: PartielView1,
+					contentType: "application/json; charset=utf-8",
+					data: "",
+					datatype: "json",
+					success: function (data) {
+						debugger;
+						$('#myModalContent').html(data);
+						$('#myModal').modal(options);
+						$('#myModal').modal('show');
+
+					},
+					error: function () {
+						alert("Dynamic content load failed.");
+					}
+				});
+			});
+
+			$("#closbtn").click(function () {
+				$('#myModal').modal('hide');
+			});
+		});
+	</script>
+}
+

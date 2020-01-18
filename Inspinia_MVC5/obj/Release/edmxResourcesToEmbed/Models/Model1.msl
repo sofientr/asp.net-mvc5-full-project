@@ -1,0 +1,2239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TrModelStoreContainer" CdmEntityContainer="Tr">
+    <EntitySetMapping Name="ACHATS_PREVISIONNELS">
+      <EntityTypeMapping TypeName="TrModel.ACHATS_PREVISIONNELS">
+        <MappingFragment StoreEntitySet="ACHATS_PREVISIONNELS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CENTRE_COUT" ColumnName="CENTRE_COUT" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MONTANT_HT" ColumnName="MONTANT_HT" />
+          <ScalarProperty Name="PROJET" ColumnName="PROJET" />
+          <ScalarProperty Name="SOCIETE" ColumnName="SOCIETE" />
+          <ScalarProperty Name="MODALITE" ColumnName="MODALITE" />
+          <ScalarProperty Name="FOURNISSEUR" ColumnName="FOURNISSEUR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AffaireCommerciales">
+      <EntityTypeMapping TypeName="TrModel.AffaireCommerciales">
+        <MappingFragment StoreEntitySet="AffaireCommerciales">
+          <ScalarProperty Name="AffaireCommercialeId" ColumnName="AffaireCommercialeId" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="EtatSoum" ColumnName="EtatSoum" />
+          <ScalarProperty Name="Cout" ColumnName="Cout" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="PersonnelId" ColumnName="PersonnelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Art_Depot">
+      <EntityTypeMapping TypeName="TrModel.Art_Depot">
+        <MappingFragment StoreEntitySet="Art_Depot">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Art" ColumnName="Id_Art" />
+          <ScalarProperty Name="Id_Dépot" ColumnName="Id_Dépot" />
+          <ScalarProperty Name="Stock_Art_Dépot" ColumnName="Stock_Art_Dépot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Art_Depot_Rayon">
+      <EntityTypeMapping TypeName="TrModel.Art_Depot_Rayon">
+        <MappingFragment StoreEntitySet="Art_Depot_Rayon">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Art_Depot" ColumnName="Id_Art_Depot" />
+          <ScalarProperty Name="Id_Rayons" ColumnName="Id_Rayons" />
+          <ScalarProperty Name="Stock_Rayon" ColumnName="Stock_Rayon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AVOIRS_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.AVOIRS_CLIENTS">
+        <MappingFragment StoreEntitySet="AVOIRS_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="FACTURE_CLIENT" ColumnName="FACTURE_CLIENT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AVOIRS_FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.AVOIRS_FOURNISSEURS">
+        <MappingFragment StoreEntitySet="AVOIRS_FOURNISSEURS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="FOURNISSEUR" ColumnName="FOURNISSEUR" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="FACTURE_FOURNISSEUR" ColumnName="FACTURE_FOURNISSEUR" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BONS_LIVRAISONS_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.BONS_LIVRAISONS_CLIENTS">
+        <MappingFragment StoreEntitySet="BONS_LIVRAISONS_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="COMMANDE_CLIENT" ColumnName="COMMANDE_CLIENT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BONS_LIVRAISONS_PART_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.BONS_LIVRAISONS_PART_CLIENTS">
+        <MappingFragment StoreEntitySet="BONS_LIVRAISONS_PART_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="IDBLC" ColumnName="IDBLC" />
+          <ScalarProperty Name="Code_Article" ColumnName="Code Article" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QTELIV" ColumnName="QTELIV" />
+          <ScalarProperty Name="QTERES" ColumnName="QTERES" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="Etat" ColumnName="Etat" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BONS_RECEPTIONS_FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.BONS_RECEPTIONS_FOURNISSEURS">
+        <MappingFragment StoreEntitySet="BONS_RECEPTIONS_FOURNISSEURS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="FOURNISSEUR" ColumnName="FOURNISSEUR" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="COMMANDE_FOURNISSEUR" ColumnName="COMMANDE_FOURNISSEUR" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Etat" ColumnName="Etat" />
+          <ScalarProperty Name="NumBlFrs" ColumnName="NumBlFrs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Caisse">
+      <EntityTypeMapping TypeName="TrModel.Caisse">
+        <MappingFragment StoreEntitySet="Caisse">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="COMMANDE_CLIENT" ColumnName="COMMANDE_CLIENT" />
+          <ScalarProperty Name="DEVIS_CLIENT" ColumnName="DEVIS_CLIENT" />
+          <ScalarProperty Name="BON_LIVRAISON_CLIENT" ColumnName="BON_LIVRAISON_CLIENT" />
+          <ScalarProperty Name="PAYEE" ColumnName="PAYEE" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TIMBRE" ColumnName="TIMBRE" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Declaration" ColumnName="Declaration" />
+          <ScalarProperty Name="Date_Declaration" ColumnName="Date_Declaration" />
+          <ScalarProperty Name="immobilisation" ColumnName="immobilisation" />
+          <ScalarProperty Name="Bien_service" ColumnName="Bien_service" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorie">
+      <EntityTypeMapping TypeName="TrModel.Categorie">
+        <MappingFragment StoreEntitySet="Categorie">
+          <ScalarProperty Name="CentreID" ColumnName="CentreID" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.CLIENTS">
+        <MappingFragment StoreEntitySet="CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="Exttva" ColumnName="Exttva" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients1">
+      <EntityTypeMapping TypeName="TrModel.Clients1">
+        <MappingFragment StoreEntitySet="Clients1">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Responsable" ColumnName="Responsable" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="TelePhone" ColumnName="TelePhone" />
+          <ScalarProperty Name="TelFix" ColumnName="TelFix" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commande">
+      <EntityTypeMapping TypeName="TrModel.Commande">
+        <MappingFragment StoreEntitySet="Commande">
+          <ScalarProperty Name="CmdID" ColumnName="CmdID" />
+          <ScalarProperty Name="Date_Passasation" ColumnName="Date_Passasation" />
+          <ScalarProperty Name="Prix_Totale" ColumnName="Prix_Totale" />
+          <ScalarProperty Name="DecaissID" ColumnName="DecaissID" />
+          <ScalarProperty Name="FRSID" ColumnName="FRSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMANDES_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.COMMANDES_CLIENTS">
+        <MappingFragment StoreEntitySet="COMMANDES_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="DEVIS_CLIENT" ColumnName="DEVIS_CLIENT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMANDES_FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.COMMANDES_FOURNISSEURS">
+        <MappingFragment StoreEntitySet="COMMANDES_FOURNISSEURS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="FOURNISSEUR" ColumnName="FOURNISSEUR" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Devis_Frs" ColumnName="Devis_Frs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CoordonneesSoc">
+      <EntityTypeMapping TypeName="TrModel.CoordonneesSoc">
+        <MappingFragment StoreEntitySet="CoordonneesSoc">
+          <ScalarProperty Name="SCoorID" ColumnName="SCoorID" />
+          <ScalarProperty Name="Nom_Soc" ColumnName="Nom_Soc" />
+          <ScalarProperty Name="Date_création" ColumnName="Date_création" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Decaissement">
+      <EntityTypeMapping TypeName="TrModel.Decaissement">
+        <MappingFragment StoreEntitySet="Decaissement">
+          <ScalarProperty Name="DecaissID" ColumnName="DecaissID" />
+          <ScalarProperty Name="CentreID" ColumnName="CentreID" />
+          <ScalarProperty Name="DiretionID" ColumnName="DiretionID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="qte" ColumnName="qte" />
+          <ScalarProperty Name="Prix" ColumnName="Prix" />
+          <ScalarProperty Name="CatID" ColumnName="CatID" />
+          <ScalarProperty Name="Mo_pay" ColumnName="Mo_pay" />
+          <ScalarProperty Name="Demandeur" ColumnName="Demandeur" />
+          <ScalarProperty Name="etat" ColumnName="etat" />
+          <ScalarProperty Name="PrID" ColumnName="PrID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeclarationTVA">
+      <EntityTypeMapping TypeName="TrModel.DeclarationTVA">
+        <MappingFragment StoreEntitySet="DeclarationTVA">
+          <ScalarProperty Name="date_dec" ColumnName="date_dec" />
+          <ScalarProperty Name="Retenue" ColumnName="Retenue" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ReportTVA" ColumnName="ReportTVA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dépot">
+      <EntityTypeMapping TypeName="TrModel.Dépot">
+        <MappingFragment StoreEntitySet="Dépot">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Dépot1" ColumnName="Dépot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Détails_Articles">
+      <EntityTypeMapping TypeName="TrModel.Détails_Articles">
+        <MappingFragment StoreEntitySet="Détails_Articles">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+          <ScalarProperty Name="NumBl" ColumnName="NumBl" />
+          <ScalarProperty Name="IdPrixAchat" ColumnName="IdPrixAchat" />
+          <ScalarProperty Name="Fournisseur" ColumnName="Fournisseur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEVIS_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.DEVIS_CLIENTS">
+        <MappingFragment StoreEntitySet="DEVIS_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="convert" ColumnName="convert" />
+          <ScalarProperty Name="TVAInstallation" ColumnName="TVAInstallation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEVIS_FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.DEVIS_FOURNISSEURS">
+        <MappingFragment StoreEntitySet="DEVIS_FOURNISSEURS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="FOURNISSEUR" ColumnName="FOURNISSEUR" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="convert" ColumnName="convert" />
+          <ScalarProperty Name="Validite" ColumnName="Validite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Devise">
+      <EntityTypeMapping TypeName="TrModel.Devise">
+        <MappingFragment StoreEntitySet="Devise">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nom_Devise" ColumnName="Nom_Devise" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Direction">
+      <EntityTypeMapping TypeName="TrModel.Direction">
+        <MappingFragment StoreEntitySet="Direction">
+          <ScalarProperty Name="DiretionID" ColumnName="DiretionID" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="Année" ColumnName="Année" />
+          <ScalarProperty Name="SCoorID" ColumnName="SCoorID" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Encaissement">
+      <EntityTypeMapping TypeName="TrModel.Encaissement">
+        <MappingFragment StoreEntitySet="Encaissement">
+          <ScalarProperty Name="EncaissID" ColumnName="EncaissID" />
+          <ScalarProperty Name="CentreID" ColumnName="CentreID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exercice">
+      <EntityTypeMapping TypeName="TrModel.Exercice">
+        <MappingFragment StoreEntitySet="Exercice">
+          <ScalarProperty Name="Annee" ColumnName="Annee" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturation">
+      <EntityTypeMapping TypeName="TrModel.Facturation">
+        <MappingFragment StoreEntitySet="Facturation">
+          <ScalarProperty Name="FactID" ColumnName="FactID" />
+          <ScalarProperty Name="NomFact" ColumnName="NomFact" />
+          <ScalarProperty Name="PrID" ColumnName="PrID" />
+          <ScalarProperty Name="EncaissID" ColumnName="EncaissID" />
+          <ScalarProperty Name="DateFact" ColumnName="DateFact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FACTURES_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.FACTURES_CLIENTS">
+        <MappingFragment StoreEntitySet="FACTURES_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="COMMANDE_CLIENT" ColumnName="COMMANDE_CLIENT" />
+          <ScalarProperty Name="DEVIS_CLIENT" ColumnName="DEVIS_CLIENT" />
+          <ScalarProperty Name="BON_LIVRAISON_CLIENT" ColumnName="BON_LIVRAISON_CLIENT" />
+          <ScalarProperty Name="PAYEE" ColumnName="PAYEE" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TIMBRE" ColumnName="TIMBRE" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Declaration" ColumnName="Declaration" />
+          <ScalarProperty Name="Date_Declaration" ColumnName="Date_Declaration" />
+          <ScalarProperty Name="immobilisation" ColumnName="immobilisation" />
+          <ScalarProperty Name="Bien_service" ColumnName="Bien_service" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FACTURES_FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.FACTURES_FOURNISSEURS">
+        <MappingFragment StoreEntitySet="FACTURES_FOURNISSEURS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="FOURNISSEUR" ColumnName="FOURNISSEUR" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="PAYEE" ColumnName="PAYEE" />
+          <ScalarProperty Name="COMMANDE_FOURNISSEUR" ColumnName="COMMANDE_FOURNISSEUR" />
+          <ScalarProperty Name="BON_RECEPTION_FOURNISSEUR" ColumnName="BON_RECEPTION_FOURNISSEUR" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TIMBRE" ColumnName="TIMBRE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="FODEC" ColumnName="FODEC" />
+          <ScalarProperty Name="Redevance" ColumnName="Redevance" />
+          <ScalarProperty Name="Num_Fact" ColumnName="Num_Fact" />
+          <ScalarProperty Name="Declaration" ColumnName="Declaration" />
+          <ScalarProperty Name="Date_Declaration" ColumnName="Date_Declaration" />
+          <ScalarProperty Name="immobilisation" ColumnName="immobilisation" />
+          <ScalarProperty Name="Bien_service" ColumnName="Bien_service" />
+          <ScalarProperty Name="RAS_Marche" ColumnName="RAS_Marche" />
+          <ScalarProperty Name="MOIS_RAS_Marche" ColumnName="MOIS_RAS_Marche" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FAMILLES_PRODUITS">
+      <EntityTypeMapping TypeName="TrModel.FAMILLES_PRODUITS">
+        <MappingFragment StoreEntitySet="FAMILLES_PRODUITS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LIBELLE" ColumnName="LIBELLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FOPROLOS">
+      <EntityTypeMapping TypeName="TrModel.FOPROLOS">
+        <MappingFragment StoreEntitySet="FOPROLOS">
+          <ScalarProperty Name="FOPROLOS1" ColumnName="FOPROLOS" />
+          <ScalarProperty Name="FOPROLOS11" ColumnName="FOPROLOS1" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fournisseur">
+      <EntityTypeMapping TypeName="TrModel.Fournisseur">
+        <MappingFragment StoreEntitySet="Fournisseur">
+          <ScalarProperty Name="FRSID" ColumnName="FRSID" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="MF" ColumnName="MF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.FOURNISSEURS">
+        <MappingFragment StoreEntitySet="FOURNISSEURS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="Etat" ColumnName="Etat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horaire">
+      <EntityTypeMapping TypeName="TrModel.Horaire">
+        <MappingFragment StoreEntitySet="Horaire">
+          <ScalarProperty Name="Horaire1" ColumnName="Horaire" />
+          <ScalarProperty Name="Debut" ColumnName="Debut" />
+          <ScalarProperty Name="Sortie" ColumnName="Sortie" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_Table_Horaire" ColumnName="id_Table_Horaire" />
+          <ScalarProperty Name="Debut1" ColumnName="Debut1" />
+          <ScalarProperty Name="Sortie2" ColumnName="Sortie2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="horaire_jour">
+      <EntityTypeMapping TypeName="TrModel.horaire_jour">
+        <MappingFragment StoreEntitySet="horaire_jour">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="table_horaire" ColumnName="table_horaire" />
+          <ScalarProperty Name="horaire" ColumnName="horaire" />
+          <ScalarProperty Name="jour" ColumnName="jour" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inscription">
+      <EntityTypeMapping TypeName="TrModel.Inscription">
+        <MappingFragment StoreEntitySet="Inscription">
+          <ScalarProperty Name="InsriID" ColumnName="InsriID" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="etat" ColumnName="etat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jours">
+      <EntityTypeMapping TypeName="TrModel.Jours">
+        <MappingFragment StoreEntitySet="Jours">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Jour" ColumnName="Jour" />
+          <ScalarProperty Name="Horaire" ColumnName="Horaire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIGNES_AVOIRS_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.LIGNES_AVOIRS_CLIENTS">
+        <MappingFragment StoreEntitySet="LIGNES_AVOIRS_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="AVOIR_CLIENT" ColumnName="AVOIR_CLIENT" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous_Categorie" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIGNES_AVOIRS_FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.LIGNES_AVOIRS_FOURNISSEURS">
+        <MappingFragment StoreEntitySet="LIGNES_AVOIRS_FOURNISSEURS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="AVOIR_FOURNISSEUR" ColumnName="AVOIR_FOURNISSEUR" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous_Categorie" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIGNES_BONS_LIVRAISONS_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.LIGNES_BONS_LIVRAISONS_CLIENTS">
+        <MappingFragment StoreEntitySet="LIGNES_BONS_LIVRAISONS_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="QTERES" ColumnName="QTERES" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="BON_LIVRAISON_CLIENT" ColumnName="BON_LIVRAISON_CLIENT" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous_Categorie" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIGNES_BONS_LIVRAISONS_PART_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.LIGNES_BONS_LIVRAISONS_PART_CLIENTS">
+        <MappingFragment StoreEntitySet="LIGNES_BONS_LIVRAISONS_PART_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="QTERES" ColumnName="QTERES" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="BON_LIVRAISON_PART_CLIENT" ColumnName="BON_LIVRAISON_PART_CLIENT" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous_Categorie" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIGNES_BONS_RECEPTIONS_FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.LIGNES_BONS_RECEPTIONS_FOURNISSEURS">
+        <MappingFragment StoreEntitySet="LIGNES_BONS_RECEPTIONS_FOURNISSEURS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="BON_RECEPTION_FOURNISSEUR" ColumnName="BON_RECEPTION_FOURNISSEUR" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous_Categorie" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIGNES_Caisse">
+      <EntityTypeMapping TypeName="TrModel.LIGNES_Caisse">
+        <MappingFragment StoreEntitySet="LIGNES_Caisse">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="Caisse" ColumnName="Caisse" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous-Categorie" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HTVente" ColumnName="PRIX_UNITAIRE_HTVente" />
+          <ScalarProperty Name="MARGE" ColumnName="MARGE" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+          <ScalarProperty Name="Num_BLP" ColumnName="Num_BLP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIGNES_COMMANDES_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.LIGNES_COMMANDES_CLIENTS">
+        <MappingFragment StoreEntitySet="LIGNES_COMMANDES_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="COMMANDE_CLIENT" ColumnName="COMMANDE_CLIENT" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous-Categorie" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIGNES_COMMANDES_FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.LIGNES_COMMANDES_FOURNISSEURS">
+        <MappingFragment StoreEntitySet="LIGNES_COMMANDES_FOURNISSEURS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="COMMANDE_FOURNISSEUR" ColumnName="COMMANDE_FOURNISSEUR" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous_Categorie" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIGNES_DEVIS_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.LIGNES_DEVIS_CLIENTS">
+        <MappingFragment StoreEntitySet="LIGNES_DEVIS_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="DEVIS_CLIENT" ColumnName="DEVIS_CLIENT" />
+          <ScalarProperty Name="Art_Devis_Frs" ColumnName="Art_Devis_Frs" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous-Categorie" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MARGE" ColumnName="MARGE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HTVente" ColumnName="PRIX_UNITAIRE_HTVente" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIGNES_DEVIS_FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.LIGNES_DEVIS_FOURNISSEURS">
+        <MappingFragment StoreEntitySet="LIGNES_DEVIS_FOURNISSEURS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="DEVIS_CLIENT" ColumnName="DEVIS_CLIENT" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous-Categorie" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIGNES_FACTURES_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.LIGNES_FACTURES_CLIENTS">
+        <MappingFragment StoreEntitySet="LIGNES_FACTURES_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="FACTURE_CLIENT" ColumnName="FACTURE_CLIENT" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous-Categorie" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HTVente" ColumnName="PRIX_UNITAIRE_HTVente" />
+          <ScalarProperty Name="MARGE" ColumnName="MARGE" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+          <ScalarProperty Name="Num_BLP" ColumnName="Num_BLP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIGNES_FACTURES_FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.LIGNES_FACTURES_FOURNISSEURS">
+        <MappingFragment StoreEntitySet="LIGNES_FACTURES_FOURNISSEURS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="FACTURE_FOURNISSEUR" ColumnName="FACTURE_FOURNISSEUR" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous_Categorie" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+          <ScalarProperty Name="ID_Bl" ColumnName="ID_Bl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lIGNES_SERVICES">
+      <EntityTypeMapping TypeName="TrModel.lIGNES_SERVICES">
+        <MappingFragment StoreEntitySet="lIGNES_SERVICES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="DEVIS_CLIENT" ColumnName="DEVIS_CLIENT" />
+          <ScalarProperty Name="SERVICES" ColumnName="SERVICES" />
+          <ScalarProperty Name="Personnels" ColumnName="Personnels" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="MARGE" ColumnName="MARGE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HTVente" ColumnName="PRIX_UNITAIRE_HTVente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Links">
+      <EntityTypeMapping TypeName="TrModel.Links">
+        <MappingFragment StoreEntitySet="Links">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="SourceTaskId" ColumnName="SourceTaskId" />
+          <ScalarProperty Name="TargetTaskId" ColumnName="TargetTaskId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marque">
+      <EntityTypeMapping TypeName="TrModel.Marque">
+        <MappingFragment StoreEntitySet="Marque">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nom_marque" ColumnName="Nom marque" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MOUVEMENETS_PRODUITS">
+      <EntityTypeMapping TypeName="TrModel.MOUVEMENETS_PRODUITS">
+        <MappingFragment StoreEntitySet="MOUVEMENETS_PRODUITS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DATE_MOUVEMENT" ColumnName="DATE_MOUVEMENT" />
+          <ScalarProperty Name="TYPE_MOUVEMENT" ColumnName="TYPE_MOUVEMENT" />
+          <ScalarProperty Name="CODE_MOUVEMENT" ColumnName="CODE_MOUVEMENT" />
+          <ScalarProperty Name="QUANTITE_MOUVEMENT" ColumnName="QUANTITE_MOUVEMENT" />
+          <ScalarProperty Name="QUANTITE_AVANT_MOUVEMENT" ColumnName="QUANTITE_AVANT_MOUVEMENT" />
+          <ScalarProperty Name="QUANTITE_APRES_MOUVEMENT" ColumnName="QUANTITE_APRES_MOUVEMENT" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parametrages">
+      <EntityTypeMapping TypeName="TrModel.Parametrages">
+        <MappingFragment StoreEntitySet="Parametrages">
+          <ScalarProperty Name="ParametrageId" ColumnName="ParametrageId" />
+          <ScalarProperty Name="RefTech" ColumnName="RefTech" />
+          <ScalarProperty Name="CompteurTech" ColumnName="CompteurTech" />
+          <ScalarProperty Name="RefCom" ColumnName="RefCom" />
+          <ScalarProperty Name="CompteurCom" ColumnName="CompteurCom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParametrageSemaines">
+      <EntityTypeMapping TypeName="TrModel.ParametrageSemaines">
+        <MappingFragment StoreEntitySet="ParametrageSemaines">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="JourId" ColumnName="JourId" />
+          <ScalarProperty Name="JourLibelle" ColumnName="JourLibelle" />
+          <ScalarProperty Name="jourTravail" ColumnName="jourTravail" />
+          <ScalarProperty Name="doubleSeance" ColumnName="doubleSeance" />
+          <ScalarProperty Name="seance1Debut" ColumnName="seance1Debut" />
+          <ScalarProperty Name="seance1Fin" ColumnName="seance1Fin" />
+          <ScalarProperty Name="seance2Debut" ColumnName="seance2Debut" />
+          <ScalarProperty Name="seance2Fin" ColumnName="seance2Fin" />
+          <ScalarProperty Name="projetTechniqueID" ColumnName="projetTechniqueID" />
+          <ScalarProperty Name="Date_Deb" ColumnName="Date_Deb" />
+          <ScalarProperty Name="Date_Fin" ColumnName="Date_Fin" />
+          <ScalarProperty Name="Date_FinString" ColumnName="Date_FinString" />
+          <ScalarProperty Name="Date_DebString" ColumnName="Date_DebString" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personnels">
+      <EntityTypeMapping TypeName="TrModel.Personnels">
+        <MappingFragment StoreEntitySet="Personnels">
+          <ScalarProperty Name="PersonnelId" ColumnName="PersonnelId" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Cout_hor" ColumnName="Cout_hor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prix_Achat">
+      <EntityTypeMapping TypeName="TrModel.Prix_Achat">
+        <MappingFragment StoreEntitySet="Prix_Achat">
+          <ScalarProperty Name="Product_ID" ColumnName="Product ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous-Categorie" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="PU_HT_Sans_Remise" ColumnName="PU HT Sans Remise" />
+          <ScalarProperty Name="Remise" ColumnName="Remise" />
+          <ScalarProperty Name="PU_HT_Avec_Remise" ColumnName="PU HT Avec Remise" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="Valeur_TVA" ColumnName="Valeur_TVA" />
+          <ScalarProperty Name="PU_TTC" ColumnName="PU TTC" />
+          <ScalarProperty Name="Fournisseur" ColumnName="Fournisseur" />
+          <ScalarProperty Name="Date_offre_de_prix" ColumnName="Date offre de prix" />
+          <ScalarProperty Name="Duree_de_validite" ColumnName="Duree de validite" />
+          <ScalarProperty Name="N_Offre_de_Prix" ColumnName="N Offre de Prix" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="QUANTITE_REPTURE_STOCK" ColumnName="QUANTITE_REPTURE_STOCK" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="DEVIS_FRS" ColumnName="DEVIS_FRS" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="Stock_Alerte" ColumnName="Stock_Alerte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUITS">
+      <EntityTypeMapping TypeName="TrModel.PRODUITS">
+        <MappingFragment StoreEntitySet="PRODUITS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="LIBELLE" ColumnName="LIBELLE" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="FAMILLE" ColumnName="FAMILLE" />
+          <ScalarProperty Name="BLOQUE" ColumnName="BLOQUE" />
+          <ScalarProperty Name="CODE_A_BARE" ColumnName="CODE_A_BARE" />
+          <ScalarProperty Name="PRIX_ACHAT_HT" ColumnName="PRIX_ACHAT_HT" />
+          <ScalarProperty Name="PRIX_VENTE_HT" ColumnName="PRIX_VENTE_HT" />
+          <ScalarProperty Name="AVEC_TVA" ColumnName="AVEC_TVA" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="PRIX_VENTE_TTC" ColumnName="PRIX_VENTE_TTC" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="QUANTITE_REPTURE_STOCK" ColumnName="QUANTITE_REPTURE_STOCK" />
+          <ScalarProperty Name="OBSERVATIONS" ColumnName="OBSERVATIONS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projets">
+      <EntityTypeMapping TypeName="TrModel.Projets">
+        <MappingFragment StoreEntitySet="Projets">
+          <ScalarProperty Name="PrID" ColumnName="PrID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NOM_PROJET" ColumnName="NOM_PROJET" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="DEBUT" ColumnName="DEBUT" />
+          <ScalarProperty Name="FIN" ColumnName="FIN" />
+          <ScalarProperty Name="MONTANT_HT" ColumnName="MONTANT_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="GARANTIE" ColumnName="GARANTIE" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="DecaissID" ColumnName="DecaissID" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjetTechniques">
+      <EntityTypeMapping TypeName="TrModel.ProjetTechniques">
+        <MappingFragment StoreEntitySet="ProjetTechniques">
+          <ScalarProperty Name="ProjetTechniqueId" ColumnName="ProjetTechniqueId" />
+          <ScalarProperty Name="ReferenceTech" ColumnName="ReferenceTech" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="Cout" ColumnName="Cout" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="PersonnelId" ColumnName="PersonnelId" />
+          <ScalarProperty Name="Statut" ColumnName="Statut" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CoutReel" ColumnName="CoutReel" />
+          <ScalarProperty Name="DateDebutReel" ColumnName="DateDebutReel" />
+          <ScalarProperty Name="DateFinReel" ColumnName="DateFinReel" />
+          <ScalarProperty Name="Devis_clt" ColumnName="Devis_clt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RASHonoraire">
+      <EntityTypeMapping TypeName="TrModel.RASHonoraire">
+        <MappingFragment StoreEntitySet="RASHonoraire">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="honoraire" ColumnName="honoraire" />
+          <ScalarProperty Name="honoraire1" ColumnName="honoraire1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RASLoyer">
+      <EntityTypeMapping TypeName="TrModel.RASLoyer">
+        <MappingFragment StoreEntitySet="RASLoyer">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="loy" ColumnName="loy" />
+          <ScalarProperty Name="loy1" ColumnName="loy1" />
+          <ScalarProperty Name="loy2" ColumnName="loy2" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RASSalaire">
+      <EntityTypeMapping TypeName="TrModel.RASSalaire">
+        <MappingFragment StoreEntitySet="RASSalaire">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="salaire" ColumnName="salaire" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rayons">
+      <EntityTypeMapping TypeName="TrModel.Rayons">
+        <MappingFragment StoreEntitySet="Rayons">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rayon" ColumnName="Rayon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICES">
+      <EntityTypeMapping TypeName="TrModel.SERVICES">
+        <MappingFragment StoreEntitySet="SERVICES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="REF" ColumnName="REF" />
+          <ScalarProperty Name="DES_SERVICE" ColumnName="DES_SERVICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocieteLogo">
+      <EntityTypeMapping TypeName="TrModel.SocieteLogo">
+        <MappingFragment StoreEntitySet="SocieteLogo">
+          <ScalarProperty Name="Nom_Societe" ColumnName="Nom_Societe" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="MF" ColumnName="MF" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="Agence" ColumnName="Agence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Societes">
+      <EntityTypeMapping TypeName="TrModel.Societes">
+        <MappingFragment StoreEntitySet="Societes">
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="CentreID" ColumnName="CentreID" />
+          <ScalarProperty Name="Capitale" ColumnName="Capitale" />
+          <ScalarProperty Name="FRSID" ColumnName="FRSID" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="SCoorID" ColumnName="SCoorID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Utilisateur" ColumnName="Utilisateur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sous_Categorie">
+      <EntityTypeMapping TypeName="TrModel.Sous_Categorie">
+        <MappingFragment StoreEntitySet="Sous_Categorie">
+          <ScalarProperty Name="CatID" ColumnName="CatID" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="CentreID" ColumnName="CentreID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stock">
+      <EntityTypeMapping TypeName="TrModel.Stock">
+        <MappingFragment StoreEntitySet="Stock">
+          <ScalarProperty Name="StockID" ColumnName="StockID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TrModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tableau_Horaire">
+      <EntityTypeMapping TypeName="TrModel.Tableau_Horaire">
+        <MappingFragment StoreEntitySet="Tableau_Horaire">
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Date_Deb" ColumnName="Date_Deb" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="jour" ColumnName="jour" />
+          <ScalarProperty Name="Horaire" ColumnName="Horaire" />
+          <ScalarProperty Name="Date_Fin" ColumnName="Date_Fin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="TrModel.Tasks">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Progress" ColumnName="Progress" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="ProjetTechniquesID" ColumnName="ProjetTechniquesID" />
+          <ScalarProperty Name="owner_id" ColumnName="owner_id" />
+          <ScalarProperty Name="planned_start" ColumnName="planned_start" />
+          <ScalarProperty Name="planned_end" ColumnName="planned_end" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="duration_h" ColumnName="duration_h" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="duration_planning" ColumnName="duration_planning" />
+          <ScalarProperty Name="duration_h_planning" ColumnName="duration_h_planning" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TFP">
+      <EntityTypeMapping TypeName="TrModel.TFP">
+        <MappingFragment StoreEntitySet="TFP">
+          <ScalarProperty Name="TFP1" ColumnName="TFP" />
+          <ScalarProperty Name="TFP11" ColumnName="TFP1" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tiers">
+      <EntityTypeMapping TypeName="TrModel.Tiers">
+        <MappingFragment StoreEntitySet="Tiers">
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="Clt" ColumnName="Clt" />
+          <ScalarProperty Name="frs" ColumnName="frs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TVA">
+      <EntityTypeMapping TypeName="TrModel.TVA">
+        <MappingFragment StoreEntitySet="TVA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Valeur_TVA" ColumnName="Valeur_TVA" />
+          <ScalarProperty Name="Annee" ColumnName="Annee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unite">
+      <EntityTypeMapping TypeName="TrModel.Unite">
+        <MappingFragment StoreEntitySet="Unite">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Valeur_Unite" ColumnName="Valeur Unite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTIVITE">
+      <EntityTypeMapping TypeName="TrModel.ACTIVITE">
+        <MappingFragment StoreEntitySet="ACTIVITE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BUDGETS">
+      <EntityTypeMapping TypeName="TrModel.BUDGETS">
+        <MappingFragment StoreEntitySet="BUDGETS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MONTANT_HT" ColumnName="MONTANT_HT" />
+          <ScalarProperty Name="PROJET" ColumnName="PROJET" />
+          <ScalarProperty Name="CENTRE_COUT" ColumnName="CENTRE_COUT" />
+          <ScalarProperty Name="SOCIETE" ColumnName="SOCIETE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorie_Sous_Categorie">
+      <EntityTypeMapping TypeName="TrModel.Categorie_Sous_Categorie">
+        <MappingFragment StoreEntitySet="Categorie_Sous_Categorie">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="LIBELLE" ColumnName="LIBELLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_AVOIR_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.PRINT_AVOIR_CLIENTS">
+        <MappingFragment StoreEntitySet="PRINT_AVOIR_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="FACTURE_CLIENT" ColumnName="FACTURE_CLIENT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="Exttva" ColumnName="Exttva" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+          <ScalarProperty Name="Expr8" ColumnName="Expr8" />
+          <ScalarProperty Name="Expr9" ColumnName="Expr9" />
+          <ScalarProperty Name="Expr10" ColumnName="Expr10" />
+          <ScalarProperty Name="Expr11" ColumnName="Expr11" />
+          <ScalarProperty Name="Clt" ColumnName="Clt" />
+          <ScalarProperty Name="Expr12" ColumnName="Expr12" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="Expr13" ColumnName="Expr13" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="Année" ColumnName="Année" />
+          <ScalarProperty Name="DiretionID" ColumnName="DiretionID" />
+          <ScalarProperty Name="SCoorID" ColumnName="SCoorID" />
+          <ScalarProperty Name="Expr14" ColumnName="Expr14" />
+          <ScalarProperty Name="Expr15" ColumnName="Expr15" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="Expr16" ColumnName="Expr16" />
+          <ScalarProperty Name="CentreID" ColumnName="CentreID" />
+          <ScalarProperty Name="Capitale" ColumnName="Capitale" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="FRSID" ColumnName="FRSID" />
+          <ScalarProperty Name="Expr17" ColumnName="Expr17" />
+          <ScalarProperty Name="Expr18" ColumnName="Expr18" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="AVOIR_CLIENT" ColumnName="AVOIR_CLIENT" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous_Categorie" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_BON_LIVRAISON">
+      <EntityTypeMapping TypeName="TrModel.PRINT_BON_LIVRAISON">
+        <MappingFragment StoreEntitySet="PRINT_BON_LIVRAISON">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product ID" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="Année" ColumnName="Année" />
+          <ScalarProperty Name="SCoorID" ColumnName="SCoorID" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="DiretionID" ColumnName="DiretionID" />
+          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+          <ScalarProperty Name="Expr8" ColumnName="Expr8" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="Expr9" ColumnName="Expr9" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="Expr10" ColumnName="Expr10" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="Expr11" ColumnName="Expr11" />
+          <ScalarProperty Name="Expr12" ColumnName="Expr12" />
+          <ScalarProperty Name="Expr13" ColumnName="Expr13" />
+          <ScalarProperty Name="Expr14" ColumnName="Expr14" />
+          <ScalarProperty Name="Expr15" ColumnName="Expr15" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="Exttva" ColumnName="Exttva" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="Expr16" ColumnName="Expr16" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="CentreID" ColumnName="CentreID" />
+          <ScalarProperty Name="Capitale" ColumnName="Capitale" />
+          <ScalarProperty Name="FRSID" ColumnName="FRSID" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Expr17" ColumnName="Expr17" />
+          <ScalarProperty Name="Expr18" ColumnName="Expr18" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_BON_LIVRAISON_PAR">
+      <EntityTypeMapping TypeName="TrModel.PRINT_BON_LIVRAISON_PAR">
+        <MappingFragment StoreEntitySet="PRINT_BON_LIVRAISON_PAR">
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="IDBLC" ColumnName="IDBLC" />
+          <ScalarProperty Name="Code_Article" ColumnName="Code Article" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QTELIV" ColumnName="QTELIV" />
+          <ScalarProperty Name="QTERES" ColumnName="QTERES" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="DiretionID" ColumnName="DiretionID" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="CentreID" ColumnName="CentreID" />
+          <ScalarProperty Name="Capitale" ColumnName="Capitale" />
+          <ScalarProperty Name="FRSID" ColumnName="FRSID" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_BonReception_Fournisseur">
+      <EntityTypeMapping TypeName="TrModel.PRINT_BonReception_Fournisseur">
+        <MappingFragment StoreEntitySet="PRINT_BonReception_Fournisseur">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous_Categorie" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product ID" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="CentreID" ColumnName="CentreID" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="DiretionID" ColumnName="DiretionID" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="Année" ColumnName="Année" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_COMMANDE_CLIENT">
+      <EntityTypeMapping TypeName="TrModel.PRINT_COMMANDE_CLIENT">
+        <MappingFragment StoreEntitySet="PRINT_COMMANDE_CLIENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="sscat" ColumnName="sscat" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="DiretionID" ColumnName="DiretionID" />
+          <ScalarProperty Name="Année" ColumnName="Année" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="Expr8" ColumnName="Expr8" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="Expr9" ColumnName="Expr9" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="Expr10" ColumnName="Expr10" />
+          <ScalarProperty Name="Expr11" ColumnName="Expr11" />
+          <ScalarProperty Name="Expr12" ColumnName="Expr12" />
+          <ScalarProperty Name="Expr13" ColumnName="Expr13" />
+          <ScalarProperty Name="Expr14" ColumnName="Expr14" />
+          <ScalarProperty Name="Expr15" ColumnName="Expr15" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="Exttva" ColumnName="Exttva" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="Expr16" ColumnName="Expr16" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="Capitale" ColumnName="Capitale" />
+          <ScalarProperty Name="CentreID" ColumnName="CentreID" />
+          <ScalarProperty Name="FRSID" ColumnName="FRSID" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="SCoorID" ColumnName="SCoorID" />
+          <ScalarProperty Name="Expr17" ColumnName="Expr17" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_COMMANDES_FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.PRINT_COMMANDES_FOURNISSEURS">
+        <MappingFragment StoreEntitySet="PRINT_COMMANDES_FOURNISSEURS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="COMMANDE_FOURNISSEUR" ColumnName="COMMANDE_FOURNISSEUR" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous_Categorie" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="DiretionID" ColumnName="DiretionID" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="Année" ColumnName="Année" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="SCoorID" ColumnName="SCoorID" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="FRSID" ColumnName="FRSID" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_DEVIS_CLIENT">
+      <EntityTypeMapping TypeName="TrModel.PRINT_DEVIS_CLIENT">
+        <MappingFragment StoreEntitySet="PRINT_DEVIS_CLIENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous-Categorie" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="Expr8" ColumnName="Expr8" />
+          <ScalarProperty Name="Expr9" ColumnName="Expr9" />
+          <ScalarProperty Name="Expr10" ColumnName="Expr10" />
+          <ScalarProperty Name="Expr11" ColumnName="Expr11" />
+          <ScalarProperty Name="Expr12" ColumnName="Expr12" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="Expr13" ColumnName="Expr13" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="CentreID" ColumnName="CentreID" />
+          <ScalarProperty Name="Capitale" ColumnName="Capitale" />
+          <ScalarProperty Name="FRSID" ColumnName="FRSID" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="SCoorID" ColumnName="SCoorID" />
+          <ScalarProperty Name="Expr14" ColumnName="Expr14" />
+          <ScalarProperty Name="Exttva" ColumnName="Exttva" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_FACTURE_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.PRINT_FACTURE_CLIENTS">
+        <MappingFragment StoreEntitySet="PRINT_FACTURE_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="TIMBRE" ColumnName="TIMBRE" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product ID" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="Expr8" ColumnName="Expr8" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="Expr9" ColumnName="Expr9" />
+          <ScalarProperty Name="Expr10" ColumnName="Expr10" />
+          <ScalarProperty Name="Expr11" ColumnName="Expr11" />
+          <ScalarProperty Name="Expr12" ColumnName="Expr12" />
+          <ScalarProperty Name="Expr13" ColumnName="Expr13" />
+          <ScalarProperty Name="Expr14" ColumnName="Expr14" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="Exttva" ColumnName="Exttva" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="Expr15" ColumnName="Expr15" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="Capitale" ColumnName="Capitale" />
+          <ScalarProperty Name="FRSID" ColumnName="FRSID" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="SCoorID" ColumnName="SCoorID" />
+          <ScalarProperty Name="Expr16" ColumnName="Expr16" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_FACTURE_FOURNISSEUR">
+      <EntityTypeMapping TypeName="TrModel.PRINT_FACTURE_FOURNISSEUR">
+        <MappingFragment StoreEntitySet="PRINT_FACTURE_FOURNISSEUR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="PAYEE" ColumnName="PAYEE" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TIMBRE" ColumnName="TIMBRE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous_Categorie" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="DiretionID" ColumnName="DiretionID" />
+          <ScalarProperty Name="SCoorID" ColumnName="SCoorID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="Année" ColumnName="Année" />
+          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_LISE_AVOIRS_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.PRINT_LISE_AVOIRS_CLIENTS">
+        <MappingFragment StoreEntitySet="PRINT_LISE_AVOIRS_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="FACTURE_CLIENT" ColumnName="FACTURE_CLIENT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="Exttva" ColumnName="Exttva" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+          <ScalarProperty Name="Expr8" ColumnName="Expr8" />
+          <ScalarProperty Name="Expr9" ColumnName="Expr9" />
+          <ScalarProperty Name="Expr10" ColumnName="Expr10" />
+          <ScalarProperty Name="Expr11" ColumnName="Expr11" />
+          <ScalarProperty Name="Expr12" ColumnName="Expr12" />
+          <ScalarProperty Name="Clt" ColumnName="Clt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_LISE_BON_LIVRAISONS">
+      <EntityTypeMapping TypeName="TrModel.PRINT_LISE_BON_LIVRAISONS">
+        <MappingFragment StoreEntitySet="PRINT_LISE_BON_LIVRAISONS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="COMMANDE_CLIENT" ColumnName="COMMANDE_CLIENT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_LISE_COMMANDES_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.PRINT_LISE_COMMANDES_CLIENTS">
+        <MappingFragment StoreEntitySet="PRINT_LISE_COMMANDES_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="DEVIS_CLIENT" ColumnName="DEVIS_CLIENT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_LISE_DEVIS_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.PRINT_LISE_DEVIS_CLIENTS">
+        <MappingFragment StoreEntitySet="PRINT_LISE_DEVIS_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_LISE_FACTURE_CLIENTS">
+      <EntityTypeMapping TypeName="TrModel.PRINT_LISE_FACTURE_CLIENTS">
+        <MappingFragment StoreEntitySet="PRINT_LISE_FACTURE_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="COMMANDE_CLIENT" ColumnName="COMMANDE_CLIENT" />
+          <ScalarProperty Name="DEVIS_CLIENT" ColumnName="DEVIS_CLIENT" />
+          <ScalarProperty Name="BON_LIVRAISON_CLIENT" ColumnName="BON_LIVRAISON_CLIENT" />
+          <ScalarProperty Name="PAYEE" ColumnName="PAYEE" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TIMBRE" ColumnName="TIMBRE" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_LISTE_BR">
+      <EntityTypeMapping TypeName="TrModel.PRINT_LISTE_BR">
+        <MappingFragment StoreEntitySet="PRINT_LISTE_BR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="FOURNISSEUR" ColumnName="FOURNISSEUR" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="Prix_achat" ColumnName="Prix_achat" />
+          <ScalarProperty Name="DESIGNATION_PRODUIT" ColumnName="DESIGNATION_PRODUIT" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="PRIX_UNITAIRE_HT" ColumnName="PRIX_UNITAIRE_HT" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TOTALE_REMISE_HT" ColumnName="TOTALE_REMISE_HT" />
+          <ScalarProperty Name="TOTALE_HT" ColumnName="TOTALE_HT" />
+          <ScalarProperty Name="TVA" ColumnName="TVA" />
+          <ScalarProperty Name="TOTALE_TTC" ColumnName="TOTALE_TTC" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous_Categorie" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Devise" ColumnName="Devise" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_LISTE_DEVIS_FOURNISSEURS">
+      <EntityTypeMapping TypeName="TrModel.PRINT_LISTE_DEVIS_FOURNISSEURS">
+        <MappingFragment StoreEntitySet="PRINT_LISTE_DEVIS_FOURNISSEURS">
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product ID" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="QUANTITE" ColumnName="QUANTITE" />
+          <ScalarProperty Name="Libelle_Prd" ColumnName="Libelle_Prd" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="FOURNISSEUR" ColumnName="FOURNISSEUR" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="PU_HT_Sans_Remise" ColumnName="PU HT Sans Remise" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="QUANTITE_REPTURE_STOCK" ColumnName="QUANTITE_REPTURE_STOCK" />
+          <ScalarProperty Name="PU_TTC" ColumnName="PU TTC" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Sous_Categorie" ColumnName="Sous-Categorie" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_LISTE_FACTURE_FOURNISSEUR">
+      <EntityTypeMapping TypeName="TrModel.PRINT_LISTE_FACTURE_FOURNISSEUR">
+        <MappingFragment StoreEntitySet="PRINT_LISTE_FACTURE_FOURNISSEUR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="Societes" ColumnName="Societes" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="FOURNISSEUR" ColumnName="FOURNISSEUR" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="VALIDER" ColumnName="VALIDER" />
+          <ScalarProperty Name="PAYEE" ColumnName="PAYEE" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="TIMBRE" ColumnName="TIMBRE" />
+          <ScalarProperty Name="Tiers" ColumnName="Tiers" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="CODE_ACCES" ColumnName="CODE_ACCES" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="SociID" ColumnName="SociID" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRINT_RETENUE">
+      <EntityTypeMapping TypeName="TrModel.PRINT_RETENUE">
+        <MappingFragment StoreEntitySet="PRINT_RETENUE">
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MODE_PAIEMENT" ColumnName="MODE_PAIEMENT" />
+          <ScalarProperty Name="THT" ColumnName="THT" />
+          <ScalarProperty Name="NHT" ColumnName="NHT" />
+          <ScalarProperty Name="TTVA" ColumnName="TTVA" />
+          <ScalarProperty Name="TTC" ColumnName="TTC" />
+          <ScalarProperty Name="TNET" ColumnName="TNET" />
+          <ScalarProperty Name="TIMBRE" ColumnName="TIMBRE" />
+          <ScalarProperty Name="REMISE" ColumnName="REMISE" />
+          <ScalarProperty Name="PAYEE" ColumnName="PAYEE" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="SITE_WEB" ColumnName="SITE_WEB" />
+          <ScalarProperty Name="ID_FISCAL" ColumnName="ID_FISCAL" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="RIB" ColumnName="RIB" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="Exttva" ColumnName="Exttva" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+          <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+          <ScalarProperty Name="Expr8" ColumnName="Expr8" />
+          <ScalarProperty Name="Expr9" ColumnName="Expr9" />
+          <ScalarProperty Name="Expr10" ColumnName="Expr10" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Societe_Centre_Couts" TypeName="TrModel.Societe_Centre_Couts" StoreEntitySet="Societe_Centre_Couts">
+      <EndProperty Name="Categorie">
+        <ScalarProperty Name="CentreID" ColumnName="CentreID" />
+      </EndProperty>
+      <EndProperty Name="Societes">
+        <ScalarProperty Name="SociID" ColumnName="SociID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Societe_Tiers" TypeName="TrModel.Societe_Tiers" StoreEntitySet="Societe_Tiers">
+      <EndProperty Name="Societes">
+        <ScalarProperty Name="SociID" ColumnName="SociID" />
+      </EndProperty>
+      <EndProperty Name="Tiers">
+        <ScalarProperty Name="TiersID" ColumnName="TiersID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="TrModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="TrModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="TrModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="TrModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="TrModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="TrModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="TrModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

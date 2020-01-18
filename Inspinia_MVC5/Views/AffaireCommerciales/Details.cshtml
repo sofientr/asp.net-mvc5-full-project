@@ -1,0 +1,183 @@
+﻿@model Inspinia_MVC5.Models.AffaireCommerciales
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Details</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+            <li class="active">
+                <strong>Details</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Details AffaireCommerciale</h5>
+                </div>
+                <div class="ibox-content">
+
+
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Reference)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Reference)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Designation)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Designation)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+                        <dt>
+                            CLIENTS
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CLIENTS.NOM)
+                        </dd>
+                        @*<dt>
+                            @Html.DisplayNameFor(model => model.DateDebut)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DateDebut)
+                        </dd>*@
+
+                        @*<dt>
+                            @Html.DisplayNameFor(model => model.DateFin)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DateFin)
+                        </dd>*@
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.EtatSoum)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.EtatSoum)
+                        </dd>
+                       
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Delai_de_Soumission)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Delai_de_Soumission)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Date_de_Soumission)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Date_de_Soumission)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DateConsultation)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DateConsultation)
+                        </dd>
+                     
+                       
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Importance)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Importance)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NbHeurePrepOffre)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.NbHeurePrepOffre)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.faisabilite)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.faisabilite)
+                        </dd>
+
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.AffaireObtenue)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.AffaireObtenue)
+                        </dd>
+
+
+
+                        <dt>
+                            Responsable Commerciale
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Personnels3.Nom)
+                        </dd>
+
+                        <dt>
+                            Responsable Technique
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Personnels.Nom)
+                        </dd>
+
+                        <dt>
+                            Coordinateur Commerciale
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Personnels1.Nom)
+                        </dd>
+
+                        <dt>
+                            Coordinateur Réalisation
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Personnels2.Nom)
+                        </dd>
+
+                    </dl>
+                </div>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.AffaireCommercialeId }) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+ 

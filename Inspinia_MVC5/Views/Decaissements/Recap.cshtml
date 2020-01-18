@@ -1,0 +1,958 @@
+﻿@model Inspinia_MVC5.Models.MonViewModel
+@{
+    ViewBag.Title = "Recap";
+}
+
+
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Index</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Centres_couts</strong>
+               </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+
+
+                    <div class="ibox-title">
+                       
+                        
+                        <form method="post" action="">
+                            <fieldset>
+                                <div class="ibox-content">
+
+
+                                    <div class="form-group" id="data_1">
+                                        <label class="font-noraml"><h5> Choisir une année :</h5></label>
+                                        <select name="ann" id="ann" class="form-control m-b" >
+                                            <option >2017</option>
+                                            <option>2016</option>
+                                            <option>2015</option>
+                                                  
+                                        </select>
+                                        <button type="submit" class="btn btn-primary"><strong>OK</strong></button>
+
+
+                                    </div>
+
+                                </div>
+
+                            </fieldset>
+
+                        </form>
+<!--
+    
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+-->
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+
+
+                    <div class="ibox-title">
+                        <h5>Decaissements</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li>
+                                    <a href="#">Config option 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Depenses/Centres_couts</th>
+                                    <th>Jan</th>
+                                    <th>Feve</th>
+                                    <th>Mars</th>
+                                    <th>Avril</th>
+                                    <th>Mai</th>
+                                    <th>Juin</th>
+                                    <th>Juill</th>
+                                    <th>Aout</th>
+                                    <th>Sept</th>
+                                    <th>Oct</th>
+                                    <th>Nov</th>
+                                    <th>Dec</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--
+                                <tr>
+                                  
+                                      <td>Solde Début de mois</td>
+                                    
+                                    <td>5000</td>
+                                    <td>5000</td>
+                                    <td>5000</td>
+                                    <td>5000</td>
+                                    <td>5000</td>
+                                    <td>5000</td>
+                                    <td>5000</td>
+                                    <td>5000</td>
+                                    <td>5000</td>
+                                    <td>5000</td>
+                                    <td>5000</td>
+                                    <td>5000</td>
+
+
+                                </tr>
+                                      -->
+                                @{
+                                    decimal s1 = 0;
+                                    decimal s2 = 0;
+                                    decimal s3 = 0;
+                                    decimal s4 = 0;
+                                    decimal s5 = 0;
+                                    decimal s6 = 0;
+                                    decimal s7 = 0;
+                                    decimal s8 = 0;
+                                    decimal s9 = 0;
+                                    decimal s10 = 0;
+                                    decimal s11 = 0;
+                                    decimal s12 = 0;
+
+                                }
+
+
+
+                                @{       
+
+
+                                    decimal[] tab11 = new decimal[12];
+
+
+
+
+
+
+}
+
+
+                              
+
+
+
+
+                                @foreach (var centre in Model.Modele3s)
+                                {
+                                    if (IsPost)
+                                    {
+
+
+                                    <tr>
+
+                                        <td class="text-navy"> @centre.Libelle</td>
+                                        @foreach (var d in Model.Modele1s)
+                                        {
+                                            if (d.CentreID == centre.CentreID)
+                                            {
+
+
+                                                foreach (var cat in Model.Modele2s)
+                                                {
+                                                    decimal[] tab1 = new decimal[12];
+
+                                                    if (cat.CatID == d.CatID)
+                                                    {
+                                                        Int32 annee = d.Date.Value.Year;
+                                                        Int32 Month = d.Date.Value.Month;
+                                                        string ann1 = Request.Form["ann"];
+
+
+                                                        <br />
+                                                    <tr>
+                                                        <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@cat.Libelle</td>
+                                                        @{ decimal x;}
+                                                        @if (d.Prix == null) {  x = 0; } else {
+                                                            x = (decimal) d.Prix ;   }
+                                                        @if (ann1.Equals("" + annee) && (Month == 1))
+                                                        {
+                                                            tab1[0] = (decimal)x;
+                                                            s1 = s1 + tab1[0];
+                                                        }
+                                                        @if (ann1.Equals("" + annee) && (Month == 2))
+                                                        {
+                                                            tab1[1] = (decimal)x;
+                                                            s2 = s2 + tab1[1];
+
+                                                        }
+                                                        @if (ann1.Equals("" + annee) && (Month == 3))
+                                                        {
+                                                            tab1[2] = (decimal)x;
+                                                            s3 = s3 + tab1[2];
+
+                                                        }
+                                                        @if (ann1.Equals("" + annee) & (Month == 4))
+                                                        {
+                                                            tab1[3] = (decimal)x;
+                                                            s4 = s4 + tab1[3];
+
+                                                        }
+                                                        @if (ann1.Equals("" + annee) && (Month == 5))
+                                                        {
+                                                            tab1[4] = (decimal)x;
+                                                            s5 = s5 + tab1[4];
+
+                                                        }
+                                                        @if (ann1.Equals("" + annee) && (Month == 6))
+                                                        {
+                                                            tab1[5] = (decimal)x;
+                                                            s6 = s6 + tab1[5];
+
+                                                        }
+                                                        @if (ann1.Equals("" + annee) && (Month == 7))
+                                                        {
+                                                            tab1[6] = (decimal)x;
+                                                            s7 = s7 + tab1[6];
+
+                                                        }
+                                                        @if (ann1.Equals("" + annee) && (Month == 8))
+                                                        {
+                                                            tab1[7] = (decimal)x;
+                                                            s8 = s8 + tab1[7];
+
+                                                        }
+                                                        @if (ann1.Equals("" + annee) && (Month == 9))
+                                                        {
+                                                            tab1[8] = (decimal)x;
+                                                            s9 = s9 + tab1[8];
+
+                                                        }
+                                                        @if (ann1.Equals("" + annee) && (Month == 10))
+                                                        {
+                                                            tab1[9] = (decimal)x;
+                                                            s10 = s10 + tab1[9];
+
+                                                        }
+                                                        @if (ann1.Equals("" + annee) && (Month == 11))
+                                                        {
+                                                            tab1[10] = (decimal)x;
+                                                            s11 = s11 + tab1[10];
+
+                                                        }
+                                                        @if (ann1.Equals("" + annee) && (Month == 12))
+                                                        {
+                                                            tab1[11] = (decimal)x;
+                                                            s12 = s12 + tab1[11];
+
+                                                        }
+                                                        @{
+                                                            tab11 = tab1;
+
+                                                        }
+                                                        @for (int i = 1; i < 13; i++)
+                                                        {
+                                                            <td>
+                                                                @tab1[i - 1]
+                                                            </td>
+
+                                                        }
+
+                                                       
+
+
+                                                       
+
+                                                    </tr>
+
+
+                                                                        }
+
+                                                                    }
+
+                                                                }
+
+                                                            }
+                                    
+                                
+                                        
+                                </tr>
+
+
+                                                            }
+
+                                <!--  -->
+
+                                                            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -------------------------------------------------------------------------------------------->
+
+
+
+
+                                <tr>
+
+                                    <td class="text-warning"> Depenses Totales par mois</td>
+                                    <td class="text-warning"> @s1</td>
+                                    <td class="text-warning"> @s2</td>
+                                    <td class="text-warning"> @s3</td>
+                                    <td class="text-warning"> @s4</td>
+                                    <td class="text-warning"> @s5</td>
+                                    <td class="text-warning"> @s6</td>
+                                    <td class="text-warning"> @s7</td>
+                                    <td class="text-warning"> @s8</td>
+                                    <td class="text-warning"> @s9</td>
+                                    <td class="text-warning"> @s10</td>
+                                    <td class="text-warning"> @s11</td>
+                                    <td class="text-warning"> @s12</td>
+                                </tr>
+
+
+
+
+
+
+
+
+
+                                <!--                                   -->
+                                <!-- ------------------------------------------------------------------------------------------------------ -->
+                                <!-- ------------------------------------------------------------------------------------------------------ -->
+                                <!--  -------------------------------------------------------------------------------->
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    
+
+
+    
+
+
+
+                        
+
+
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+
+
+                    <div class="ibox-title">
+                        <h5>Encaissements</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li>
+                                    <a href="#">Config option 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Factures & Projets</th>
+                                    <th>Jan</th>
+                                    <th>Feve</th>
+                                    <th>Mars</th>
+                                    <th>Avril</th>
+                                    <th>Mai</th>
+                                    <th>Juin</th>
+                                    <th>Juill</th>
+                                    <th>Aout</th>
+                                    <th>Sept</th>
+                                    <th>Oct</th>
+                                    <th>Nov</th>
+                                    <th>Dec</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+    <!--
+                                    <tr>
+                                        <td>Solde Début de mois</td>
+
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+
+
+                                    </tr>
+        --!>
+                                    @{
+                                        decimal a1 = 0;
+                                        decimal a2 = 0;
+                                        decimal a3 = 0;
+                                        decimal a4 = 0;
+                                        decimal a5 = 0;
+                                        decimal a6 = 0;
+                                        decimal a7 = 0;
+                                        decimal a8 = 0;
+                                        decimal a9 = 0;
+                                        decimal a10 = 0;
+                                        decimal a11 = 0;
+                                        decimal a12 = 0;
+
+                                    }
+
+
+    @{                                     decimal[] tab22 = new decimal[12];
+    }
+
+
+
+                                    <!-- ------------------------------------------------------------------------------------------ -->
+
+    @foreach (var fact in Model.Modele5s)
+    {
+        if (IsPost)
+        {
+
+            Int32 annee = fact.DateFact.Value.Year;
+            Int32 Month = fact.DateFact.Value.Month;
+            string ann1 = Request.Form["ann"];
+
+       
+        <br />
+        <tr>
+
+            <td class="text-navy"> <a href="http://localhost:58893/Facturations/Details/@fact.Commande.CmdID">@fact.NomFact</a></td>
+            @if (ann1.Equals("" + annee) && (Month == 1))
+            {
+                tab22[0] = (decimal)fact.Commande.Prix_Totale;
+                a1 = a1 + tab22[0];
+            }
+            @if (ann1.Equals("" + annee) && (Month == 2))
+            {
+                tab22[1] = (decimal)fact.Commande.Prix_Totale;
+                a2 = a2 + tab22[1];
+            }
+            @if (ann1.Equals("" + annee) && (Month == 3))
+            {
+                tab22[2] = (decimal)fact.Commande.Prix_Totale;
+                a3 = a3 + tab22[2];
+            }
+            @if (ann1.Equals("" + annee) && (Month == 4))
+            {
+                tab22[3] = (decimal)fact.Commande.Prix_Totale;
+                a4 = a4 + tab22[3];
+            }
+            @if (ann1.Equals("" + annee) && (Month == 5))
+            {
+                tab22[4] = (decimal)fact.Commande.Prix_Totale;
+                a5 = a5 + tab22[4];
+            }
+            @if (ann1.Equals("" + annee) && (Month == 6))
+            {
+                tab22[5] = (decimal)fact.Commande.Prix_Totale;
+                a6 = a6 + tab22[5];
+            }
+            @if (ann1.Equals("" + annee) && (Month == 7))
+            {
+                tab22[6] = (decimal)fact.Commande.Prix_Totale;
+                a7 = a7 + tab22[6];
+            }
+            @if (ann1.Equals("" + annee) && (Month == 8))
+            {
+                tab22[7] = (decimal)fact.Commande.Prix_Totale;
+                a8 = a8 + tab22[7];
+            }
+            @if (ann1.Equals("" + annee) && (Month == 9))
+            {
+                tab22[8] = (decimal)fact.Commande.Prix_Totale;
+                a9 = a9 + tab22[8];
+            }
+            @if (ann1.Equals("" + annee) && (Month == 10))
+            {
+                tab22[9] = (decimal)fact.Commande.Prix_Totale;
+                a10 = a10 + tab22[9];
+            }
+            @if (ann1.Equals("" + annee) && (Month == 11))
+            {
+                tab22[10] = (decimal)fact.Commande.Prix_Totale;
+                a11 = a11 + tab22[10];
+            }
+            @if (ann1.Equals("" + annee) && (Month == 12))
+            {
+                tab22[11] = (decimal)fact.Commande.Prix_Totale;
+                a12 = a12 + tab22[11];
+            }
+
+            @for (int jj = 1; jj < 13; jj++)
+            {
+                <td>
+                    @tab22[jj - 1]
+                </td>
+
+            }
+
+
+
+
+
+
+        </tr>
+
+        }
+
+    }
+
+    </tr>
+
+    <!-- ------------------------------------------------------------------------------------------------->
+    <tr>
+
+        <td class="text-warning"> Encaissements Totals par mois</td>
+        <td class="text-warning"> @a1</td>
+        <td class="text-warning"> @a2</td>
+        <td class="text-warning"> @a3</td>
+        <td class="text-warning"> @a4</td>
+        <td class="text-warning"> @a5</td>
+        <td class="text-warning"> @a6</td>
+        <td class="text-warning"> @a7</td>
+        <td class="text-warning"> @a8</td>
+        <td class="text-warning"> @a9</td>
+        <td class="text-warning"> @a10</td>
+        <td class="text-warning"> @a11</td>
+        <td class="text-warning"> @a12</td>
+    </tr>
+
+
+
+
+
+
+                                <!--                                   -->
+                                <!-- ------------------------------------------------------------------------------------------------------ -->
+                                <!-- ------------------------------------------------------------------------------------------------------ -->
+                                <!--  -------------------------------------------------------------------------------->
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                        <div class="wrapper wrapper-content animated fadeInRight">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox float-e-margins">
+
+                                        <div class="ibox-content">
+
+
+                                            <div class="ibox-title">
+                                                <h5>Gain ou Perte / mois</h5>
+                                                <div class="ibox-tools">
+                                                    <a class="collapse-link">
+                                                        <i class="fa fa-chevron-up"></i>
+                                                    </a>
+                                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                                        <i class="fa fa-wrench"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-user">
+                                                        <li>
+                                                            <a href="#">Config option 1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Config option 2</a>
+                                                        </li>
+                                                    </ul>
+                                                    <a class="close-link">
+                                                        <i class="fa fa-times"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="ibox-content">
+
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th>Jan</th>
+                                                            <th>Feve</th>
+                                                            <th>Mars</th>
+                                                            <th>Avril</th>
+                                                            <th>Mai</th>
+                                                            <th>Juin</th>
+                                                            <th>Juill</th>
+                                                            <th>Aout</th>
+                                                            <th>Sept</th>
+                                                            <th>Oct</th>
+                                                            <th>Nov</th>
+                                                            <th>Dec</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!--
+                                    <tr>
+
+                                          <td>Solde Début de mois</td>
+
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+
+
+                                    </tr>
+                                          -->
+
+
+                                                        @{
+
+
+                                                            decimal[] tabb = new decimal[12];
+                                                            decimal[] res = new decimal[12];
+
+
+
+
+
+
+                                                        }
+
+
+
+
+
+
+                                                        @{
+
+                                                            if (IsPost)
+                                                            {
+                                                                decimal r1 = a1 - s1;
+                                                                decimal r2 = a2 - s2;
+                                                                decimal r3 = a3 - s3;
+                                                                decimal r4 = a4 - s4;
+                                                                decimal r5 = a5 - s5;
+                                                                decimal r6 = a6 - s6;
+                                                                decimal r7 = a7 - s7;
+                                                                decimal r8 = a8 - s8;
+                                                                decimal r9 = a9 - s9;
+                                                                decimal r10 = a10 - s10;
+                                                                decimal r11 = a11 - s11;
+                                                                decimal r12 = a12 - s12;
+
+                                                                <tr>
+
+                                                                    <td> Gain ou Perte / mois</td>
+                                                                   @{ 
+
+
+
+                                                                       if (r1 < 0)
+                                                                       {
+                                                                     <td class="text-danger"> @r1</td>
+                                                                       }
+                                                                       else if (r1 > 0)
+                                                                       {
+                                                                        <td class="text-success">+ @r1</td>
+                                                                       }
+                                                                       else
+                                                                       {
+                                                                        <td> @r1</td>
+                                                                       }
+                                                                       //
+
+                                                                       if (r2 < 0)
+                                                                       {
+                                                                     <td class="text-danger"> @r2</td>
+                                                                       }
+                                                                       else if (r2 > 0)
+                                                                       {
+                                                                        <td class="text-success">+ @r2</td>
+                                                                       }
+                                                                       else
+                                                                       {
+                                                                        <td> @r2</td>
+                                                                       }
+                                                                       //
+                                                                       if (r3 < 0)
+                                                                       {
+                                                                        <td class="text-danger"> @r3</td>
+                                                                       }
+                                                                       else if (r3 > 0)
+                                                                       {
+                                                                        <td class="text-success">+ @r3</td>
+                                                                       }
+                                                                       else
+                                                                       {
+                                                                        <td> @r3</td>
+                                                                       }
+                                                                       //
+                                                                       if (r4 < 0)
+                                                                       {
+                                                                        <td class="text-danger"> @r4</td>
+                                                                       }
+                                                                       else if (r4 > 0)
+                                                                       {
+                                                                        <td class="text-success">+ @r4</td>
+                                                                       }
+                                                                       else
+                                                                       {
+                                                                        <td> @r4</td>
+                                                                       }
+                                                                       //
+                                                                       if (r5 < 0)
+                                                                       {
+                                                                        <td class="text-danger"> @r5</td>
+                                                                       }
+                                                                       else if (r5 > 0)
+                                                                       {
+                                                                        <td class="text-success">+ @r5</td>
+                                                                       }
+                                                                       else
+                                                                       {
+                                                                        <td> @r5</td>
+                                                                       }
+                                                                       //
+                                                                       if (r6 < 0)
+                                                                       {
+                                                                        <td class="text-danger"> @r6</td>
+                                                                       }
+                                                                       else if (r6 > 0)
+                                                                       {
+                                                                        <td class="text-success">+ @r6</td>
+                                                                       }
+                                                                       else
+                                                                       {
+                                                                        <td> @r6</td>
+                                                                       }
+                                                                       //
+                                                                       if (r7 < 0)
+                                                                       {
+                                                                        <td class="text-danger"> @r7</td>
+                                                                       }
+                                                                       else if (r7 > 0)
+                                                                       {
+                                                                        <td class="text-success">+ @r7</td>
+                                                                       }
+                                                                       else
+                                                                       {
+                                                                        <td> @r7</td>
+                                                                       }
+                                                                       //
+                                                                       if (r8 < 0)
+                                                                       {
+                                                                        <td class="text-danger"> @r8</td>
+                                                                                   }
+                                                                       else if (r8 > 0)
+                                                                                   {
+                                                                        <td class="text-success">+ @r8</td>
+                                                                           }
+                                                                       else
+                                                                       {
+                                                                        <td> @r8</td>
+                                                                       }
+                                                                       // 
+                                                                       if (r9 < 0)
+                                                                       {
+                                                                     <td class="text-danger"> @r9</td>
+                                                                       }
+                                                                       else if (r9 > 0)
+                                                                       {
+                                                                        <td class="text-success">+ @r9</td>
+                                                                       }
+                                                                       else
+                                                                       {
+                                                                        <td> @r9</td>
+                                                                       }
+                                                                       //
+                                                                       if (r10 < 0)
+                                                                       {
+                                                                        <td class="text-danger"> @r10</td>
+                                                                       }
+                                                                       else if (r10 > 0)
+                                                                       {
+                                                                        <td class="text-success">+ @r10</td>
+                                                                       }
+                                                                       else
+                                                                       {
+                                                                        <td> @r10</td>
+                                                                       }
+                                                                       //
+                                                                       if (r11 < 0)
+                                                                       {
+                                                                        <td class="text-danger"> @r11</td>
+                                                                       }
+                                                                       else if (r11 > 0)
+                                                                       {
+                                                                        <td class="text-success">+ @r11</td>
+                                                                       }
+                                                                       else
+                                                                       {
+                                                                        <td> @r11</td>
+                                                                       }
+                                                                       //
+                                                                       if (r12 < 0)
+                                                                       {
+                                                                        <td class="text-danger"> @r12</td>
+                                                                       }
+                                                                       else if (r12 > 0)
+                                                                       {
+                                                                        <td class="text-success">+ @r12</td>
+                                                                       }
+                                                                       else
+                                                                       {
+                                                                        <td> @r12</td>
+                                                                       }
+                                                                       //
+
+
+
+
+
+
+
+                                                                       //
+
+                                                                }
+
+
+                                                                </tr>
+                                                            }
+
+                                                        }
+
+
+
+                                                        </tr>
+
+
+
+
+
+
+                                                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        <!-- -------------------------------------------------------------------------------------------->
+                                                        <!--                                   -->
+                                                        <!-- ------------------------------------------------------------------------------------------------------ -->
+                                                        <!-- ------------------------------------------------------------------------------------------------------ -->
+                                                        <!--  -------------------------------------------------------------------------------->
+
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>

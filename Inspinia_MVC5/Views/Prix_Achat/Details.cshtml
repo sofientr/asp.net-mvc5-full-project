@@ -1,0 +1,302 @@
+﻿@model Inspinia_MVC5.Models.Prix_Achat
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Details</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+
+            <li class="active">
+                <strong>article details</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox product-detail">
+                <div class="ibox-content">
+
+                    <div class="row">
+                        <div class="col-md-5">
+
+
+                            <div class="product-images">
+
+                                <div>
+                                    <div class="image-imitation">
+                                        [IMAGE 1]
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="image-imitation">
+                                        [IMAGE 2]
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="image-imitation">
+                                        [IMAGE 3]
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-7">
+
+                            <h2 class="font-bold m-b-xs">
+                                Desktop publishing software
+                            </h2>
+                            <small>Many desktop publishing packages and web page editors now.</small>
+                            <div class="m-t-md">
+                                <h2 class="product-main-price">$406,602 <small class="text-muted">Exclude Tax</small> </h2>
+                            </div>
+                            <hr>
+
+                            <h4>Product description</h4>
+
+                            <div class="small text-muted">
+                                It is a long established fact that a reader will be distracted by the readable
+                                content of a page when looking at its layout. The point of using Lorem Ipsum is
+
+                                <br />
+                                <br />
+                                There are many variations of passages of Lorem Ipsum available, but the majority
+                                have suffered alteration in some form, by injected humour, or randomised words
+                                which don't look even slightly believable.
+                            </div>
+                            <dl class="small m-t-md">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Designation)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Designation)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.PU_HT_Sans_Remise)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.PU_HT_Sans_Remise)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Remise)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Remise)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.PU_HT_Avec_Remise)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.PU_HT_Avec_Remise)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.PU_TTC)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.PU_TTC)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Date_offre_de_prix)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Date_offre_de_prix)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Duree_de_validite)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Duree_de_validite)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.N_Offre_de_Prix)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.N_Offre_de_Prix)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Categorie1.Libelle)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Categorie1.Libelle)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Devise1.Nom_Devise)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Devise1.Nom_Devise)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Fournisseur1.NOM)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Fournisseur1.NOM)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Marque1.Nom_marque)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Marque1.Nom_marque)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Sous_Categorie1.Libelle)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Sous_Categorie1.Libelle)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.TVA.Valeur_TVA)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.TVA.Valeur_TVA)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Unite1.Valeur_Unite)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Unite1.Valeur_Unite)
+                                </dd>
+
+
+                            </dl>
+                            <hr>
+
+                            <div>
+                                <div class="btn-group">
+                                    <button class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to cart</button>
+                                    <button class="btn btn-white btn-sm"><i class="fa fa-star"></i> Add to wishlist </button>
+                                    <button class="btn btn-white btn-sm"><i class="fa fa-envelope"></i> Contact with author </button>
+                                </div>
+                            </div>
+                            <div>
+                                @Html.ActionLink("Edit", "Edit", new { id = Model.Product_ID }, new { @class = "btn btn-primary" })
+                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-white" })
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="ibox-footer">
+                    <span class="pull-right">
+                        Full stock - <i class="fa fa-clock-o"></i> 14.04.2016 10:04 pm
+                    </span>
+                    The generated Lorem Ipsum is therefore always free
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+@section Styles {
+    @Styles.Render("~/plugins/slickStyles")
+    @Styles.Render("~/plugins/slickThemeStyles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/slick")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            $('.product-images').slick({
+                dots: true
+            });
+
+        });
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

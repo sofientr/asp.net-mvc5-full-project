@@ -1,0 +1,175 @@
+﻿@model Inspinia_MVC5.Models.CLIENTS
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>CLIENTS</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.CODE, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @*@Html.EditorFor(model => model.CODE)
+        @Html.ValidationMessageFor(model => model.CODE)*@
+                <input type="text" class="form-control" readonly="true" name="CODE" id="CODE" value="@ViewBag.Numero">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NOM, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.NOM)
+                @Html.ValidationMessageFor(model => model.NOM)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ADRESSE, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.ADRESSE, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.ADRESSE)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TELEPHONE, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.TELEPHONE)
+                @Html.ValidationMessageFor(model => model.TELEPHONE)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FAX, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.FAX)
+                @Html.ValidationMessageFor(model => model.FAX)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EMAIL, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.EMAIL)
+                @Html.ValidationMessageFor(model => model.EMAIL)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SITE_WEB, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.SITE_WEB)
+                @Html.ValidationMessageFor(model => model.SITE_WEB)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ID_FISCAL, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.ID_FISCAL, new { htmlAttributes = new { @class = "form-control", required = "required" }})
+                @Html.ValidationMessageFor(model => model.ID_FISCAL)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AI, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.AI)
+                @Html.ValidationMessageFor(model => model.AI)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NIS, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.NIS)
+                @Html.ValidationMessageFor(model => model.NIS)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RC, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.RC)
+                @Html.ValidationMessageFor(model => model.RC)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RIB, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.RIB)
+                @Html.ValidationMessageFor(model => model.RIB)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CONTACT, new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.CONTACT)
+                @Html.ValidationMessageFor(model => model.CONTACT)
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" value="Create" class="btn btn-primary" onclick="update_clients2()" />
+                @Html.ActionLink("Cancel", "FormDevis", new { Mode = ViewBag.Mode, Code = ViewBag.Code, Date = ViewBag.Date, numero = ViewBag.numeroo, designation = ViewBag.designation, modePaiement = ViewBag.modePaiement, client = ViewBag.client, codeClient = ViewBag.codeClient, Tiers = ViewBag.Tiers, remise = ViewBag.remise }, null)
+            </div>
+        </div>
+    </div>
+}
+
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+<script>
+   
+
+   
+    function update_clients2() {
+        
+        var mode = "@ViewBag.Mode";
+        var code = "@ViewBag.Code";
+        var Date = "@ViewBag.Date";
+        var numero="@ViewBag.numeroo";
+        var designation = decodeHtml("@ViewBag.designation");
+        var modePaiement = decodeHtml("@ViewBag.modePaiement");
+        var client = decodeHtml("@ViewBag.client");
+        var codeClient="@ViewBag.codeClient";
+        var Tiers = decodeHtml("@ViewBag.Tiers");
+        var remise ="@ViewBag.remise";
+        $.ajax({
+            type: 'POST',
+
+            url: "/Vente/AddClient?Code=" + CODE.value + "&NOM=" + NOM.value + "&Adresse=" + ADRESSE.value + "&TELEPHONE=" + TELEPHONE.value + "&FAX=" + FAX.value + "&EMAIL=" + EMAIL.value + "&SITE_WEB=" + SITE_WEB.value + "&ID_FISCAL=" + ID_FISCAL.value + "&AI=" + AI.value + "&NIS=" + NIS.value + "&RC=" + RC.value + "&RIB=" + RIB.value + "&CONTACT=" + CONTACT.value ,
+            success: function (response) {
+
+                $("#Code").val("");
+                $("#NOM").val("");
+                $("#ADRESSE").val("");
+                $("#TELEPHONE").val(0);
+                $("#FAX").val(0);
+                $("#EMAIL").val("");
+                $("#RIB").val("");
+                $("#RC").val("");
+                $("#NIS").val("");
+                $("#CONTACT").val("");
+                $("#AI").val("");
+                $("#ID_FISCAL").val("");
+                $("#SITE_WEB").val("");
+
+                window.location.href = "/Vente/FormDevis?Mode=" + mode + "&Code=" + code + "&Date=" + Date + "&numero=" + numero + "&designation=" + designation + "&modePaiement=" + modePaiement + "&client=" + client + "&codeClient=" + codeClient + "&Tiers=" + Tiers + "&remise=" + remise;
+            }
+        });
+    }
+    function decodeHtml(html) {
+        var txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+    }
+</script>

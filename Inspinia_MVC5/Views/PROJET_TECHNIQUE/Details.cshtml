@@ -1,0 +1,122 @@
+﻿@model Inspinia_MVC5.Models.PROJET_TECHNIQUE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PROJET_TECHNIQUE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Reference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reference)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AffaireCommerciales.Reference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AffaireCommerciales.Reference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLIENTS.CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLIENTS.CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnCourExecution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnCourExecution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AffaireObtenue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AffaireObtenue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateLivraison)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateLivraison)
+        </dd>
+
+        <dt>
+            Responsable Commerciale
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personnels3.Nom)
+        </dd>
+
+        <dt>
+            Responsable Technique
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personnels.Nom)
+        </dd>
+
+        <dt>
+            Coordinateur Commerciale
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personnels1.Nom)
+        </dd>
+
+        <dt>
+            Coordinateur Réalisation
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personnels2.Nom)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProjetTechniqueId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

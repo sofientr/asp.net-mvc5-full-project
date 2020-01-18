@@ -1,0 +1,498 @@
+﻿
+@model Inspinia_MVC5.Models.MonViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Index</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Direction</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+@{
+    decimal TotalDA = 0;
+    decimal TotalDT = 0;
+    decimal TotalDF = 0;
+    decimal TotalDC = 0;
+
+
+    decimal BudgetDA = 0;
+    decimal BudgetDT = 0;
+    decimal BudgetDF = 0;
+    decimal BudgetDC = 0;
+
+
+    decimal PrixTotalDa = 0;
+    decimal PrixTotalDf = 0;
+    decimal PrixTotalDt = 0;
+    decimal PrixTotalDc = 0;
+    int an = DateTime.Today.Year;
+    string ann1 = an.ToString();
+}
+
+@foreach (var item in Model.Modele1s)
+{
+    foreach (var item1 in Model.Modele7s)
+    {
+        if (item.Demandeur.Equals(item1.NOM) && item1.Direction1.Equals("da") && item.Date.Value.Year==an)
+        { if (item.Prix == null)
+            { PrixTotalDa = PrixTotalDa + 0; }
+            else
+
+            { PrixTotalDa = PrixTotalDa + (decimal)item.Prix; }
+        }
+        //
+        if (item.Demandeur.Equals(item1.NOM) && item1.Direction1.Equals("df") && item.Date.Value.Year == an)
+        {
+            if (item.Prix == null)
+            { PrixTotalDf = PrixTotalDf + 0; }
+            else
+
+            { PrixTotalDf = PrixTotalDf + (decimal)item.Prix; }
+        }
+        //
+        if (item.Demandeur.Equals(item1.NOM) && item1.Direction1.Equals("dt") && item.Date.Value.Year == an)
+        {
+            if (item.Prix == null)
+            { PrixTotalDt = PrixTotalDt + 0; }
+            else
+
+            { PrixTotalDt = PrixTotalDt + (decimal)item.Prix; }
+        }
+        //
+        if (item.Demandeur.Equals(item1.NOM) && item1.Direction1.Equals("dc") && item.Date.Value.Year == an)
+        {
+            if (item.Prix == null)
+            { PrixTotalDc = PrixTotalDc + 0; }
+            else
+
+            { PrixTotalDc = PrixTotalDc + (decimal)item.Prix; }
+        }
+
+
+
+    }
+
+}
+
+@foreach (var item in Model.Modele8s)
+{
+    if (item.Nom.Equals("da"))
+    {
+        TotalDA = TotalDA + (decimal)item.Budget;
+        BudgetDA = (decimal)item.Budget;
+    }
+
+
+
+    else if (item.Nom.Equals("dt"))
+    {
+        TotalDT = TotalDT + (decimal)item.Budget;
+        BudgetDT = (decimal)item.Budget;
+    }
+
+
+    else if (item.Nom.Equals("df"))
+    {
+        TotalDF = TotalDF + (decimal)item.Budget;
+        BudgetDF = (decimal)item.Budget;
+    }
+
+    else
+         if (item.Nom.Equals("dc"))
+    {
+        TotalDC = TotalDC + (decimal)item.Budget;
+        BudgetDC = (decimal)item.Budget;
+    }
+
+}
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Liste par Direction</h5>
+                    <div class="ibox-tools">
+                        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-xs" })
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <table class="table table-striped">
+                        <tr>
+                            <th>
+                                Direction Achat
+                            </th>
+                            <th>
+                                Direction Technique
+                            </th>
+                            <th>
+                                Direction Finance
+                            </th>
+                            <th>
+                                Direction Comptable
+                            </th>
+
+
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                @TotalDA
+                            </td>
+                            <td>
+                                @TotalDT
+                            </td>
+                            <td>
+                                @TotalDF
+                            </td>
+                            <td>
+                                @TotalDC
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5> Pourcentage depenses 2017 Direction achat</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#">Config option 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Config option 2</a>
+                            @PrixTotalDa
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="flot-chart">
+                    <div class="flot-chart-pie-content" id="flot-pie-chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------->
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5> Pourcentage depenses 2017 Direction Finance</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#">Config option 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Config option 2</a>
+                            @PrixTotalDa
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="flot-chart">
+                    <div class="flot-chart-pie-content" id="flot-pie-chart1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------->
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5> Pourcentage depenses 2017 Direction Technique</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#">Config option 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Config option 2</a>
+                            @PrixTotalDa
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="flot-chart">
+                    <div class="flot-chart-pie-content" id="flot-pie-chart2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------->
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5> Pourcentage depenses 2017 Direction Comptable</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#">Config option 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Config option 2</a>
+                            @PrixTotalDa
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="flot-chart">
+                    <div class="flot-chart-pie-content" id="flot-pie-chart3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@{ 
+
+    decimal Da = (PrixTotalDa / BudgetDA)*100;
+    int Dafinal = Convert.ToInt32(Da);
+
+    decimal resteDa = 100-(PrixTotalDa / BudgetDA) * 100;
+    int resteDafinal = Convert.ToInt32(resteDa);
+    //
+
+
+    decimal Df = (PrixTotalDf / BudgetDF) * 100;
+    int Dffinal = Convert.ToInt32(Df);
+
+    decimal resteDf = 100 - (PrixTotalDf / BudgetDA) * 100;
+    int resteDffinal = Convert.ToInt32(resteDf);
+
+
+    //
+
+
+    decimal Dt = (PrixTotalDt / BudgetDT) * 100;
+    int Dtfinal = Convert.ToInt32(Dt);
+
+    decimal resteDt = 100 - (PrixTotalDt / BudgetDT) * 100;
+    int resteDtfinal = Convert.ToInt32(resteDt);
+
+
+
+    //
+
+
+    decimal Dc = (PrixTotalDc / BudgetDC) * 100;
+    int Dcfinal = Convert.ToInt32(Dc);
+
+    decimal resteDc = 100 - (PrixTotalDc / BudgetDC) * 100;
+    int resteDcfinal = Convert.ToInt32(resteDc);
+}
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------->
+@section Scripts {
+    @Scripts.Render("~/plugins/flot")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+
+
+            var data = [{
+                label: "Decaissement",
+                data: @Dafinal,
+                color: "#bababa",
+            },  {
+                label: "reste",
+                data: @resteDafinal,
+                color: "#1ab394",
+            }];
+
+            var plotObj = $.plot($("#flot-pie-chart"), data, {
+                series: {
+                    pie: {
+                        show: true
+                    }
+                },
+                grid: {
+                    hoverable: true
+                },
+                tooltip: true,
+                tooltipOpts: {
+                    content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+                    shifts: {
+                        x: 20,
+                        y: 0
+                    },
+                    defaultTheme: false
+                }
+            });
+
+
+
+
+
+            var data = [{
+                label: "Decaissement",
+                data: @Dffinal,
+                color: "#bababa",
+            },  {
+                label: "reste",
+                data: @resteDffinal,
+                color: "#1ab394",
+            }];
+
+            var plotObj = $.plot($("#flot-pie-chart1"), data, {
+                series: {
+                    pie: {
+                        show: true
+                    }
+                },
+                grid: {
+                    hoverable: true
+                },
+                tooltip: true,
+                tooltipOpts: {
+                    content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+                    shifts: {
+                        x: 20,
+                        y: 0
+                    },
+                    defaultTheme: false
+                }
+            });
+
+            //
+            var data = [{
+                label: "Decaissement",
+                data: @Dtfinal,
+                color: "#bababa",
+            },  {
+                label: "reste",
+                data: @resteDtfinal,
+                color: "#1ab394",
+            }];
+
+            var plotObj = $.plot($("#flot-pie-chart2"), data, {
+                series: {
+                    pie: {
+                        show: true
+                    }
+                },
+                grid: {
+                    hoverable: true
+                },
+                tooltip: true,
+                tooltipOpts: {
+                    content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+                    shifts: {
+                        x: 20,
+                        y: 0
+                    },
+                    defaultTheme: false
+                }
+            });
+
+
+            //
+            var data = [{
+                label: "Decaissement",
+                data: @Dcfinal,
+                color: "#bababa",
+            },  {
+                label: "reste",
+                data: @resteDcfinal,
+                color: "#1ab394",
+            }];
+
+            var plotObj = $.plot($("#flot-pie-chart3"), data, {
+                series: {
+                    pie: {
+                        show: true
+                    }
+                },
+                grid: {
+                    hoverable: true
+                },
+                tooltip: true,
+                tooltipOpts: {
+                    content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+                    shifts: {
+                        x: 20,
+                        y: 0
+                    },
+                    defaultTheme: false
+                }
+            });
+
+
+            //
+
+        });
+
+    </script>
+
+    
+
+    }

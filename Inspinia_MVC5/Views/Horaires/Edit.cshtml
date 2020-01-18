@@ -1,0 +1,174 @@
+﻿@model Inspinia_MVC5.Models.Horaire
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Edit Horaire </h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Dashboard_1", "Dashboards")">Home</a>
+            </li>
+            <li>
+                <a>Horaire</a>
+            </li>
+            <li class="active">
+                <strong>Edit</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Edit Tableau Horaire<small></small></h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <h3></h3>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Horaire1, htmlAttributes: new { @class = "control-label col-md-1" })
+                            <div class="col-md-10">
+
+                                @Html.EditorFor(model => model.Horaire1, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Horaire1, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">Séance1</label>
+                            <div class="col-md-10">
+                                <label class="control-label col-md-1">De</label>
+
+                                <div class="input-group clockpicker" data-autoclose="true">
+
+                                    @Html.EditorFor(model => model.Debut, new { htmlAttributes = new { @Value = @Model.Debut, @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Debut, "", new { @class = "text-danger" })
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </span>
+                                </div>
+                                <label class="control-label col-md-1">A</label>
+                                <div class="input-group clockpicker" data-autoclose="true">
+                                    @Html.EditorFor(model => model.Sortie, new { htmlAttributes = new { @Value = @Model.Sortie, @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Sortie, "", new { @class = "text-danger" })
+
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">Séance2</label>
+                            <div class="col-md-10">
+                                <label class="control-label col-md-1">De</label>
+
+                                <div class="input-group clockpicker" data-autoclose="true">
+
+                                    @Html.EditorFor(model => model.Debut1, new { htmlAttributes = new { @Value = @Model.Debut1, @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Debut1, "", new { @class = "text-danger" })
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </span>
+                                </div>
+                                <label class="control-label col-md-1">A</label>
+                                <div class="input-group clockpicker" data-autoclose="true">
+
+                                    @Html.EditorFor(model => model.Sortie2, new { htmlAttributes = new { @Value = @Model.Sortie2, @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Sortie2, "", new { @class = "text-danger" })
+
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+            @Html.LabelFor(model => model.Debut, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Debut, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Debut, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+                        @*<div class="form-group">
+            @Html.LabelFor(model => model.Sortie, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Sortie, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Sortie, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                        @*<div class="form-group">
+            @Html.LabelFor(model => model.Debut1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Debut1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Debut1, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                        @*<div class="form-group">
+            @Html.LabelFor(model => model.Sortie2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Sortie2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Sortie2, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+                        @Html.HiddenFor(model => model.id)
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Edit" class="btn btn-primary" />
+                                @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-white" })
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+            </div>
+        }
+    </div>
+</div>
+
+
+
+@section Styles {
+    @Styles.Render("~/plugins/clockpickerStyles")
+
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/plugins/clockpicker")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.clockpicker').clockpicker();
+
+        });
+    </script>
+}

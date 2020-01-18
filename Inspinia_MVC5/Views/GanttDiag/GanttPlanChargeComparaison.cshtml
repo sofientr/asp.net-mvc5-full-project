@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "GanttPlanCharge";
+}
+
+<h2>GanttPlanCharge</h2>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    @*<script src="https://cdn.anychart.com/js/latest/data-adapter.min.js"></script>*@
+    <script src="~/Scripts/dhtmlxgantt/dhtmlxgantt.js?v=20180227" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="~/Scripts/dhtmlxgantt/dhtmlxgantt.css?v=20180227">
+    <style>
+
+        html, body {
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        .baseline {
+            position: absolute;
+            border-radius: 2px;
+            opacity: 0.6;
+            margin-top: -7px;
+            height: 12px;
+            background: #ffd180;
+            border: 1px solid rgb(255, 153, 0);
+        }
+
+        /* move task lines upper */
+        .gantt_task_line, .gantt_line_wrapper {
+            margin-top: -9px;
+        }
+
+        .gantt_side_content {
+            margin-bottom: 7px;
+        }
+
+        .gantt_task_link .gantt_link_arrow {
+            margin-top: -12px
+        }
+
+        .gantt_side_content.gantt_right {
+            bottom: 0;
+        }
+
+
+
+
+        .gantt_task_cell.day_end, .gantt_task_cell.no_work_hour.day_start {
+            border-right-color: #C7DFFF;
+        }
+
+        .gantt_task_cell.week_end.day_end, .gantt_task_cell.week_end.day_start {
+            border-right-color: #E2E1E1;
+        }
+
+        .gantt_task_cell.week_end, .gantt_task_cell.no_work_hour {
+            background-color: #F5F5F5;
+        }
+
+        .gantt_task_row.gantt_selected .gantt_task_cell.week_end {
+            background-color: #F8EC9C;
+        }
+    </style>
+
+
+    <title>Index</title>
+</head>
+<body>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-sm-4">
+            <h2>Create</h2>
+            <ol class="breadcrumb">
+                <li>
+                    @Html.ActionLink("ProjetTechnique", "Index")
+                </li>
+                <li class="active">
+                    <strong>Diagramme de Gantt</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-sm-8">
+            <div class="title-action">
+                @Html.ActionLink("Retour aux projets technques", "projTech", null, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+    <div id="ganttContainer" style='width:1200px; height:550px;'></div>
+
+
+    <script src="~/Scripts/mainPlanChargeComparaison.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>
+@*<script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            // specifying the date format
+            gantt.config.xml_date = "%Y-%m-%d %H:%i";
+            // initializing gantt
+            gantt.init("gantt_here");
+
+            // initiating data loading
+            gantt.load("/api/data");
+            // initializing dataProcessor
+            var dp = new gantt.dataProcessor("/api/");
+            // and attaching it to gantt
+            dp.init(gantt);
+            // setting the REST mode for dataProcessor
+            dp.setTransactionMode("REST");
+        });
+    </script>*@
+

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.Tiers>
+
+@{
+    ViewBag.Title = "ListeTiers";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-9">
+        <h2>Contacts</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Dashboard_1", "Dashboards")">Home</a>
+            </li>
+            <li>
+                App Views
+            </li>
+            <li class="active">
+                <strong>Contacts</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+
+
+    
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+       
+        @{ 
+            string aa = @Session["NOM"].ToString();
+        }
+@foreach (var item in Model)
+{ if (item.Societes.NOM.Equals(aa) )  {
+        <div class="col-lg-4">
+            <div class="contact-box">
+                @{ string x;
+                    int id = item.TiersID;
+                    }
+                <a href="@Url.Action("Details/" + id, "Tiers")">
+                    <div class="col-sm-4">
+                        <div class="text-center">
+                            <img alt="image" class="img-circle m-t-xs img-responsive" src="~/Images/personne.jpg">
+                            <div class="m-t-xs font-bold">@Html.DisplayFor(modelItem => item.NOM)</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <h3><strong>@Html.DisplayFor(modelItem => item.NOM)</strong></h3>
+                        <p><i class="fa fa-map-marker"></i> @Html.DisplayFor(modelItem => item.ADRESSE)</p>
+                        <address>
+                            <strong>Tel : @Html.DisplayFor(modelItem => item.TEL)</strong><br>
+                           Fax :  @Html.DisplayFor(modelItem => item.FAX)<br>
+                          
+                            <abbr title="Phone">@Html.DisplayFor(modelItem => item.MAIL)</abbr>
+                        </address>
+                    </div>
+                    <div class="clearfix"></div>
+                </a>
+            </div>
+        </div>
+                        }
+                    }
+    </div>
+</div>
+
+

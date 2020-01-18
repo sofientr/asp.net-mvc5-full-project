@@ -1,0 +1,254 @@
+﻿<link href="~/Content/select2.min.css" rel="stylesheet" type="text/css" />
+
+@model Inspinia_MVC5.Models.ACCESSOIRE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ACCESSOIRE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PTHT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PTHT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PTTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PTTC)
+        </dd>
+
+    </dl>
+    <div class="ibox ">
+        <div class="ibox-title">
+            <h5>Description</h5>
+            <span class="label label-primary">D</span>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+
+
+            </div>
+
+        </div>
+        <div class="ibox-content">
+
+            <div class="divScroll">
+
+                <table class="table table-striped table-bordered table-hover dataTables-example" id="Tableau">
+                    <thead>
+                        <tr>
+                            <th style="width:150px;">
+                                DESIGNATION
+                            </th>
+
+                            <th style="width:90px;">
+                                QTE
+                            </th>
+
+                            <th>
+                                PUHT
+                            </th>
+
+                            <th>
+                                PTHT
+                            </th>
+                            <th style="width:90px;">
+                                TVA
+                            </th>
+
+                            <th>
+                                TTC
+                            </th>
+                            <th>
+                            </th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody></tbody>
+                 
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/plugins/dataTables")
+    @Scripts.Render("~/plugins/select2")
+    <script type="text/javascript">
+        $('#DESIGNATION').select2();
+        $('#TVAProduit').select2();
+        RemplirTableau();
+
+        $('#TVAProduit').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllTVA",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('#TVAProduit').append($('<option>', {
+                        value: item.Valeur_TVA,
+                        text: item.Valeur_TVA
+                    }));
+                });
+            }
+        });
+
+        $(document).on("keyup", "input[type=number][data-modif!=edited]", function (e) {
+            var Qte = $("#QuantiteProduit").val();
+            var PRIX_VENTE_HT = parseFloat($('#PUHTProduit').val());
+            Qte = parseFloat(Qte);
+            var PTHTProduit = Qte * PRIX_VENTE_HT;
+            $('#PTHTProduit').val(PTHTProduit.toFixed(3));
+            var TVA = $('#TVAProduit').val();
+            TVA = parseFloat(TVA);
+            var MontantTVA = (PTHTProduit * TVA) / 100;
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#TTCProduit').val(TTCProduit.toFixed(3));
+
+        });
+        $(document).on("keydown", "input[type=number][data-modif!=edited]", function (e) {
+            var Qte = $("#QuantiteProduit").val();
+            var PRIX_VENTE_HT = parseFloat($('#PUHTProduit').val());
+            Qte = parseFloat(Qte);
+            var PTHTProduit = Qte * PRIX_VENTE_HT;
+            $('#PTHTProduit').val(PTHTProduit.toFixed(3));
+            var TVA = $('#TVAProduit').val();
+            TVA = parseFloat(TVA);
+            var MontantTVA = (PTHTProduit * TVA) / 100;
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#TTCProduit').val(TTCProduit.toFixed(3));
+
+        });
+        $(document).on("change", "#TVAProduit", function (e) {
+
+            var Qte = $("#QuantiteProduit").val();
+            Qte = parseFloat(Qte);
+            var PRIX_VENTE_HT = parseFloat($('#PUHTProduit').val());
+            var PTHTProduit = Qte * PRIX_VENTE_HT;
+            $('#PTHTProduit').val(PTHTProduit.toFixed(3));
+            var TVA = $(this).val();
+            TVA = parseFloat(TVA);
+            var MontantTVA = (PTHTProduit * TVA) / 100;
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#TTCProduit').val(TTCProduit.toFixed(3));
+
+        });
+        function AddRow() {
+
+            var DESIGNATION = $('#DESIGNATION').val();
+            var QTE = $('#QuantiteProduit').val();
+            var PUHT_Produit = $('#PUHTProduit').val();
+            var PTHT_Produit = $('#PTHTProduit').val();
+            var TVA_Produit = $('#TVAProduit').val();
+            var TTC_Produit = $('#TTCProduit').val();
+            var data = {
+                DESIGNATION: DESIGNATION,
+                QTE: QTE,
+                PUHT_Produit: PUHT_Produit,
+                PTHT_Produit: PTHT_Produit,
+                TVA_Produit: TVA_Produit,
+                TTC_Produit: TTC_Produit
+            };
+            $.ajax({
+                type: 'POST',
+                url: "/ACCESSOIREs/AddLineACC",
+                data: data,
+                success: function (response) {
+                    RemplirTableau();
+                }
+            });
+
+        }
+        function RemplirTableau() {
+            $("#Tableau tbody").empty();
+            $.ajax({
+                type: 'POST',
+                url: "/ACCESSOIREs/GetAllLineACC",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        var line = "<tr id='" + item.ID + "'><td>" + item.DESIGNATION + "</td><td>" + item.QTE + "</td><td>" + item.PUHT + "</td><td>" + item.PTHT + "</td><td>" + item.TVA + "</td><td>" + item.TTC + "</td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+                        $("#Tableau tbody").append(line);
+                    });
+
+                    RemplirListe();
+
+                }
+            });
+
+            UpdatePrice();
+
+        }
+        function RemplirListe() {
+            $('#TVAProduit').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllTVA",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#TVAProduit').append($('<option>', {
+                            value: item.Valeur_TVA,
+                            text: item.Valeur_TVA
+                        }));
+                    });
+                }
+            });
+
+        }
+        function UpdatePrice() {
+
+            $.ajax({
+                type: 'POST',
+                url: "/ACCESSOIREs/UpdatePriceACCESSOIREs",
+                success: function (response) {
+                    PTTC
+                    var totalHT = response.totalHT;
+                    var totalTC = response.totalTC;
+
+                    totalHT = totalHT.toString();
+                    totalHT = totalHT.replace(".", ",")
+                    totalTC = totalTC.toString();
+                    totalTC = totalTC.replace(".", ",")
+                    $("#PTHT").val(totalHT);
+                    $("#PTTC").val(totalTC);
+
+                }
+            });
+        }
+    </script>
+}

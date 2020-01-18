@@ -1,0 +1,120 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.SERVICES>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+</head>
+<body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Liste des services</h5>
+                        <div class="ibox-tools">
+                            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-xs" })
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <table class="table table-striped table-bordered table-hover dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.REF)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DES_SERVICE)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.REF)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DES_SERVICE)
+                                        </td>
+                                        <td>
+                                            @{
+                                                int code = item.ID;
+                                                Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+                                                Inspinia_MVC5.Models.lIGNES_SERVICES lIGNES_SERVICES = db.lIGNES_SERVICES.Where(t => t.SERVICES == code).FirstOrDefault();
+                                                if (lIGNES_SERVICES != null)
+                                                {
+                                                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary btn-sm", disabled = "disabled" })
+                                                    @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-primary btn-sm" })
+                                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-primary btn-sm", disabled = "disabled" })
+                                                }
+                                                else
+                                                {
+                                                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary btn-sm" })
+                                                    @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-primary btn-sm" })
+                                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-primary btn-sm" })
+                                                }
+                                            }
+
+
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot></tfoot>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Styles {
+        @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+
+    }
+    @section Scripts {
+        @Scripts.Render("~/plugins/dataTables")
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                $('.dataTables-example').DataTable({
+                    pageLength: 25,
+                    dom: '<"html5buttons"B>lTfgitp',
+                    buttons: [
+                        { extend: 'copy' },
+                        { extend: 'csv', title: 'liste des Services' },
+                        { extend: 'excel', title: 'liste des Services' },
+                        { extend: 'pdf', title: 'liste des Services' },
+
+                        {
+                            extend: 'print',
+                            customize: function (win) {
+                                $(win.document.body).addClass('white-bg');
+                                $(win.document.body).css('font-size', '10px');
+
+                                $(win.document.body).find('table')
+                                    .addClass('compact')
+                                    .css('font-size', 'inherit');
+                            }
+                        }
+
+                    ]
+
+                });
+
+
+
+            });
+
+        </script>
+    }

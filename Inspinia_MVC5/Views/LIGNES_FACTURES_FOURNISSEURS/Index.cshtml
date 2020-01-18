@@ -1,0 +1,147 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.LIGNES_FACTURES_FOURNISSEURS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DESIGNATION_PRODUIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUANTITE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRIX_UNITAIRE_HT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REMISE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOTALE_REMISE_HT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOTALE_HT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TVA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOTALE_TTC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categorie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sous_Categorie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marque)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Devise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_offre_de_prix)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duree_de_validite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N_Offre_de_Prix)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Libelle_Prd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FACTURES_FOURNISSEURS.CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prix_Achat1.Designation)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESIGNATION_PRODUIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QUANTITE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRIX_UNITAIRE_HT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REMISE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOTALE_REMISE_HT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOTALE_HT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TVA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOTALE_TTC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categorie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sous_Categorie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marque)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Unite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Devise)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_offre_de_prix)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duree_de_validite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N_Offre_de_Prix)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Libelle_Prd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FACTURES_FOURNISSEURS.CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prix_Achat1.Designation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

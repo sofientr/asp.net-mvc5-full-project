@@ -1,0 +1,237 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.LIGNES_DEVIS_FOURNISSEURS>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Liste des devis fournisseurs pour categorie <b>@ViewBag.Art</b></h5>
+                </div>
+                <div class="ibox-content">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true)
+                            <table class="table">
+                                <tr>
+                                    @*<th>
+            @Html.DisplayNameFor(model => model.DESIGNATION_PRODUIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUANTITE)
+        </th>*@
+                                    <th>
+                                        <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" />
+                                    </th>
+                                    <th>
+                                        FOURNISSEURS
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DEVIS_FOURNISSEURS.DATE)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.PRIX_UNITAIRE_HT)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.REMISE)
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TOTALE_HT)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TVA)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TOTALE_TTC)
+                                    </th>
+                                    <th>
+                                        DATE Validite
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DEVIS_FOURNISSEURS.Validite)
+                                    </th>
+                                    @*<th>
+            @Html.DisplayNameFor(model => model.Marque)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categorie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sous_Categorie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Devise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_offre_de_prix)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duree_de_validite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N_Offre_de_Prix)
+        </th>*@
+                                    @*<th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEV)
+        </th>*@
+
+                                    @*<th>
+            @Html.DisplayNameFor(model => model.Prix_Achat1.Designation)
+        </th>*@
+                                    <th></th>
+                                </tr>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        @*<td>
+                                @Html.DisplayFor(modelItem => item.DESIGNATION_PRODUIT)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.QUANTITE)
+                            </td>*@
+                                        <td>
+                                            <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" value=" @Html.DisplayFor(modelItem => item.ID)" onchange="check(@Html.DisplayFor(modelItem => item.ID))" />
+
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DEVIS_FOURNISSEURS.FOURNISSEURS.NOM)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DEVIS_FOURNISSEURS.DATE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PRIX_UNITAIRE_HT)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.REMISE)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TOTALE_HT)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TVA)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TOTALE_TTC)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DEVIS_FOURNISSEURS.Validite)
+                                        </td>
+                                        <td>
+                                            @if (item.DEVIS_FOURNISSEURS.Validite > ViewBag.Date)
+                                            {
+                                                <span class="label label-primary">VALIDEE</span>
+                                            }
+                                            @if (item.DEVIS_FOURNISSEURS.Validite < ViewBag.Date)
+                                            {
+                                                <span class="label label-warning-light">NON VALIDEE</span>
+                                            }
+                                            @if (item.DEVIS_FOURNISSEURS.Validite == null)
+                                            {
+                                                <span class="label label-warning-light">Date de validité inconnue </span>
+                                            }
+                                        </td>
+                                        @*<td>
+                                @Html.DisplayFor(modelItem => item.Marque)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Categorie)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Sous_Categorie)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Unite)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Devise)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date_offre_de_prix)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Duree_de_validite)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.N_Offre_de_Prix)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Libelle_Prd)
+                            </td>*@
+
+                                        @*<td>
+                                @Html.DisplayFor(modelItem => item.Prix_Achat1.Designation)
+                            </td>*@
+                                        @*<td>
+                                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+                            </td>*@
+                                    </tr>
+                                }
+
+                            </table>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    @Html.ActionLink("Cancel", "FormDevis", new { Mode = ViewBag.Mode, Code = ViewBag.Code, Date = ViewBag.Date1, numero = ViewBag.numero, designation = ViewBag.designation, modePaiement = ViewBag.modePaiement, client = ViewBag.client, codeClient = ViewBag.codeClient, Tiers = ViewBag.Tiers, remise = ViewBag.remise, IdAffaireCommercial = ViewBag.IdAffaireCommercial }, null)
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function check(elee) {
+        var mode = "@ViewBag.Mode";
+        var code = "@ViewBag.Code";
+        var Date = "@ViewBag.Date1";
+        var numero="@ViewBag.numero";
+        var designation = decodeHtml("@ViewBag.designation");
+        var modePaiement = decodeHtml("@ViewBag.modePaiement");
+       
+        var client = decodeHtml("@ViewBag.client");
+        var codeClient="@ViewBag.codeClient";
+        var Tiers = decodeHtml("@ViewBag.Tiers");
+        var remise = decodeHtml("@ViewBag.remise");
+         var IdAffaireCommercial = "@ViewBag.IdAffaireCommercial";
+        if (elee != null) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/Addlignedevis2?ID=" + elee,
+                success: function (response) {
+                    window.location.href = "/Vente/FormDevis?Mode=" + mode + "&Code=" + code + "&Date=" + Date + "&numero=" + numero + "&designation=" + designation + "&modePaiement=" + modePaiement + "&client=" + client + "&codeClient=" + codeClient + "&Tiers=" + Tiers + "&remise=" + remise + "&IdAffaireCommercial=" + IdAffaireCommercial;
+                }
+            });
+        }
+
+    }
+    //function update_clients() {
+
+    //    debugger;
+    //    $.ajax({
+    //        type: 'POST',
+
+    //        url: "/Vente/Addlignedevis2?ID=",
+    //        success: function (response) {
+    //            window.location.href = "Create";
+    //        }
+    //    });
+    //}
+</script>

@@ -1,0 +1,369 @@
+﻿@model Inspinia_MVC5.Models.LIGNES_DEVIS_FOURNISSEURS
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>LIGNES_DEVIS_FOURNISSEURS</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.ID)
+
+    <div class="form-group">
+        <label class="control-label col-md-2">
+            REF
+        </label>
+        @{
+            string lib = ViewBag.lib;
+            Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+            Inspinia_MVC5.Models.Prix_Achat Prix_Achat = db.Prix_Achat.Where(t => t.Libelle == lib).FirstOrDefault();
+            if (Prix_Achat != null)
+            {
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Libelle_Prd, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                    @Html.ValidationMessageFor(model => model.Libelle_Prd, "", new { @class = "text-danger" })
+                </div>
+            }
+            else
+            {
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Libelle_Prd, new { htmlAttributes = new { @class = "form-control"} })
+                    @Html.ValidationMessageFor(model => model.Libelle_Prd, "", new { @class = "text-danger" })
+                </div>
+            }
+        }
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">
+            DES
+        </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DESIGNATION_PRODUIT, new { htmlAttributes = new { @class = "form-control"} })
+            @Html.ValidationMessageFor(model => model.DESIGNATION_PRODUIT, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.QUANTITE, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.QUANTITE, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.QUANTITE,"", new { @class = "text-danger" })
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">
+            PUHT
+        </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PRIX_UNITAIRE_HT, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.PRIX_UNITAIRE_HT, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.REMISE, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.REMISE, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.REMISE, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2">
+            THT
+        </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TOTALE_HT, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.TOTALE_HT, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TVA, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @if (ViewBag.TVA != null)
+            {
+                <select class="form-control" name="TVA" id="TVA"><option>@ViewBag.TVA</option></select>
+            }
+            else
+            {
+                <select class="form-control" name="TVA" id="TVA"><option></option></select>
+
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">
+            TTC
+        </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TOTALE_TTC, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.TOTALE_TTC, "", new { @class = "text-danger"})
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Marque, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @if (ViewBag.Marque != null)
+            {
+                <select class="form-control" name="marque" id="marque"><option>@ViewBag.Marque</option></select>
+
+            }
+            else
+            {
+                <select class="form-control" name="marque" id="marque"><option></option></select>
+
+            }
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Categorie, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @if (ViewBag.Categorie != null)
+            {
+                <select class="form-control" id="categorie" name="categorie"><option>@ViewBag.Categorie</option></select>
+            }
+            else
+            {
+                <select class="form-control" id="categorie" name="categorie"><option></option></select>
+
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Sous_Categorie, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @if (ViewBag.Sous_Categorie != null)
+            {
+                <select class="form-control" id="Sous_Categorie" name="Sous_Categorie"><option>@ViewBag.Sous_Categorie</option></select>
+            }
+            else
+            {
+                <select class="form-control" id="Sous_Categorie" name="Sous_Categorie"><option></option></select>
+
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Unite, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @if (ViewBag.Unite != null)
+            {
+                <select class="form-control" name="unite" id="unite"><option>@ViewBag.Unite</option></select>
+            }
+            else
+            {
+                <select class="form-control" name="unite" id="unite"><option></option></select>
+
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Devise, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @if (ViewBag.Devise != null)
+            {
+                <select class="form-control" id="devise" name="devise"><option>@ViewBag.Devise</option></select>
+            }
+            else
+            {
+                <select class="form-control" id="devise" name="devise"><option></option></select>
+
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">
+            NUM_DEVIS
+        </label>
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.DEVIS_CLIENT, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.DEVIS_CLIENT, "", new { @class = "text -danger" })*@
+            <input class="form-control" name="DEVIS_CLIENT" id="DEVIS_CLIENT" value="@ViewBag.DEVIS_CLIENT" disabled/>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+}
+@section Scripts {
+
+    @Scripts.Render("~/plugins/select2")
+    <script type="text/javascript">
+        //$("#categorie").select2();
+        //$("#marque").select2();
+        RemplirListe3();
+        RemplirListe4();
+        RemplirListe5();
+        RemplirListe6();
+        RemplirListe9();
+        function RemplirListe3() {
+            //$('#marque').find('option').remove();
+            $('#marque').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllMarque",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#marque').append($('<option>', {
+                            value: item.Nom_marque,
+                            text: item.Nom_marque
+                        }));
+                    });
+                }
+            });
+        }
+        function RemplirListe4() {
+            //$('#unite').find('option').remove();
+
+            $('#unite').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllUnite",
+                success: function (response) {
+
+                    $.each(response, function (i, item) {
+                        $('#unite').append($('<option>', {
+                            value: item.Valeur_Unite,
+                            text: item.Valeur_Unite
+
+                        }));
+
+                    });
+                }
+            });
+        }
+        function RemplirListe5() {
+            //$('#devise').find('option').remove();
+            $('#devise').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllDevise",
+                success: function (response) {
+
+                    $.each(response, function (i, item) {
+                        $('#devise').append($('<option>', {
+                            value: item.Nom_Devise,
+                            text: item.Nom_Devise
+
+                        }));
+
+                    });
+                }
+            });
+        }
+        function RemplirListe6() {
+            //$('#categorie').find('option').remove();
+
+            $('#categorie').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllCategorie",
+                success: function (response) {
+
+                    $.each(response, function (i, item) {
+                        $('#categorie').append($('<option>', {
+                            value: item.CentreID,
+                            text: item.Libelle
+
+                        }));
+
+                    });
+                }
+            });
+        }
+        function RemplirListe9() {
+
+            $('#TVA').append($('<TVA>', {
+                value: "",
+                text: ""
+            }));
+
+
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllTVA",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#TVA').append($('<option>', {
+                            value: item.Valeur_TVA,
+                            text: item.Valeur_TVA
+                        }));
+                    });
+                }
+            });
+        }
+         $(document).on("change", "#categorie", function (e) {
+
+            var selectedItemValue = $(this).val();
+
+            var ddlProducts = $("#Sous_Categorie");
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: '@Url.Action("GetsousByCategoryId", "Vente")',
+                data: { "id": selectedItemValue },
+                success: function (data) {
+                ddlProducts.html('');
+                $.each(data, function (id, option) {
+                    ddlProducts.append($('<option style="width:100px; height:50px;"></option>').val(option.id).html(option.name));
+                });
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                alert('Found error to load sous categorie!!.');
+                }
+                });
+                });
+    </script>
+    }

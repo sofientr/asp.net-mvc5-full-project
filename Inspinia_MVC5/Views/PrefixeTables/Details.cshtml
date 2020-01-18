@@ -1,0 +1,42 @@
+﻿@model Inspinia_MVC5.Models.PrefixeTable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PrefixeTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Table)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_Table)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Ste)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_Ste)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prefixe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prefixe)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

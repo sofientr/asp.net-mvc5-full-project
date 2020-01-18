@@ -1,0 +1,507 @@
+﻿<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		@*<ul class="nav navbar-nav" >*@
+
+		<ul class="nav navbar-nav">
+			@{
+							/**/
+
+							try
+							{
+								if (Session["Direction"].ToString().Equals("df") || Session["Direction"].ToString().Equals("dg"))
+								{
+									<li class="@Html.IsSelected(controller: "Decaissements")">
+										<a href="@Url.Action("Acceuil", "Decaissements")"><i class="fa fa-pie-chart"></i> <span class="nav-label" data-i18n="nav.metrics">Dashboard</span> </a>
+									</li>
+
+
+									<li class="dropdown">
+										<a href="@Url.Action("Recap", "Decaissements")"> <span class="nav-label" data-i18n="nav.forms">Achat</span><span class="caret"></span></a>
+										<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+											<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Decaissements")">Demandes Achats</a></li>
+											<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("MesDemandesA", "Decaissements")">Mes Demandes Achats</a></li>
+
+										</ul>
+									</li>
+
+
+									<li class="@Html.IsSelected(controller: "Decaissement")">
+										<a href="@Url.Action("Recap", "Decaissements")"> <span class="nav-label" data-i18n="nav.forms">Recap</span><span class="caret"></span></a>
+										<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+											<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Recap", "Decaissements")">Recap</a></li>
+											<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Decaissements")">Decaissements</a></li>
+											<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Facturations")">Facturationss</a></li>
+
+										</ul>
+									</li>
+
+
+
+
+
+									<li class="@Html.IsSelected(controller: "Decaissement")">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-calculator"></i> <span class="nav-label" data-i18n="nav.forms">Projets</span><span class="caret"></span></a>
+										<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+											<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Projets")">Liste des projets</a></li>
+										</ul>
+
+										<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+											<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("DepensesProjets", "Projets")">depenses des projets</a></li>
+										</ul>
+
+										<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+											<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("IndexParProjet", "Projets")">depenses par projets</a></li>
+										</ul>
+									</li>
+
+									<li class="@Html.IsSelected(controller: "Facturations")">
+										<a href="@Url.Action("Index", "Directions")"><i class="fa fa-flask"></i> <span class="nav-label" data-i18n="nav.widgets">Budget Prévisionnel  </span> </a>
+									</li>
+
+									<li class="@Html.IsSelected(controller: "Facturations")">
+										<a href="@Url.Action("Recap", "Decaissements")"><i class="fa fa-flask"></i> <span class="nav-label" data-i18n="nav.widgets">Recap </span> </a>
+									</li>
+
+									<li class="@Html.IsSelected(controller: "Decaissement")">
+										<a href="@Url.Action("Acceuil_previsionnel", "Decaissements")"><i class="fa fa-clipboard"></i> <span class="nav-label" data-i18n="nav.animations">Prevision </span></a>
+									</li>
+
+
+									<li class="@Html.IsSelected(controller: "Tiers")">
+										<a href="@Url.Action("ListeTiers", "Tiers")"><i class="fa fa-clipboard"></i> <span class="nav-label" data-i18n="nav.animations">Tiers </span><span class="label label-info pull-right">10</span></a>
+									</li>
+
+									<li class="@Html.IsSelected(controller: "Categories")">
+
+										<a href="#"><i class="fa fa-certificate"></i> <span class="nav-label" data-i18n="nav.forms">Paramétrages</span><span class="caret"></span></a>
+										<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+											<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Categories")">Catégories</a></li>
+											<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Sous_Categorie")">Sous Catégories</a></li>
+
+										</ul>
+									</li>
+								}
+
+							}
+							catch (Exception e)
+							{
+								Html.Action("Login", "Societes");
+
+							}
+			}
+
+
+
+			<!-- DTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT-->
+			@{
+				try
+				{
+					if (Session["Direction"].ToString().Equals("dt"))
+					{
+
+						<li class="@Html.IsSelected(controller: "Decaissement")">
+							<a href="@Url.Action("Recap", "Decaissements")"> <span class="nav-label" data-i18n="nav.forms">Achat</span><span class="caret"></span></a>
+							<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Decaissements")">Demandes Achats</a></li>
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("MesDemandesA", "Decaissements")">Mes Demandes Achats</a></li>
+
+							</ul>
+						</li>
+
+
+						<li class="@Html.IsSelected(controller: "Decaissement")">
+							<a href="@Url.Action("Recap", "Decaissements")"> <span class="nav-label" data-i18n="nav.forms">Recap</span><span class="caret"></span></a>
+							<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Recap", "Decaissements")">Recap</a></li>
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Decaissements")">Decaissements</a></li>
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Facturations")">Facturationss</a></li>
+
+							</ul>
+						</li>
+
+
+
+
+
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-calculator"></i> <span class="nav-label" data-i18n="nav.forms">Projets</span><span class="caret"></span></a>
+							<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Projets")">Liste des projets</a></li>
+							</ul>
+
+							<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("DepensesProjets", "Projets")">depenses des projets</a></li>
+							</ul>
+
+							<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("IndexParProjet", "Projets")">depenses par projets</a></li>
+							</ul>
+						</li>
+
+
+
+
+						<li class="@Html.IsSelected(controller: "Facturations")">
+							<a href="@Url.Action("Recap", "Decaissements")"><i class="fa fa-flask"></i> <span class="nav-label" data-i18n="nav.widgets">Recap </span> </a>
+						</li>
+
+						<li class="@Html.IsSelected(controller: "Decaissement")">
+							<a href="@Url.Action("Acceuil_previsionnel", "Decaissements")"><i class="fa fa-clipboard"></i> <span class="nav-label" data-i18n="nav.animations">Prevision </span></a>
+						</li>
+
+
+						<li class="@Html.IsSelected(controller: "Tiers")">
+							<a href="@Url.Action("ListeTiers", "Tiers")"><i class="fa fa-clipboard"></i> <span class="nav-label" data-i18n="nav.animations">Tiers </span><span class="label label-info pull-right">10</span></a>
+						</li>
+
+						<li class="dropdown">
+
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-certificate"></i> <span class="nav-label" data-i18n="nav.forms">Paramétrages</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Categories")">Catégories</a></li>
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Sous_Categorie")">Sous Catégories</a></li>
+
+							</ul>
+						</li>
+					}
+
+				}
+				catch (Exception e)
+				{
+					Html.Action("Login", "Societes");
+
+				}
+			}
+
+			<!-- DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
+			@{
+				try
+				{
+					if (Session["Direction"].ToString().Equals("da"))
+					{
+						<li class="dropdown">
+
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-money"></i> <span class="nav-label" data-i18n="nav.forms">DA: Gestion des demandes dachats</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("DAttentes", "Decaissements")">demandes en attentes</a></li>
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Decaissements")">demandes envoyées</a></li>
+
+							</ul>
+						</li>
+
+
+						<li class="@Html.IsSelected(controller: "GridOptions")">
+							<a href="@Url.Action("Index", "FRS")"><i class="fa fa-laptop"></i> <span class="nav-label" data-i18n="nav.gridoptions">DA: Gestion des Frs</span></a>
+							<a href="@Url.Action("Index", "GridOptions")"><i class="fa fa-laptop"></i> <span class="nav-label" data-i18n="nav.gridoptions">DA: Gestion du stock</span></a>
+							<a href="@Url.Action("Index", "Commandes")"><i class="fa fa-laptop"></i> <span class="nav-label" data-i18n="nav.gridoptions">DA: Gestion des commandes</span></a>
+
+
+						</li>
+
+
+					}
+					//else
+					//{
+					//    if (Session["Direction"] == null)
+					//    {
+					//        Html.Action("LockScreen", "Societes");
+					//    }
+					//}
+				}
+				catch (Exception e)
+				{
+					Html.Action("Login", "Societes");
+
+				}
+			}
+
+
+
+			<!----------------------------------------------------------ADMIN--------------------------------------------------------------------------------------->
+			@{
+				try
+				{
+					if (Session["NOM"].ToString().Equals("admin") || Session["Direction"].ToString().Equals("Admin"))
+					//if (/*Session["NOM"].ToString().Equals("admin") ||*/ ViewBag.direction == "Admin")
+					{
+						@*<li class="@Html.IsSelected(controller: "Decaissements")">
+						<a href="@Url.Action("Acceuil", "Decaissements")"><i class="fa fa-pie-chart"></i> <span class="nav-label" data-i18n="nav.metrics">Dashboard1</span> </a>
+						<a href="@Url.Action("BudgetParDirectionSecteur", "Directions")"><i class="fa fa-pie-chart"></i> <span class="nav-label" data-i18n="nav.metrics">Dashboard2</span> </a>
+
+					</li>*@
+
+						@*<li @*class="@Html.IsSelected(controller: "Facturations")">
+							<a href="@Url.Action("Index", "Inscriptions")"><i class="fa fa-flask"></i> <span class="nav-label" data-i18n="nav.widgets">Demande d'inscription </span> </a>
+						</li>*@
+						<li @*class="@Html.IsSelected(controller: "Facturations")"*@>
+							<a href="@Url.Action("Dashboard_1", "Dashboards")"><i class="fa fa-bar-chart-o"></i><span class="nav-label" data-i18n="nav.widgets">Statistique</span> </a>
+						</li>
+						@*<li class="@Html.IsSelected(controller: "Decaissement")">
+						<a href="@Url.Action("Recap", "Decaissements")"> <span class="nav-label" data-i18n="nav.forms"><i class="fa fa-money"></i>Achat2</span><span class="caret"></span></a>
+						<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Decaissements")">Demandes Achats</a></li>
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("DAttentes", "Decaissements")">demandes en attentes</a></li>
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Decaissements")">demandes envoyées</a></li>
+
+						</ul>
+					</li>*@
+						<li class="@Html.IsSelected(action: "DataTables")"> <a href="@Url.Action("Index", "AffaireCommerciales")"> <i class="fa fa-shopping-cart"></i><span class="nav-label" data-i18n="nav.gridoptions">Affaires commerciale </span></a></li>
+						<li class="@Html.IsSelected(action: "DataTables")"> <a href="@Url.Action("Index", "PROJET_TECHNIQUE")"> <i class="fa fa-shopping-cart"></i><span class="nav-label" data-i18n="nav.gridoptions">Projets Techniques </span></a></li>
+
+						@*<li class="@Html.IsSelected(controller: "ProjetTechniques")">
+					<a href="#"><i class="glyphicon glyphicon-list-alt"></i> <span class="nav-label" data-i18n="nav.ecommerce">Gestion des projets</span><span class="caret"></span></a>
+					<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Ecommerce", cssClass: "in")">
+						<li class="@Html.IsSelected(action: "DataTables")"> <a href="@Url.Action("Index", "ProjetTechniques")"> Projets Techniques </a></li>
+						<li class="@Html.IsSelected(action: "DataTables")"> <a href="@Url.Action("Index", "Parametrages")"> Parametrage </a></li>
+						@*<li class="@Html.IsSelected(action: "DataTables")"> <a href="@Url.Action("Index", "GanttDiag")"> Diagramme de Gantt </a></li>*@
+						@*<li class="@Html.IsSelected(action: "DataTables")"> <a href="@Url.Action("Index", "Documents")"> Couts</a></li>*@
+						@*</ul>
+					</li>*@
+						@*<li class="@Html.IsSelected(controller: "Achat")">
+						<a href="@Url.Action("Devis", "Achat")"><i class="fa fa-shopping-cart"></i><span class="nav-label" data-i18n="nav.forms">Achat</span><span class="caret"></span></a>
+						<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Devis", "Achat")">Devis</a></li>
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Commandes", "Achat")">Commandes</a></li>
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("BonReception", "Achat")">Bon Réception</a></li>
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Facture", "Achat")">Facture</a></li>
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Avoir", "Achat")">Avoir</a></li>
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "RETENUE_S_FOURNISSEURS")">Retenue</a></li>
+
+
+						</ul>
+					</li>*@
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("Devis", "Achat")"><i class="fa fa-shopping-cart"></i><span class="nav-label" data-i18n="nav.forms">Achat</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+
+								<li ><a href="@Url.Action("Devis", "Achat")">Devis</a></li>
+								<li ><a href="@Url.Action("Commandes", "Achat")">Commandes</a></li>
+								<li ><a href="@Url.Action("BonReception", "Achat")">Bon Réception</a></li>
+								<li ><a href="@Url.Action("Facture", "Achat")">Facture</a></li>
+								@*<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Avoir", "Achat")">Avoir</a></li>
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "RETENUE_S_FOURNISSEURS")">Retenue</a></li>*@
+
+
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("Devis", "Vente")"><i class="fa fa-money"></i><span class="nav-label" data-i18n="nav.forms">Vente</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li ><a href="@Url.Action("Devis", "Vente")">Devis</a></li>
+								<li ><a href="@Url.Action("Commandes", "Vente")">Commandes</a></li>
+								<li ><a href="@Url.Action("BonLivraison", "Vente")">Bon Livraison</a></li>
+								<li ><a href="@Url.Action("Facture", "Vente")">Facture</a></li>
+								@*<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Avoir", "Vente")">Avoir</a></li>
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Caisse", "Vente")">Caisse</a></li>*@
+
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("#", "Articles")"><i class="fa fa-list"></i><span class="nav-label" data-i18n="nav.forms">Articles</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="@Url.Action("Index", "lIGNES_DEVIS_FOURNISSEURS")">Articles</a></li>
+								<li><a href="@Url.Action("Index", "Prix_Achat1")">Articles valideé</a></li>
+								<li><a href="@Url.Action("Create", "Prix_Achat1")">Ajout Article</a></li>
+								@*<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "ACCESSOIREs")">ACCESSOIRES</a></li>
+		@{
+			Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+			List<Inspinia_MVC5.Models.CATEGORIE_SUPERIEUR> task_list = db.CATEGORIE_SUPERIEUR.ToList();
+			foreach (var item in task_list)
+			{
+				<li class="@Html.IsSelected(action: "LISTECATEGORIE")"><a href="@Url.Action("LISTECATEGORIE", "CATEGORIE_SUPERIEUR",new { ID = item.ID}, null)">@item.libelle </a></li>
+
+			}
+		}*@
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("#", "Services")"><i class="fa fa-cogs"></i><span class="nav-label" data-i18n="nav.forms">Services</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li ><a href="@Url.Action("Index", "SERVICES")">Services</a></li>
+
+
+							</ul>
+						</li>
+						@*<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("#", "Stock")"><i class="fa fa-building"></i><span class="nav-label" data-i18n="nav.forms">Stock</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Prix_Achat1")">Stock</a></li>
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Dépot")">Dépot</a></li>
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Rayons")">Rayons</a></li>
+
+							</ul>
+						</li>*@
+						@*<li class="@Html.IsSelected(controller: "Déclarations")">
+						<a href="@Url.Action("#", "Déclarations")"><i class="fa fa-money"></i><span class="nav-label" data-i18n="nav.forms">Déclarations</span><span class="caret"></span></a>
+						<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("FactureDeclaration", "Vente")">Factures de vente</a></li>
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("FactureDeclaration", "Achat")">Factures d'achat</a></li>
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("DeclarationTVA", "Vente")">Declaration mensuelle</a></li>
+
+						</ul>
+					</li>*@
+						@*<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("#", "Déclarations")"><i class="fa fa-money"></i><span class="nav-label" data-i18n="nav.forms">Chéques</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "CHEQUE_FOURNISSEUR")">Chéques Fournisseurs</a></li>
+								<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "CHEQUE_CLIENT")">Chéques Clients</a></li>
+							</ul>
+						</li>*@
+
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-list-alt"></i> <span class="nav-label" data-i18n="nav.ecommerce">Tiers</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li > <a href="@Url.Action("Index", "Personnels")"> Personnels</a></li>
+								<li ><a href="@Url.Action("Index", "CLIENTS")">Clients</a></li>
+								<li ><a href="@Url.Action("Index", "FOURNISSEURS1")">Fournisseurs</a></li>
+								<li ><a href="@Url.Action("Index", "SOUS_TRAITANCE")"> Sous Traitance </a></li>
+
+
+							</ul>
+						</li>
+						@*<li class="@Html.IsSelected(controller: "Decaissement")">
+					 <a href="@Url.Action("Recap", "Decaissements")"> <i class="fa fa-flask"></i> <span class="nav-label" data-i18n="nav.forms">Recap</span><span class="caret"></span></a>
+					 <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+						 <li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Recap", "Decaissements")">Recap</a></li>
+						 <li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Decaissements")">Decaissements</a></li>
+						 <li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Facturations")">Facturationss</a></li>
+
+					 </ul>
+					</li>*@
+
+
+
+
+
+						@*<li class="@Html.IsSelected(controller: "Decaissement")">
+						<a href="#"><i class="fa fa-calculator"></i> <span class="nav-label" data-i18n="nav.forms">Projets</span><span class="caret"></span></a>
+						<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Projets")">Liste des projets</a></li>
+						</ul>
+
+						<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("DepensesProjets", "Projets")">depenses des projets</a></li>
+						</ul>
+
+						<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("IndexParProjet", "Projets")">depenses par projets</a></li>
+						</ul>
+					</li>
+
+
+
+					<li class="@Html.IsSelected(controller: "Facturations")">
+						<a href="#"><i class="fa fa-certificate"></i> <span class="nav-label" data-i18n="nav.forms">Budget Prévisionnel</span><span class="caret"></span></a>
+						<ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Forms", cssClass: "in")">
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("BudgetTotal", "Directions")">Budget Prévisionnel Totals</a></li>
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("BudgetParDirection", "Directions")">Budget Prévisionnel par Direction</a></li>
+							<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("BudgetParCC", "Directions")">Budget Prévisionnel par Centre de Couts</a></li>
+
+						</ul>
+					</li>*@
+
+
+
+
+
+
+						@*<li class="@Html.IsSelected(controller: "Decaissement")">
+						<a href="@Url.Action("Acceuil_previsionnel", "Decaissements")"><i class="fa fa-clipboard"></i> <span class="nav-label" data-i18n="nav.animations">Prevision </span></a>
+					</li>
+
+
+					<li class="@Html.IsSelected(controller: "Tiers")">
+						<a href="@Url.Action("index", "Tiers")"><i class="fa fa-clipboard"></i> <span class="nav-label" data-i18n="nav.animations">Clients</span><span class="label label-info pull-right">10</span></a>
+					</li>*@
+
+						@*<li class="@Html.IsSelected(controller: "Vente")">
+						<a href="@Url.Action("Devis", "Vente")"><i class="fa fa-clipboard"></i> <span class="nav-label" data-i18n="nav.animations">Devis</span><span class="label label-info pull-right">10</span></a>
+						<a href="@Url.Action("FormDevis", "Vente")"><i class="fa fa-clipboard"></i> <span class="nav-label" data-i18n="nav.animations">Ajouter devis</span><span class="label label-info pull-right">10</span></a>
+					</li>*@
+
+
+
+						@*<li class="@Html.IsSelected(controller: "GridOptions")">
+						<a href="@Url.Action("Index", "Fournisseurs")"><i class="fa fa-clipboard"></i>  <span class="nav-label" data-i18n="nav.gridoptions">Fournisseurs</span></a>
+						<a href="@Url.Action("Index", "Commandes")"><i class="fa fa-laptop"></i> <span class="nav-label" data-i18n="nav.gridoptions">Commandes</span></a>
+
+
+					</li>*@
+
+						<li class="dropdown">
+
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-certificate"></i> <span class="nav-label" data-i18n="nav.forms">Paramétrages</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								@*<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "CATEGORIE_SUPERIEUR")">CATEGORIE_SUPERIEUR</a></li>*@
+								<li ><a href="@Url.Action("Index", "Categories")">Catégories</a></li>
+								<li><a href="@Url.Action("Index", "Sous_Categorie")">Sous Catégories</a></li>
+								<li ><a href="@Url.Action("Index", "Marques")">Marques</a></li>
+								<li ><a href="@Url.Action("Index", "TVAs")">TVA</a></li>
+								<li ><a href="@Url.Action("Index", "Unites")">Unités</a></li>
+								<li ><a href="@Url.Action("Index", "Devises")">Devises</a></li>
+								@*<li class="@Html.IsSelected(action: "DataTables")"> <a href="@Url.Action("Index", "Personnels")"> Personnels</a></li>*@
+								@*<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "CLIENTS")">Clients</a></li>*@
+								@*<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "FOURNISSEURS1")">Fournisseurs</a></li>*@
+								@*<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Tableau_Horaire")">Tableau_Horaire</a></li>*@
+								@*<li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "Horaires")">Horaires</a></li>*@
+								<li ><a href="@Url.Action("Index", "SocieteLogoes")">Societe-Logo</a></li>
+
+								<li ><a href="@Url.Action("Index", "Directions")"><i class="fa fa-flask"></i> <span class="nav-label" data-i18n="nav.widgets">Budget Prévisionnel  </span> </a></li>
+
+								@if (Session["Soclogo"].ToString().Equals("SUNEVIT"))
+								{
+									<li ><a href="@Url.Action("CreatePrefixe", "SocieteLogoes")"><i class="fa fa-flask"></i> <span class="nav-label" data-i18n="nav.widgets"> CreatePrefixe  </span> </a></li>
+									<li ><a href="@Url.Action("Tour", "SocieteLogoes")"><i class="fa fa-flask"></i> <span class="nav-label" data-i18n="nav.widgets"> Configuration D'Application  </span> </a></li>
+								}
+							</ul>
+						</li>
+						<li class="dropdown">
+
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-certificate"></i> <span class="nav-label" data-i18n="nav.forms">Paramétrages Cuisine</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li ><a href="@Url.Action("Index", "TYPE_CAISSON")">Type Caisson</a></li>
+								<li ><a href="@Url.Action("Index", "ACCESSOIREs")">Accessoire Caisson</a></li>
+								<li ><a href="@Url.Action("Index", "CAISSONs")">Caisson</a></li>
+								<li ><a href="@Url.Action("Index", "TYPE_FACADE")">Type Facade</a></li>
+								<li ><a href="@Url.Action("Index", "FACADEs")">Références des Facades</a></li>
+								<li ><a href="@Url.Action("Index", "SS_FACADE")">Facades</a></li>
+
+
+
+							</ul>
+						</li>
+
+					}
+					else
+					{
+						if (Session["NOM"] == null)
+						{
+							Html.Action("LockScreen", "Societes");
+						}
+					}
+
+				}
+				catch (Exception e)
+				{
+					Html.Action("Login", "Societes");
+
+				}
+			}
+
+
+
+
+
+
+
+
+
+
+		</ul>
+
+
+
+</div>
+</nav>

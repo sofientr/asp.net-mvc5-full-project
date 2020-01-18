@@ -1,0 +1,283 @@
+﻿@model Inspinia_MVC5.Models.Decaissement
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Create</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+            <li class="active">
+                <strong>Create</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+			@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary"})
+        </div>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Create Decaissement</h5>
+                </div>
+                <div class="ibox-content">
+
+				@using (Html.BeginForm())
+                {
+    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true)
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CentreID, "Centre de couts", new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.DropDownList("CentreID", (IEnumerable<SelectListItem>)ViewBag.CentreID, new { @class = "form-control m-b" })
+                                @Html.ValidationMessageFor(model => model.CentreID)
+                            </div>
+
+                            
+                                <a href="javascript:void(0);" class="Couts">ajout</a>
+
+                            
+                        </div>
+
+
+                        
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Date, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Date)
+                                @Html.ValidationMessageFor(model => model.Date)
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CatID, "Catégorie", new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.DropDownList("CatID", (IEnumerable<SelectListItem>)ViewBag.CatID, new { @class = "form-control m-b" })
+                                @Html.ValidationMessageFor(model => model.CatID)
+                            </div>
+                        </div>
+
+                        @{try
+                            {
+                                if (Session["Direction"].ToString().Equals("dt"))
+                                {
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PrID, "Projet", new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                <div class="switch">
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" id="e" name="e" class="onoffswitch-checkbox" />
+                                        <label class="onoffswitch-label" for="e">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                  @Html.DropDownList("PrID", (IEnumerable<SelectListItem>)ViewBag.PrID, new { @class = "form-control ", @style = "display:none" })
+                                @Html.ValidationMessageFor(model => model.PrID)
+                            
+                              
+                            
+                             </div>
+                        </div>
+                                    }
+                                }
+                                catch (Exception e)
+                                {
+                                    Html.Action("Login", "Societes");
+
+                                }
+
+                            }
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                @Html.HiddenFor(model => model.DiretionID)
+
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.qte,"Quantité", new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.qte)
+                                @Html.ValidationMessageFor(model => model.qte)
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Demandeur, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Demandeur, new { htmlAttributes = new { @readonly = "", @class = "form-control", @Value = "" + Session["NOM"].ToString() } })
+                                @Html.ValidationMessageFor(model => model.Demandeur)
+                            
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.etat,"Etat", new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <h5 class="text-danger">en attente de validation<h5/>  
+                           @Html.HiddenFor(model => model.etat, new { Value = "0" })
+                             </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Create" class="btn btn-primary" />
+                                        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-white" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            }
+
+
+                        </div>
+                    </div>
+        </div>
+    </div>
+ </div>
+
+
+<div id='myModal' class='modal'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="myModalContent">
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+ @section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/jeditable")
+    @Scripts.Render("~/plugins/dataTables")
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+
+
+
+
+
+
+        $(document).ready(function () {
+
+            $('#e').change(function () {
+                if (this.checked) {
+                    alert("affecter un projet");
+
+                    $('#PrID').css("visibility", "visible");
+
+                    $('#PrID').show();
+                } else {
+                    alert("n'affecter pas  un projet");
+
+                    $('#PrID').css("visibility", "hidden");
+
+                    $('#PrID').show();
+                }
+            });
+
+            var elem = document.querySelector('.js-switch');
+            var switchery = new Switchery(elem, { color: '#1AB394' });
+
+            var elem_2 = document.querySelector('.js-switch_2');
+            var switchery_2 = new Switchery(elem_2, { color: '#ED5565' });
+
+            var elem_3 = document.querySelector('.js-switch_3');
+            var switchery_3 = new Switchery(elem_3, { color: '#1AB394' });
+
+
+
+
+
+        });
+
+
+
+
+
+
+
+
+
+        var PartielView1 = '/Decaissements/Couts';
+    $(function () {
+        $(".Couts").click(function () {
+            debugger;
+            var $buttonClicked = $(this);
+            var options = { "backdrop": "static", keyboard: true };
+            $.ajax({
+                type: "GET",
+                url: PartielView1,
+                contentType: "application/json; charset=utf-8",
+                data: "",
+                datatype: "json",
+                success: function (data) {
+                    debugger;
+                    $('#myModalContent').html(data);
+                    $('#myModal').modal(options);
+                    $('#myModal').modal('show');
+
+                },
+                error: function () {
+                    alert("Dynamic content load failed.");
+                }
+            });
+        });
+
+        $("#closbtn").click(function () {
+            $('#myModal').modal('hide');
+        });
+    });
+
+
+    </script>
+}

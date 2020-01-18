@@ -1,0 +1,360 @@
+﻿@model Inspinia_MVC5.Models.FOURNISSEURS
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h2>Edit Fournisseur</h2>
+                    </div>
+                    <div class="ibox-content">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            <h4>FOURNISSEURS</h4>
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.ID)
+
+                            @*<div class="form-group">
+            @Html.LabelFor(model => model.CODE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CODE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CODE, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CODE, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.CODE, new { htmlAttributes = new { @readonly = "", @class = "form-control"} })
+                                    @Html.ValidationMessageFor(model => model.CODE,"", new { @class = "text-danger" })
+                                    @*<input type="text" class="form-control" readonly="true" name="numero" id="numero" value="@ViewBag.Numero" required>*@
+									
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.NOM, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.NOM, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.NOM, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ADRESSE, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.ADRESSE, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ADRESSE, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TELEPHONE, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.TELEPHONE, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TELEPHONE, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.FAX, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.FAX, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.FAX, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EMAIL, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SITE_WEB, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.SITE_WEB, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.SITE_WEB, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ID_FISCAL, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.ID_FISCAL, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ID_FISCAL, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @*<div class="form-group">
+            @Html.LabelFor(model => model.AI, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AI, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AI, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+                            @*<div class="form-group">
+            @Html.LabelFor(model => model.NIS, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NIS, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NIS, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.RC, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.RC, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.RC, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.RIB, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.RIB, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.RIB, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CONTACT, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.CONTACT, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.CONTACT, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Save" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </div>
+                        }
+
+                        <div>
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="row">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>TIERS</h5>
+					<span class="label label-primary">T</span>
+					<div class="ibox-tools">
+						<a class="collapse-link">
+							<i class="fa fa-chevron-up"></i>
+						</a>
+
+
+					</div>
+
+				</div>
+				<div class="ibox-content">
+
+					<div>
+						<div class="divScroll">
+
+							<table class="table table-striped table-bordered table-hover dataTables-example" id="Tab">
+								<thead>
+									<tr>
+
+										<th style="width:160px;">
+											REF_TIERS
+										</th>
+										<th>
+											NOM
+										</th>
+										<th>
+											PRENOM
+										</th>
+										<th>
+											NUMERO
+										</th>
+										<th>
+											EMAIL
+										</th>
+
+
+										<th>
+
+										</th>
+
+
+									</tr>
+									@*<tr>
+										<th colspan="8" style="text-align:right">Coût services:</th>
+										<th><input type="text" class="form-control" readonly="true" name="NettotalTTCSERV" id="NettotalTTCSERV" value="0" required></th>
+										<th></th>
+
+									</tr>*@
+								</thead>
+
+								<tbody></tbody>
+								<tfoot>
+									<tr>
+										
+										<td>
+											<input type="number" class="form-control" id="REF111" />
+										</td>
+										<td>
+											<input type="text" class="form-control" id="NOM1" />
+										</td>
+										<td>
+											<input type="text" class="form-control" id="PRENOM1" />
+										</td>
+										<td>
+											<input type="number" class="form-control" id="NUMERO1" />
+										</td>
+										<td>
+											<input type="text" class="form-control" id="EMAIL1" />
+										</td>
+
+										<td style="display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px;
+                                border-top-width: 0px;" required>
+											<button class="btn btn-info btn-circle" type="button" onclick="AddRow2()" id="FirstBTN2">
+												<i class="fa fa-check"></i>
+											</button>
+											<button class="btn btn-warning btn-circle" type="button" disabled>
+												<i class="fa fa-times"></i>
+											</button>
+										</td>
+									</tr>
+
+								</tfoot>
+
+							</table>
+
+						</div>
+
+
+
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+    </div>
+
+
+    @section Scripts {
+        <script type="text/javascript" src="~/Scripts/jquery.maskedinput.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#ID_FISCAL").mask("9999999*/a/a/999");
+
+            });
+
+
+
+
+
+
+			function AddRow2() {
+				
+				var ID1 = $("#REF111").val();
+				var NOM1= $("#NOM1").val();
+				var PRENOM1 = $("#PRENOM1").val();
+				var NUMERO1 = $("#NUMERO1").val();
+				var EMAIL1 = $("#EMAIL1").val();
+
+
+				var data1 = {
+					ID1: ID1,
+					NOM1: NOM1,
+					PRENOM1: PRENOM1,
+					NUMERO1: NUMERO1,
+					EMAIL1: EMAIL1
+					
+
+				};
+
+				debugger;
+				$.ajax({
+					type: 'POST',
+					url: "/FOURNISSEURS1/AddLinetiers",
+					data: data1,
+					success: function (response) {
+
+						RemplirTableau4();
+
+					}
+				});
+			}
+
+			RemplirTableau4()
+			function RemplirTableau4() {
+				$("#Tab tbody").empty();
+
+				$.ajax({
+					type: 'POST',
+					url: "/FOURNISSEURS1/GetAllLineTIERS",
+					success: function (response1) {
+
+						$.each(response1, function (i, item) {
+
+
+							var line = "<tr  id='" + item.ID + "'><td>" + item.ID + "</td><td>" + item.NOM + "</td><td>" + item.PRENOM + "</td><td>" + item.NUMERO + "</td><td>" + item.EMAIL +"</td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow2(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+							$("#Tab tbody").append(line);
+
+
+						});
+						/*if (Mode == "Aff") {
+							$("#Tab tfoot").empty();
+						}
+						else {
+							$("#Tab tfoot").replaceWith("<tfoot><tr><tr><td><select type='text' class='form-control' id='SERVICE'/></td><td><textarea id='descriptionSERVICE'></textarea></td><td><input class='form-control' id='uniteSERVICE' value='H'/></td><td><input type='number' class='form-control' id='QuantiteSERVICE' value='1' min='1'/></td><td><input type='number' class='form-control' id='PUHTSERVICE' min='0' /></td><td><input type='number' class='form-control' id='RemiseSERVICE' value='0' min='0'/></td><td><input type='number' class='form-control' id='PTHTSERVICE' readonly='true'/></td><td><select class='form-control' id='TVASERVICE'><option>19</option></select></td><td><input type='number' class='form-control' id='TTCSERVICE' readonly='true'/></td><td><select type='text' id='RESSOURCE' data-placeholder='Choisir un employer...' class='chosen-select' multiple style='width:350px;' tabindex='4'></select></td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='AddRow2()'  id='FirstBTN'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' disabled> <i class='fa fa-times'></i> </button> </td> </tr> </tfoot>");
+							$("#SERVICE").select2();
+							$("#RESSOURCE").select2();
+							$("#TVASERVICE").select2();
+							RemplirListe11();
+							RemplirListe12();
+							RemplirListe13();
+						}*/
+					}
+				});
+
+				
+
+			}
+			function DeleteRow2(parampassed) {
+				$.ajax({
+					type: 'POST',
+					url: "/FOURNISSEURS1/DeleteLineTIERS?parampassed=" + parampassed,
+					success: function (response) {
+						RemplirTableau4();
+					}
+				});
+			}
+
+
+        </script>
+    }
+</body>
+</html>

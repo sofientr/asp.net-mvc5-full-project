@@ -1,0 +1,778 @@
+﻿<link href="~/Content/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+<link href="~/Content/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
+<link href="~/Content/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
+<style type="text/css">
+
+    #Tableau {
+        /*margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        border: 1px solid #000000;*/
+        width: 1175px;
+    }
+
+    .divScroll {
+        overflow: auto;
+        /*height: 200px;*/
+        /*width: 800px;*/
+    }
+</style>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>
+            AVOIRS
+        </h2>
+        <ol class="breadcrumb">
+            <li><a>Vente</a> </li>
+            <li class="active"><strong>AVOIRS</strong> </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title" style="padding-top: 4px;">
+                    <h5 style="padding-top: 10px;">
+                        Liste des avoirs clients
+                    </h5>
+                    <div class="ibox-tools">
+                        <button class="btn btn-success " type="button" onclick="location.href='@Url.Action("FormAvoir", "Vente", new { Mode = "Create", Code = "-1" }, null)'">
+                            <i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;&nbsp;<span class="bold">Ajouter</span>
+                        </button>
+                        @*<button class="btn btn-primary " type="button" id="PrintBtn">
+                                <i class="fa fa-print" aria-hidden="true"></i>&nbsp;&nbsp;<span class="bold">Imprimer</span>
+                            </button>*@
+                        <div class="btn-group pull-right" style="margin-right: 5px;">
+                            <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+                                <i class="fa fa-print" aria-hidden="true"></i>Imprimer <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li id="Pardate" onclick="Pardate();"><a href="#">Par Date</a></li>
+                                @*<li id="paretat" onclick="parVal();"><a href="#">Par Validité</a></li>*@
+                                <li id="Parclt" onclick="Parclt();"><a href="#">Par Client</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="ibox-content">*@
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tabs-container">
+                            <ul class="nav nav-tabs" id="listeAnnee">
+                                <li class="active"><a data-toggle="tab" href="#tab-1">all</a></li>
+                                @{
+                                    Inspinia_MVC5.Models.Tr db = new Inspinia_MVC5.Models.Tr();
+                                    List<Inspinia_MVC5.Models.Exercice> Exercice = db.Exercice.ToList();
+                                    foreach (Inspinia_MVC5.Models.Exercice Ex in Exercice)
+                                    {
+                                        <li class=""><a data-toggle="tab" href="#@Ex.Annee">@Ex.Annee</a></li>
+                                    }
+                                }
+
+                            </ul>
+                            <div class="tab-content" id="exercice">
+                                <div id="tab-1" class="tab-pane active">
+
+                                    <div class="panel-body">
+                                        <table cellpadding="1" cellspacing="0" border="0" style="width: 50%; margin: 0 auto 2em auto;">
+                                            <thead>
+                                                <tr>
+                                                    <th><center>Search</center></th>
+                                                    <th><center>Search text</center></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="filter_col1" data-column="0">
+                                                    <td align="center">N°</td>
+                                                    <td align="center"><input type="text" class="column_filter" id="col0_filter"></td>
+                                                </tr>
+                                                <tr id="filter_col2" data-column="1">
+                                                    <td align="center">DATE</td>
+                                                    <td align="center"><input type="text" class="column_filter" id="col1_filter"></td>
+                                                </tr>
+                                                @*<tr id="filter_col3" data-column="2">
+                                                    <td align="center">Date</td>
+                                                    <td align="center"><input type="text" class="column_filter" id="col2_filter"></td>
+                                                </tr>*@
+                                                <tr id="filter_col4" data-column="2">
+                                                    <td align="center">FRS</td>
+                                                    <td align="center">
+                                                        <select class="column_filter" id="col3_filter" style="width:154px; height:24px;"></select>
+                                                    </td>
+                                                </tr>
+
+                                                <tr id="filter_col5" data-column="4">
+                                                    <td align="center">PHT</td>
+                                                    <td align="center"><input type="text" class="column_filter" id="col4_filter"></td>
+                                                </tr>
+                                                <tr id="filter_col6" data-column="5">
+                                                    <td align="center">TTVA</td>
+                                                    <td align="center"><input type="text" class="column_filter" id="col5_filter"></td>
+                                                </tr>
+                                                <tr id="filter_col7" data-column="6">
+                                                    <td align="center">PTTC</td>
+                                                    <td align="center"><input type="text" class="column_filter" id="col6_filter"></td>
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
+                                        <table class="table table-striped table-bordered table-hover dataTables-example"
+                                               id="Tableau">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        NUMERO
+                                                    </th>
+                                                    <th>
+                                                        DATE
+                                                    </th>
+                                                    <th>
+                                                        CLIENT
+                                                    </th>
+                                                    <th>
+                                                        VALIDEE
+                                                    </th>
+                                                    <th>
+                                                        NET HT
+                                                    </th>
+                                                    <th>
+                                                        TOTALE TVA
+                                                    </th>
+                                                    <th>
+                                                        TOTALE TTC
+                                                    </th>
+                                                    <th>
+                                                        NET A PAYE
+                                                    </th>
+                                                    @*<th>
+                                                            SOCIETE
+                                                        </th>*@
+                                                    @*<th>
+                                                            TIERS
+                                                        </th>*@
+                                                    <th>
+
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (dynamic item in Model)
+                                                {
+                                                    <tr id="@item.ID">
+                                                        <td>
+                                                            @item.CODE
+                                                        </td>
+                                                        <td>
+                                                            @item.DATE
+                                                        </td>
+                                                        <td>
+                                                            @item.FOURNISSEUR
+                                                        </td>
+                                                        <td>
+                                                            @if (item.VALIDE == true)
+                                                            {
+                                                                <span class="label label-primary">VALIDEE</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="label label-warning-light">NON VALIDEE</span>
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            @item.THT
+                                                        </td>
+                                                        <td>
+                                                            @item.TTVA
+                                                        </td>
+                                                        <td>
+                                                            @item.TTC
+                                                        </td>
+                                                        <td>
+                                                            @item.TNET
+                                                        </td>
+                                                        @*<td>
+                                                                @item.SOCIETE
+                                                            </td>*@
+                                                        @* <td>
+                                                                @item.TIERS
+                                                            </td>*@
+
+                                                        <td>
+
+
+                                                            <button class="btn btn-primary dim" type="button" style="width : 40px" onclick="Btn_Edit_click(@item.ID);">
+                                                                <i class="fa fa-pencil-square-o" style="margin-right: 2px;"></i>
+                                                            </button>
+
+                                                            <button class="btn btn-info  dim" type="button" style="width : 40px" onclick="Delete(@item.ID);">
+                                                                <i class="fa fa-trash" style="margin-right: 2px;"></i>
+                                                            </button>
+
+                                                            <button class="btn btn-warning  dim" type="button" style="width : 40px" onclick="Btn_Aff_click(@item.ID);">
+                                                                <i class="fa fa-eye"></i>
+                                                            </button>
+
+                                                        </td>
+
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="5" style="text-align:right">Total:</th>
+                                                    @for (int i = 0; i < 4; i++)
+                                                    {
+                                                        <th></th>
+                                                    }
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                                @{
+                                    Inspinia_MVC5.Models.Tr db1 = new Inspinia_MVC5.Models.Tr();
+                                    List<Inspinia_MVC5.Models.Exercice> Exercice1 = db1.Exercice.ToList();
+                                    List<Inspinia_MVC5.Models.AVOIRS_CLIENTS> FACTURES_FOURNISSEURS1 = db1.AVOIRS_CLIENTS.ToList();
+
+                                    foreach (Inspinia_MVC5.Models.Exercice Ex1 in Exercice1)
+                                    {
+                                        List<Inspinia_MVC5.Models.AVOIRS_CLIENTS> FACTURES_FOURNISSEURS = new List<Inspinia_MVC5.Models.AVOIRS_CLIENTS>();
+                                        decimal tht = 0;
+                                        decimal ttva = 0;
+                                        decimal tttc = 0;
+
+                                        string exan = (Ex1.Annee).ToString();
+                                        foreach (Inspinia_MVC5.Models.AVOIRS_CLIENTS ligne in FACTURES_FOURNISSEURS1)
+                                        {
+                                            string an = ligne.DATE.ToString("yyyy");
+                                            if (exan == an)
+                                            {
+                                                FACTURES_FOURNISSEURS.Add(ligne);
+                                                tht += (decimal)(ligne.THT);
+                                                ttva += (decimal)(ligne.TTVA);
+                                                tttc += (decimal)(ligne.TTC);
+
+                                            }
+
+                                        }
+
+
+                                        <div id="@Ex1.Annee" class="tab-pane">
+
+                                            <div class="panel-body">
+                                                <table cellpadding="1" cellspacing="0" border="0" style="width: 50%; margin: 0 auto 2em auto;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th><center>Search</center></th>
+                                                            <th><center>Search text</center></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        @{
+                                                            var NUM1 = "NUM" + Ex1.Annee;
+                                                            var NUM2 = "NUM" + Ex1.Annee + "N";
+                                                        }
+                                                        <tr id="filter_col1" data-column="@NUM1">
+                                                            <td align="center">N°</td>
+                                                            <td align="center"><input type="text" class="column_filter0" id="@NUM2"></td>
+                                                        </tr>
+                                                        @{
+                                                            var DES1 = "DES" + Ex1.Annee;
+                                                            var DES2 = "DES" + Ex1.Annee + "DES";
+                                                        }
+                                                        <tr id="filter_col2" data-column="@DES1">
+                                                            <td align="center">DATE</td>
+                                                            <td align="center"><input type="text" class="column_filter2" id="@DES2"></td>
+                                                        </tr>
+                                                        @{
+                                                            var DATE1 = "DATE" + Ex1.Annee;
+                                                            var DATE2 = "DATE" + Ex1.Annee + "D";
+                                                        }
+                                                        <tr id="filter_col3" data-column="@DATE1">
+                                                            <td align="center">DATE</td>
+                                                            <td align="center"><input type="text" class="column_filter1" id="@DATE2"></td>
+                                                        </tr>
+                                                        @{
+                                                            var FRS1 = "FRS" + Ex1.Annee;
+                                                            var FRS2 = "FRS" + Ex1.Annee + "F";
+                                                        }
+                                                        <tr id="filter_col34" data-column="@FRS1">
+                                                            <td align="center">FRS</td>
+                                                            <td align="center">
+                                                                <select class="column_filter3" id="@FRS2" style="width:154px; height:24px;"></select>
+                                                            </td>
+                                                        </tr>
+
+
+                                                        @{
+                                                            var PHT1 = "THT" + Ex1.Annee;
+                                                            var PHT2 = "THT" + Ex1.Annee + "HT";
+                                                        }
+                                                        <tr id="filter_col5" data-column="@PHT1">
+                                                            <td align="center">PHT</td>
+                                                            <td align="center"><input type="text" class="column_filter4" id="@PHT2"></td>
+                                                        </tr>
+                                                        @{
+                                                            var TTVA1 = "TTVA" + Ex1.Annee;
+                                                            var TTVA2 = "TTVA" + Ex1.Annee + "TV";
+                                                        }
+                                                        <tr id="filter_col6" data-column="@TTVA1">
+                                                            <td align="center">TTVA</td>
+                                                            <td align="center"><input type="text" class="column_filter5" id="@TTVA2"></td>
+                                                        </tr>
+                                                        @{
+                                                            var TTC1 = "TTC" + Ex1.Annee;
+                                                            var TTC2 = "TTC" + Ex1.Annee + "TC";
+                                                        }
+                                                        <tr id="filter_col7" data-column="@TTC1">
+                                                            <td align="center">PTTC</td>
+                                                            <td align="center"><input type="text" class="column_filter6" id="@TTC2"></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                @{
+                                                    var idtab = "tab" + Ex1.Annee;
+                                                }
+                                                <table class="table table-striped table-bordered table-hover dataTables-example"
+                                                       id="@idtab">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                NUMERO
+                                                            </th>
+                                                            <th>
+                                                                DATE
+                                                            </th>
+                                                            <th>
+                                                                CLIENT
+                                                            </th>
+                                                            <th>
+                                                                VALIDEE
+                                                            </th>
+                                                            <th>
+                                                                NET HT
+                                                            </th>
+                                                            <th>
+                                                                TOTALE TVA
+                                                            </th>
+                                                            <th>
+                                                                TOTALE TTC
+                                                            </th>
+                                                            <th>
+                                                                NET A PAYE
+                                                            </th>
+                                                            @*<th>
+                                                                    SOCIETE
+                                                                </th>*@
+                                                            @*<th>
+                                                                    TIERS
+                                                                </th>*@
+                                                            <th>
+
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var item in FACTURES_FOURNISSEURS)
+                                                        {
+                                                            <tr id="@item.ID">
+                                                                <td>
+                                                                    @item.CODE
+                                                                </td>
+                                                                <td>
+                                                                    @item.DATE
+                                                                </td>
+                                                                <td>
+                                                                    @item.CLIENTS.NOM
+                                                                </td>
+                                                                <td>
+                                                                    @if (item.VALIDER == true)
+                                                                    {
+                                                                        <span class="label label-primary">VALIDEE</span>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <span class="label label-warning-light">NON VALIDEE</span>
+                                                                    }
+                                                                </td>
+                                                                <td>
+                                                                    @item.THT
+                                                                </td>
+                                                                <td>
+                                                                    @item.TTVA
+                                                                </td>
+                                                                <td>
+                                                                    @item.TTC
+                                                                </td>
+                                                                <td>
+                                                                    @item.TNET
+                                                                </td>
+                                                                @*<td>
+                                                                        @item.SOCIETE
+                                                                    </td>*@
+                                                                @* <td>
+                                                                        @item.TIERS
+                                                                    </td>*@
+
+                                                                <td>
+
+
+                                                                    <button class="btn btn-primary dim" type="button" style="width : 40px" onclick="Btn_Edit_click(@item.ID);">
+                                                                        <i class="fa fa-pencil-square-o" style="margin-right: 2px;"></i>
+                                                                    </button>
+
+                                                                    <button class="btn btn-info  dim" type="button" style="width : 40px" onclick="Delete(@item.ID);">
+                                                                        <i class="fa fa-trash" style="margin-right: 2px;"></i>
+                                                                    </button>
+
+                                                                    <button class="btn btn-warning  dim" type="button" style="width : 40px" onclick="Btn_Aff_click(@item.ID);">
+                                                                        <i class="fa fa-eye"></i>
+                                                                    </button>
+
+                                                                </td>
+
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th colspan="5" style="text-align:right">Total:</th>
+                                                            @for (int i = 0; i < 4; i++)
+                                                            {
+                                                                <th></th>
+                                                            }
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+@section Scripts {
+    <script type="text/javascript" src="~/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.responsive.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+    @Scripts.Render("~/plugins/dataTables")
+    <script type="text/javascript">
+        var table = $('#Tableau').DataTable();
+
+
+
+    $("#PrintBtn").click(function () {
+        window.open("/Vente/PrintAllAvoirClient", '_blank');
+    });
+    function Btn_Edit_click(MyValue) {
+        window.location.href = "/Vente/FormAvoir?Mode=Edit&Code=" + MyValue;
+    }
+    function Btn_Aff_click(MyValue) {
+
+        window.location.href = "/Vente/FormAvoir?Mode=Aff&Code=" + MyValue;
+
+
+    }
+        function Delete(MyValue) {
+        var Conf = confirm("Voulez vous Supprimer cet elément ?");
+        if (Conf == true) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/DeleteAvoir?parampassed=" + MyValue,
+                success: function (response) {
+                    window.location = "/Vente/Avoir";
+                }
+            });
+        }
+        var preloader = $('<div>', { 'class': 'preloader' }).appendTo('body');
+        $(this)
+               .ajaxStart(function () {
+                   preloader.fadeIn();
+               })
+               .ajaxStop(function () {
+                   preloader.delay(800).fadeOut();
+               });
+        }
+        //function parVal() {
+        //    var parampassed = "@ViewBag.Code";
+        //    var Conf = confirm("Voulez vous imprimer cette avoir par validité ?");
+        //    if (Conf == true) {
+        //        $.ajax({
+        //            type: 'POST',
+        //            url: "/Vente/PrintAllAvoirClientParVal?parampassed=" + parampassed,
+        //            success: function (response) {
+        //                window.location.href = "/Vente/PrintAllAvoirClientParVal?Code=" + parampassed;
+        //                //    if (response == "NO") {
+        //                //        window.location.href = window.location.href;
+        //                //        alert("Facture pas encore validée");
+        //                //    }
+        //                //    else {
+        //                //        window.location.href = "/Vente/FormAvoir?Mode=Edit&Code=" + response;
+        //                //    }
+        //            }
+        //        });
+        //    }
+        //}
+        function Parclt() {
+            var parampassed = "@ViewBag.Code";
+            var Conf = confirm("Voulez vous imprimer cette avoir par Client ?");
+            if (Conf == true) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Vente/PrintAllAvoirClient?parampassed=" + parampassed,
+                    success: function (response) {
+                        window.location.href = "/Vente/PrintAllAvoirClient?Code=" + parampassed;
+                        //    if (response == "NO") {
+                        //        window.location.href = window.location.href;
+                        //        alert("Facture pas encore validée");
+                        //    }
+                        //    else {
+                        //        window.location.href = "/Vente/FormAvoir?Mode=Edit&Code=" + response;
+                        //    }
+                    }
+                });
+            }
+
+
+        }
+        function Pardate() {
+            var parampassed = "@ViewBag.Code";
+            var Conf = confirm("Voulez vous imprimer cette Avoir par Date ?");
+            if (Conf == true) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Vente/PrintAllAvoirClientParDate?parampassed=" + parampassed,
+                    success: function (response) {
+                        window.location.href = "/Vente/PrintAllAvoirClientParDate?Code=" + parampassed;
+                        //    if (response == "NO") {
+                        //        window.location.href = window.location.href;
+                        //        alert("Facture pas encore validée");
+                        //    }
+                        //    else {
+                        //        window.location.href = "/Vente/FormAvoir?Mode=Edit&Code=" + response;
+                        //    }
+                    }
+                });
+            }
+        }
+        function filterGlobal() {
+            $('#Tableau').DataTable().search(
+                $('#global_filter').val(),
+
+            ).draw();
+        }
+        function filterColumn0(i) {
+
+            var iii = i + "N";
+
+            var ii = i.replace("NUM", "");
+
+            var tab = "tab" + ii;
+
+            $('#' + tab + '').DataTable().column(0).search(
+                $('#' + iii + '').val(),
+            ).draw();
+
+        }
+        function filterColumn1(i) {
+
+            var iii = i + "DES";
+
+            var ii = i.replace("DES", "");
+            var tab = "tab" + ii;
+            $('#' + tab + '').DataTable().column(1).search(
+                $('#' + iii + '').val(),
+            ).draw();
+
+        }
+
+        function filterColumn3(i) {
+            var iii = i + "F";
+            var ii = i.replace("FRS", "");
+            var tab = "tab" + ii;
+            $('#' + tab + '').DataTable().column(2).search(
+                $('#' + iii + '').val(),
+            ).draw();
+        }
+        function filterColumn11(i) {
+            var iii = i + "D";
+            var ii = i.replace("DATE", "");
+            var tab = "tab" + ii;
+            $('#' + tab + '').DataTable().column(2).search(
+                $('#' + iii + '').val(),
+            ).draw();
+        }
+        function filterColumn33(i) {
+            var iii = i + "HT";
+            var ii = i.replace("THT", "");
+            var tab = "tab" + ii;
+            $('#' + tab + '').DataTable().column(4).search(
+                $('#' + iii + '').val(),
+            ).draw();
+        }
+        function filterColumn44(i) {
+            var iii = i + "TV";
+            var ii = i.replace("TTVA", "");
+            var tab = "tab" + ii;
+            $('#' + tab + '').DataTable().column(5).search(
+                $('#' + iii + '').val(),
+            ).draw();
+        }
+        function filterColumn55(i) {
+            var iii = i + "TC";
+            var ii = i.replace("TTC", "");
+            var tab = "tab" + ii;
+            $('#' + tab + '').DataTable().column(6).search(
+                $('#' + iii + '').val(),
+            ).draw();
+        }
+        function filterColumn(i) {
+            $('#Tableau').DataTable().column(i).search(
+                $('#col' + i + '_filter').val(),
+            ).draw();
+        }
+
+
+        $('#col3_filter').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllClient",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('#col3_filter').append($('<option>', {
+                        value: item.NOM,
+                        text: item.NOM
+                    }));
+
+                });
+            }
+        });
+        $('.column_filter3').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllClient",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('.column_filter3').append($('<option>', {
+                        value: item.NOM,
+                        text: item.NOM
+                    }));
+
+                });
+            }
+        });
+    $(document).ready(function () {
+        $("#Li-Vente").attr("class", "active");
+        $("#ul-Vente").attr("class", "nav nav-second-level collapse in");
+        $("#ul-Vente").attr("aria-expanded", "true");
+        var Action = "@ViewBag.MODE";
+        if (Action == "Create") {
+            setTimeout(function () {
+                toastr.options = {
+                    closeButton: true,
+                    progressBar: true,
+                    showMethod: 'slideDown',
+                    timeOut: 3000
+                };
+                toastr.success('Ajout avec Succés', '');
+
+            }, 1300);
+        }
+        if (Action == "Edit") {
+            setTimeout(function () {
+                toastr.options = {
+                    closeButton: true,
+                    progressBar: true,
+                    showMethod: 'slideDown',
+                    timeOut: 3000
+                };
+                toastr.success('Modification avec Succés', '');
+
+            }, 1300);
+        }
+ });
+                                $('input.global_filter').on('keyup click', function () {
+                                    filterGlobal();
+                                });
+                                $('select.global_filter').on('change', function () {
+                                    filterGlobal();
+                                });
+
+                                $('input.column_filter').on('keyup click', function () {
+                                    filterColumn($(this).parents('tr').attr('data-column'));
+                                });
+                                $('input.column_filter0').on('keyup click', function () {
+                                    filterColumn0($(this).parents('tr').attr('data-column'));
+                                });
+
+                                $('input.column_filter1').on('keyup click', function () {
+                                    filterColumn11($(this).parents('tr').attr('data-column'));
+                                });
+
+                                $('input.column_filter2').on('keyup click', function () {
+                                   filterColumn1($(this).parents('tr').attr('data-column'));
+                                });
+                                $('input.column_filter4').on('keyup click', function () {
+                                    filterColumn33($(this).parents('tr').attr('data-column'));
+                                });
+                                $('input.column_filter5').on('keyup click', function () {
+                                    filterColumn44($(this).parents('tr').attr('data-column'));
+                                });
+                                $('input.column_filter6').on('keyup click', function () {
+                                    filterColumn55($(this).parents('tr').attr('data-column'));
+                                });
+                                //$('input.column_filter6').on('keyup click', function () {
+                                //    filterColumn66($(this).parents('tr').attr('data-column'));
+                                //});
+
+                                $('select.column_filter').on('change', function () {
+                                    filterColumn($(this).parents('tr').attr('data-column'));
+                                });
+                                $('select.column_filter1').on('change', function () {
+                                    filterColumn1($(this).parents('tr').attr('data-column'));
+                                });
+                                $('select.column_filter2').on('change', function () {
+                                    filterColumn2($(this).parents('tr').attr('data-column'));
+                                });
+                                $('select.column_filter3').on('change', function () {
+                                    filterColumn3($(this).parents('tr').attr('data-column'));
+                                });
+                                //$('select.column_filter3').on('change', function () {
+                                //    filterColumn3($(this).parents('tr').attr('data-column'));
+                                //});
+                                $('select.column_filter4').on('change', function () {
+                                    filterColumn4($(this).parents('tr').attr('data-column'));
+                                });
+
+
+
+
+    </script>
+}

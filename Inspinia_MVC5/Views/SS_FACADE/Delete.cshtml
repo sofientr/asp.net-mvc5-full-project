@@ -1,0 +1,64 @@
+﻿@model Inspinia_MVC5.Models.SS_FACADE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SS_FACADE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PTHT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PTHT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PTTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PTTC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FACADE.REF_FAC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FACADE.REF_FAC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FACADE1.REF_FAC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FACADE1.REF_FAC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPE_FACADE.TYPE_FACADE1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPE_FACADE.TYPE_FACADE1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

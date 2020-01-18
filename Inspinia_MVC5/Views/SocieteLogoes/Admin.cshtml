@@ -1,0 +1,121 @@
+﻿@model Inspinia_MVC5.Models.Personnels
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Create</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+            <li class="active">
+                <strong>Create</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+            @*@Html.ActionLink("Retour à la liste des employés", "Index", null, new { @class = "btn btn-primary" })*@
+        </div>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Ajouter un nouveau employé</h5>
+                </div>
+                <div class="ibox-content">
+
+                    @using (Html.BeginForm("SendAdmin", "SocieteLogoes", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true)
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Role, "Role", new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("Role", new List<SelectListItem>
+                                    {
+                                         //new SelectListItem{ Text="", Value = "" },
+                                         new SelectListItem{ Text="Admin", Value = "Admin" },
+                                         //new SelectListItem{ Text="Directeur technique ", Value = "Directeur Technique " },
+                                         //new SelectListItem{ Text="Directeur commerciale ", Value = "Responsable Commerciale" },
+                                         //new SelectListItem{ Text="Chef projet ", Value = "Chef Projet" },
+                                         //new SelectListItem{ Text="Technicien ", Value = "Technicien" },
+                                         //new SelectListItem{ Text="Employee", Value = "Employee" },
+                                     },
+                                        
+                                        new { @readonly = "", @class = "form-control m-b" })
+                                        @Html.ValidationMessageFor(model => model.Role)
+                            </div>
+                        </div>
+                        @{
+                         //var direction = Session["NewDirection"].ToString();
+
+                        }
+                        <div class="form-group">
+                            <div class="control-label col-md-2"><b>Direction</b></div>
+                            <div class="col-md-10">
+                                @*@Html.EditorFor(model => model.Direction)
+                                @Html.ValidationMessageFor(model => model.Direction)*@
+                                <input class="form-control" type="text" name="direction" id="direction" Value="@ViewBag.direction" readonly />
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Email)
+                                @Html.ValidationMessageFor(model => model.Email)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            Login
+                            @*@Html.LabelFor(model => model.Nom, new { @class = "control-label col-md-2" })*@
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Nom)
+                                @Html.ValidationMessageFor(model => model.Nom)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @*@Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })*@
+                            <div class="control-label col-md-2"><b>Mot de passe</b></div>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Password)
+                                @Html.ValidationMessageFor(model => model.Password)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @*@Html.LabelFor(model => model.Tel, new { @class = "control-label col-md-2" })*@
+                            <div class="control-label col-md-2"><b>N° de téléphone</b></div>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Tel)
+                                @Html.ValidationMessageFor(model => model.Tel)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Valider" class="btn btn-primary" />
+                                @Html.ActionLink("Annuler", "Tour", "SocieteLogoes", null, new { @class = "btn btn-white" })
+                            </div>
+                        </div>
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,212 @@
+﻿@model Inspinia_MVC5.Models.Direction
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Details</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+            <li class="active">
+                <strong>Details</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Details Direction</h5>
+                </div>
+                <div class="ibox-content">
+
+
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Nom)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Nom)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Budget)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Budget)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Année)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Année)
+                        </dd>
+
+                        @*<dt>
+                            @Html.DisplayNameFor(model => model.Societes.NOM)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Societes.NOM)
+                        </dd>*@
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.SocieteLogo.Nom_Societe)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.SocieteLogo.Nom_Societe)
+                        </dd>
+
+                    </dl>
+
+
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.DiretionID }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-white" })
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ibox ">
+    <div class="ibox-title">
+        <h5>Droit d'accés </h5>
+        <span class="label label-primary">DA</span>
+        <div class="ibox-tools">
+            <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+        </div>
+
+    </div>
+    <div class="ibox-content">
+
+        <div class="divScroll">
+            <table class="table table-striped table-bordered table-hover dataTables-example" id="Tableau">
+                <thead>
+                    <tr>
+                        <th style="width:150px;">
+                            Table
+                        </th>
+                        <th style="width:150px;">
+                            Ajout
+                        </th>
+                        <th style="width:150px;">
+                            Modification
+                        </th>
+
+                        <th style="width:150px;">
+                            Suppression
+                        </th>
+                        <th style="width:150px;">
+                            Affichage
+                        </th>
+                        @*<th style="width:150px;">
+
+                        </th>*@
+
+                    </tr>
+
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    @{
+                        Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+                        int id = ViewBag.id;
+                        List<Inspinia_MVC5.Models.DROIT_ACCES> DROIT_ACCES = db.DROIT_ACCES.Where(f=>f.Id_Direction== id).ToList();
+                        foreach (var item in DROIT_ACCES)
+                        {
+
+                            <tr id="@item.Id">
+                                <td>
+                                    @db.TABLES_BD.Where(f=>f.Id==item.Id_Table).FirstOrDefault().Libelle_Table
+                                </td>
+                                <td>
+                                    @if (item.Ajout == true)
+                                    {
+                                        <input type="checkbox" name="ajout" disabled checked />
+                                    }
+                                    else
+                                    {
+                                        <input type="checkbox" name="ajout" disabled/>
+
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.Modification == true)
+                                    {
+                                        <input type="checkbox" name="Modif" disabled checked />
+                                    }
+                                    else
+                                    {
+                                        <input type="checkbox" name="Modif" disabled/>
+
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.Suppression == true)
+                                    {
+                                        <input type="checkbox" name="supp" disabled checked />
+
+                                    }
+                                    else
+                                    {
+                                        <input type="checkbox" name="supp" disabled />
+
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.Affichage == true)
+                                    {
+                                        <input type="checkbox" name="aff" disabled checked />
+                                    }
+                                    else
+                                    {
+                                        <input type="checkbox" name="aff" disabled/>
+
+                                    }
+                                </td>
+                                @*<td>
+                                           <button class="btn btn-info btn-circle" type="button" title="Validée" style="height: 28px;
+                                    padding-bottom: 3px; padding-top: 3px;" id="ValidateBtn" onclick=" Validate();">
+                                               <i class="fa fa-check"></i>
+                                           </button>
+                                       </td>*@
+
+
+                            </tr>
+                        }
+                    }
+
+
+
+                </tfoot>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

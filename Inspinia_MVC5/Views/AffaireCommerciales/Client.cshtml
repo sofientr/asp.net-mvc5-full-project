@@ -1,0 +1,213 @@
+﻿@model Inspinia_MVC5.Models.CLIENTS
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Client Client</h5>
+                </div>
+                <div class="ibox-content">
+
+				@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true)
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CODE, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                
+                                <input type="text" class="form-control" readonly="true" name="CODE" id="CODE" value="@ViewBag.Numero">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.NOM, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.NOM)
+                                @Html.ValidationMessageFor(model => model.NOM)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ADRESSE, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.ADRESSE, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.ADRESSE)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.TELEPHONE, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.TELEPHONE)
+                                @Html.ValidationMessageFor(model => model.TELEPHONE)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.FAX, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.FAX)
+                                @Html.ValidationMessageFor(model => model.FAX)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EMAIL, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.EMAIL)
+                                @Html.ValidationMessageFor(model => model.EMAIL)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SITE_WEB, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.SITE_WEB)
+                                @Html.ValidationMessageFor(model => model.SITE_WEB)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ID_FISCAL, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.ID_FISCAL, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.ID_FISCAL)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AI, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.AI)
+                                @Html.ValidationMessageFor(model => model.AI)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.NIS, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.NIS)
+                                @Html.ValidationMessageFor(model => model.NIS)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.RC, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.RC)
+                                @Html.ValidationMessageFor(model => model.RC)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.RIB, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.RIB)
+                                @Html.ValidationMessageFor(model => model.RIB)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CONTACT, new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.CONTACT)
+                                @Html.ValidationMessageFor(model => model.CONTACT)
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="button" value="Create" class="btn btn-primary" onclick="update_clients2()" />
+                                @Html.ActionLink("Cancel", "Create", new {  Designation=ViewBag.Designation,  Description=ViewBag.Description, Delai_de_Soumission=ViewBag.Delai_de_Soumission, Date_de_Soumission=ViewBag.Date_de_Soumission, DateConsultation=ViewBag.DateConsultation,EtatSoum=ViewBag.EtatSoum,faisabilite=ViewBag.faisabilite,AffaireObtenue=ViewBag.AffaireObtenue, Importance=ViewBag.Importance,NbHeurePrepOffre=ViewBag.NbHeurePrepOffre,  ClientId=ViewBag.ClientId,  PersonnelId=ViewBag.PersonnelId, ResponsableTechnique=ViewBag.ResponsableTechnique, CoordinateurCommerciale=ViewBag.CoordinateurCommerciale, CoordinateurRealisation =ViewBag.CoordinateurRealisation }, new { @class = "btn btn-white" })
+                            </div>
+                        </div>
+                    </div>
+}
+
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+<script>
+    function update_clients() {
+        $.ajax({
+            type: 'POST',
+
+            url: "/AffaireCommerciales/AddClient?Nom=" + Nom.value,
+            success: function (response) {
+
+                $("#Nom").val("");
+                window.location.href = "Create";
+            }
+        });
+    }
+  
+    function update_clients2() {
+          @*var Designation = decodeHtml(@ViewBag.Designation);
+        alert(Designation);
+        $("#Designation").val(Designation);*@
+      
+
+        Mode = "@ViewBag.Mode";
+        id = "@ViewBag.id";
+        Designation = decodeHtml("@ViewBag.Designation");
+    Description="@ViewBag.Description";
+    Delai_de_Soumission="@ViewBag.Delai_de_Soumission";
+    Date_de_Soumission= "@ViewBag.Date_de_Soumission";
+    DateConsultation="@ViewBag.DateConsultation";
+    EtatSoum= "@ViewBag.EtatSoum";
+    faisabilite="@ViewBag.faisabilite";
+    AffaireObtenue="@ViewBag.AffaireObtenue";
+    Importance ="@ViewBag.Importance";
+    NbHeurePrepOffre="@ViewBag.NbHeurePrepOffre";
+    ClientId="@ViewBag.ClientId";
+    PersonnelId="@ViewBag.PersonnelId";
+    ResponsableTechnique="@ViewBag.ResponsableTechnique";
+    CoordinateurCommerciale="@ViewBag.CoordinateurCommerciale";
+        CoordinateurRealisation = "@ViewBag.CoordinateurRealisation";
+
+        $.ajax({
+            type: 'POST',
+
+            url: "/AffaireCommerciales/AddClient?Code=" + CODE.value + "&NOM=" + NOM.value + "&Adresse=" + ADRESSE.value + "&TELEPHONE=" + TELEPHONE.value + "&FAX=" + FAX.value + "&EMAIL=" + EMAIL.value + "&SITE_WEB=" + SITE_WEB.value + "&ID_FISCAL=" + ID_FISCAL.value + "&AI=" + AI.value + "&NIS=" + NIS.value + "&RC=" + RC.value + "&RIB=" + RIB.value + "&CONTACT=" + CONTACT.value,
+            success: function (response) {
+
+                $("#Code").val("");
+                $("#NOM").val("");
+                $("#ADRESSE").val("");
+                $("#TELEPHONE").val(0);
+                $("#FAX").val(0);
+                $("#EMAIL").val("");
+                $("#RIB").val("");
+                $("#RC").val("");
+                $("#NIS").val("");
+                $("#CONTACT").val("");
+                $("#AI").val("");
+                $("#ID_FISCAL").val("");
+                $("#SITE_WEB").val("");
+                if (Mode == "Create") {
+                    window.location.href = '/AffaireCommerciales/Create?Designation=' + Designation + '&Description=' + Description + '&Delai_de_Soumission=' + Delai_de_Soumission + '&Date_de_Soumission=' + Date_de_Soumission + '&DateConsultation=' + DateConsultation + '&EtatSoum=' + EtatSoum + '&faisabilite=' + faisabilite + '&AffaireObtenue=' + AffaireObtenue + '&Importance=' + Importance + '&NbHeurePrepOffre=' + NbHeurePrepOffre + '&ClientId=' + ClientId + '&PersonnelId=' + PersonnelId + '&ResponsableTechnique=' + ResponsableTechnique + '&CoordinateurCommerciale=' + CoordinateurCommerciale + '&CoordinateurRealisation=' + CoordinateurRealisation;
+                }
+                else {
+                    window.location.href = '/AffaireCommerciales/Edit?id=' + id+'&Designation=' + Designation + '&Description=' + Description + '&Delai_de_Soumission=' + Delai_de_Soumission + '&Date_de_Soumission=' + Date_de_Soumission + '&DateConsultation=' + DateConsultation + '&EtatSoum=' + EtatSoum + '&faisabilite=' + faisabilite + '&AffaireObtenue=' + AffaireObtenue + '&Importance=' + Importance + '&NbHeurePrepOffre=' + NbHeurePrepOffre + '&ClientId=' + ClientId + '&PersonnelId=' + PersonnelId + '&ResponsableTechnique=' + ResponsableTechnique + '&CoordinateurCommerciale=' + CoordinateurCommerciale + '&CoordinateurRealisation=' + CoordinateurRealisation;
+
+                }
+
+            }
+        });
+    }
+    function decodeHtml(html) {
+        var txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+    }
+</script>
+ 

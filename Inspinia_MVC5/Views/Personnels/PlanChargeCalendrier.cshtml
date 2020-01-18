@@ -1,0 +1,175 @@
+﻿@*@model IEnumerable<Inspinia_MVC5.Models.Tasks>*@
+@using Inspinia_MVC5.Models;
+
+@{
+    Tr db = new Tr();
+    ViewBag.Title = "PlanChargeCalendrier";
+    String mode = Session["calendrier"] == null ? "DataCalendrier" : (String)Session["calendrier"];
+    int empId = (int)Session["emp_id"];
+    List<Tasks> tsk = db.Tasks.Where(t => t.owner_id == empId).ToList();
+    List<ProjetTechniques> projTech = new List<ProjetTechniques>();
+    foreach (Tasks t in tsk)
+    {
+        if (projTech.Count() != 0)
+        {
+            Boolean test = false;
+            foreach (ProjetTechniques p in projTech)
+            {
+                if (p.ProjetTechniqueId == t.ProjetTechniquesID)
+                {
+                    test = true;
+                }
+            }
+            if (test == false)
+            {
+                projTech.Add(db.ProjetTechniques.Find(t.ProjetTechniquesID));
+                break;
+            }
+        }
+        else
+        {
+            projTech.Add(db.ProjetTechniques.Find(t.ProjetTechniquesID));
+        }
+    }
+    String o = "";
+    List<ParametrageSemaines> joursFinSem = db.ParametrageSemaines.Where(j => j.jourTravail == false && j.projetTechniqueID == 2).ToList();
+
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+
+    @*<meta charset='utf-8' />*@
+    <link href='~/Scripts/Calendrier/fullcalendar.min.css' rel="stylesheet" />
+    <link href='~/Scripts/Calendrier/fullcalendar.print.min.css' rel='stylesheet' media="print" />
+    <script src="~/Scripts/Calendrier/lib/moment.min.js"></script>
+    <script src="~/Scripts/Calendrier/fullcalendar.min.js"></script>
+    @*<script src="~/Scripts/bootstrap.min.js"></script>*@
+    @*<script src="~/Scripts/jquery-3.0.0.min.js"></script>*@
+
+    <script>
+        $(document).ready(function () {
+            var data1;
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action(mode, "ganttDiag")',
+
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    debugger;
+                    data1 = data;
+                    var calendarEl = document.getElementById('calendar');
+
+                    var calendar = new FullCalendar.Calendar(calendarEl, {
+                        header: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'month,agendaWeek,agendaDay,listWeek'
+                        },
+                        //defaultDate: '2018-04-12',
+                        navLinks: true, // can click day/week names to navigate views
+                        //editable: true,
+                        eventLimit: true,
+                        hiddenDays:[
+                            @foreach (ParametrageSemaines p in joursFinSem)
+                            {
+                                if (p != joursFinSem[0]) { Write(","); }
+                                Write(p.JourId);
+                            }
+                        ],
+                        @*businessHours:
+                        @foreach (var d in jsonData) {
+
+                        }
+                            ,*@
+                        events: data1
+                    });
+
+                    calendar.render();
+
+                }
+
+            });
+        });
+
+
+
+
+
+
+    </script>
+    <style>
+
+
+        /*body {
+            margin: 40px 10px;
+            padding: 0;
+            font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+            font-size: 14px;
+        }*/
+
+        #calendar {
+            max-width: 900px;
+            padding-bottom: 80px;
+            margin: 0 auto;
+        }
+
+        .btn-xl {
+            padding: 10px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-8">
+
+            @switch (mode)
+            {
+                case "DataCalendrier":
+                    o = "Plan de charge de l'employé " + db.Personnels.Find(empId).Nom;
+                    break;
+                case "DataCalendrierProj":
+                    o = "plan de charge de l'employé " + db.Personnels.Find(empId).Nom + " dans le projet " + db.ProjetTechniques.Find((int)Session["proj_id"]).Designation;
+                    break;
+
+            }
+            <h2>@o</h2>
+        </div>
+        <div class="col-lg-4">
+            <div class="title-action">
+                @Html.ActionLink("Liste des employés", "Index", null, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+        </div>
+    <div>
+        <div>
+            <br /><br />
+            @Html.ActionLink("Plan de charge total", "PlanChargeTotal", null, new { @class = "btn btn-danger btn-xl" })
+            @foreach (ProjetTechniques p in projTech)
+        {
+            <br /><br />
+            @Html.ActionLink("Projet " + @p.Designation, "PlanChargePerso", new { id = @p.ProjetTechniqueId }, new { @class = "btn btn-primary btn-xl" })
+
+    }
+
+
+        </div>
+        <div id='calendar'></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+﻿@model Inspinia_MVC5.Models.RETENUE_S_FOURNISSEURS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RETENUE_S_FOURNISSEURS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TTC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Retenue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Retenue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Retenue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Retenue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Montant_Brut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Montant_Brut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Taux_Retenue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Taux_Retenue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Montant_net)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Montant_net)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Declaration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Declaration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Declaration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Declaration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FACTURES_FOURNISSEURS.CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FACTURES_FOURNISSEURS.CODE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

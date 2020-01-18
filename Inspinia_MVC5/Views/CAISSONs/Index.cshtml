@@ -1,0 +1,207 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.CAISSON>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<link href="~/Content/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+<link href="~/Content/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
+<link href="~/Content/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
+<link href="~/Content/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+	/*#Tableau {
+		width: 1175px;
+		margin-left: auto;
+		margin-right: auto;
+	}*/
+
+	.divScroll {
+		overflow: auto;
+	}
+</style>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>
+			CAISSON
+		</h2>
+		<ol class="breadcrumb">
+			<li class="active"></li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+	</div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-tools">
+					<button class="btn btn-success " type="button" onclick="location.href='@Url.Action("Create", "CAISSONs", null)'">
+						<i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;&nbsp;<span class="bold">Ajouter</span>
+					</button>
+					</div>
+					<div class="divScroll">
+						<div class="wrapper wrapper-content  animated fadeInRight">
+							<div class="row" id="sortable-view">
+
+
+
+
+
+								@{ Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+									List<Inspinia_MVC5.Models.TYPE_CAISSON> task_list = db.TYPE_CAISSON.ToList();
+									foreach (var item1 in task_list)
+									{
+										<div class="col-lg-6">
+											@{List<Inspinia_MVC5.Models.CAISSON> CAISSON = db.CAISSON.Where(f => f.TYPE_CAISSON1.ID == item1.ID).ToList();}
+
+											@if (CAISSON != null)
+											{
+
+												<div class="ibox">
+													<div class="ibox-title">
+														<h5> @item1.TYPE_CAISSON1</h5>
+														<div class="ibox-tools">
+
+														</div>
+													</div>
+
+													<div class="ibox-content">
+														<table class="table table-striped table-bordered table-hover dataTables-example"
+															   id="Tableau">
+															<thead>
+																<tr>
+																	<th>
+																		@Html.DisplayNameFor(model => model.REF_BAS)
+																	</th>
+																	@*<th>
+																@Html.DisplayNameFor(model => model.ID_FAC)
+															</th>*@
+																	<th>
+																		@Html.DisplayNameFor(model => model.PTHT)
+																	</th>
+																	<th>
+																		@Html.DisplayNameFor(model => model.PTTC)
+																	</th>
+																	<th>
+																		@Html.DisplayNameFor(model => model.ACCESSOIRE.NOM)
+																	</th>
+																	<th>
+																		@Html.DisplayNameFor(model => model.TYPE_CAISSON1.TYPE_CAISSON1)
+																	</th>
+																	<th></th>
+																</tr>
+
+															</thead>
+															@foreach (var item in CAISSON)
+															{
+
+																<tr>
+																	<td>
+																		@Html.DisplayFor(modelItem => item.REF_BAS)
+																	</td>
+																	@*<td>
+																@Html.DisplayFor(modelItem => item.ID_FAC)
+															</td>*@
+																	<td>
+																		@Html.DisplayFor(modelItem => item.PTHT)
+																	</td>
+																	<td>
+																		@Html.DisplayFor(modelItem => item.PTTC)
+																	</td>
+																	<td>
+																		@Html.DisplayFor(modelItem => item.ACCESSOIRE.NOM)
+																	</td>
+																	<td>
+																		@Html.DisplayFor(modelItem => item.TYPE_CAISSON1.TYPE_CAISSON1)
+																	</td>
+																	<td>
+
+
+																		<button class="btn btn-primary dim" type="button" style="width : 40px" onclick="location.href='@Url.Action("Edit", "CAISSONs" , new { id = item.ID }, null)'">
+																			<i class="fa fa-pencil-square-o" style="margin-right: 2px;"></i>
+																		</button>
+
+
+																		<button class="btn btn-warning  dim" type="button" style="width : 40px" onclick="location.href='@Url.Action("Details", "CAISSONs" , new { id = item.ID }, null)'">
+																			<i class="fa fa-eye"></i>
+																		</button>
+																		@{
+																			Inspinia_MVC5.Models.LIGNES_CUISINE_DEVIS_CLIENTS LIGNES_CUISINE_DEVIS_CLIENTS = db.LIGNES_CUISINE_DEVIS_CLIENTS.Where(f => f.SSCAISSON == item.ID).FirstOrDefault();
+																			if (LIGNES_CUISINE_DEVIS_CLIENTS != null)
+																			{
+																				<button class="btn btn-info  dim" type="button" style="width : 40px" onclick="location.href='@Url.Action("Delete", "CAISSONs" , new { id = item.ID }, null)'" disabled>
+																					<i class="fa fa-trash" style="margin-right: 2px;"></i>
+																				</button>
+																			}
+																			else
+																			{
+																				<button class="btn btn-info  dim" type="button" style="width : 40px" onclick="location.href='@Url.Action("Delete", "CAISSONs" , new { id = item.ID }, null)'">
+																					<i class="fa fa-trash" style="margin-right: 2px;"></i>
+																				</button>
+																			}
+																		}
+																	</td>
+																</tr>
+															}
+														</table>
+													</div>
+												</div>
+
+											}
+										</div>
+									}
+								}
+
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+@section Styles {
+	@Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+@section Scripts {
+	<script type="text/javascript" src="~/js/plugins/dataTables/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="~/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+	<script type="text/javascript" src="~/js/plugins/dataTables/dataTables.responsive.js"></script>
+	<script type="text/javascript" src="~/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+	@Scripts.Render("~/plugins/dataTables")
+	@Scripts.Render("~/plugins/dataPicker")
+	@Scripts.Render("~/bundles/jqueryui")
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			WinMove();
+
+		});
+	</script>
+	<script type="text/javascript">
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			$('.dataTables-example').DataTable({
+
+
+				buttons: [
+
+
+
+
+				]
+
+			});
+
+
+
+		});
+	</script>
+}

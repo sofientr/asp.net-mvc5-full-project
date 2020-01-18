@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.SocieteLogo>
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-9">
+		<h2>Sociétés</h2>
+		<ol class="breadcrumb">
+			<li>
+				<a href="@Url.Action("Dashboard_1", "Dashboards")">Home</a>
+			</li>
+			<li class="active">
+				<strong>Sociétés</strong>
+			</li>
+		</ol>
+	</div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12">
+			@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-xs" })
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<input type="text" id="search-criteria" />
+			<input type="button" id="search" value="search" />
+
+
+		</div>
+	</div>
+
+
+	<div class="row">
+		@foreach (var item in Model)
+		{
+			<div class="col-lg-4">
+				<div class="contact-box">
+					@*<a href="@Url.Action("Profile", "AppViews")">*@
+					<div class="col-sm-4">
+						<div class="text-center">
+							<img alt="image" class="img-circle m-t-xs img-responsive" src="~/Images/@item.logo">
+							<div class="m-t-xs font-bold">@item.Nom_Societe</div>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<h3><a href="##">@item.Nom_Societe</a></h3>
+						<p><i class="fa fa-book"></i>@item.MF</p>
+						<p><i class="fa fa-bookmark"></i><strong>@item.RC</strong></p>
+						<p><i class="fa fa-envelope"></i> @item.mail</p>
+						<p><i class="fa fa-bank"></i>@item.RIB</p>
+						<p><i class="fa fa-phone"></i>@item.Tel</p>
+
+					</div>
+					<button class="btn btn-info  dim" type="button" style="width : 40px" onclick="location.href='@Url.Action("Edit", "SocieteLogoes", new { id = item.id })'"> <i class="fa fa-pencil-square-o" style="margin-right: 2px;"></i></button>
+					<button class="btn btn-warning  dim" type="button" style="width : 40px" onclick="location.href='@Url.Action("Delete", "SocieteLogoes", new { id = item.id })'"><i class="fa fa-trash" style="margin-right: 2px;"></i></button>
+					<button class="btn btn-info  dim" type="button" style="width : 40px" onclick="location.href='@Url.Action("Details", "SocieteLogoes", new { id = item.id })'"><i class="fa fa-eye"></i></button>
+					<button class="btn btn-info  dim" type="button" style="width : 40px" onclick="location.href='@Url.Action("PrefixeEdit", "SocieteLogoes", new { id = item.id })'"><i class="fa fa-eye"></i></button>
+					<div class="clearfix"></div>
+					@*</a>*@
+				</div>
+			</div>
+
+		}
+
+	</div>
+</div>
+@section Scripts {
+	<script src="~/Scripts/jquery-1.10.2.js"></script>
+	<script src="~/Scripts/bootstrap.js"></script>
+	<script src="~/Scripts/bootstrap.min.js"></script>
+	<script src="~/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+	<script src="~/js/select2.min.js" type="text/javascript"></script>
+
+<script>
+	
+	$('#search').click(function () {
+		$('.col-lg-4').hide();
+		var txt = $('#search-criteria').val();
+		debugger;
+		$('.col-lg-4.contact-box.col-sm-8:contains("' + txt + '")').show();
+	});
+</script>
+
+	}

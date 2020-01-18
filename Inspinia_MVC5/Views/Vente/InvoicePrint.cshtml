@@ -1,0 +1,397 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.LIGNES_DEVIS_CLIENTS>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @if (ViewBag.affaireCommerciale != null && ViewBag.affaireCommerciale != "")
+    {
+        <title>Affaire Commerciale</title>
+    }
+    else
+    {
+        <title>Devis CLIENT</title>
+
+    }
+
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+
+</head>
+
+<body class="white-bg">
+    <div class="wrapper wrapper-content p-xl">
+        <div class="col-sm-6">
+            <img src="~/Images/@ViewBag.Logo" alt="SUNEVIT">
+        </div>
+        <div class="col-sm-6 text-right">
+            @if (ViewBag.affaireCommerciale != null && ViewBag.affaireCommerciale != "")
+            {
+                <h4>Affaire Commerciale @ViewBag.designation</h4>
+            }
+            else
+            {
+                <h4>Devis @ViewBag.designation</h4>
+
+            }
+            
+
+            @if (ViewBag.CodeAff != null && ViewBag.CodeAff != "")
+            {
+                <h4>Affaire Commerciale @ViewBag.CodeAff</h4>
+            }
+            else
+            {
+                <h4 class="text-navy">@ViewBag.Code</h4>
+
+            }
+            <span>
+                @if (ViewBag.affaireCommerciale != null && ViewBag.affaireCommerciale != "")
+                {
+                    <strong>Date d'affaire commerciale:</strong>@(((DateTime)ViewBag.DATE).ToString("dd-MMM-yyyy"))
+
+                }
+                else
+                {
+                    <strong>Date de devis :</strong>@(((DateTime)ViewBag.DATE).ToString("dd-MMM-yyyy"))
+
+
+                }
+
+
+            </span>
+        </div>
+        <div class="ibox-content p-xl">
+            <div class="row">
+                <div class="col-sm-6">
+                    @*<h5>Client:</h5>*@
+                    <address>
+                        <strong>@ViewBag.NOM</strong><br>
+                        @ViewBag.ADRESSE<br>
+                        @ViewBag.TEL<br>
+                        @ViewBag.FAX
+                    </address>
+                </div>
+
+                <div class="col-sm-6 text-right">
+                    @*<span>To:</span>*@
+                    <address>
+                        <strong>@ViewBag.NomSte</strong><br>
+                        <br>
+                        @ViewBag.Adresse
+                    </address>
+                    <p>
+                        @*<span><strong>Date d'impression:</strong>@ViewBag.DATE2</span><br />*@
+
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                @if ((ViewBag.FINTION != "" && ViewBag.FINTION != null)|| (ViewBag.Tiroirs != "" && ViewBag.Tiroirs != null) || (ViewBag.Charnieres != "" && ViewBag.Charnieres != null))
+                {
+                <h4 class="text-navy">
+                    Cuisine</h4>
+                }
+                @if (ViewBag.FINTION != "" && ViewBag.FINTION != null)
+                {
+                    <div> <b> Fintion:</b></div> @ViewBag.FINTION <br />
+                }
+                @if (ViewBag.Tiroirs != "" && ViewBag.Tiroirs != null)
+                {
+                    <div><b>Tiroirs:</b></div> @ViewBag.Tiroirs <br />
+                }
+                @if (ViewBag.Charnieres != "" && ViewBag.Charnieres != null)
+                {
+                    <div><b>Charnieres:</b></div> @ViewBag.Charnieres<br />
+                }
+
+</div>
+                <div class="table-responsive m-t">
+                    <table class="table invoice-table">
+                        <thead>
+                            <tr>
+                                <th>DÉSIGNATION</th>
+                                @*<th>Unite</th>*@
+                                <th>Qté</th>
+                                <th>TVA</th>
+
+                                <th>PUHT</th>
+
+                                <th>PTHT</th>
+                                @*<th>PTTC</th>*@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int code = int.Parse(ViewBag.id);
+                                Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+                                List<Inspinia_MVC5.Models.LIGNES_CUISINE_DEVIS_CLIENTS> task_list = db.LIGNES_CUISINE_DEVIS_CLIENTS.Where(t => t.DEVIS_CLIENT == code).ToList();
+                                List<Inspinia_MVC5.Models.TYPE_CAISSON> TYPE_CAISSON = db.TYPE_CAISSON.ToList();
+                                List<Inspinia_MVC5.Models.TYPE_FACADE> TYPE_FACADE = db.TYPE_FACADE.ToList();
+                                List<Inspinia_MVC5.Models.SS_FACADE> SS_FACADE = db.SS_FACADE.ToList();
+                                foreach (var item in TYPE_CAISSON)
+                                {
+                                    if (task_list.Select(cmd => cmd.CAISSON.TYPE_CAISSON).Contains(item.ID))
+                                    {
+                                        <tr><td colspan="5" style="text-align:center;"><b><font color="gray">@item.TYPE_CAISSON1</font></b></td></tr>
+                                    }
+
+                                    foreach (var item1 in task_list)
+                                    {
+
+                                        if (item.ID == item1.CAISSON.TYPE_CAISSON1.ID)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @*<div><strong>@item.Libelle_Prd</strong></div>*@
+                                                    <small>@item1.CAISSON.REF_BAS</small>
+                                                </td>
+                                                <td>@item1.QuantiteCAISSON</td>
+                                                <td>@item1.TVACUISINE</td>
+                                                <td>@item1.PTHTAVECMARGE</td>
+                                                @{
+                                                    decimal PthtCaisson = (decimal)(item1.QuantiteCAISSON * item1.PTHTAVECMARGE);
+                                                }
+                                                <td>@PthtCaisson</td>
+                                                @*<td>@item1.PTTCCUISINE</td>*@
+                                            </tr>
+
+                                        }
+
+
+                                    }
+                                }
+                                foreach (var item3 in TYPE_FACADE)
+                                {
+                                    if ((!(task_list.Select(cmd => cmd.SOUSFACADE).Contains(0))) && (!(task_list.Select(cmd => cmd.SOUSFACADE).Contains(null))))
+                                    {
+                                        foreach (var item1 in task_list)
+                                        {
+                                            int typeFACADE = db.SS_FACADE.Where(f => f.ID == item1.SOUSFACADE).FirstOrDefault().TYPE_FACADE.ID;
+                                            string typeREFFACADE = db.SS_FACADE.Where(f => f.ID == item1.SOUSFACADE).FirstOrDefault().TYPE_FACADE.TYPE_FACADE1;
+                                            if (item3.ID == typeFACADE)
+                                            {
+                                                <tr><td colspan="5" style="text-align:center;"><b><font color="gray">@item3.TYPE_FACADE1</font></b></td></tr>
+                                                break;
+                                            }
+                                        }
+
+
+                                        foreach (var item1 in task_list)
+                                        {
+                                            int typeFACADE = db.SS_FACADE.Where(f => f.ID == item1.SOUSFACADE).FirstOrDefault().TYPE_FACADE.ID;
+                                            string typeREFFACADE = db.SS_FACADE.Where(f => f.ID == item1.SOUSFACADE).FirstOrDefault().TYPE_FACADE.TYPE_FACADE1;
+                                            int FACADE = db.SS_FACADE.Where(f => f.ID == item1.SOUSFACADE).FirstOrDefault().FACADE.ID;
+                                            string REFFACADE = db.SS_FACADE.Where(f => f.ID == item1.SOUSFACADE).FirstOrDefault().FACADE.REF_FAC;
+                                            if (item3.ID == typeFACADE)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @*<div><strong>@item.Libelle_Prd</strong></div>*@
+                                                        <small>@REFFACADE</small>
+                                                    </td>
+                                                    <td>@item1.QuantiteCAISSON</td>
+                                                    <td>@item1.TVACUISINE</td>
+                                                    <td>@item1.PTHTFACADE</td>
+                                                    @{
+                                                        decimal PthtFacade = (decimal)(item1.QuantiteCAISSON * item1.PTHTFACADE);
+                                                    }
+                                                    <td>@PthtFacade</td>
+                                                    @*<td>@item1.PTTCCUISINE</td>*@
+                                                </tr>
+
+                                            }
+                                        }
+
+                                    }
+                                }
+
+                            }
+
+                            @if(Model!=null)
+                            { 
+                            <tr><td colspan="5" style="text-align:center;"><b><font color="gray">Accessoires</font></b></td></tr>
+                            foreach (dynamic item in Model)
+                            {
+
+                                <tr>
+                                    <td>
+                                        @*<div><strong>@item.Libelle_Prd</strong></div>*@
+                                        <small>@item.DESIGNATION_PRODUIT</small>
+                                    </td>
+                                    <td>@item.QUANTITE</td>
+                                    <td>@item.TVA</td>
+
+                                    <td>@item.PRIX_UNITAIRE_HTVente</td>
+                                    <td>@item.TOTALE_HT</td>
+                                    @*<td>@item.TVA</td>*@
+                                    @*<td>@item.TOTALE_TTC</td>*@
+                                </tr>
+
+                            }
+                            }
+                            @{
+                                List<Inspinia_MVC5.Models.lIGNES_SERVICES> lIGNES_SERVICES = db.lIGNES_SERVICES.Where(t => t.DEVIS_CLIENT == code).ToList();
+                                if (db.lIGNES_SERVICES.Select(cmd => cmd.DEVIS_CLIENT).Contains(code))
+                                {
+                                    <tr><td colspan="5" style="text-align:center;"><b><font color="gray">Service</font></b></td></tr>
+                                }
+                                foreach (var item2 in lIGNES_SERVICES)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            @item2.SERVICES1.DES_SERVICE
+                                        </td>
+                                        <td> @item2.QUANTITE</td>
+                                        <td> @item2.TVA</td>
+
+                                        <td> @item2.PRIX_UNITAIRE_HTVente</td>
+                                        <td> @item2.TOTALE_HT</td>
+                                        @*<td> @item2.TOTALE_TTC</td>*@
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div><!-- /table-responsive -->
+
+                <table class="table invoice-total">
+                    <tbody>
+                        <tr>
+                            <td><strong>Total HT :</strong></td>
+                            <td>
+                                @ViewBag.TTNET
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>TVA :</strong></td>
+                            <td>@ViewBag.TTVA </td>
+                        </tr>
+                        <tr>
+                            <td><strong>TOTAL TTC :</strong></td>
+                            <td> @ViewBag.TTTC</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TOTAL :</strong></td>
+                            <td> @ViewBag.totale</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr color="black">
+                @*<div class="table-responsive m-t">
+            <table class="table invoice-total">
+                <thead>
+                    <tr>
+                        <th>
+                            Nom
+                        </th>
+                        <th>
+                            Date Début planifiée
+                        </th>
+                        <th>
+                            Date fin planifiée
+                        </th>
+                        <th>
+                            Durée planifiée
+                        </th>
+                        <th>
+                            Employé
+                        </th>
+                        <th>
+                            Progrés actuel
+                        </th>
+                        <th>
+                            cout
+                        </th>
+
+
+                    </tr>
+                </thead>
+                @if (ViewBag.id != null)
+                {
+                    int code = int.Parse(ViewBag.id);
+                    Inspinia_MVC5.Models.Tr db = new Inspinia_MVC5.Models.Tr();
+                    List<Inspinia_MVC5.Models.Tasks> task_list = db.Tasks.Where(t => t.ProjetTechniquesID == code).ToList();
+                    foreach (var item in task_list)
+                    {
+                        <tr>
+
+                            <td>
+                                @item.Text
+                            </td>
+                            <td>
+                                @item.planned_start
+                            </td>
+                            <td>
+                                @item.planned_end
+                            </td>
+                            <td>
+                                @item.duration_h_planning
+                            </td>
+                            <td>
+                                @db.Personnels.Find(item.owner_id).Nom
+                            </td>
+                            <td>
+                                @(item.Progress * 100)%
+                            </td>
+                            @{
+                                double c1 = (double)db.Personnels.Find(item.owner_id).Cout_hor;
+                                string c4 = item.duration_h_planning.ToString();
+                                int c2 = int.Parse(c4);
+                                double c3 = c1 * c2;
+                                //somme = somme + c3;
+                                //db.Personnels.Find(item.owner_id).Cout_hor * item.duration_h_planning
+                            }
+                            <td>
+                                @c3
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </table>
+            </div>*@
+
+                <strong style="FONT-SIZE: 12pt;">
+                    <u> 1. Conditions de paiement</u>
+                </strong>
+                <br><br />
+
+                <strong>
+                    1.1 Conditions de paiement
+                </strong>
+                <br><br />
+                @ViewBag.Conditions
+
+                <br><br />
+                <strong>
+                    1.2 Validité de l’offre
+                </strong>
+                <br><br />
+                @ViewBag.validite
+                @*<div class="well m-t">
+                <strong>Comments</strong>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
+            </div>*@
+            </div>
+
+        </div>
+    <div> <b>Signature et cachet:</b></div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+        //window.print();
+</script>

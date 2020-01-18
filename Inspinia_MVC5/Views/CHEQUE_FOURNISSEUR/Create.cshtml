@@ -1,0 +1,111 @@
+﻿<link href="~/Content/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/select2.min.css" rel="stylesheet" type="text/css" />
+@model Inspinia_MVC5.Models.CHEQUE_FOURNISSEUR
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>CHEQUE_FOURNISSEUR</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.NumCheque, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NumCheque, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NumCheque, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Fournisseur, "Fournisseur", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Fournisseur", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Fournisseur, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Montant, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Montant, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Montant, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DateCheque, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                @Html.EditorFor(model => model.DateCheque, "DateCheque", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateCheque, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">
+            Status
+        </label>
+        <div class="col-md-10">
+            <select class="form-control" id="Status" name="Status">
+                <option value="Payé">Payé</option>
+                <option value="Enattente">En attent</option>
+                <option value="Annulé">Annulé</option>
+                <option value="Impayé">Impayé</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DatePayement, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                @Html.EditorFor(model => model.DatePayement, "DatePayement", new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                @Html.ValidationMessageFor(model => model.DatePayement, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/plugins/dataPicker")
+
+    <script type="text/javascript">
+        $("#DateCheque").datepicker({
+            format: 'dd/mm/yyyy'
+        });
+        $("#DatePayement").datepicker({
+            format: 'dd/mm/yyyy'
+        });
+        $(document).on("change", "#Status", function (e) {
+            debugger;
+            var status = this.value;
+
+            if (status == "Payé") {
+                document.getElementById("DatePayement").disabled = false;
+            }
+            else {
+                document.getElementById("DatePayement").disabled = true;
+            }
+        });
+    </script>
+}

@@ -1,0 +1,536 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.Horaire>
+
+@{
+    
+}
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    @using (Html.BeginForm("Valider", "Tableau_Horaire", new { id = ViewBag.id , Date_Deb=ViewBag.Date_Deb , Date_Fin=ViewBag.Date_Fin}, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-8">
+                <h2>Tableau Horaire</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="@Url.Action("Dashboard_1", "Dashboards")">Home</a>
+                    </li>
+                    <li>
+                        Tableau Horaire
+                    </li>
+                    <li class="active">
+                        DE <strong> @(((DateTime)ViewBag.Date_Deb).ToString("dd/MM/yyyy")) </strong> A<strong> @(((DateTime)ViewBag.Date_Fin).ToString("dd/MM/yyyy"))</strong>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-content">
+            <div class="row animated fadeInDown">
+
+                <div class="col-lg-9">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Liste Des Horaires</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div id='external-events'>
+                                <p>Veuillez selectionner l'horaire à paramétrer.</p>
+                                <table class="table">
+                                    <tr>
+                                        <th>
+
+                                        </th>
+                                        <th>
+                                            Horaire
+                                        </th>
+                                        <th>
+                                            Debut S1
+                                        </th>
+                                        <th>
+                                            Sortie S1
+                                        </th>
+                                        <th>
+                                            Debut S2
+                                        </th>
+                                        <th>
+                                            Sortie S2
+                                        </th>
+
+                                    </tr>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @{
+                                                    string idd = ViewBag.id;
+                                                    int id2 = int.Parse(idd);
+                                                    Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+                                                    List<Inspinia_MVC5.Models.horaire_jour> horaire_jour = db.horaire_jour.Where(t => t.table_horaire == id2 && t.horaire == item.id).ToList();
+
+                                                }
+                                                @if (horaire_jour.Count > 0)
+                                                {
+                                                    <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" id="affComId" value="@item.id" onchange="check(this)" checked disabled />
+                                                }
+                                                else
+                                                {
+                                                    <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" id="affComId" value="@item.id" onchange="check(this)" />
+
+                                                }
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Horaire1)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Debut)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Sortie)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Debut1)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Sortie2)
+                                            </td>
+
+
+                                        </tr>
+                                    }
+
+                                </table>
+
+                            </div>
+                            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success pull-top" })
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Jour de la semaine</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div id='external-events'>
+                                <p>Veuillez affecter les jours de travail.</p>
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="lundi" id="lundi" value="" onchange="check1(this)" />lundi <br />
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="Mardi" id="Mardi" value="" onchange="check2(this)" />Mardi <br />
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="Mercredi" id="Mercredi" value="" onchange="check3(this)" />Mercredi <br />
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="jeudi" id="jeudi" value="" onchange="check4(this)" />jeudi <br />
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="vendredi" id="vendredi" value="" onchange="check5(this)" />vendredi <br />
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="Samedi" id="Samedi" value="" onchange="check6(this)" />Samedi <br />
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="Dimanche" id="Dimanche" value="" onchange="check7(this)" />Dimanche <br />
+                                <input type="hidden" class="form-control" readonly="true" name="idcheck" id="idcheck">
+
+                                <div class="row">
+                                    <button class="btn btn-success pull-right" type="submit" style="margin-right: 5px;" id="valider">
+                                        <span class="bold">Valider</span>
+                                    </button>
+
+
+
+                                </div>
+
+                                @*<p class="m-t">
+            <input type='checkbox' id='drop-remove' class="i-checks" checked /> <label for='drop-remove'>remove after drop</label>
+        </p>*@
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                @*<div class="col-lg-6">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Striped Table </h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li>
+                                            <a href="#">Config option 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div id="calendar"></div>
+                            </div>
+                        </div>
+                    </div>*@
+            </div>
+        </div>
+       
+    }
+</div>
+
+                                                    
+
+        @section Styles {
+            @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+            @Styles.Render("~/plugins/fullCalendarStyles")
+            @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+        }
+        @section Scripts {
+            <script type="text/javascript" src="~/js/plugins/dataTables/jquery.dataTables.js"></script>
+            <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+            <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.responsive.js"></script>
+            <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+            @Scripts.Render("~/plugins/dataTables")
+            @Scripts.Render("~/bundles/jqueryui")
+            @Scripts.Render("~/plugins/fullCalendar")
+            @Scripts.Render("~/plugins/iCheck")
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('.i-checks').iCheck({
+                        checkboxClass: 'icheckbox_square-green',
+                        radioClass: 'iradio_square-green',
+                    });
+
+                    /* initialize the external events
+                     -----------------------------------------------------------------*/
+
+
+                    $('#external-events div.external-event').each(function () {
+
+                        // store data so the calendar knows to render an event upon drop
+                        $(this).data('event', {
+                            title: $.trim($(this).text()), // use the element's text as the event title
+                            stick: true // maintain when user navigates (see docs on the renderEvent method)
+                        });
+
+                        // make the event draggable using jQuery UI
+                        $(this).draggable({
+                            zIndex: 1111999,
+                            revert: true,      // will cause the event to go back to its
+                            revertDuration: 0  //  original position after the drag
+                        });
+
+                    });
+
+
+                    /* initialize the calendar
+                     -----------------------------------------------------------------*/
+                    var date = new Date();
+                    var d = date.getDate();
+                    var m = date.getMonth();
+                    var y = date.getFullYear();
+
+                    $('#calendar').fullCalendar({
+                        header: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'month,agendaWeek,agendaDay'
+                        },
+                        editable: true,
+                        droppable: true, // this allows things to be dropped onto the calendar
+                        drop: function () {
+                            // is the "remove after drop" checkbox checked?
+                            if ($('#drop-remove').is(':checked')) {
+                                // if so, remove the element from the "Draggable Events" list
+                                $(this).remove();
+                            }
+                        },
+
+                    });
+
+
+                });
+            </script>
+            <script type="text/javascript">
+                function checkAll(ele) {
+                    var checkboxes = document.getElementsByTagName('input');
+                    if (ele.checked) {
+                        for (var i = 0; i < checkboxes.length; i++) {
+                            if (checkboxes[i].type == 'checkbox') {
+                                checkboxes[i].checked = true;
+                            }
+                        }
+                    } else {
+                        for (var i = 0; i < checkboxes.length; i++) {
+                            console.log(i)
+                            if (checkboxes[i].type == 'checkbox') {
+                                checkboxes[i].checked = false;
+                            }
+                        }
+                    }
+                }
+                function check1(elee) {
+                    if (elee.checked) {
+                        $('#lundi').val("lundi");
+
+                    }
+                    else {
+                        $('#lundi').val("");
+
+                    }
+                }
+                function check2(elee) {
+                    if (elee.checked) {
+                        $('#Mardi').val("Mardi");
+
+                    }
+                    else {
+                        $('#Mardi').val("");
+
+                    }
+                }
+                function check3(elee) {
+                    if (elee.checked) {
+                        $('#Mercredi').val("Mercredi");
+
+                    }
+                    else {
+                        $('#Mercredi').val("");
+
+                    }
+                }
+                function check4(elee) {
+                    if (elee.checked) {
+                        $('#jeudi').val("jeudi");
+
+                    }
+                    else {
+                        $('#jeudi').val("");
+
+                    }
+                }
+                function check5(elee) {
+                    if (elee.checked) {
+                        $('#vendredi').val("vendredi");
+
+                    }
+                    else {
+                        $('#vendredi').val("");
+
+                    }
+                }
+                function check6(elee) {
+                    if (elee.checked) {
+                        $('#Samedi').val("Samedi");
+
+                    }
+                    else {
+                        $('#Samedi').val("");
+
+                    }
+                }
+                function check7(elee) {
+                    if (elee.checked) {
+                        $('#Dimanche').val("Dimanche");
+
+                    }
+                    else {
+                        $('#Dimanche').val("");
+
+                    }
+                }
+                function check(elee) {
+                    debugger;
+                    $('#idcheck').val(elee.value);
+                    document.getElementById('lundi').checked = true;
+                    $('#lundi').val("lundi");
+
+                    document.getElementById('Mardi').checked = true;
+                    $('#Mardi').val("Mardi");
+
+                    document.getElementById('Mercredi').checked = true;
+                    $('#Mercredi').val("Mercredi");
+
+                    document.getElementById('jeudi').checked = true;
+                    $('#jeudi').val("jeudi");
+
+                    document.getElementById('vendredi').checked = true;
+                    $('#vendredi').val("vendredi");
+
+                    document.getElementById('Samedi').checked = true;
+                    $('#Samedi').val("Samedi");
+
+                    document.getElementById('Dimanche').checked = true;
+                    $('#Dimanche').val("Dimanche");
+
+                    var checkboxes = document.getElementsByTagName('input');
+                    if (elee.checked) {
+                        for (var i = 0; i < checkboxes.length; i++) {
+                            if ((checkboxes[i].type == 'checkbox') && (checkboxes[i].value != elee.value) && (checkboxes[i].name == 'affComId')) {
+                                checkboxes[i].disabled = true;
+                            }
+
+                        }
+                    }
+                    else {
+                        for (var i = 0; i < checkboxes.length; i++) {
+                            checkboxes[i].disabled = false;
+                        }
+                    }
+
+                }
+                //function check(elee) {
+                //    alert(elee.value);
+
+                //    if (elee.checked) {
+                //        $.ajax({
+                //            type: 'POST',
+                //            url: "/Tableau_Horaire/GetJourParHor?hor="+ elee.value,
+                //            success: function (response) {
+                //                alert("ggg");
+                //                alert(response.length);
+                //                if (response.length > 1) {
+                //                    $.each(response, function (i, item) {
+                //                        alert(item.hor);
+                //                        $('#idcheck').val(item.hor);
+                //                        if (item.jour == "lundi") {
+                //                            document.getElementById('lundi').checked = true;
+                //                        }
+                //                        if (item.jour == "Mardi") {
+                //                            document.getElementById('Mardi').checked = true;
+                //                        }
+                //                        if (item.jour == "Mercredi") {
+                //                            document.getElementById('Mercredi').checked = true;
+                //                        }
+                //                        if (item.jour == "jeudi") {
+                //                            document.getElementById('jeudi').checked = true;
+                //                        }
+                //                        if (item.jour == "vendredi") {
+                //                            document.getElementById('vendredi').checked = true;
+                //                        }
+                //                        if (item.jour == "Samedi") {
+                //                            document.getElementById('Samedi').checked = true;
+                //                        }
+                //                        if (item.jour == "Dimanche") {
+                //                            document.getElementById('Dimanche').checked = true;
+                //                        }
+                //                    });
+                //                }
+                //                else {
+                //                    alert("jjj");
+                //                    $.each(response, function (i, item) {
+                //                        alert(item.hor);
+                //                        $('#idcheck').val(item.hor);
+
+                //                    });
+                //                    document.getElementById('lundi').checked = true;
+                //                    document.getElementById('Mardi').checked = true;
+                //                    document.getElementById('Mercredi').checked = true;
+                //                    document.getElementById('jeudi').checked = true;
+                //                    document.getElementById('vendredi').checked = true;
+                //                    document.getElementById('Samedi').checked = true;
+                //                    document.getElementById('Dimanche').checked = true;
+                //                }
+                //            },
+                //            error: function () {
+                //                alert("Dynamic content load failed.");
+                //            }
+                //        });
+
+
+                //    }
+
+                //}
+                function ValideHoraire() {
+                    debugger;
+                    if (document.getElementById('lundi').checked == true) {
+                        var lundi = $("#lundi").val();
+                    }
+                    else {
+                        var lundi = "";
+                    }
+                    if (document.getElementById('Mardi').checked == true) {
+                        var Mardi = $("#Mardi").val();
+                    }
+                    else {
+                        var Mardi = "";
+                    }
+                    if (document.getElementById('Mercredi').checked == true) {
+                        var Mercredi = $("#Mercredi").val();
+                    }
+                    else {
+                        var Mercredi = "";
+                    }
+                    if (document.getElementById('jeudi').checked == true) {
+                        var jeudi = $("#jeudi").val();
+                    }
+                    else {
+                        var jeudi = "";
+                    }
+                    if (document.getElementById('vendredi').checked == true) {
+                        var vendredi = $("#vendredi").val();
+                    }
+                    else {
+                        var vendredi = "";
+                    }
+                    if (document.getElementById('Samedi').checked == true) {
+                        var Samedi = $("#Samedi").val();
+                    }
+                    else {
+                        var Samedi = "";
+                    }
+                    if (document.getElementById('Dimanche').checked == true) {
+                        var Dimanche = $("#Dimanche").val();
+                    }
+                    else {
+                        var Dimanche = "";
+                    }
+                    //if (document.getElementById('affComId').checked == true) {
+                    //    var Horaire = $("#affComId").val();
+                    //}
+                    var Horaire = $('#idcheck').val();
+                    alert(Horaire);
+                    var data = {
+                        lundi: lundi,
+                        Mardi: Mardi,
+                        Mercredi: Mercredi,
+                        jeudi: jeudi,
+                        vendredi: vendredi,
+                        Samedi: Samedi,
+                        Dimanche: Dimanche,
+                        Horaire: Horaire,
+
+                    };
+                    $.ajax({
+                        type: 'POST',
+                        url: "/Tableau_Horaire/AddLineHoraire",
+                        data: data,
+                        success: function (response) {
+                            alert("hhh");
+                        }
+                    });
+                }
+            </script>
+
+        }

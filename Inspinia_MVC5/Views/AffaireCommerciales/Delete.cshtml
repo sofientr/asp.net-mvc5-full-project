@@ -1,0 +1,186 @@
+﻿@model Inspinia_MVC5.Models.AffaireCommerciales
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Delete</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+            <li class="active">
+                <strong>Delete</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>AffaireCommerciale</h5>
+                </div>
+                <div class="ibox-content">
+                    <h4 class="text-danger">Are you sure you want to delete this?</h4>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Reference)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Reference)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Designation)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Designation)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CLIENTS.NOM)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CLIENTS.NOM)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CLIENTS.CODE)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CLIENTS.CODE)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.EtatSoum)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.EtatSoum)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Cout)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Cout)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.EnCourExecution)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.EnCourExecution)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Importance)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Importance)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NbHeurePrepOffre)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.NbHeurePrepOffre)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.faisabilite)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.faisabilite)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DateConsultation)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DateConsultation)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.AffaireObtenue)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.AffaireObtenue)
+                        </dd>
+
+
+
+
+                        <dt>
+                            Responsable Commerciale
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Personnels3.Nom)
+                        </dd>
+
+                        <dt>
+                            Responsable Technique
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Personnels.Nom)
+                        </dd>
+
+                        <dt>
+                            Coordinateur Commerciale
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Personnels1.Nom)
+                        </dd>
+
+                        <dt>
+                            Coordinateur Réalisation
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Personnels2.Nom)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-default" /> |
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

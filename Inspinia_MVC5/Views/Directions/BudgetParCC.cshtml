@@ -1,0 +1,719 @@
+﻿@model Inspinia_MVC5.Models.MonViewModel
+@{
+    ViewBag.Title = "Recap";
+}
+
+
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Index</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Centres_couts</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+
+
+                    <div class="ibox-title">
+
+
+                        <form method="post" action="">
+                            <fieldset>
+                                <div class="ibox-content">
+
+
+                                    <div class="form-group" id="data_1">
+                                        <label class="font-noraml"><h5> Choisir une année :</h5></label>
+                                        <select name="ann" id="ann" class="form-control m-b">
+                                            <option>2017</option>
+                                            <option>2016</option>
+                                            <option>2015</option>
+
+                                        </select>
+                                        <button type="submit" class="btn btn-primary"><strong>OK</strong></button>
+
+
+                                    </div>
+
+                                </div>
+
+                            </fieldset>
+
+                        </form>
+                        <!--
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        -->
+
+                        <!------------------dfffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-->
+                        <div class="wrapper wrapper-content animated fadeInRight">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox float-e-margins">
+
+                                        <div class="ibox-content">
+
+
+                                            <div class="ibox-title">
+                                                <h5>Decaissements</h5>
+                                                <div class="ibox-tools">
+                                                    <a class="collapse-link">
+                                                        <i class="fa fa-chevron-up"></i>
+                                                    </a>
+                                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                                        <i class="fa fa-wrench"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-user">
+                                                        <li>
+                                                            <a href="#">Config option 1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Config option 2</a>
+                                                        </li>
+                                                    </ul>
+                                                    <a class="close-link">
+                                                        <i class="fa fa-times"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="ibox-content">
+
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>DF /Centres_couts</th>
+                                                            <th>Jan</th>
+                                                            <th>Feve</th>
+                                                            <th>Mars</th>
+                                                            <th>Avril</th>
+                                                            <th>Mai</th>
+                                                            <th>Juin</th>
+                                                            <th>Juill</th>
+                                                            <th>Aout</th>
+                                                            <th>Sept</th>
+                                                            <th>Oct</th>
+                                                            <th>Nov</th>
+                                                            <th>Dec</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!--
+                                                        <tr>
+
+                                                              <td>Solde Début de mois</td>
+
+                                                            <td>5000</td>
+                                                            <td>5000</td>
+                                                            <td>5000</td>
+                                                            <td>5000</td>
+                                                            <td>5000</td>
+                                                            <td>5000</td>
+                                                            <td>5000</td>
+                                                            <td>5000</td>
+                                                            <td>5000</td>
+                                                            <td>5000</td>
+                                                            <td>5000</td>
+                                                            <td>5000</td>
+
+
+                                                        </tr>
+                                                              -->
+                                                        @{
+                                                            decimal s1 = 0;
+                                                            decimal s2 = 0;
+                                                            decimal s3 = 0;
+                                                            decimal s4 = 0;
+                                                            decimal s5 = 0;
+                                                            decimal s6 = 0;
+                                                            decimal s7 = 0;
+                                                            decimal s8 = 0;
+                                                            decimal s9 = 0;
+                                                            decimal s10 = 0;
+                                                            decimal s11 = 0;
+                                                            decimal s12 = 0;
+
+                                                        }
+
+
+
+                                                        @{
+
+
+                                                            decimal[] tab11 = new decimal[12];
+
+
+
+
+
+
+                                                        }
+
+
+
+
+
+
+
+                                                        @foreach (var centre in Model.Modele3s)
+                                                        {
+                                                            if (IsPost)
+                                                            {
+
+
+                                                                <tr>
+
+                                                                    <td class="text-navy"> @centre.Libelle</td>
+                                                                    @foreach (var d in Model.Modele1s)
+                                                                    {foreach (var soc in Model.Modele7s)
+                                                                            {
+                                                                        if (d.CentreID == centre.CentreID  && soc.NOM.Equals(d.Demandeur)  && soc.Direction1.Equals("df"))
+                                                                        {
+                                                                            
+
+                                                                                foreach (var cat in Model.Modele2s)
+                                                                                {
+                                                                                    decimal[] tab1 = new decimal[12];
+
+                                                                                    if (cat.CatID == d.CatID)
+                                                                                    {
+                                                                                        Int32 annee = d.Date.Value.Year;
+                                                                                        Int32 Month = d.Date.Value.Month;
+                                                                                        string ann1 = Request.Form["ann"];
+
+
+                                                                                    <br />
+                                                                                <tr>
+                                                                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@cat.Libelle</td>
+                                                                                    @{ decimal x;}
+                                                                                    @if (d.Prix == null) { x = 0; }
+                                                                                    else
+                                                                                    {
+                                                                                        x = (decimal)d.Prix;
+                                                                                    }
+                                                                                    @if (ann1.Equals("" + annee) && (Month == 1))
+                                                                                    {
+                                                                                        tab1[0] = (decimal)x;
+                                                                                        s1 = s1 + tab1[0];
+                                                                                    }
+                                                                                    @if (ann1.Equals("" + annee) && (Month == 2))
+                                                                                    {
+                                                                                        tab1[1] = (decimal)x;
+                                                                                        s2 = s2 + tab1[1];
+
+                                                                                    }
+                                                                                    @if (ann1.Equals("" + annee) && (Month == 3))
+                                                                                    {
+                                                                                        tab1[2] = (decimal)x;
+                                                                                        s3 = s3 + tab1[2];
+
+                                                                                    }
+                                                                                    @if (ann1.Equals("" + annee) & (Month == 4))
+                                                                                    {
+                                                                                        tab1[3] = (decimal)x;
+                                                                                        s4 = s4 + tab1[3];
+
+                                                                                    }
+                                                                                    @if (ann1.Equals("" + annee) && (Month == 5))
+                                                                                    {
+                                                                                        tab1[4] = (decimal)x;
+                                                                                        s5 = s5 + tab1[4];
+
+                                                                                    }
+                                                                                    @if (ann1.Equals("" + annee) && (Month == 6))
+                                                                                    {
+                                                                                        tab1[5] = (decimal)x;
+                                                                                        s6 = s6 + tab1[5];
+
+                                                                                    }
+                                                                                    @if (ann1.Equals("" + annee) && (Month == 7))
+                                                                                    {
+                                                                                        tab1[6] = (decimal)x;
+                                                                                        s7 = s7 + tab1[6];
+
+                                                                                    }
+                                                                                    @if (ann1.Equals("" + annee) && (Month == 8))
+                                                                                    {
+                                                                                        tab1[7] = (decimal)x;
+                                                                                        s8 = s8 + tab1[7];
+
+                                                                                    }
+                                                                                    @if (ann1.Equals("" + annee) && (Month == 9))
+                                                                                    {
+                                                                                        tab1[8] = (decimal)x;
+                                                                                        s9 = s9 + tab1[8];
+
+                                                                                    }
+                                                                                    @if (ann1.Equals("" + annee) && (Month == 10))
+                                                                                    {
+                                                                                        tab1[9] = (decimal)x;
+                                                                                        s10 = s10 + tab1[9];
+
+                                                                                    }
+                                                                                    @if (ann1.Equals("" + annee) && (Month == 11))
+                                                                                    {
+                                                                                        tab1[10] = (decimal)x;
+                                                                                        s11 = s11 + tab1[10];
+
+                                                                                    }
+                                                                                    @if (ann1.Equals("" + annee) && (Month == 12))
+                                                                                    {
+                                                                                        tab1[11] = (decimal)x;
+                                                                                        s12 = s12 + tab1[11];
+
+                                                                                    }
+                                                                                    @{
+                                                                                        tab11 = tab1;
+
+                                                                                    }
+                                                                                    @for (int i = 1; i < 13; i++)
+                                                                                    {
+                                                                                        <td>
+                                                                                            @tab1[i - 1]
+                                                                                        </td>
+
+                                                                                    }
+
+
+
+
+
+
+                                                                                </tr>
+
+
+                                                                                                        }
+
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+
+                                                                                        }
+
+
+
+                                                                    </tr>
+
+
+                                                                                        }
+
+                                <!--  -->
+
+                                                                                        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        <!-- -------------------------------------------------------------------------------------------->
+
+
+
+
+                                                        <tr>
+
+                                                            <td class="text-warning"> Depenses Totales par mois</td>
+                                                            <td class="text-warning"> @s1</td>
+                                                            <td class="text-warning"> @s2</td>
+                                                            <td class="text-warning"> @s3</td>
+                                                            <td class="text-warning"> @s4</td>
+                                                            <td class="text-warning"> @s5</td>
+                                                            <td class="text-warning"> @s6</td>
+                                                            <td class="text-warning"> @s7</td>
+                                                            <td class="text-warning"> @s8</td>
+                                                            <td class="text-warning"> @s9</td>
+                                                            <td class="text-warning"> @s10</td>
+                                                            <td class="text-warning"> @s11</td>
+                                                            <td class="text-warning"> @s12</td>
+                                                        </tr>
+
+
+
+
+
+
+
+
+
+                                                        <!--                                   -->
+                                                        <!-- ------------------------------------------------------------------------------------------------------ -->
+                                                        <!-- ------------------------------------------------------------------------------------------------------ -->
+                                                        <!--  -------------------------------------------------------------------------------->
+
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!----------------------------->
+
+                        <!------------------daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+
+                        <div class="wrapper wrapper-content animated fadeInRight">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox float-e-margins">
+
+                                        <div class="ibox-content">
+
+
+                                            <div class="ibox-title">
+                                                <h5>Decaissements</h5>
+                                                <div class="ibox-tools">
+                                                    <a class="collapse-link">
+                                                        <i class="fa fa-chevron-up"></i>
+                                                    </a>
+                                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                                        <i class="fa fa-wrench"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-user">
+                                                        <li>
+                                                            <a href="#">Config option 1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Config option 2</a>
+                                                        </li>
+                                                    </ul>
+                                                    <a class="close-link">
+                                                        <i class="fa fa-times"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="ibox-content">
+
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>DA /Centres_couts</th>
+                                                            <th>Jan</th>
+                                                            <th>Feve</th>
+                                                            <th>Mars</th>
+                                                            <th>Avril</th>
+                                                            <th>Mai</th>
+                                                            <th>Juin</th>
+                                                            <th>Juill</th>
+                                                            <th>Aout</th>
+                                                            <th>Sept</th>
+                                                            <th>Oct</th>
+                                                            <th>Nov</th>
+                                                            <th>Dec</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!--
+                                    <tr>
+
+                                          <td>Solde Début de mois</td>
+
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+                                        <td>5000</td>
+
+
+                                    </tr>
+                                          -->
+                                                        @{
+                                                            decimal sa1 = 0;
+                                                            decimal sa2 = 0;
+                                                            decimal sa3 = 0;
+                                                            decimal sa4 = 0;
+                                                            decimal sa5 = 0;
+                                                            decimal sa6 = 0;
+                                                            decimal sa7 = 0;
+                                                            decimal sa8 = 0;
+                                                            decimal sa9 = 0;
+                                                            decimal sa10 = 0;
+                                                            decimal sa11 = 0;
+                                                            decimal sa12 = 0;
+
+                                                        }
+
+
+
+                                                        @{
+
+
+                                                            decimal[] taba11 = new decimal[12];
+
+
+
+
+
+
+                                                        }
+
+
+
+
+
+
+
+                                                        @foreach (var centre in Model.Modele3s)
+                                                        {
+                                                            if (IsPost)
+                                                            {
+
+
+                                                                <tr>
+
+                                                                    <td class="text-navy"> @centre.Libelle</td>
+                                                                    @foreach (var d in Model.Modele1s)
+                                                                    {
+                                                                        foreach (var soc in Model.Modele7s)
+                                                                        {
+                                                                            if (d.CentreID == centre.CentreID && soc.NOM.Equals(d.Demandeur) && soc.Direction1.Equals("da"))
+                                                                            {
+
+
+                                                                                foreach (var cat in Model.Modele2s)
+                                                                                {
+                                                                                    decimal[] tab1 = new decimal[12];
+
+                                                                                    if (cat.CatID == d.CatID)
+                                                                                    {
+                                                                                        Int32 annee = d.Date.Value.Year;
+                                                                                        Int32 Month = d.Date.Value.Month;
+                                                                                        string ann1 = Request.Form["ann"];
+
+
+                                                                                        <br />
+                                                                                    <tr>
+                                                                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@cat.Libelle</td>
+                                                                                        @{ decimal x;}
+                                                                                        @if (d.Prix == null) { x = 0; }
+                                                                                        else
+                                                                                        {
+                                                                                            x = (decimal)d.Prix;
+                                                                                        }
+                                                                                        @if (ann1.Equals("" + annee) && (Month == 1))
+                                                                                        {
+                                                                                            tab1[0] = (decimal)x;
+                                                                                            s1 = s1 + tab1[0];
+                                                                                        }
+                                                                                        @if (ann1.Equals("" + annee) && (Month == 2))
+                                                                                        {
+                                                                                            tab1[1] = (decimal)x;
+                                                                                            s2 = s2 + tab1[1];
+
+                                                                                        }
+                                                                                        @if (ann1.Equals("" + annee) && (Month == 3))
+                                                                                        {
+                                                                                            tab1[2] = (decimal)x;
+                                                                                            s3 = s3 + tab1[2];
+
+                                                                                        }
+                                                                                        @if (ann1.Equals("" + annee) & (Month == 4))
+                                                                                        {
+                                                                                            tab1[3] = (decimal)x;
+                                                                                            s4 = s4 + tab1[3];
+
+                                                                                        }
+                                                                                        @if (ann1.Equals("" + annee) && (Month == 5))
+                                                                                        {
+                                                                                            tab1[4] = (decimal)x;
+                                                                                            s5 = s5 + tab1[4];
+
+                                                                                        }
+                                                                                        @if (ann1.Equals("" + annee) && (Month == 6))
+                                                                                        {
+                                                                                            tab1[5] = (decimal)x;
+                                                                                            s6 = s6 + tab1[5];
+
+                                                                                        }
+                                                                                        @if (ann1.Equals("" + annee) && (Month == 7))
+                                                                                        {
+                                                                                            tab1[6] = (decimal)x;
+                                                                                            s7 = s7 + tab1[6];
+
+                                                                                        }
+                                                                                        @if (ann1.Equals("" + annee) && (Month == 8))
+                                                                                        {
+                                                                                            tab1[7] = (decimal)x;
+                                                                                            s8 = s8 + tab1[7];
+
+                                                                                        }
+                                                                                        @if (ann1.Equals("" + annee) && (Month == 9))
+                                                                                        {
+                                                                                            tab1[8] = (decimal)x;
+                                                                                            s9 = s9 + tab1[8];
+
+                                                                                        }
+                                                                                        @if (ann1.Equals("" + annee) && (Month == 10))
+                                                                                        {
+                                                                                            tab1[9] = (decimal)x;
+                                                                                            s10 = s10 + tab1[9];
+
+                                                                                        }
+                                                                                        @if (ann1.Equals("" + annee) && (Month == 11))
+                                                                                        {
+                                                                                            tab1[10] = (decimal)x;
+                                                                                            s11 = s11 + tab1[10];
+
+                                                                                        }
+                                                                                        @if (ann1.Equals("" + annee) && (Month == 12))
+                                                                                        {
+                                                                                            tab1[11] = (decimal)x;
+                                                                                            s12 = s12 + tab1[11];
+
+                                                                                        }
+                                                                                        @{
+                                                                                            tab11 = tab1;
+
+                                                                                        }
+                                                                                        @for (int i = 1; i < 13; i++)
+                                                                                        {
+                                                                                            <td>
+                                                                                                @tab1[i - 1]
+                                                                                            </td>
+
+                                                                                        }
+
+
+
+
+
+
+                                                                                    </tr>
+
+
+                                                                                                            }
+
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+
+                                                                                            }
+
+
+
+                                                                    </tr>
+
+
+                                                                                            }
+
+                                <!--  -->
+
+                                                                                            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        <!-- -------------------------------------------------------------------------------------------->
+
+
+
+
+                                                        <tr>
+
+                                                            <td class="text-warning"> Depenses Totales par mois</td>
+                                                            <td class="text-warning"> @sa1</td>
+                                                            <td class="text-warning"> @sa2</td>
+                                                            <td class="text-warning"> @sa3</td>
+                                                            <td class="text-warning"> @sa4</td>
+                                                            <td class="text-warning"> @sa5</td>
+                                                            <td class="text-warning"> @sa6</td>
+                                                            <td class="text-warning"> @sa7</td>
+                                                            <td class="text-warning"> @sa8</td>
+                                                            <td class="text-warning"> @sa9</td>
+                                                            <td class="text-warning"> @sa10</td>
+                                                            <td class="text-warning"> @sa11</td>
+                                                            <td class="text-warning"> @sa12</td>
+                                                        </tr>
+
+
+
+
+
+
+
+
+
+                                                        <!--                                   -->
+                                                        <!-- ------------------------------------------------------------------------------------------------------ -->
+                                                        <!-- ------------------------------------------------------------------------------------------------------ -->
+                                                        <!--  -------------------------------------------------------------------------------->
+
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!------------------>
+
+
+
+
+
+
+
+
+
+                        
+
+
+
+

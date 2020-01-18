@@ -1,0 +1,2353 @@
+﻿<link href="~/Content/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/select2.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/plugins/switchery/switchery.css" rel="stylesheet" type="text/css" />
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <div class="form-group">
+            <div class="col-lg-10">
+                <label class="col-lg-2 control-label" style="padding-left: 0px; text-align: initial;">
+                    Declaration TVA MOIS:
+                </label>
+                <div class="col-lg-2">
+                    <select class="form-control" name="mois" id="mois" required><option></option></select>
+                </div>
+                <div class="col-lg-4">
+                    <input type="number" class="form-control" value="0" name="RETENU" id="RETENU" readonly />
+                </div>
+                @{
+
+                    @*if ((Session["RASSalaire"] != null) && (Session["RASHoraire"] != null) && (Session["RASLoyer"] != null) && (Session["RASTFP"] != null) && (Session["FOPROLOS"] != null))
+                    {
+                        <button class="btn btn-primary pull-right" type="button" onclick="valider();" id="valider">
+                            <span class="bold">valider</span>
+                        </button>
+                    }
+                    else
+                    {*@
+                        <button class="btn btn-primary pull-right" type="button" onclick="valider();" id="valider" disabled>
+                            <span class="bold">valider</span>
+                        </button>
+                    @*}*@
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10">
+                <div class="col-lg-1">
+
+                    <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="sal1" id="sal1" value="" onchange="checksal(this);"/>
+                    </div>
+                    <label class="col-lg-2 control-label" style="padding-left: 0px; text-align: initial;">
+                        RAS/Salaire
+                    </label>
+                    <div class="col-lg-5">
+                        <input type="number" class="form-control" value="0" name="salaire" id="1" oninput="change2(this.id);" required />
+                    </div>
+                    <div class="col-lg-1" style="padding-left: 0px;padding-right: 0px;">
+                        <button class="btn btn-outline btn-primary dim" type="button" id="add1" onclick="addInput('dynamicInput');" disabled><i class="fa fa-plus"></i></button>
+
+                    </div>
+                    <div class="col-lg-1" style="padding-left: 0px;padding-right: 0px;">
+                        @*<button class="btn btn-outline btn-primary dim" type="button" onclick="AddRow()" id="FirstBTN">
+                    <i class="fa fa-check"></i>
+                </button>*@
+                    </div>
+                </div>
+            <div class="col-lg-10">
+                <div class="col-lg-1">
+
+                </div>
+                    <label class="col-lg-2 control-label" style="padding-left: 0px; text-align: initial;">
+                    </label>
+                    <div class="col-lg-5" id="dynamicInput">
+
+                    </div>
+                    <div class='col-lg-2' style='padding-left: 0px; padding-right: 0px;' id="dynamic">
+
+                    </div>
+                </div>
+            <div class="col-lg-10">
+                <div class="col-lg-1">
+
+                </div>
+                <label class="col-lg-2 control-label" style="padding-left: 0px; text-align: initial;">
+                </label>
+                <div class="col-lg-5">
+                    <b><input type="number" class="form-control" style="background-color: wheat;" value="0" name="totsal" id="totsal" readonly /></b>
+
+                </div>
+                <div class='col-lg-2' style='padding-left: 0px; padding-right: 0px;'>
+
+                </div>
+
+            </div>
+                <div class="ibox-content">
+                    <div>
+                        <div class="form-group">
+                            <div class="col-lg-1">
+
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="hor1" id="hor1" value="" onchange="checkhor(this);"/>
+                            </div>
+                            <label class="col-lg-2 control-label">
+                                RAS/honoraire
+                            </label>
+                            <div class="col-lg-4">
+
+                                <input type="number" class="form-control" value="0" name="honoraire" id="11" oninput="change(this.id);" required />
+                            </div>
+                            <div class="col-lg-1">
+
+                                <input type="text" class="form-control" value="5%" name="po" id="po" disabled />
+                            </div>
+                            <div class="col-lg-2">
+
+                                <input type="number" class="form-control" value="0" name="honorairePr" id="12" readonly />
+                            </div>
+                            <button class="btn btn-outline btn-primary dim" type="button" id="add2" onclick="addInput1('dynamicInput2');" disabled><i class="fa fa-plus"></i></button>
+
+                            @*<button class="btn btn-outline btn-primary dim" type="button" onclick="AddRowhor()" id="FirstBTN">
+                        <i class="fa fa-check"></i>
+                    </button>*@
+                        </div>
+                    </div>
+                    <div id="dynamicInput2">
+
+
+                    </div>
+                    @*<div class="ibox-content">
+            <div>*@
+                    <div class="form-group">
+                        <div class="col-lg-1">
+
+                        </div>
+                        <label class="col-lg-2 control-label">
+                        </label>
+
+                        <div class="col-lg-4">
+                        </div>
+                        <div class="col-lg-1">
+                        </div>
+                        <div class="col-lg-2">
+                            <b><input type="number" class="form-control" style="background-color: wheat;" value="0" name="tothor" id="tothor" readonly /></b>
+
+                        </div>
+
+                    </div>
+                    @*</div>
+            </div>*@
+                </div>
+
+                <div class="ibox-content">
+                    <div>
+                        <div class="form-group">
+                            <div class="col-lg-1">
+
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="loy1" id="loy1" value="" onchange="checkloy(this);"/>
+                            </div>
+                            <label class="col-lg-2 control-label">
+                                RAS/LOYER
+                            </label>
+                            <div class="col-lg-2">
+                                <input type="number" class="form-control" value="0" name="net" id="110" oninput="change1(this.id);" required />
+                            </div>
+                            <div class="col-lg-2">
+                                <input type="number" class="form-control" value="0" name="brut" id="111" readonly />
+                            </div>
+                            <div class="col-lg-1">
+                                <input type="text" class="form-control" value="15%" name="po" id="po" disabled />
+                            </div>
+                            <div class="col-lg-2">
+                                <input type="number" class="form-control" value="0" name="brut1" id="112" readonly />
+                            </div>
+                            <a class="CLIENT"><button class="btn btn-outline btn-primary dim" type="button" id="add3" onclick="addInput2('dynamicInput3');" disabled><i class="fa fa-plus"></i></button></a>
+                            @*<button class="btn btn-outline btn-primary dim" type="button" onclick="AddRowloy()" id="FirstBTN">
+                        <i class="fa fa-check"></i>
+                    </button>*@
+                        </div>
+                    </div>
+                    <div id="dynamicInput3">
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-1">
+
+                        </div>
+                        <label class="col-lg-2 control-label">
+                        </label>
+
+                        <div class="col-lg-4">
+                        </div>
+                        <div class="col-lg-1">
+                        </div>
+                        <div class="col-lg-2">
+                            <b> <input type="number" class="form-control" style="background-color: wheat;" value="0" name="totloy" id="totloy" readonly /></b>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <div class="form-group">
+                            <div class="col-lg-1">
+
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="Marche" id="Marche" value="" onchange="checkMarche(this);"/>
+                            </div>
+                            <label class="col-lg-2 control-label">
+                                RAS/MARCHE
+                            </label>
+                            <table class="table table-striped table-bordered table-hover dataTables-example" id="Tableau">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            N° facture
+                                        </th>
+                                        <th>
+                                            DATE
+                                        </th>
+                                        <th>
+                                            FRS
+                                        </th>
+                                        <th>
+                                            BASE
+                                        </th>
+
+                                        <th>
+                                            R/S
+                                        </th>
+                                        <th>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot></tfoot>
+
+                            </table>
+                            <input type="number" class="form-control" style="display:none" value="0" name="TOTRS" id="TOTRS" />
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <div class="form-group">
+                            <div class="col-lg-1">
+
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="tfp11" id="tfp11" value="" onchange="checTFP(this);"/>
+                            </div>
+                            <label class="col-lg-2 control-label">
+                                TFP
+                            </label>
+                            <div class="col-lg-3">
+                                <input type="number" class="form-control" value="0" name="TFP" id="TFP" oninput="change3(this.id);" required />
+                            </div>
+                            <div class="col-lg-1">
+                                <input type="text" class="form-control" value="2%" name="TFPPr" id="TFPPr" disabled />
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="number" class="form-control" value="0" name="TFP1" id="TFP1" readonly />
+                            </div>
+                            <div class="col-lg-1">
+                                <button class="btn btn-outline btn-primary dim" type="button" onclick="AddRowTFP()" id="addftp" disabled>
+                                    <i class="fa fa-check"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-1">
+                            </div>
+
+                            <label class="col-lg-2 control-label">
+                            </label>
+                            <div class="col-lg-3">
+                            </div>
+                            <div class="col-lg-2">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="number" class="form-control" style="background-color: wheat;" value="0" name="totTFP" id="totTFP" readonly />
+
+                            </div>
+                            <div class="col-lg-1">
+                            </div>
+
+
+                        </div>
+                        </div>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <div class="form-group">
+                            <div class="col-lg-1">
+
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="FOPROLOS11" id="FOPROLOS11" value="" onchange="checFOPROLOS(this);" />
+                            </div>
+                            <label class="col-lg-2 control-label">
+                                FOPROLOS
+                            </label>
+                            <div class="col-lg-3">
+                                <input type="number" class="form-control" value="0" name="FOPROLOS" id="FOPROLOS" oninput="change4(this.id);" required />
+                            </div>
+                            <div class="col-lg-1">
+                                <input type="text" class="form-control" value="1%" name="FOPROLOSPr" id="FOPROLOSPr" disabled />
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="number" class="form-control" value="0" name="FOPROLOS1" id="FOPROLOS1" readonly />
+                            </div>
+                            <div class="col-lg-1">
+                                <button class="btn btn-outline btn-primary dim" type="button" onclick="AddRowFOPROLOS()" id="btnfrolos" disabled>
+                                    <i class="fa fa-check"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-1">
+                            </div>
+                            <label class="col-lg-2 control-label">
+                            </label>
+                            <div class="col-lg-3">
+                            </div>
+                            <div class="col-lg-2">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="number" class="form-control" style="background-color: wheat;" value="0" name="totFOPROLOS" id="totFOPROLOS" readonly />
+
+                            </div>
+                            <div class="col-lg-1">
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">
+                                TVA DEDUCTIBLE
+
+                            </label>
+                            <table class="table table-striped table-bordered table-hover dataTables-example" id="Tableau1">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            HT
+                                        </th>
+                                        <th>
+                                            TVA
+                                        </th>
+                                        <th>
+                                            MTVA
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot></tfoot>
+
+                            </table>
+                            <input type="number" class="form-control" style="display:none" value="0" name="tttvacol" id="tttvacol" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">
+                                TVA COLLECTE
+                            </label>
+                            <table class="table table-striped table-bordered table-hover dataTables-example" id="Tableau2">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            HT
+                                        </th>
+                                        <th>
+                                            TVA
+                                        </th>
+                                        <th>
+                                            MTVA
+                                        </th>
+
+
+
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot></tfoot>
+
+                            </table>
+                            <input type="number" class="form-control" style="display:none" value="0" name="tttvadec" id="tttvadec" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <div class="form-group">
+                            <div class="col-lg-1">
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="report" id="report" value="" onchange="checReport(this);" />
+                            </div>
+                            <label class="col-lg-1 control-label">
+                                TVA A PAYER
+                            </label>
+                            <div class="col-lg-2">
+                                <input type="number" class="form-control" value="0" name="TVAAPAYER" id="TVAAPAYER" readonly />
+                            </div>
+                            <label class="col-lg-2 control-label">
+                                REPORT ANTERIEUR
+                            </label>
+                            <div class="col-lg-2">
+                                <input type="number" class="form-control" value="0" name="REPORTANT" id="REPORTANT" readonly />
+                            </div>
+                            <label class="col-lg-1 control-label">
+                                REPORT TVA
+                            </label>
+                            <div class="col-lg-2">
+                                <input type="number" class="form-control" value="0" value="" name="REPORTTVA" id="REPORTTVA" readonly />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <div class="form-group">
+                            <div class="col-lg-1">
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="timbre1" id="timbre1" value="" onchange="checktimbre(this);"/>
+                            </div>
+                            <label class="col-lg-2 control-label">
+                                DROIT DE TIMBRE :
+                            </label> <br />
+                            <label class="col-lg-2 control-label">
+                                Factures *0.500 :
+                            </label>
+                            <div class="col-lg-2">
+                                <input type="number" class="form-control" value="0" name="timbre" id="timbre" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div>
+
+                        <div class="form-group">
+                            <div class="col-lg-1">
+                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="tcl11" id="tcl11" value="" onchange="checktcl(this);"/>
+                            </div>
+                            <label class="col-lg-2 control-label">
+                                TCL
+                            </label>
+                            <div class="col-lg-2">
+                                <input type="number" class="form-control" value="0" name="TCL" id="TCL" readonly />
+                            </div>
+
+                            <div class="col-lg-2">
+                                <input type="text" class="form-control" name="20" id="20" value="0.2%" disabled />
+                            </div>
+
+                            <div class="col-lg-2">
+                                <input type="number" class="form-control" value="0" name="TCL1" id="TCL1" readonly />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+@section Scripts {
+    @Scripts.Render("~/plugins/select2")
+    <script type="text/javascript">
+                    $("#mois").select2();
+                    $('#mois').append($('<option>', {
+                        value: "",
+                        text: ""
+                    }));
+                    $.ajax({
+                        type: 'POST',
+                        url: "/Vente/GetAllMois",
+                        success: function (response) {
+                            $.each(response, function (i, item) {
+                                $('#mois').append($('<option>', {
+                                    value: item,
+                                    text: item
+                                }));
+
+                            });
+                        }
+                    });
+
+                    $(document).on("keyup", "input[type=number][data-modif!=edited]", function (e) {
+
+
+                        var tfp = $("#TFP").val();
+                        tfp = parseFloat(tfp);
+                        var tfp1 = tfp * 2 / 100;
+                        tfp1 = parseFloat(tfp1);
+                        $('#TFP1').val(tfp1.toFixed(3));
+
+                        var FOPROLOS = $("#FOPROLOS").val();
+                        FOPROLOS = parseFloat(FOPROLOS);
+                        var FOPROLOS1 = FOPROLOS * 1 / 100;
+                        FOPROLOS1 = parseFloat(FOPROLOS1);
+                        $('#FOPROLOS1').val(FOPROLOS1.toFixed(3));
+                        
+
+                    });
+                    $(document).on("keydown", "input[type=number][data-modif!=edited]", function (e) {
+
+
+                        var tfp = $("#TFP").val();
+                        tfp = parseFloat(tfp);
+                        var tfp1 = tfp * 2 / 100;
+                        tfp1 = parseFloat(tfp1);
+                        $('#TFP1').val(tfp1.toFixed(3));
+
+
+                        var FOPROLOS = $("#FOPROLOS").val();
+                        FOPROLOS = parseFloat(FOPROLOS);
+                        var FOPROLOS1 = FOPROLOS * 1 / 100;
+                        FOPROLOS1 = parseFloat(FOPROLOS1);
+                        $('#FOPROLOS1').val(FOPROLOS1.toFixed(3));
+
+
+                    });
+
+
+                    $("#mois").change(function () {
+                        $('#RETENU').val(0);
+                        $('#11').val(0);
+                        $('#12').val(0);
+
+                        $('#110').val(0);
+                        $('#111').val(0);
+                        $('#112').val(0);
+                        $('#1').val(0);
+                        $('#TFP').val(0);
+                        $('#TFP1').val(0);
+                        $('#FOPROLOS').val(0);
+                        $('#FOPROLOS1').val(0);
+                        $('#timbre').val(0);
+
+                        var selectedItemValue = $(this).val();
+
+                         $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetDeclarationTva", "Vente")',
+                            data: { "id": selectedItemValue },
+                             success: function (data) {
+                                 var RETENU = data.Retenue;
+                                 RETENU = parseFloat(RETENU);
+                                 $('#RETENU').val(RETENU.toFixed(3));
+
+                             }
+
+                        });
+
+                          $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("calculTimbre", "Vente")',
+                            data: { "id": selectedItemValue },
+                              success: function (data) {
+                                  var timbre = data;
+                                  timbre = parseFloat(timbre);
+                                  $('#timbre').val(timbre.toFixed(3));
+
+                            }
+
+                           });
+
+
+                        $("#Tableau tbody").empty();
+
+                        $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetfactClt", "Vente")',
+                            data: { "id": selectedItemValue },
+                            success: function (response) {
+                                $("#Tableau tbody").empty();
+                                $.ajax({
+                                    type: 'POST',
+                                    url: "/Vente/GetAllLigneTVA",
+                                    success: function (response) {
+
+                                        $.each(response, function (i, item) {
+                                            var idd = item.FRS;
+
+                                            idd = parseInt(idd);
+
+                                            $.ajax({
+                                                cache: false,
+                                                type: "GET",
+                                                url: '@Url.Action("GetFournisseuryID", "Achat")',
+                                                data: { "id": idd },
+                                                success: function (data) {
+                                                    var frs = data.NOM;
+                                                    var rs = item.Base;
+                                                    rs = parseFloat(rs);
+                                                    var rs1 = rs * (1.5 / 100);
+                                                    rs1 = parseFloat(rs1).toFixed(3);
+                                                    var date = item.Date;
+                                                    var line = "<tr id='" + item.ID + "' ><td>" + item.CodeFact + "</td><td>" + date + "</td><td>" + frs + "</td><td>" + item.Base + "</td><td>" + rs1 + "</td><td><button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button></td></tr>";
+                                                    $("#Tableau tbody").append(line);
+                                                },
+
+                                            });
+                                        });
+                                       
+
+
+                                    },
+
+                                });
+                                 $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetTotalRS", "Vente")',
+                            data: { "id": selectedItemValue },
+                            success: function (response) {
+                                var line = "<tr><td></td><td></td><td></td><td><B>Totale RAS/MARCHE</B> </td><td style='background-color: wheat;'><B>" + response.toFixed(3) + "</B></td><td></td></tr>";
+                                $("#Tableau tbody").append(line);
+                            },
+                        });
+
+                            },
+
+                        });
+
+                         
+
+                        $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("getRS", "Vente")',
+                             success: function (data) {
+                                var data = data;
+                                data = parseFloat(data);
+                                 $('#TOTRS').val(data.toFixed(3));
+                                //var RETENU = $('#RETENU').val();
+                                //RETENU = parseFloat(RETENU);
+                                //var RETENU1 = RETENU + data;
+                                //$('#RETENU').val(RETENU1.toFixed(3));
+                             }
+                         });
+
+                       $("#Tableau2 tbody").empty();
+
+                       $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetTVADeductible", "Vente")',
+                            data: { "id": selectedItemValue },
+                           success: function (response) {
+
+                                $.each(response, function (i, item) {
+                                    var TTC = item.TTC;
+                                    TTC = parseFloat(TTC);
+                                    var tva = item.TVA;
+                                    tva = parseInt(tva);
+
+                                    var HT = item.HT;
+                                    HT = parseFloat(HT);
+
+                                    var HT1 = TTC - HT;
+                                    HT1 = parseFloat(HT1);
+                                    
+                                    var line = "<tr><td>" + TTC.toFixed(3) + "</td><td>" + tva + "</td><td>" + HT1.toFixed(3) + "</td></tr>";
+                                    $("#Tableau2 tbody").append(line);
+
+
+                                });
+                                $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetTVACollecttotalclt", "Vente")',
+                            data: { "id": selectedItemValue },
+                                    success: function (response) {
+
+
+                                        var line = "<tr style='background-color: wheat;'><td><B>" + response.tottcc.toFixed(3) + "</B></td><td></td><td><B>" + response.tottva.toFixed(3) + "</B></td></tr>";
+                                        $("#Tableau2 tbody").append(line);
+
+                                        var tttvadec = response.tottva;
+                                        tttvadec = parseFloat(tttvadec);
+
+                                        $('#tttvadec').val(tttvadec.toFixed(3));
+                                        var tttvacol = $('#tttvacol').val();
+                                        tttvacol = parseFloat(tttvacol);
+                                        var tttvadec = $('#tttvadec').val();
+                                        tttvadec = parseFloat(tttvadec);
+                                        var tvareport = tttvadec - tttvacol;
+                                        tvareport = parseFloat(tvareport);
+                                        $('#TVAAPAYER').val(tvareport.toFixed(3));
+                                        $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("getTVAReport", "Vente")',
+                            data: { "id": selectedItemValue },
+                            success: function (data) {
+                                var REPORTANT = data;
+                                REPORTANT = parseFloat(REPORTANT);
+
+                                var REPORTANT1 = REPORTANT * (-1);
+                                REPORTANT1 = parseFloat(REPORTANT1);
+
+                                $('#REPORTANT').val(REPORTANT1.toFixed(3));
+
+                                var TVAAPAYER = $('#TVAAPAYER').val();
+                                TVAAPAYER = parseFloat(TVAAPAYER);
+                                var TVAAPAYER1 = TVAAPAYER - REPORTANT1;
+                                TVAAPAYER1 = parseFloat(TVAAPAYER1);
+                                $('#REPORTTVA').val(TVAAPAYER1.toFixed(3));
+
+
+                            }
+                        });
+
+                            },
+
+                        });
+                           },
+
+                        });
+
+                      $("#Tableau1 tbody").empty();
+
+                       $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetTVACollect", "Vente")',
+                            data: { "id": selectedItemValue },
+                           success: function (response) {
+
+                               $.each(response, function (i, item) {
+                                   
+                               
+                                       var TTC = item.TTC;
+                                       TTC = parseFloat(TTC);
+                                       var tva = item.TVA;
+                                       tva = parseInt(tva);
+
+                                       var HT = item.HT;
+                                       HT = parseFloat(HT);
+
+                                       var HT1 = TTC - HT;
+                                       HT1 = parseFloat(HT1);
+
+                                       var line = "<tr><td>" + HT.toFixed(3) + "</td><td>" + tva + "</td><td>" + HT1.toFixed(3) + "</td></tr>";
+                                       $("#Tableau1 tbody").append(line);
+                                   
+
+                               });
+                               $.ajax({
+                                   cache: false,
+                                   type: "GET",
+                                   url: '@Url.Action("GetTotalFodec", "Vente")',
+                                   data: { "id": selectedItemValue },
+                                   success: function (response) {
+
+
+                                       var line = "<tr><td style='background-color: wheat;'>"+ response.totfodec.toFixed(3) +"</td><td style='background-color: wheat;'>FODEC</td><td style='background-color: wheat;'>" + response.tvafodec.toFixed(3) + "</td></tr>";
+                                       $("#Tableau1 tbody").append(line);
+                                   },
+                               });
+                           $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetTVACollecttotal", "Vente")',
+                            data: { "id": selectedItemValue },
+                                    success: function (response) {
+
+                                        var line = "<tr style='background-color: wheat;'><td><B>" + response.totHT.toFixed(3) + "</B></td><td></td><td><B>" + response.totMTVA.toFixed(3) + "</B></td></tr>";
+                                    $("#Tableau1 tbody").append(line);
+                                        var tttvadec = response.totMTVA;
+                                        tttvadec = parseFloat(tttvadec);
+
+                                        $('#tttvacol').val(tttvadec.toFixed(3));
+                                        var tttvacol = $('#tttvacol').val();
+                                        tttvacol = parseFloat(tttvacol);
+                                        var tttvadec = $('#tttvadec').val();
+                                        tttvadec = parseFloat(tttvadec);
+                                        var tvareport = tttvadec - tttvacol;
+                                        tvareport = parseFloat(tvareport);
+                                        $('#TVAAPAYER').val(tvareport.toFixed(3));
+
+
+                         $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("getTVAReport", "Vente")',
+                            data: { "id": selectedItemValue },
+                            success: function (data) {
+                                var REPORTANT = data;
+                                REPORTANT = parseFloat(REPORTANT);
+
+                                var REPORTANT1 = REPORTANT * (-1);
+                                REPORTANT1 = parseFloat(REPORTANT1);
+
+                                $('#REPORTANT').val(REPORTANT1.toFixed(3));
+                                var TVAAPAYER = $('#TVAAPAYER').val();
+                                TVAAPAYER = parseFloat(TVAAPAYER);
+                                var TVAAPAYER1 = TVAAPAYER - REPORTANT1;
+                                TVAAPAYER1 = parseFloat(TVAAPAYER1);
+                                $('#REPORTTVA').val(TVAAPAYER1.toFixed(3));
+
+
+                            }
+                        });
+                            },
+
+                        });
+                           },
+
+                        });
+
+                      
+
+
+                        $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("calculTCL", "Vente")',
+                            data: { "id": selectedItemValue },
+                            success: function (data) {
+                                var tcl = data;
+                                tcl = parseFloat(tcl);
+
+                                var tcl1 = tcl * 0.2/100;
+                                tcl1 = parseFloat(tcl1);
+                                $('#TCL').val(tcl.toFixed(3));
+                                $('#TCL1').val(tcl1.toFixed(3));
+
+                            }
+                        });
+
+                        $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetAllsalaire2", "Vente")',
+                            data: { "id": selectedItemValue },
+                            success: function (response) {
+                                document.getElementById('add1').disabled = false;
+
+                                if (response.count == 1) {
+
+                                    $('#1').val(item.salaire);
+                                }
+                                else {
+                                    $('#1').val(response[0].salaire);
+                                    $.each(response, function (i, item) {
+                                        var i = i + 1;
+                                        i = parseInt(i);
+                                        var count = document.getElementsByName('salaire').length;
+                                        var iddiv = count + "salaire";
+                                        var iddiv2 = count + "salaire2";
+                                        var count1 = document.getElementById(count).value;
+                                        count1 = parseFloat(count1);
+                                        count = parseInt(count);
+                                        var newDiv = document.createElement('div');
+                                        var newDiv2 = document.createElement('div');
+
+                                        var selectHTML = "";
+                                        var selectHTML2 = "";
+
+                                        var id = count + 1;
+                                        id = parseInt(id);
+                                        selectHTML = "<div id='" + iddiv + "'><input type='number' class='form-control' value='" + response[i].salaire + "' name='salaire' id='" + id + "' oninput='change2(\"" + id + "\")' required/></div>";
+                                        selectHTML2 = "<div id='" + iddiv2 + "'><button class='btn btn-warning btn-outline btn-primary dim' type='button' onclick='DeleteRow1(\"" + iddiv + "\");DeleteRow11(\"" + response[i].ID  + "\");'><i class='fa fa-times'></i></button><button class='btn btn-outline btn-primary dim' type='button' onclick='AddRowsal(\"" + id + "\")' id='FirstBTN'><i class='fa fa-check'></i></button></div>";
+                                        newDiv.innerHTML = selectHTML;
+                                        newDiv2.innerHTML = selectHTML2;
+
+
+                                        document.getElementById('dynamicInput').appendChild(newDiv);
+                                        document.getElementById('dynamic').appendChild(newDiv2);
+                                    });
+                                   
+                                }
+                                
+
+                            }
+                        });
+                        $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetTOTsalaire2", "Vente")',
+                            data: { "id": selectedItemValue },
+                            success: function (response) {
+                                $('#totsal').val(response);
+
+                            }
+                        });
+
+                          $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetAllHonoraire2", "Vente")',
+                            data: { "id": selectedItemValue },
+                              success: function (response) {
+                                  document.getElementById('add2').disabled = false;
+
+                                  if (response.count == 1) {
+                                      $('#11').val(item.honoraire);
+                                      $('#12').val(item.honoraire1);
+                                  }
+                                  else {
+                                      $('#11').val(response[0].honoraire);
+                                      $('#12').val(response[0].honoraire1);
+                                    $.each(response, function (i, item) {
+                                        var i = i + 1;
+                                        i = parseInt(i);
+                                        var count = document.getElementsByName('honoraire').length;
+                                        var iddiv = count + "honoraire";
+
+                                        count = parseInt(count);
+
+                                        var id = 11 + (count * 2);
+                                        id = parseInt(id);
+                                        var id1 = id + 1;
+
+                                        var newDiv = document.createElement('div');
+                                        var selectHTML = "";
+                                        selectHTML = "<div id='" + iddiv + "'><div class='form-group'><div class='col-lg-1'></div><label class='col-lg-2 control-label'></label><div class='col-lg-4'><input type='number' class='form-control' value='" + response[i].honoraire + "' name='honoraire' id='" + id + "' oninput='change(\"" + id + "\")' required /></div><div class='col-lg-1'><input type='text' class='form-control' value='5%' name='po' id='po' disabled /></div><div class='col-lg-2'><input type='number' class='form-control' value='" + response[i].honoraire1 + "' name='honorairePr' id='" + id1 + "' readonly /></div><button class='btn btn-warning btn-outline btn-primary dim' type='button' onclick='DeleteRow2(\"" + iddiv + "\");DeleteRow22(\"" + response[i].ID + "\");'><i class='fa fa-times'></i></button> </button> <button class='btn btn-outline btn-primary dim' type='button' onclick='AddRowHor1(\"" + id + "\")' id='FirstBTN'><i class='fa fa-check'></i></button> </div></div></div>";
+                                        newDiv.innerHTML = selectHTML;
+                                        document.getElementById('dynamicInput2').appendChild(newDiv);
+                                      });
+                                  }
+                                  var tab2 = document.getElementsByName("honorairePr");
+                                  var tabSeco2 = 0;
+
+                                  for (t = 0; t < tab2.length; t++) {
+                                      tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+                                  }
+                                  tabSeco2 = parseFloat(tabSeco2);
+                                  $('#tothor').val(tabSeco2.toFixed(3));
+                            }
+                        });
+                         $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetTOThor2", "Vente")',
+                            data: { "id": selectedItemValue },
+                            success: function (response) {
+                                $('#tothor').val(response);
+
+                            }
+                        });
+
+                         $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetAllLoyer2", "Vente")',
+                            data: { "id": selectedItemValue },
+                             success: function (response) {
+                                 document.getElementById('add3').disabled = false;
+
+                                 if (response.count == 1) {
+
+                                     $('#110').val(item.loy);
+                                     $('#111').val(item.loy1);
+                                     $('#112').val(item.loy2);
+                                 }
+                                 else {
+                                     $('#110').val(response[0].loy);
+                                     $('#111').val(response[0].loy1);
+
+                                     $('#112').val(response[0].loy2);
+                                    $.each(response, function (i, item) {
+                                        var i = i + 1;
+                                        i = parseInt(i);
+                                        var count = document.getElementsByName('net').length;
+                                        var iddiv = count + "net";
+
+                                        count = parseInt(count);
+
+                                        var id = 110 + (count * 3);
+                                        id = parseInt(id);
+                                        var id1 = id + 1;
+                                        id1 = parseInt(id1);
+                                        var id2 = id1 + 1;
+
+
+                                        var newDiv = document.createElement('div');
+                                        var selectHTML = "";
+                                        selectHTML = "<div id='" + iddiv + "'><div class='form-group'><div class='col-lg-1'></div><label class='col-lg-2 control-label'></label><div class='col-lg-2'><input type='number' class='form-control' value='" + response[i].loy + "' name='net' id='" + id + "' oninput='change1(\"" + id + "\")' required /></div><div class='col-lg-2'><input type='number' class='form-control' value='" + response[i].loy1 + "' name='brut' id='" + id1 + "' readonly /></div><div class='col-lg-1'><input type='text' class='form-control' value='15%' name='po' id='po' disabled /></div><div class='col-lg-2'><input type='number' class='form-control' value='" + response[i].loy2 + "' name='brut1' id='" + id2 + "' readonly /></div><button class='btn btn-warning btn-outline btn-primary dim' type='button' onclick='DeleteRow3(\"" + iddiv + "\");DeleteRow33(\"" + response[i].ID + "\");'><i class='fa fa-times'></i></button> <button class='btn btn-outline btn-primary dim' type='button' onclick='AddRowloy1(\"" + id + "\")' id='FirstBTN'><i class='fa fa-check'></i></button ></div></div></div>";
+
+                                        newDiv.innerHTML = selectHTML;
+                                        document.getElementById('dynamicInput3').appendChild(newDiv);
+
+
+                                     });
+                                 }
+                                 var tab2 = document.getElementsByName("brut1");
+                                 var tabSeco2 = 0;
+
+                                 for (t = 0; t < tab2.length; t++) {
+                                     tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+                                 }
+                                 tabSeco2 = parseFloat(tabSeco2);
+                                 $('#totloy').val(tabSeco2.toFixed(3));
+                            }
+                        });
+                         $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetTOTLoy2", "Vente")',
+                            data: { "id": selectedItemValue },
+                            success: function (response) {
+                                $('#totloy').val(response);
+
+                            }
+                        });
+                         $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetAllTFP2", "Vente")',
+                            data: { "id": selectedItemValue },
+                             success: function (response) {
+                                 document.getElementById('addftp').disabled = false;
+
+                                     $.each(response, function (i, item) {
+
+                                         $('#TFP').val(item.FTP11);
+                                         $('#TFP1').val(item.FTP22);
+                                     });
+
+                            }
+                        });
+                         $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetAllFOPROLOS2", "Vente")',
+                            data: { "id": selectedItemValue },
+                             success: function (response) {
+                                 document.getElementById('btnfrolos').disabled = false;
+
+                                    $.each(response, function (i, item) {
+
+                                        $('#FOPROLOS').val(item.FOPROLOS11);
+                                            $('#FOPROLOS1').val(item.FOPROLOS22);
+
+                                    });
+                            }
+                        });
+                         $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetAllsalaire2", "Vente")',
+                            data: { "id": selectedItemValue },
+                            success: function (response) {
+                                document.getElementById('add1').disabled = false;
+
+                                if (response.count == 1) {
+
+                                    $('#1').val(item.salaire);
+                                }
+                                else {
+                                    $('#1').val(response[0].salaire);
+                                    $.each(response, function (i, item) {
+                                        var i = i + 1;
+                                        i = parseInt(i);
+                                        var count = document.getElementsByName('salaire').length;
+                                        var iddiv = count + "salaire";
+                                        var iddiv2 = count + "salaire2";
+                                        var count1 = document.getElementById(count).value;
+                                        count1 = parseFloat(count1);
+                                        count = parseInt(count);
+                                        var newDiv = document.createElement('div');
+                                        var newDiv2 = document.createElement('div');
+
+                                        var selectHTML = "";
+                                        var selectHTML2 = "";
+
+                                        var id = count + 1;
+                                        id = parseInt(id);
+                                        selectHTML = "<div id='" + iddiv + "'><input type='number' class='form-control' value='" + response[i].salaire + "' name='salaire' id='" + id + "' oninput='change2(\"" + id + "\")' required/></div>";
+                                        selectHTML2 = "<div id='" + iddiv2 + "'><button  class='btn btn-warning btn-outline btn-primary dim' type='button' onclick='DeleteRow1(\"" + iddiv + "\");DeleteRow11(\"" + response[i].ID  + "\");'><i class='fa fa-times'></i></button><button class='btn btn-outline btn-primary dim' type='button' onclick='AddRowsal(\"" + id + "\")' id='FirstBTN'><i class='fa fa-check'></i></button></div>";
+                                        newDiv.innerHTML = selectHTML;
+                                        newDiv2.innerHTML = selectHTML2;
+
+
+                                        document.getElementById('dynamicInput').appendChild(newDiv);
+                                        document.getElementById('dynamic').appendChild(newDiv2);
+                                    });
+                                   
+                                }
+                                
+
+                            }
+                        });
+                         $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("getSession", "Vente")',
+                            
+                             success: function (response) {
+                                 if (response == "true") {
+                                     document.getElementById('valider').disabled = false;
+                                 }
+                                 else {
+                                     document.getElementById('valider').disabled = true;
+
+                                 }
+                            }
+                        });
+                        
+                    });
+        //function remplirchamps() {
+        //    var tab2 = document.getElementsByName("salaire");
+        //    var tabSeco2 = 0;
+
+        //    for (t = 0; t < tab2.length; t++) {
+        //        tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+        //    }
+        //    tabSeco2 = parseFloat(tabSeco2);
+        //    alert(tabSeco2);
+        //    $('#totsal').val(tabSeco2.toFixed(3));
+        //}
+
+       
+        $(document).on("change", "#REPORTTVA", function (e) {
+            var REPORTTVA = $('#REPORTTVA').val()
+            REPORTTVA = parseFloat(REPORTTVA);
+            //var RETENU = $('#RETENU').val();
+            //RETENU = parseFloat(RETENU);
+            //var retenu1 = RETENU + REPORTTVA;
+            //retenu1 = parseFloat(retenu1);
+            //$('#RETENU').val(retenu1.toFixed(3));
+        });
+                    function DeleteRow(parampassed) {
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/getRSbase?parampassed=" + parampassed,
+                            success: function (data) {
+                                var data = data;
+                                data = parseFloat(data);
+                               
+                            }
+                        });
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/DeleteLigneTVA?parampassed=" + parampassed,
+                            success: function (response) {
+                                var resp = response;
+                                resp = parseFloat(resp);
+
+                                var TOTRS = $('#TOTRS').val();
+                                TOTRS = parseFloat(TOTRS);
+                                
+                                var rs = TOTRS - resp;
+                                rs = parseFloat(rs);
+                                $('#TOTRS').val(rs.toFixed(3));
+
+                                var TOTRS1 = $('#TOTRS').val();
+                                TOTRS1 = parseFloat(TOTRS1);
+
+                                //var RETENU = $('#RETENU').val();
+                                //RETENU = parseFloat(RETENU);
+                                //var REPORTTVA = $('#REPORTTVA').val();
+                                //REPORTTVA = parseFloat(REPORTTVA);
+                                //var retenu1 = REPORTTVA + RETENU - resp;
+
+                                //$('#RETENU').val(retenu1.toFixed(3));
+
+                                RemplirTableau();
+
+                            }
+                        });
+        }
+        function DeleteRow11(parampassed) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/deleteligneSession",
+                data: { "id": parampassed },
+                success: function (response) {
+                        var totsal = $('#totsal').val();
+                        totsal = parseFloat(totsal);
+                        var sal = response;
+                        sal = parseFloat(sal);
+                        var totsal1 = totsal - sal;
+                        totsal1 = parseFloat(totsal1);
+                       $('#totsal').val(totsal1.toFixed(3));
+                    //var RETENU = $('#RETENU').val();
+                    //RETENU = parseFloat(RETENU);
+                    //var RETENU1 = RETENU - sal;
+                    //RETENU1 = parseFloat(RETENU1);
+                    //$('#RETENU').val(RETENU1);
+                }
+
+});
+
+        }
+        function DeleteRow22(parampassed) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/deleteligneSessionhor",
+                data: { "id": parampassed },
+                success: function (response) {
+                    var tothor = $('#tothor').val();
+                    tothor = parseFloat(tothor);
+                    var hor = response;
+                    hor = parseFloat(hor);
+                    var tothor1 = tothor - hor;
+                    tothor1 = parseFloat(tothor1);
+                    $('#tothor').val(tothor1.toFixed(3));
+                    //var RETENU = $('#RETENU').val();
+                    //RETENU = parseFloat(RETENU);
+                    //var RETENU1 = RETENU - hor;
+                    //RETENU1 = parseFloat(RETENU1);
+                    //$('#RETENU').val(RETENU1);
+                }
+
+            });
+
+        }
+        function DeleteRow33(parampassed) {
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/deleteligneSessionloy",
+                data: { "id": parampassed },
+                success: function (response) {
+                    var totloy = $('#totloy').val();
+                    totloy = parseFloat(totloy);
+                    var loy = response;
+                    loy = parseFloat(loy);
+                    var totloy1 = totloy - loy;
+                    totloy1 = parseFloat(totloy1);
+                    $('#totloy').val(totloy1.toFixed(3));
+                    //var RETENU = $('#RETENU').val();
+                    //RETENU = parseFloat(RETENU);
+                    //var RETENU1 = RETENU - loy;
+                    //RETENU1 = parseFloat(RETENU1);
+                    //$('#RETENU').val(RETENU1);
+                }
+
+            });
+
+        }
+                    function DeleteRow1(parampassed) {
+
+                        var param = parampassed + 2;
+                        document.getElementById(parampassed).innerHTML = "";
+                        document.getElementById(param).innerHTML = "";
+                        document.getElementById(parampassed).removeAttribute("id");
+                        document.getElementById(param).removeAttribute("id");
+
+
+                    }
+                    function DeleteRow2(parampassed) {
+                        document.getElementById(parampassed).innerHTML = "";
+                        document.getElementById(parampassed).removeAttribute("id");
+
+                    }
+                    function DeleteRow3(parampassed) {
+                        document.getElementById(parampassed).innerHTML = "";
+                        document.getElementById(parampassed).removeAttribute("id");
+
+                    }
+                  function RemplirTableau() {
+                        var selectedItemValue = $('#mois').val();
+
+                                $("#Tableau tbody").empty();
+                                $.ajax({
+                                    type: 'POST',
+                                    url: "/Vente/GetAllLigneTVA",
+                                    success: function (response) {
+
+                                        $.each(response, function (i, item) {
+                                            var idd = item.FRS;
+
+                                            idd = parseInt(idd);
+
+                                            $.ajax({
+                                                cache: false,
+                                                type: "GET",
+                                                url: '@Url.Action("GetFournisseuryID", "Achat")',
+                                                data: { "id": idd },
+                                                success: function (data) {
+                                                    var frs = data.NOM;
+                                                    var rs = item.Base;
+                                                    rs = parseFloat(rs);
+                                                    var rs1 = rs * (1.5 / 100);
+                                                    rs1 = parseFloat(rs1).toFixed(3);
+                                                    var date = item.Date;
+                                                    var line = "<tr id='" + item.ID + "' ><td>" + item.CodeFact + "</td><td>" + date + "</td><td>" + frs + "</td><td>" + item.Base + "</td><td>" + rs1 + "</td><td><button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button></td></tr>";
+                                                    $("#Tableau tbody").append(line);
+                                                },
+
+                                            });
+                                        });
+                                       
+
+
+                                    },
+
+                                });
+                                 $.ajax({
+                            cache: false,
+                            type: "GET",
+                            url: '@Url.Action("GetTotalRS", "Vente")',
+                            data: { "id": selectedItemValue },
+                                     success: function (response) {
+                                         var TOTRS1 = $('#TOTRS').val();
+                                         TOTRS1 = parseFloat(TOTRS1);
+                                         var line = "<tr><td></td><td></td><td></td><td><B>Totale RAS/MARCHE</B> </td><td style='background-color: wheat;'><B>" + TOTRS1.toFixed(3) + "</B></td><td></td></tr>";
+                                         $("#Tableau tbody").append(line);
+                            },
+                        });
+
+
+
+                    }
+
+        function addInput(divName) {
+
+                        var tab2 = document.getElementsByName("salaire");
+                        var tabSeco2 = 0;
+
+                        for (t = 0; t < tab2.length; t++) {
+                            tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+                        }
+                        tabSeco2 = parseFloat(tabSeco2);
+                        $('#totsal').val(tabSeco2.toFixed(3));
+
+
+
+                        var count = document.getElementsByName('salaire').length;
+                        var iddiv = count + "salaire";
+                        var iddiv2 = count + "salaire2";
+                        var count1 = document.getElementById(count).value;
+                        count1 = parseFloat(count1);
+
+
+                        count = parseInt(count);
+
+                        var newDiv = document.createElement('div');
+                        var newDiv2 = document.createElement('div');
+
+                        var selectHTML = "";
+                        var selectHTML2 = "";
+
+                        var id = count + 1;
+                        id = parseInt(id);
+                        selectHTML = "<div id='" + iddiv + "'><br/><input type='number' class='form-control' value='0' name='salaire' id='" + id + "' oninput='change2(\"" + id + "\")' required/></div>";
+            selectHTML2 = "<div id='" + iddiv2 + "'><br/><div class='col-lg-5' style='padding-left: 0px; padding-right: 0px;'><button class='btn btn-warning btn-outline btn-primary dim' type='button' onclick='DeleteRow1(\"" + iddiv + "\");DeleteRow11(\"" + id + "\");'><i class='fa fa-times'></i></button></div> <div class='col-lg-5' style='padding-left: 0px; padding - right: 0px;'><button class='btn btn-outline btn-primary dim' type='button' onclick='AddRowsal(\"" + id + "\")' id='FirstBTN'><i class='fa fa-check'></i></button></div></div>";
+                        newDiv.innerHTML = selectHTML;
+                        newDiv2.innerHTML = selectHTML2;
+                        
+                        document.getElementById(divName).appendChild(newDiv);
+                        document.getElementById('dynamic').appendChild(newDiv2);
+                        AddRow();
+                    }
+        function addInput1(divName) {
+            var tab2 = document.getElementsByName("honorairePr");
+            var tabSeco2 = 0;
+
+            for (t = 0; t < tab2.length; t++) {
+                tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+            }
+            tabSeco2 = parseFloat(tabSeco2);
+            $('#tothor').val(tabSeco2.toFixed(3));
+                        var count = document.getElementsByName('honoraire').length;
+                        var iddiv = count + "honoraire";
+
+                        count = parseInt(count);
+
+                        var id = 11 + (count * 2);
+                        id = parseInt(id);
+                        var id1 = id + 1;
+
+                        var newDiv = document.createElement('div');
+                        var selectHTML = "";
+                        selectHTML = "<div id='" + iddiv + "'><div class='form-group'><div class='col-lg-1'></div><label class='col-lg-2 control-label'></label><div class='col-lg-4'><input type='number' class='form-control' value='0' name='honoraire' id='" + id + "' oninput='change(\"" + id + "\")' required /></div><div class='col-lg-1'><input type='text' class='form-control' value='5%' name='po' id='po' disabled /></div><div class='col-lg-2'><input type='number' class='form-control' value='0' name='honorairePr' id='" + id1 + "' readonly /></div><button class='btn btn-warning btn-outline btn-primary dim' type='button' onclick='DeleteRow2(\"" + iddiv + "\");DeleteRow22(\"" + id + "\");'><i class='fa fa-times'></i></button> </button> <button class='btn btn-outline btn-primary dim' type='button' onclick='AddRowHor1(\"" + id + "\")' id='FirstBTN'><i class='fa fa-check'></i></button> </div></div></div>";
+                        newDiv.innerHTML = selectHTML;
+                        document.getElementById(divName).appendChild(newDiv);
+                        AddRowhor();
+                    }
+        function addInput2(divName) {
+            var tab2 = document.getElementsByName("brut1");
+            var tabSeco2 = 0;
+
+            for (t = 0; t < tab2.length; t++) {
+                tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+            }
+            tabSeco2 = parseFloat(tabSeco2);
+            $('#totloy').val(tabSeco2.toFixed(3));
+                        var count = document.getElementsByName('net').length;
+                        var iddiv = count + "net";
+
+                        count = parseInt(count);
+
+                        var id = 110 + (count *3);
+                        id = parseInt(id);
+                        var id1 = id + 1;
+                        id1 = parseInt(id1);
+                        var id2 = id1 + 1;
+
+
+                        var newDiv = document.createElement('div');
+                        var selectHTML = "";
+            selectHTML = "<div id='" + iddiv + "'><div class='form-group'><div class='col-lg-1'></div><label class='col-lg-2 control-label'></label><div class='col-lg-2'><input type='number' class='form-control' value='0' name='net' id='" + id + "' oninput='change1(\"" + id + "\")' required /></div><div class='col-lg-2'><input type='number' class='form-control' value='0' name='brut' id='" + id1 + "' readonly /></div><div class='col-lg-1'><input type='text' class='form-control' value='15%' name='po' id='po' disabled /></div><div class='col-lg-2'><input type='number' class='form-control' value='0' name='brut1' id='" + id2 + "' readonly /></div><button class='btn btn-warning btn-outline btn-primary dim' type='button' onclick='DeleteRow3(\"" + iddiv + "\");DeleteRow33(\"" + id + "\");'><i class='fa fa-times'></i></button> <button class='btn btn-outline btn-primary dim' type='button' onclick='AddRowloy1(\"" + id + "\")' id='FirstBTN'><i class='fa fa-check'></i></button ></div></div></div>";
+
+                    newDiv.innerHTML = selectHTML;
+                    document.getElementById(divName).appendChild(newDiv);
+                    AddRowloy();
+                    }
+                    function change(id) {
+
+                        document.getElementById('add2').disabled = false;
+
+                        var Qte = document.getElementById(id).value;
+                        Qte = parseFloat(Qte);
+                        var id2 = id;
+                        id2 = parseInt(id2);
+                        var id3 = id2 + 1;
+                        id3 = parseInt(id3);
+                        var PrixTotHTSansRemise = Qte * 5 / 100;
+                        PrixTotHTSansRemise = parseFloat(PrixTotHTSansRemise);
+                        document.getElementById(id3).value = PrixTotHTSansRemise.toFixed(3);
+
+                        var tab = document.getElementsByName("salaire");
+                        var tabSeco=0;
+                       
+
+                        for (t = 0; t < tab.length; t++) {
+                            tabSeco = tabSeco + parseFloat(tab.item(t).value);
+                        }
+                        tabSeco = parseFloat(tabSeco);
+                        var tab1 = document.getElementsByName("brut1");
+                        var tabSeco1=0;
+
+                        for (t = 0; t < tab1.length; t++) {
+                            tabSeco1 = tabSeco1 + parseFloat(tab1.item(t).value);
+                        }
+                        tabSeco1 = parseFloat(tabSeco1);
+
+                        //var tab2 = document.getElementsByName("honorairePr");
+                        //var tabSeco2 = 0;
+
+                        //for (t = 0; t < tab2.length; t++) {
+                        //    tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+                        //}
+                        //tabSeco2 = parseFloat(tabSeco2);
+                        //$('#tothor').val(tabSeco2.toFixed(3));
+
+                        //var TFP1 = $('#TFP1').val();
+                        //TFP1 = parseFloat(TFP1);
+
+                        //var FOPROLOS1 = $('#FOPROLOS1').val();
+                        //FOPROLOS1 = parseFloat(FOPROLOS1);
+
+                        //var REPORTTVA = $('#REPORTTVA').val();
+                        //REPORTTVA = parseFloat(REPORTTVA);
+
+                        //var timbre = $('#timbre').val();
+                        //timbre = parseFloat(timbre);
+
+                        //var TCL1 = $('#TCL1').val();
+                        //TCL1 = parseFloat(TCL1);
+
+                        //var TOTRS = $('#TOTRS').val();
+                        //TOTRS = parseFloat(TOTRS);
+
+                        //var RETENU1 = PrixTotHTSansRemise + tabSeco + tabSeco1 + TFP1 + FOPROLOS1 + REPORTTVA + timbre + TCL1 + TOTRS;
+                        //RETENU1 = parseFloat(RETENU1);
+                        //$('#RETENU').val(RETENU1.toFixed(3));
+                    }
+        function change1(id) {
+            document.getElementById('add3').disabled = false;
+
+                        //var RETENU = $('#RETENU').val();
+                        //RETENU = parseFloat(RETENU);
+                        var net = document.getElementById(id).value;
+                        net = parseFloat(net);
+                        var brut = net / 0.85;
+                        brut = parseFloat(brut);
+
+                        var id2 = id;
+                        id2 = parseInt(id2);
+                        var id3 = id2 + 1;
+                        id3 = parseInt(id3);
+                        var id4 = id3 + 1;
+                        id4 = parseInt(id4);
+
+                        document.getElementById(id3).value=brut.toFixed(3);
+
+                        var brut1 = brut * 15 / 100;
+                        brut1 = parseFloat(brut1);
+                        document.getElementById(id4).value=brut1.toFixed(3);
+
+                        var tab = document.getElementsByName("honorairePr");
+                        var tabSeco=0;
+
+                        for (t = 0; t < tab.length; t++) {
+                            tabSeco = tabSeco + parseFloat(tab.item(t).value);
+                        }
+                        tabSeco = parseFloat(tabSeco);
+                       
+                        var tab1 = document.getElementsByName("salaire");
+                        var tabSeco1=0;
+
+                        for (t = 0; t < tab1.length; t++) {
+                            tabSeco1 = tabSeco1 + parseFloat(tab1.item(t).value);
+                        }
+                        tabSeco1 = parseFloat(tabSeco1);
+
+                        //var tab2 = document.getElementsByName("brut1");
+                        //var tabSeco2 = 0;
+
+                        //for (t = 0; t < tab2.length; t++) {
+                        //    tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+                        //}
+                        //tabSeco2 = parseFloat(tabSeco2);
+                        //$('#totloy').val(tabSeco2.toFixed(3));
+
+                        //var TFP1 = $('#TFP1').val();
+                        //TFP1 = parseFloat(TFP1);
+
+                        //var FOPROLOS1 = $('#FOPROLOS1').val();
+                        //FOPROLOS1 = parseFloat(FOPROLOS1);
+
+                        //var REPORTTVA = $('#REPORTTVA').val();
+                        //REPORTTVA = parseFloat(REPORTTVA);
+
+                        //var timbre = $('#timbre').val();
+                        //timbre = parseFloat(timbre);
+
+                        //var TCL1 = $('#TCL1').val();
+                        //TCL1 = parseFloat(TCL1);
+
+                        //var TOTRS = $('#TOTRS').val();
+                        //TOTRS = parseFloat(TOTRS);
+
+                        //var RETENU1 = brut1 + tabSeco + tabSeco1 + TFP1 + FOPROLOS1 + REPORTTVA + timbre + TCL1 + TOTRS;
+                        //RETENU1 = parseFloat(RETENU1);
+                        //$('#RETENU').val(RETENU1.toFixed(3));
+
+                    }
+                    function change2(id) {
+                        document.getElementById('add1').disabled = false;
+
+
+                        var Qte = document.getElementById(id).value;
+                        Qte = parseFloat(Qte);
+                        var tab = document.getElementsByName("honorairePr");
+                        var tabSeco=0;
+                        tabSeco = parseFloat(tabSeco);
+                        for (t = 0; t < tab.length; t++) {
+                            tabSeco = tabSeco + parseFloat(tab.item(t).value);
+                        }
+                        var tab1 = document.getElementsByName("brut1");
+                        var tabSeco1=0;
+                        tabSeco1 = parseFloat(tabSeco1);
+
+                        for (t = 0; t < tab1.length; t++) {
+                            tabSeco1 = tabSeco1 + parseFloat(tab1.item(t).value);
+                        }
+
+                        //var tab2 = document.getElementsByName("salaire");
+                        //var tabSeco2 = 0;
+
+                        //for (t = 0; t < tab2.length; t++) {
+                        //    tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+                        //}
+                        //tabSeco2 = parseFloat(tabSeco2);
+                        //$('#totsal').val(tabSeco2.toFixed(3));
+
+                        //var TFP1 = $('#TFP1').val();
+                        //TFP1 = parseFloat(TFP1);
+
+                        //var FOPROLOS1 = $('#FOPROLOS1').val();
+                        //FOPROLOS1 = parseFloat(FOPROLOS1);
+
+                        //var REPORTTVA = $('#REPORTTVA').val();
+                        //REPORTTVA = parseFloat(REPORTTVA);
+
+                        //var timbre = $('#timbre').val();
+                        //timbre = parseFloat(timbre);
+
+                        //var TCL1 = $('#TCL1').val();
+                        //TCL1 = parseFloat(TCL1);
+
+                        //var TOTRS = $('#TOTRS').val();
+                        //TOTRS = parseFloat(TOTRS);
+
+                        //var RETENU1 = Qte + tabSeco + tabSeco1 + TFP1 + FOPROLOS1 + REPORTTVA + timbre + TCL1 + TOTRS;
+                        //RETENU1 = parseFloat(RETENU1);
+                        //$('#RETENU').val(RETENU1.toFixed(3));
+                    }
+        function change3(id) {
+            
+            document.getElementById('addftp').disabled = false;
+
+                        var tfp = $("#TFP").val();
+                        tfp = parseFloat(tfp);
+                        var tfp1 = tfp * 2 / 100;
+                        tfp1 = parseFloat(tfp1);
+                        $('#TFP1').val(tfp1.toFixed(3));
+
+                        var tab = document.getElementsByName("honoraire");
+                        var tabSeco=0;
+                        tabSeco = parseFloat(tabSeco);
+                        for (t = 0; t < tab.length; t++) {
+                            tabSeco = tabSeco + parseFloat(tab.item(t).value);
+                        }
+                        var tab1 = document.getElementsByName("brut1");
+                        var tabSeco1=0;
+                        tabSeco1 = parseFloat(tabSeco1);
+
+                        for (t = 0; t < tab1.length; t++) {
+                            tabSeco1 = tabSeco1 + parseFloat(tab1.item(t).value);
+                        }
+
+                        var tab2 = document.getElementsByName("salaire");
+                        var tabSeco2=0;
+                        tabSeco2 = parseFloat(tabSeco2);
+
+                        for (t = 0; t < tab2.length; t++) {
+                            tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+                        }
+
+
+                        //var FOPROLOS1 = $('#FOPROLOS1').val();
+                        //FOPROLOS1 = parseFloat(FOPROLOS1);
+
+                        //var REPORTTVA = $('#REPORTTVA').val();
+                        //REPORTTVA = parseFloat(REPORTTVA);
+
+                        //var timbre = $('#timbre').val();
+                        //timbre = parseFloat(timbre);
+
+                        //var TCL1 = $('#TCL1').val();
+                        //TCL1 = parseFloat(TCL1);
+
+                        //var TOTRS = $('#TOTRS').val();
+                        //TOTRS = parseFloat(TOTRS);
+
+                        //var RETENU1 = tabSeco + tabSeco1 + tfp1 + FOPROLOS1 + REPORTTVA + timbre + TCL1 + tabSeco2 + TOTRS;
+                        //RETENU1 = parseFloat(RETENU1);
+                        //$('#RETENU').val(RETENU1.toFixed(3));
+
+
+                    }
+        function change4(id) {
+            
+            document.getElementById('btnfrolos').disabled = false;
+
+                        var FOPROLOS = $("#FOPROLOS").val();
+                        FOPROLOS = parseFloat(FOPROLOS);
+                        var FOPROLOS1 = FOPROLOS * 1 / 100;
+                        FOPROLOS1 = parseFloat(FOPROLOS1);
+                        $('#FOPROLOS1').val(FOPROLOS1.toFixed(3));
+
+                        var tab = document.getElementsByName("honoraire");
+                        var tabSeco=0;
+                        tabSeco = parseFloat(tabSeco);
+                        for (t = 0; t < tab.length; t++) {
+                            tabSeco = tabSeco + parseFloat(tab.item(t).value);
+                        }
+                        var tab1 = document.getElementsByName("brut1");
+                        var tabSeco1=0;
+                        tabSeco1 = parseFloat(tabSeco1);
+
+                        for (t = 0; t < tab1.length; t++) {
+                            tabSeco1 = tabSeco1 + parseFloat(tab1.item(t).value);
+                        }
+
+                        var tab2 = document.getElementsByName("salaire");
+                        var tabSeco2=0;
+                        tabSeco2 = parseFloat(tabSeco2);
+
+                        for (t = 0; t < tab2.length; t++) {
+                            tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+                        }
+                        //var TFP1 = $('#TFP1').val();
+                        //TFP1 = parseFloat(TFP1);
+
+
+                        //var REPORTTVA = $('#REPORTTVA').val();
+                        //REPORTTVA = parseFloat(REPORTTVA);
+
+                        //var timbre = $('#timbre').val();
+                        //timbre = parseFloat(timbre);
+
+                        //var TCL1 = $('#TCL1').val();
+                        //TCL1 = parseFloat(TCL1);
+
+                        //var TOTRS = $('#TOTRS').val();
+                        //TOTRS = parseFloat(TOTRS);
+
+                        //var RETENU1 = tabSeco + tabSeco1 + TFP1 + FOPROLOS1 + REPORTTVA + timbre + TCL1 + tabSeco2 + TOTRS;
+                        //RETENU1 = parseFloat(RETENU1);
+                        //$('#RETENU').val(RETENU1.toFixed(3));
+                        
+                    }
+                    function valider() {
+                        var RETENU = $('#RETENU').val();
+                        var mois = $('#mois').val();
+                        var REPORTANT = $('#REPORTANT').val();
+
+                        var data = {
+                            RETENU: RETENU,
+                            mois: mois,
+                            REPORTANT: REPORTANT,
+
+                        };
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/ValiderDecTVA",
+                            data: data,
+                            success: function (response) {
+                                window.location = "/Vente/DeclarationTVA";
+                            }
+                        });
+                    }
+
+                    function AddRow() {
+                        var parampassed = 1;
+                        var salaire = $('#1').val();
+                        var mois = $('#mois').val();
+                        var data = {
+                            salaire: salaire,
+                            mois: mois,
+                            parampassed: parampassed,
+
+                        };
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "/Vente/addSalaire",
+                        data: data,
+                        success: function (response) {
+                            if (response == "true") {
+                                document.getElementById('valider').disabled = false;
+                            }
+                            else {
+                                document.getElementById('valider').disabled = true;
+
+                            }
+                            document.getElementById('add1').disabled = false;
+
+                            RemplirSalaire();
+                        }
+                    });
+                    }
+        function AddRowsal(parampassed) {
+            var tab2 = document.getElementsByName("salaire");
+            var tabSeco2 = 0;
+
+            for (t = 0; t < tab2.length; t++) {
+                tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+            }
+            tabSeco2 = parseFloat(tabSeco2);
+            $('#totsal').val(tabSeco2.toFixed(3));
+
+            divName = 'dynamicInput';
+                        var count = document.getElementsByName('salaire').length;
+                        var iddiv = count + "salaire";
+                        var iddiv2 = count + "salaire2";
+                        var count1 = document.getElementById(count).value;
+                        count1 = parseFloat(count1);
+
+
+                        count = parseInt(count);
+
+                        var newDiv = document.createElement('div');
+                        var newDiv2 = document.createElement('div');
+
+                        var selectHTML = "";
+                        var selectHTML2 = "";
+
+                        var id = count + 1;
+                        id = parseInt(id);
+                        selectHTML = "<div id='" + iddiv + "'><br/><input type='number' class='form-control' value='0' name='salaire' id='" + id + "' oninput='change2(\"" + id + "\")' required/></div>";
+            selectHTML2 = "<div id='" + iddiv2 + "'><br/><div class='col-lg-5' style='padding-left: 0px; padding-right: 0px;'><button class='btn btn-warning btn-outline btn-primary dim' type='button' onclick='DeleteRow1(\"" + iddiv + "\");DeleteRow11(\"" + id + "\");'><i class='fa fa-times'></i></button></div> <div class='col-lg-5' style='padding-left: 0px; padding - right: 0px;'><button class='btn btn-outline btn-primary dim' type='button' onclick='AddRowsal(\"" + id + "\")' id='FirstBTN'><i class='fa fa-check'></i></button></div></div>";
+                        newDiv.innerHTML = selectHTML;
+                        newDiv2.innerHTML = selectHTML2;
+
+                        document.getElementById(divName).appendChild(newDiv);
+                        document.getElementById('dynamic').appendChild(newDiv2);
+
+
+                        var salaire = document.getElementById(parampassed).value;
+
+
+                        var mois = $('#mois').val();
+                        var data = {
+                            salaire: salaire,
+                            mois: mois,
+                            parampassed: parampassed,
+                        };
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/addSalaire",
+                            data: data,
+                            success: function (response) {
+                                RemplirSalaire();
+                            }
+                        });
+                    }
+                    function AddRowhor() {
+                        var hor = $('#11').val();
+                        var hor1 = $('#12').val();
+                        var parampassed = 11;
+                        var param1 = 12;
+                        var mois = $('#mois').val();
+                        var data = {
+                            hor: hor,
+                            hor1: hor1,
+                            mois: mois,
+                            parampassed: parampassed,
+                            param1: param1,
+                        };
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/addHoraire",
+                            data: data,
+                            success: function (response) {
+                                if (response == "true") {
+                                    document.getElementById('valider').disabled = false;
+                                }
+                                else {
+                                    document.getElementById('valider').disabled = true;
+
+                                }
+                                document.getElementById('add2').disabled = false;
+
+                                RemplirHoraire();
+                            }
+                        });
+                    }
+        function AddRowHor1(parampassed) {
+            var tab2 = document.getElementsByName("honorairePr");
+            var tabSeco2 = 0;
+
+            for (t = 0; t < tab2.length; t++) {
+                tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+            }
+            tabSeco2 = parseFloat(tabSeco2);
+            $('#tothor').val(tabSeco2.toFixed(3));
+       divName = 'dynamicInput2';
+            var count = document.getElementsByName('honoraire').length;
+            var iddiv = count + "honoraire";
+
+            count = parseInt(count);
+
+            var id = 11 + (count * 2);
+            id = parseInt(id);
+            var id1 = id + 1;
+
+            var newDiv = document.createElement('div');
+            var selectHTML = "";
+            selectHTML = "<div id='" + iddiv + "'><div class='form-group'><div class='col-lg-1'></div><label class='col-lg-2 control-label'></label><div class='col-lg-4'><input type='number' class='form-control' value='0' name='honoraire' id='" + id + "' oninput='change(\"" + id + "\")' required /></div><div class='col-lg-2'><input type='text' class='form-control' value='5%' name='po' id='po' disabled /></div><div class='col-lg-2'><input type='number' class='form-control' value='0' name='honorairePr' id='" + id1 + "' readonly /></div><button class='btn btn-warning btn-outline btn-primary dim' type='button' onclick='DeleteRow2(\"" + iddiv + "\");DeleteRow22(\"" + id + "\");'><i class='fa fa-times'></i></button> </button> <button class='btn btn-outline btn-primary dim' type='button' onclick='AddRowHor1(\"" + id + "\")' id='FirstBTN'><i class='fa fa-check'></i></button> </div></div></div>";
+            newDiv.innerHTML = selectHTML;
+            document.getElementById(divName).appendChild(newDiv);
+                        var param = parampassed;
+                        param = parseInt(param);
+                        param1 = param + 1;
+                        var hor = document.getElementById(parampassed).value;
+                        var hor1 = document.getElementById(param1).value;
+                        var mois = $('#mois').val();
+                        var data = {
+                            hor: hor,
+                            hor1: hor1,
+                            mois: mois,
+                            parampassed:parampassed,
+                            param1: param1,
+                        };
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/addHoraire",
+                            data: data,
+                            success: function (response) {
+                                RemplirHoraire();
+                            }
+                        });
+                    }
+                    function AddRowloy() {
+                        var loy = $('#110').val();
+                        var loy1 = $('#111').val();
+                        var loy2 = $('#112').val();
+                        var mois = $('#mois').val();
+                        var parampassed = 110;
+                        var param1 = 111;
+                        var param2 = 112;
+
+                        var data = {
+                            loy: loy,
+                            loy1: loy1,
+                            loy2: loy2,
+                            mois: mois,
+                            parampassed: parampassed,
+                            param1: param1,
+                            param2: param2,
+                        };
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/addloyer",
+                            data: data,
+                            success: function (response) {
+                                if (response == "true") {
+                                    document.getElementById('valider').disabled = false;
+                                }
+                                else {
+                                    document.getElementById('valider').disabled = true;
+
+                                }
+                                document.getElementById('add3').disabled = false;
+
+                                Remplirloyer();
+                            }
+                        });
+                    }
+        function AddRowloy1(parampassed) {
+            var tab2 = document.getElementsByName("brut1");
+            var tabSeco2 = 0;
+
+            for (t = 0; t < tab2.length; t++) {
+                tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+            }
+            tabSeco2 = parseFloat(tabSeco2);
+            $('#totloy').val(tabSeco2.toFixed(3));
+            divName = 'dynamicInput3';
+
+            var count = document.getElementsByName('net').length;
+            var iddiv = count + "net";
+
+            count = parseInt(count);
+
+            var id = 110 + (count * 3);
+            id = parseInt(id);
+            var id1 = id + 1;
+            id1 = parseInt(id1);
+            var id2 = id1 + 1;
+
+
+            var newDiv = document.createElement('div');
+            var selectHTML = "";
+            selectHTML = "<div id='" + iddiv + "'><div class='form-group'><div class='col-lg-1'></div><label class='col-lg-2 control-label'></label><div class='col-lg-2'><input type='number' class='form-control' value='0' name='net' id='" + id + "' oninput='change1(\"" + id + "\")' required /></div><div class='col-lg-2'><input type='number' class='form-control' value='0' name='brut' id='" + id1 + "' readonly /></div><div class='col-lg-2'><input type='text' class='form-control' value='15%' name='po' id='po' disabled /></div><div class='col-lg-2'><input type='number' class='form-control' value='0' name='brut1' id='" + id2 + "' readonly /></div><button class='btn btn-warning btn-outline btn-primary dim' type='button' onclick='DeleteRow3(\"" + iddiv + "\");DeleteRow33(\"" + id + "\")'><i class='fa fa-times'></i></button> <button class='btn btn-outline btn-primary dim' type='button' onclick='AddRowloy1(\"" + id + "\")' id='FirstBTN'><i class='fa fa-check'></i></button ></div></div></div>";
+
+            newDiv.innerHTML = selectHTML;
+            document.getElementById(divName).appendChild(newDiv);
+                        var param = parampassed;
+                        param = parseInt(param);
+                        var param1 = param + 1;
+                        param1 = parseInt(param1);
+                        var param2 = param1 + 1;
+                        param2 = parseInt(param2);
+
+                        var loy = document.getElementById(parampassed).value;
+                        var loy1 = document.getElementById(param1).value;
+                        var loy2 = document.getElementById(param2).value;
+                        var mois = $('#mois').val();
+                        var data = {
+                            loy: loy,
+                            loy1: loy1,
+                            loy2: loy2,
+                            mois: mois,
+                            parampassed: parampassed,
+                            param1: param1,
+                            param2: param2,
+                        };
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/addloyer",
+                            data: data,
+                            success: function (response) {
+                                Remplirloyer();
+                            }
+                        });
+                    }
+                    function AddRowTFP() {
+                        var TFP = $('#TFP').val();
+                        var TFP1 = $('#TFP1').val();
+                        TFP1 = parseFloat(TFP1);
+                        $('#totTFP').val(TFP1);
+                        var mois = $('#mois').val();
+                        var data = {
+                            TFP: TFP,
+                            TFP1: TFP1,
+                            mois: mois,
+                        };
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/addTFP",
+                            data: data,
+                            success: function (response) {
+                                if (response == "true") {
+                                    document.getElementById('valider').disabled = false;
+                                }
+                                else {
+                                    document.getElementById('valider').disabled = true;
+
+                                }
+                                RemplirTFP();
+                            }
+                        });
+                    }
+                    function AddRowFOPROLOS() {
+                        var FOPROLOS = $('#FOPROLOS').val();
+                        var FOPROLOS1 = $('#FOPROLOS1').val();
+                        FOPROLOS1 = parseFloat(FOPROLOS1);
+                        $('#totFOPROLOS').val(FOPROLOS1);
+                        var mois = $('#mois').val();
+                        var data = {
+                            FOPROLOS: FOPROLOS,
+                            FOPROLOS1: FOPROLOS1,
+                            mois: mois,
+                        };
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/addFOPROLOS",
+                            data: data,
+                            success: function (response) {
+                                if (response == "true") {
+                                    document.getElementById('valider').disabled = false;
+                                }
+                                else {
+                                    document.getElementById('valider').disabled = true;
+
+                                }
+                                RemplirFOPROLOS();
+                            }
+                        });
+                    }
+                    function RemplirSalaire() {
+                        var selectedItemValue = $('#mois').val();
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/GetAllRASSalaire",
+                            success: function (response) {
+                                $.each(response, function (i, item) {
+
+                                    document.getElementById(item.idinput).value = item.salaire;
+                                    var tab2 = document.getElementsByName("salaire");
+                                    var tabSeco2 = 0;
+
+                                    for (t = 0; t < tab2.length; t++) {
+                                        tabSeco2 = tabSeco2 + parseFloat(tab2.item(t).value);
+                                    }
+                                    tabSeco2 = parseFloat(tabSeco2);
+                                    $('#totsal').val(tabSeco2.toFixed(3));
+
+                                });
+
+
+                            },
+
+                        });
+
+
+                    }
+                    function RemplirHoraire() {
+                        var selectedItemValue = $('#mois').val();
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/GetAllRASHonoraire",
+                            success: function (response) {
+                                    $.each(response, function (i, item) {
+                                        document.getElementById(item.idhor).value = item.honoraire;
+                                        document.getElementById(item.idhor1).value = item.honoraire1;
+
+                                    });
+
+
+
+
+                            },
+
+                        });
+
+
+                    }
+                    function Remplirloyer() {
+                        var selectedItemValue = $('#mois').val();
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/GetAllRASLoy",
+                            success: function (response) {
+
+                                $.each(response, function (i, item) {
+                                    document.getElementById(item.idloy).value = item.loy;
+                                    document.getElementById(item.idloy1).value = item.loy1;
+                                    document.getElementById(item.idloy2).value = item.loy2;
+
+                                    });
+
+
+
+                            },
+
+                        });
+
+
+                    }
+                    function RemplirTFP() {
+                        var selectedItemValue = $('#mois').val();
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/GetAllTFP",
+                            success: function (response) {
+                                $.each(response, function (i, item) {
+                                    $('#TFP').val(item.FTP11);
+                                    $('#TFP1').val(item.FTP22);
+
+                                });
+
+
+
+                            },
+
+                        });
+
+
+                    }
+                    function RemplirFOPROLOS() {
+                        var selectedItemValue = $('#mois').val();
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "/Vente/GetAllFOPROLOS",
+                            success: function (response) {
+                                $.each(response, function (i, item) {
+                                    $('#FOPROLOS').val(item.FTFOPROLOS11);
+                                    $('#FOPROLOS1').val(item.FOPROLOS22);
+
+                                });
+
+
+
+                            },
+
+                        });
+
+
+                    }
+
+        function checksal(elem)
+        {
+            if (elem.checked) {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var totsal = $('#totsal').val();
+                totsal = parseFloat(totsal);
+                var RETENU1 = RETENU + totsal;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+            else {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var totsal = $('#totsal').val();
+                totsal = parseFloat(totsal);
+                var RETENU1 = RETENU - totsal;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+        }
+        function checkhor(elem) {
+            if (elem.checked) {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var tothor = $('#tothor').val();
+                tothor = parseFloat(tothor);
+                var RETENU1 = RETENU + tothor;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+            else {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var tothor = $('#tothor').val();
+                tothor = parseFloat(tothor);
+                var RETENU1 = RETENU - tothor;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+        }
+        function checkloy(elem) {
+            if (elem.checked) {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var totloy = $('#totloy').val();
+                totloy = parseFloat(totloy);
+                var RETENU1 = RETENU + totloy;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+            else {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var totloy = $('#totloy').val();
+                totloy = parseFloat(totloy);
+                var RETENU1 = RETENU - totloy;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+        }
+        function checkMarche(elem) {
+            if (elem.checked) {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var TOTRS = $('#TOTRS').val();
+                TOTRS = parseFloat(TOTRS);
+                var RETENU1 = RETENU + TOTRS;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+            else {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var TOTRS = $('#TOTRS').val();
+                TOTRS = parseFloat(TOTRS);
+                var RETENU1 = RETENU - TOTRS;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+        }
+        function checTFP(elem) {
+            if (elem.checked) {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var totTFP = $('#totTFP').val();
+                totTFP = parseFloat(totTFP);
+                var RETENU1 = RETENU + totTFP;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+            else {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var totTFP = $('#totTFP').val();
+                totTFP = parseFloat(totTFP);
+                var RETENU1 = RETENU - totTFP;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+        }
+        function checFOPROLOS(elem) {
+            if (elem.checked) {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var totFOPROLOS = $('#totFOPROLOS').val();
+                totFOPROLOS = parseFloat(totFOPROLOS);
+                var RETENU1 = RETENU + totFOPROLOS;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+            else {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var totFOPROLOS = $('#totFOPROLOS').val();
+                totFOPROLOS = parseFloat(totFOPROLOS);
+                var RETENU1 = RETENU - totFOPROLOS;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+        }
+        function checReport(elem) {
+            if (elem.checked) {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var REPORTTVA = $('#REPORTTVA').val();
+                REPORTTVA = parseFloat(REPORTTVA);
+                var RETENU1 = RETENU + REPORTTVA;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+            else {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var REPORTTVA = $('#REPORTTVA').val();
+                REPORTTVA = parseFloat(REPORTTVA);
+                var RETENU1 = RETENU - REPORTTVA;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+        }
+        function checktimbre(elem) {
+            if (elem.checked) {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var timbre = $('#timbre').val();
+                timbre = parseFloat(timbre);
+                var RETENU1 = RETENU + timbre;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+            else {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var timbre = $('#timbre').val();
+                timbre = parseFloat(timbre);
+                var RETENU1 = RETENU - timbre;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+        }
+        function checktcl(elem) {
+            if (elem.checked) {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var TCL1 = $('#TCL1').val();
+                TCL1 = parseFloat(TCL1);
+                var RETENU1 = RETENU + TCL1;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+            else {
+                var RETENU = $('#RETENU').val();
+
+                RETENU = parseFloat(RETENU);
+                var TCL1 = $('#TCL1').val();
+                TCL1 = parseFloat(TCL1);
+                var RETENU1 = RETENU - TCL1;
+                RETENU1 = parseFloat(RETENU1);
+                $('#RETENU').val(RETENU1.toFixed(3));
+            }
+        }
+    </script>
+
+}

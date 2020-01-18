@@ -1,0 +1,212 @@
+﻿@model Inspinia_MVC5.Models.Prix_Achat
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Article</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Libelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libelle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PU_HT_Sans_Remise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PU_HT_Sans_Remise)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+        @*@{
+            string lib = ViewBag.lib;
+            Inspinia_MVC5.Models.Tr db = new Inspinia_MVC5.Models.Tr();
+            List<Inspinia_MVC5.Models.Prix_Achat> ListPrix_Achat = db.Prix_Achat.Where(t => t.Libelle == lib).ToList();
+            double stock = 0;
+            foreach(Inspinia_MVC5.Models.Prix_Achat p in ListPrix_Achat)
+            {
+                stock +=(double)p.Stock;
+
+            }
+
+        }*@
+        <dd>
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+
+        <dt>
+            Catégorie
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categorie1.Libelle)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.DEVIS_FOURNISSEURS.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_FOURNISSEURS.Designation)
+        </dd>*@
+
+        <dt>
+            Devise
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Devise1.Nom_Devise)
+        </dd>
+
+        <dt>
+            Marque
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marque1.Nom_marque)
+        </dd>
+
+        <dt>
+            Sous-Catégorie
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sous_Categorie1.Libelle)
+        </dd>
+
+        <dt>
+            Unite
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unite1.Valeur_Unite)
+        </dd>
+
+    </dl>
+
+</div>
+<div>
+    <table class="table table-striped table-bordered table-hover dataTables-example" id="example">
+        <thead>
+            <tr>
+
+                <th>
+                    Fournisseur
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Quantité
+                </th>
+                <th>
+                    N° Bon livraison
+                </th>
+                <th>
+                    N° Facture
+                </th>
+</thead>
+        <tbody>
+            @{
+                int id = ViewBag.id;
+                Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+                List<Inspinia_MVC5.Models.Détails_Articles> Détails_Articles = db.Détails_Articles.Where(t => t.IdPrixAchat == id).ToList();
+                if (Détails_Articles != null)
+                {
+                    foreach (var item in Détails_Articles)
+                    {
+               <tr>
+               
+                <td>
+                    @{ 
+                        Inspinia_MVC5.Models.FOURNISSEURS FOURNISSEURS = db.FOURNISSEURS.Where(t => t.ID == item.Fournisseur).FirstOrDefault();
+
+                    }
+                    @FOURNISSEURS.NOM
+                </td>
+                   <td>
+                      @item.Description
+                   </td>
+                <td>
+                    @item.Quantite
+                   
+                <td>
+
+                    @{
+                        Inspinia_MVC5.Models.BONS_RECEPTIONS_FOURNISSEURS BONS_RECEPTIONS_FOURNISSEURS = db.BONS_RECEPTIONS_FOURNISSEURS.Where(t => t.ID == item.NumBl).FirstOrDefault();
+                        if (BONS_RECEPTIONS_FOURNISSEURS != null)
+                        {
+                            Inspinia_MVC5.Models.FACTURES_FOURNISSEURS FACTURES_FOURNISSEURS = db.FACTURES_FOURNISSEURS.Where(fou => fou.BON_RECEPTION_FOURNISSEUR == BONS_RECEPTIONS_FOURNISSEURS.ID).FirstOrDefault();
+                            <li><a href="/Achat/FormBonReception?Mode=Edit&Code=@BONS_RECEPTIONS_FOURNISSEURS.ID">@BONS_RECEPTIONS_FOURNISSEURS.CODE</a></li>
+
+
+                        }
+                    }
+
+
+                </td>
+                <td>
+                    @{
+                        Inspinia_MVC5.Models.BONS_RECEPTIONS_FOURNISSEURS BONS_RECEPTIONS_FOURNISSEURS1 = db.BONS_RECEPTIONS_FOURNISSEURS.Where(t => t.ID == item.NumBl).FirstOrDefault();
+
+                        if (BONS_RECEPTIONS_FOURNISSEURS1 != null)
+                        {
+                            Inspinia_MVC5.Models.FACTURES_FOURNISSEURS FACTURES_FOURNISSEURS1 = new Inspinia_MVC5.Models.FACTURES_FOURNISSEURS();
+                            FACTURES_FOURNISSEURS1 = db.FACTURES_FOURNISSEURS.Where(fou => fou.BON_RECEPTION_FOURNISSEUR == BONS_RECEPTIONS_FOURNISSEURS1.ID).FirstOrDefault();
+                            if (FACTURES_FOURNISSEURS1 != null)
+                            {
+                            <li><a href="/Achat/FormFacture?Mode=Edit&Code=@FACTURES_FOURNISSEURS1.ID">@FACTURES_FOURNISSEURS1.CODE</a></li>
+                            }
+
+                        }
+                    }
+
+                </td>
+              
+            </tr>
+                                }
+                            }
+                        }
+        </tbody>
+
+        <tfoot>
+
+        </tfoot>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Product_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+@section Scripts {
+    @Scripts.Render("~/plugins/dataTables")
+    <script type="text/javascript">
+        $("#Li-Vente").attr("class", "active");
+        $("#ul-Vente").attr("class", "nav nav-second-level collapse in");
+        $("#ul-Vente").attr("aria-expanded", "true");
+
+    </script>
+}

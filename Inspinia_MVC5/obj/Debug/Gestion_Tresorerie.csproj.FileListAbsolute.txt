@@ -1,0 +1,1676 @@
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -lundi 05-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mardi 06-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mercredi 07-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -jeudi 08-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -vendredi 09-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -lundi 12-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -mardi 13-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mercredi 14-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -jeudi 15-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -vendredi 16-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -samedi 17-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -lundi 19-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mardii 20-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -mercredi 21-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -jeudi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -vendredi 22-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -mercredi 28-06-2017 -\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Microsoft.Web.Infrastructure.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Razor.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\WebGrease.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+D:\D\SAUV\Work\SUNEVIT\2-DEV\treso29-06-2017selmane\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.AspNet.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.Core.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\stdole.dll
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.AspNet.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.Core.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\2mastere ISIAD\GestionProjet\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.Core.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\stdole.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.Core.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\Users\dell\Desktop\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.AspNet.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.Core.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.AspNet.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.Core.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+E:\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.Core.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.Core.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\stdole.dll
+C:\Users\dell\Desktop\Copie_finale\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.Core.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.Core.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.Web.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\stdole.dll
+C:\Users\dell\Desktop\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojResolveAssemblyReference.cache
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.Cache
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.Core.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Antlr3.Runtime.pdb
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.Core.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\EntityFramework.SqlServer.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Newtonsoft.Json.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Helpers.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Mvc.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Optimization.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Razor.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Deployment.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.WebPages.Razor.xml
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\EntityFramework.resources.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Helpers.resources.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Mvc.resources.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Optimization.resources.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.Razor.resources.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.resources.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.Web.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\stdole.dll
+C:\Users\dell\Desktop\Copie_finale\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.Web.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\stdole.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojAssemblyReference.cache
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.cache
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CopyComplete
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+D:\D\SAUV\Work\SUNEVIT\2-DEV\omayma+achref\VERSION FINAL - Copie\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.Web.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\stdole.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.xml
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojAssemblyReference.cache
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.cache
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CopyComplete
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+D:\Sunevit\DEV\mayma+achref\mayma+achref\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.Web.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\stdole.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.xml
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojAssemblyReference.cache
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.cache
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CopyComplete
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+D:\Sunevit\DEV\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.Web.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\stdole.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.xml
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojAssemblyReference.cache
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.cache
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CopyComplete
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+D:\Sunevit\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.cache
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.Web.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\stdole.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.xml
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CopyComplete
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-SUNEVIT\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojAssemblyReference.cache
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.Web.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\stdole.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.xml
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojAssemblyReference.cache
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.cache
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CopyComplete
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+D:\Sunevit\Clients\MohamedTrabelsiApp\SUNPRO-ELEMENTS\SUNPRO-SUNEVIT\MVC5_Full_Version -jeudi  29-06-2017\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\System.Web.Http.dll
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\System.Web.Http.xml
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CopyComplete
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb
+C:\Users\HP\Desktop\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojAssemblyReference.cache
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\Inspinia_MVC5.dll.config
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\Inspinia_MVC5.dll
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\Inspinia_MVC5.pdb
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\System.Net.Http.Formatting.dll
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\System.Web.Http.dll
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\System.Web.Http.WebHost.dll
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\System.Net.Http.Formatting.xml
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\System.Web.Http.xml
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\System.Web.Http.WebHost.xml
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\fr\System.Net.Http.Formatting.resources.dll
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\fr\System.Web.Http.resources.dll
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\bin\fr\System.Web.Http.WebHost.resources.dll
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csprojAssemblyReference.cache
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bdt.resources
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd1.resources
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd2.resources
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd3.resources
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd4.resources
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd5.resources
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.bd6.resources
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.Migrations.db9.resources
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.GenerateResource.cache
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CoreCompileInputs.cache
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Gestion_Tresorerie.csproj.CopyComplete
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.dll
+D:\sofien\Cours\Sofien-pfe\SUNPRO-SUNEVIT\SOFIEN\Inspinia_MVC5\obj\Debug\Inspinia_MVC5.pdb

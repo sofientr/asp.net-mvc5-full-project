@@ -1,0 +1,226 @@
+﻿<div class="row border-bottom">
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#" TITLE="reduire la barre de navigation" ><i class="fa fa-bars"></i> </a>
+            <form role="search" class="navbar-form-custom" method="post" action="">
+                @*<div class="form-group">
+             
+                          <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+             
+                   </div>*@
+                <div>
+                 
+
+                </div>
+            </form>
+        </div>
+		<ul class="nav navbar-top-links navbar-right">
+			<li>
+				<span class="m-r-sm text-muted welcome-message" data-i18n="topnav.welcometext">
+					Bonjour<strong>
+						@if (Session["ID"] != null)
+						{
+							try
+							{
+								@Session["NOM"].ToString()
+							}
+							catch (Exception e)
+							{
+								Html.Action("Login", "Societes");
+
+							}
+						}
+						else { Html.Action("Login", "Societes"); }
+
+
+					</strong>
+				</span>
+			</li>
+			@{Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+				List<Inspinia_MVC5.Models.AffaireCommerciales> Liste = db.AffaireCommerciales.ToList();
+
+				List<Inspinia_MVC5.Models.AffaireCommerciales> Liste1 =new List<Inspinia_MVC5.Models.AffaireCommerciales>();
+				int i = 0;
+
+				foreach (var item in Liste)
+				{
+					if (item.Delai_de_Soumission != null)
+					{
+
+						DateTime fin = DateTime.Now;
+						TimeSpan Diff = fin - (DateTime)item.Delai_de_Soumission;
+						if (Diff.Days <= 2 && Diff.Days>=0)
+
+						{
+							Liste1.Add(item);
+							i++;
+						}
+					}
+				}
+
+
+
+			}
+
+
+			<li class="dropdown">
+				<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+					<i class="fa fa-bell"></i>  <span class="label label-warning">@i</span>
+				</a>
+				<ul class="dropdown-menu dropdown-messages">
+			
+
+					@foreach (var item in Liste1)
+					{
+						 ViewBag.remtab = Liste1;
+						
+
+						<li>
+							<div class="dropdown-messages-box">
+
+								<a href="@Url.Action("Index", "AffaireCommerciales")" class="pull-left">
+									<img alt="image" class="img-circle" src="~/Images/test.jpg">
+
+									<div class="media-body ">
+										<a href="@Url.Action("Index", "AffaireCommerciales")">
+											il vous reste moins de 2 jours pour soumettre l'affaire
+											<strong>@item.Designation</strong>
+
+											<br>
+											<small class="text-navy">
+												la delai de soumission @item.Delai_de_Soumission
+											</small>
+
+										</a>
+									</div>
+
+							</div>
+
+						</li>
+						<li class="divider">
+						</li>
+					}
+				</ul>
+			</li>
+			@*  <li class="dropdown">
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+							<i class="fa fa-bell"></i>  <span class="label label-primary">
+
+		@{ int s = 0;
+		   /*
+			try
+			{
+				if (Session["NOM"].ToString().Equals("admin"))
+				{
+					//
+
+					foreach (var item in Model.Modele9s)
+					{
+
+						if (item.etat==0) {
+
+							s = s + 1;
+						}
+
+
+					}
+
+					//
+				}
+			}
+			catch (Exception e)
+			{
+				Html.Action("Login", "Societes");
+
+			}
+
+				*/}
+
+		</span>
+						</a>
+						<ul class="dropdown-menu dropdown-alerts">
+							<li>
+								<a href="#">
+									<div>
+										<i class="fa fa-envelope fa-fw"></i> You have   messages
+										<span class="pull-right text-muted small"></span>
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<i class="fa fa-twitter fa-fw"></i> 3 New Followers
+										<span class="pull-right text-muted small">12 minutes ago</span>
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<i class="fa fa-upload fa-fw"></i> Server Rebooted
+										<span class="pull-right text-muted small">4 minutes ago</span>
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<div class="text-center link-block">
+									<a href="#">
+										<strong>See All Alerts</strong>
+										<i class="fa fa-angle-right"></i>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</li>*@
+
+
+
+
+
+			<li>
+				<span class="m-r-sm text-muted welcome-message" data-i18n="topnav.welcometext">
+					Societé<strong>
+
+
+						@if (Session["ID"] != null)
+						{
+							try
+							{
+								@Session["Soclogo"].ToString()
+							}
+							catch (Exception e)
+							{
+								Html.Action("Login", "Societes");
+
+							}
+						}
+						else { Html.Action("Login", "Societes"); }
+
+
+
+
+
+
+
+
+					</strong>
+				</span>
+			</li>
+			<li>
+				<a href="@Url.Action("Login", "Societes")">
+					<i class="fa fa-sign-out"></i> Log out
+
+				</a>
+
+
+			</li>
+
+
+
+		</ul>
+    </nav>
+</div>

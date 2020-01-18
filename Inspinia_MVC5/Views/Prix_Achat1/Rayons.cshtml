@@ -1,0 +1,156 @@
+﻿
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    @{
+                        int id1 = int.Parse(ViewBag.id);
+                        Inspinia_MVC5.Models.Tr db1 = new Inspinia_MVC5.Models.Tr();
+                        string Prix_Achat1 = db1.Prix_Achat.Where(f => f.Product_ID == id1).FirstOrDefault().Libelle;
+                        string desArt = db1.Prix_Achat.Where(f => f.Product_ID == id1).FirstOrDefault().Designation;
+
+                    }
+                    <h2> <b>@Prix_Achat1</b></h2>
+                    <b5>@desArt</b5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    @{
+                        //int id = int.Parse(ViewBag.id);
+                        string depot1;
+                        //Inspinia_MVC5.Models.Tr db = new Inspinia_MVC5.Models.Tr();
+                        List<Inspinia_MVC5.Models.Art_Depot> Art_Depot1 = db1.Art_Depot.Where(f => f.Id_Art == id1).ToList();
+                        foreach (var item1 in Art_Depot1)
+                        {
+
+                            depot1 = db1.Dépot.Where(f => f.Id == item1.Id_Dépot).FirstOrDefault().Dépot1;
+
+                            <label>
+                                <font color="teal">
+                                    <b>
+                                        @depot1 : &nbsp;&nbsp;
+
+                                    </b>
+                                </font>
+                            </label>
+
+                            <label>
+                                @item1.Stock_Art_Dépot
+                            </label><br />
+                            <div class="ibox-content">
+                                @*<div class="row">
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <input type="text" placeholder="Search" class="input-sm form-control"> <span class="input-group-btn">
+                                    <button type="button" class="btn btn-sm btn-primary"> Go!</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>*@
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Rayon</th>
+                                            <th>Quantité</th>
+                                            @*<th>Value</th>*@
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            List<Inspinia_MVC5.Models.Art_Depot_Rayon> Art_Depot_Rayon = db1.Art_Depot_Rayon.Where(f => f.Id_Art_Depot == item1.Id).ToList();
+                                            int i = 0;
+                                            foreach (var item2 in Art_Depot_Rayon)
+                                            {
+                                                i++;
+                                                <tr>
+                                                    <td>@i</td>
+                                                    <td><span class="pie">@item2.Rayons.Rayon</span></td>
+                                                    <td>@item2.Stock_Rayon</td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        }
+                    }
+
+                    @Html.ActionLink("Retour","Index", new { @class = "btn btn-outline btn-primary dim" })
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Styles {
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/peity")
+    @Scripts.Render("~/plugins/iCheck")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+
+            $("span.pie").peity("pie", {
+                fill: ['#1ab394', '#d7d7d7', '#ffffff']
+            })
+
+            $(".line").peity("line", {
+                fill: '#1ab394',
+                stroke: '#169c81',
+            })
+
+            $(".bar").peity("bar", {
+                fill: ["#1ab394", "#d7d7d7"]
+            })
+
+            $(".bar_dashboard").peity("bar", {
+                fill: ["#1ab394", "#d7d7d7"],
+                width: 100
+            })
+
+            var updatingChart = $(".updating-chart").peity("line", { fill: '#1ab394', stroke: '#169c81', width: 64 })
+
+            setInterval(function () {
+                var random = Math.round(Math.random() * 10)
+                var values = updatingChart.text().split(",")
+                values.shift()
+                values.push(random)
+
+                updatingChart
+                    .text(values.join(","))
+                    .change()
+            }, 1000);
+
+        });
+    </script>
+}
+

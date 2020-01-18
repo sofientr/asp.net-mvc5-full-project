@@ -1,0 +1,503 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.Societes>
+
+@{
+    ViewBag.Title = "Configuration";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    </head>
+<body>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>Configuration Application</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#"></a>
+                </li>
+                <li>
+                    <a></a>
+                </li>
+                <li class="active">
+                    <strong></strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+    </div>
+
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>Configuration rapide</h5>
+                    </div>
+
+                    <div class="ibox-content">
+                        <p>
+                            Un moyen rapide et facile pour configurer votre application.
+                        </p>
+
+                        <div class=" m-t-sm">
+
+                            <a href="#" class="btn btn-primary startTour"><i class="fa fa-play"></i> Lancer la configuration</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>
+                            Étapes 1 de la tournée
+                        </h5>
+                    </div>
+                    <div class="ibox-content text-center" id="step1">
+                        <div class="p-sm">
+                            <h3>Création Société   @Session["NewSociete"]</h3>
+                            <div class=" m-t-sm">
+
+                                <a href="javascript:void(0);" class="SOCIETE"><i class="fa fa-play"></i>Ajout</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>
+                            Étapes 2 de la tournée
+                        </h5>
+                    </div>
+                    <div class="ibox-content text-center" id="step2">
+                        <div class="p-sm">
+                            <h3>Création Direction  @Session["NewDirection"]</h3>
+                            <div class=" m-t-sm">
+                                <a href="javascript:void(0);" class="DIRECTION"><i class="fa fa-play"></i>Ajout</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>
+                            Étapes 3 de la tournée
+                        </h5>
+                    </div>
+                    <div class="ibox-content text-center" id="step3">
+                        <div class="p-sm">
+                            <h3>Configuration préfixes</h3>
+                            <div class=" m-t-sm">
+
+                                <a href="javascript:void(0);" class="PREFIXE"><i class="fa fa-play"></i>Ajout</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="WithPrint" id="WithPrint" required />
+        <div id='myModal' class='modal'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div id='myModalContent'>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>
+                            Étapes 4 de la tournée
+                        </h5>
+                    </div>
+                    <div class="ibox-content text-center" id="step4">
+                        <div class="p-xl">
+                            <h3>
+                                Création Compte ADMIN @Session["Admin"]
+                            </h3>
+                            <div class=" m-t-sm">
+
+                                <a href="javascript:void(0);" class="ADMIN"><i class="fa fa-play"></i>Ajout</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+    @section Styles {
+        @Styles.Render("~/plugins/tourStyles")
+        @Styles.Render("~/plugins/awesomeCheckboxStyles")
+        @Styles.Render("~/plugins/clockpickerStyles")
+        @Styles.Render("~/plugins/dateRangeStyles")
+        @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+        @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+        @Styles.Render("~/plugins/switcheryStyles")
+        @Styles.Render("~/plugins/jasnyBootstrapStyles")
+        @Styles.Render("~/plugins/nouiSliderStyles")
+        @Styles.Render("~/plugins/dataPickerStyles")
+        @Styles.Render("~/Content/plugins/ionRangeSlider/ionRangeStyles")
+        @Styles.Render("~/plugins/imagecropperStyles")
+        @Styles.Render("~/Content/plugins/colorpicker/colorpickerStyles")
+        @Styles.Render("~/plugins/select2Styles")
+        @Styles.Render("~/plugins/touchSpinStyles")
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/plugins/tour")
+        @Scripts.Render("~/plugins/iCheck")
+        @Scripts.Render("~/plugins/dataPicker")
+        @Scripts.Render("~/plugins/ionRange")
+        @Scripts.Render("~/plugins/nouiSlider")
+        @Scripts.Render("~/plugins/jasnyBootstrap")
+        @Scripts.Render("~/plugins/switchery")
+        @Scripts.Render("~/plugins/chosen")
+        @Scripts.Render("~/plugins/knob")
+        @Scripts.Render("~/plugins/imagecropper")
+        @Scripts.Render("~/plugins/colorpicker")
+        @Scripts.Render("~/plugins/clockpicker")
+        @Scripts.Render("~/plugins/dateRange")
+        @Scripts.Render("~/plugins/select2")
+        @Scripts.Render("~/plugins/touchSpin")
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(function () {
+                    $(".SOCIETE").click(function () {
+                        var PartielView1 = "/SocieteLogoes/Societe";
+                        var $buttonClicked = $(this);
+                        var options = { "backdrop": "static", keyboard: true };
+                        $.ajax({
+                            type: "GET",
+                            url: PartielView1,
+                            contentType: "application/json; charset=utf-8",
+                            data: "",
+                            datatype: "json",
+                            success: function (data) {
+                                $('#myModalContent').html(data);
+                                $('#myModal').modal(options);
+                                $('#myModal').modal('show');
+
+                            },
+                            error: function () {
+                                alert("Dynamic content load failed.");
+                            }
+                        });
+                    });
+
+                    $("#closbtn").click(function () {
+                        $('#myModal').modal('hide');
+                    });
+
+                });
+                $(function () {
+                    $(".DIRECTION").click(function () {
+                        var PartielView1 = "/SocieteLogoes/Direction";
+                        var $buttonClicked = $(this);
+                        var options = { "backdrop": "static", keyboard: true };
+                        $.ajax({
+                            type: "GET",
+                            url: PartielView1,
+                            contentType: "application/json; charset=utf-8",
+                            data: "",
+                            datatype: "json",
+                            success: function (data) {
+                                $('#myModalContent').html(data);
+                                $('#myModal').modal(options);
+                                $('#myModal').modal('show');
+
+                            },
+                            error: function () {
+                                alert("Dynamic content load failed.");
+                            }
+                        });
+                    });
+
+                    $("#closbtn").click(function () {
+                        $('#myModal').modal('hide');
+                    });
+
+                });
+                $(function () {
+                    $(".PREFIXE").click(function () {
+                        var PartielView1 = "/SocieteLogoes/Prefixe";
+                        var $buttonClicked = $(this);
+                        var options = { "backdrop": "static", keyboard: true };
+                        $.ajax({
+                            type: "GET",
+                            url: PartielView1,
+                            contentType: "application/json; charset=utf-8",
+                            data: "",
+                            datatype: "json",
+                            success: function (data) {
+                                $('#myModalContent').html(data);
+                                $('#myModal').modal(options);
+                                $('#myModal').modal('show');
+
+                            },
+                            error: function () {
+                                alert("Dynamic content load failed.");
+                            }
+                        });
+                    });
+
+                    $("#closbtn").click(function () {
+                        $('#myModal').modal('hide');
+                    });
+
+                });
+                $(function () {
+                    $(".ADMIN").click(function () {
+                        var PartielView1 = "/SocieteLogoes/Admin";
+                        var $buttonClicked = $(this);
+                        var options = { "backdrop": "static", keyboard: true };
+                        $.ajax({
+                            type: "GET",
+                            url: PartielView1,
+                            contentType: "application/json; charset=utf-8",
+                            data: "",
+                            datatype: "json",
+                            success: function (data) {
+                                $('#myModalContent').html(data);
+                                $('#myModal').modal(options);
+                                $('#myModal').modal('show');
+
+                            },
+                            error: function () {
+                                alert("Dynamic content load failed.");
+                            }
+                        });
+                    });
+
+                    $("#closbtn").click(function () {
+                        $('#myModal').modal('hide');
+                    });
+
+                });
+                // Instance the tour
+
+                var tour = new Tour({
+                    steps: [{
+                        element: "#step1",
+                        title: "Title of my step",
+                        content: "Content of my step",
+                        placement: "top",
+                        backdrop: true,
+                        backdropContainer: '#wrapper',
+                        onShown: function (tour) {
+                            $('body').addClass('tour-open')
+                        },
+                        onHidden: function (tour) {
+                            $('body').removeClass('tour-close')
+                        }
+                    },
+                    {
+                        element: "#step2",
+                        title: "Title of my step",
+                        content: "Content of my step",
+                        placement: "top",
+                        backdrop: true,
+                        backdropContainer: '#wrapper',
+                        onShown: function (tour) {
+                            $('body').addClass('tour-open')
+                        },
+                        onHidden: function (tour) {
+                            $('body').removeClass('tour-close')
+                        }
+                    },
+                    {
+                        element: "#step3",
+                        title: "Title of my step",
+                        content: "Content of my step",
+                        placement: "top",
+                        backdrop: true,
+                        backdropContainer: '#wrapper',
+                        onShown: function (tour) {
+                            $('body').addClass('tour-open')
+                        },
+                        onHidden: function (tour) {
+                            $('body').removeClass('tour-close')
+                        }
+                    },
+                    {
+                        element: "#step4",
+                        title: "Title of my step",
+                        content: "Content of my step",
+                        placement: "top",
+                        backdrop: true,
+                        backdropContainer: '#wrapper',
+                        onShown: function (tour) {
+                            $('body').addClass('tour-open')
+                        },
+                        onHidden: function (tour) {
+                            $('body').removeClass('tour-close')
+                        }
+                    },
+                    ]
+                });
+
+                // Initialize the tour
+                tour.init();
+
+                $('.startTour').click(function () {
+                    tour.restart();
+
+                    // Start the tour
+                    // tour.start();
+                })
+                var $image = $(".image-crop > img")
+                $($image).cropper({
+                    aspectRatio: 1.618,
+                    preview: ".img-preview",
+                    done: function (data) {
+                        // Output the result data for cropping image.
+                    }
+                });
+
+                var $inputImage = $("#inputImage");
+                if (window.FileReader) {
+
+                    $inputImage.change(function () {
+                        var fileReader = new FileReader(),
+                            files = this.files,
+                            file;
+
+                        if (!files.length) {
+                            return;
+                        }
+
+                        file = files[0];
+                        //$("#inputImage").value=file;
+                        //alert($("#inputImage").val());
+                        if (/^image\/\w+$/.test(file.type)) {
+                            document.getElementById('Create').disabled = false;
+                            fileReader.readAsDataURL(file);
+                            fileReader.onload = function () {
+                                $inputImage.value = file;
+                                $image.cropper("reset", true).cropper("replace", this.result);
+                            };
+                        } else {
+                            showMessage("Please choose an image file.");
+                        }
+                    });
+                } else {
+                    $inputImage.addClass("hide");
+                }
+
+            });
+            var config = {
+                '.chosen-select': {},
+                '.chosen-select-deselect': { allow_single_deselect: true },
+                '.chosen-select-no-single': { disable_search_threshold: 10 },
+                '.chosen-select-no-results': { no_results_text: 'Oops, nothing found!' },
+                '.chosen-select-width': { width: "95%" }
+            }
+            for (var selector in config) {
+                $(selector).chosen(config[selector]);
+            }
+
+            $("#ionrange_1").ionRangeSlider({
+                min: 0,
+                max: 5000,
+                type: 'double',
+                prefix: "$",
+                maxPostfix: "+",
+                prettify: false,
+                hasGrid: true
+            });
+
+            $("#ionrange_2").ionRangeSlider({
+                min: 0,
+                max: 10,
+                type: 'single',
+                step: 0.1,
+                postfix: " carats",
+                prettify: false,
+                hasGrid: true
+            });
+
+            $("#ionrange_3").ionRangeSlider({
+                min: -50,
+                max: 50,
+                from: 0,
+                postfix: "°",
+                prettify: false,
+                hasGrid: true
+            });
+
+            $("#ionrange_4").ionRangeSlider({
+                values: [
+                    "January", "February", "March",
+                    "April", "May", "June",
+                    "July", "August", "September",
+                    "October", "November", "December"
+                ],
+                type: 'single',
+                hasGrid: true
+            });
+
+            $("#ionrange_5").ionRangeSlider({
+                min: 10000,
+                max: 100000,
+                step: 100,
+                postfix: " km",
+                from: 55000,
+                hideMinMax: true,
+                hideFromTo: false
+            });
+
+            $(".dial").knob();
+
+            $("#basic_slider").noUiSlider({
+                start: 40,
+                behaviour: 'tap',
+                connect: 'upper',
+                range: {
+                    'min': 20,
+                    'max': 80
+                }
+            });
+
+            $("#range_slider").noUiSlider({
+                start: [40, 60],
+                behaviour: 'drag',
+                connect: true,
+                range: {
+                    'min': 20,
+                    'max': 80
+                }
+            });
+
+            $("#drag-fixed").noUiSlider({
+                start: [40, 60],
+                behaviour: 'drag-fixed',
+                connect: true,
+                range: {
+                    'min': 20,
+                    'max': 80
+                }
+            });
+        </script>
+    }

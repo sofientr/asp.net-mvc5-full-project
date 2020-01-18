@@ -1,0 +1,375 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.Horaire>
+
+@{
+    
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="wrapper wrapper-content animated fadeInRight">
+    @using (Html.BeginForm("Valider", "Tableau_Horaire", new { id = ViewBag.id }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+    <div class="row">
+        <button class="btn btn-success pull-right" type="submit" style="margin-right: 5px;" id="valider">
+            <span class="bold">Valider</span>
+        </button>
+        <div class="col-lg-6">
+            <table class="table">
+                <tr>
+                    <th>
+
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Horaire1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Debut)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Sortie)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Debut1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Sortie2)
+                    </th>
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @{
+                            string idd = ViewBag.id;
+                            int id2 = int.Parse(idd);
+                            Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+                            List<Inspinia_MVC5.Models.horaire_jour> horaire_jour = db.horaire_jour.Where(t => t.table_horaire == id2 && t.horaire == item.id).ToList();
+
+                        }
+                        @if (horaire_jour.Count > 0)
+                        {
+                            <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" id="affComId" value="@item.id" onchange="check(this)" checked/>
+                        }
+                        else
+                        {
+                            <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" id="affComId" value="@item.id" onchange="check(this)" />
+
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Horaire1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Debut)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sortie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Debut1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sortie2)
+                    </td>
+
+
+                </tr>
+                }
+
+            </table>
+        </div>
+
+        <div class="col-lg-6">
+            <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="lundi" id="lundi" value="" onchange="check1(this)" />lundi <br />
+            <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="Mardi" id="Mardi" value="" onchange="check2(this)" />Mardi <br />
+            <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="Mercredi" id="Mercredi" value="" onchange="check3(this)" />Mercredi <br />
+            <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="jeudi" id="jeudi" value="" onchange="check4(this)"  />jeudi <br />
+            <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="vendredi" id="vendredi" value="" onchange="check5(this)" />vendredi <br />
+            <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="Samedi" id="Samedi" value="" onchange="check6(this)"  />Samedi <br />
+            <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="Dimanche" id="Dimanche" value="" onchange="check7(this)" />Dimanche <br />
+            <input type="hidden" class="form-control" readonly="true" name="idcheck" id="idcheck">
+
+        </div>
+        @*<button class="btn btn-success pull-right" type="button" style="margin-right: 5px;" onclick="ValideHoraire();">
+            <span class="bold">ValideHoraire</span>
+        </button>*@
+    </div>
+    }
+    
+</div>
+
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+@section Scripts {
+    <script type="text/javascript" src="~/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.responsive.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+    @Scripts.Render("~/plugins/dataTables")
+    <script type="text/javascript">
+        function checkAll(ele)
+        {
+            var checkboxes = document.getElementsByTagName('input');
+            if (ele.checked) {
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].type == 'checkbox') {
+                        checkboxes[i].checked = true;
+                    }
+                }
+            } else {
+                for (var i = 0; i < checkboxes.length; i++) {
+                    console.log(i)
+                    if (checkboxes[i].type == 'checkbox') {
+                        checkboxes[i].checked = false;
+                    }
+                }
+            }
+        }
+        function check1(elee) {
+            if (elee.checked) {
+                $('#lundi').val("lundi");
+
+            }
+            else {
+                $('#lundi').val("");
+
+            }
+        }
+        function check2(elee) {
+            if (elee.checked) {
+                $('#Mardi').val("Mardi");
+
+            }
+            else {
+                $('#Mardi').val("");
+
+            }
+        }
+        function check3(elee) {
+            if (elee.checked) {
+                $('#Mercredi').val("Mercredi");
+
+            }
+            else {
+                $('#Mercredi').val("");
+
+            }
+        }
+        function check4(elee) {
+            if (elee.checked) {
+                $('#jeudi').val("jeudi");
+
+            }
+            else {
+                $('#jeudi').val("");
+
+            }
+        }
+        function check5(elee) {
+            if (elee.checked) {
+                $('#vendredi').val("vendredi");
+
+            }
+            else {
+                $('#vendredi').val("");
+
+            }
+        }
+        function check6(elee) {
+            if (elee.checked) {
+                $('#Samedi').val("Samedi");
+
+            }
+            else {
+                $('#Samedi').val("");
+
+            }
+        }
+        function check7(elee) {
+            if (elee.checked) {
+                $('#Dimanche').val("Dimanche");
+
+            }
+            else {
+                $('#Dimanche').val("");
+
+            }
+        }
+        function check(elee) {
+            debugger;
+            $('#idcheck').val(elee.value);
+            document.getElementById('lundi').checked = true;
+            $('#lundi').val("lundi");
+
+            document.getElementById('Mardi').checked = true;
+            $('#Mardi').val("Mardi");
+
+            document.getElementById('Mercredi').checked = true;
+            $('#Mercredi').val("Mercredi");
+
+            document.getElementById('jeudi').checked = true;
+            $('#jeudi').val("jeudi");
+
+            document.getElementById('vendredi').checked = true;
+            $('#vendredi').val("vendredi");
+
+            document.getElementById('Samedi').checked = true;
+            $('#Samedi').val("Samedi");
+
+            document.getElementById('Dimanche').checked = true;
+            $('#Dimanche').val("Dimanche");
+
+            var checkboxes = document.getElementsByTagName('input');
+            if (elee.checked) {
+                for (var i = 0; i < checkboxes.length; i++) {
+
+                    if ((checkboxes[i].type == 'checkbox') && (checkboxes[i].value != elee.value) && (checkboxes[i].name == 'affComId')) {
+                        checkboxes[i].disabled = true;
+                    }
+
+                }
+            }
+            else {
+                for (var i = 0; i < checkboxes.length; i++) {
+                    checkboxes[i].disabled = false;
+                }
+            }
+
+        }
+        //function check(elee) {
+        //    alert(elee.value);
+
+        //    if (elee.checked) {
+        //        $.ajax({
+        //            type: 'POST',
+        //            url: "/Tableau_Horaire/GetJourParHor?hor="+ elee.value,
+        //            success: function (response) {
+        //                alert("ggg");
+        //                alert(response.length);
+        //                if (response.length > 1) {
+        //                    $.each(response, function (i, item) {
+        //                        alert(item.hor);
+        //                        $('#idcheck').val(item.hor);
+        //                        if (item.jour == "lundi") {
+        //                            document.getElementById('lundi').checked = true;
+        //                        }
+        //                        if (item.jour == "Mardi") {
+        //                            document.getElementById('Mardi').checked = true;
+        //                        }
+        //                        if (item.jour == "Mercredi") {
+        //                            document.getElementById('Mercredi').checked = true;
+        //                        }
+        //                        if (item.jour == "jeudi") {
+        //                            document.getElementById('jeudi').checked = true;
+        //                        }
+        //                        if (item.jour == "vendredi") {
+        //                            document.getElementById('vendredi').checked = true;
+        //                        }
+        //                        if (item.jour == "Samedi") {
+        //                            document.getElementById('Samedi').checked = true;
+        //                        }
+        //                        if (item.jour == "Dimanche") {
+        //                            document.getElementById('Dimanche').checked = true;
+        //                        }
+        //                    });
+        //                }
+        //                else {
+        //                    alert("jjj");
+        //                    $.each(response, function (i, item) {
+        //                        alert(item.hor);
+        //                        $('#idcheck').val(item.hor);
+
+        //                    });
+        //                    document.getElementById('lundi').checked = true;
+        //                    document.getElementById('Mardi').checked = true;
+        //                    document.getElementById('Mercredi').checked = true;
+        //                    document.getElementById('jeudi').checked = true;
+        //                    document.getElementById('vendredi').checked = true;
+        //                    document.getElementById('Samedi').checked = true;
+        //                    document.getElementById('Dimanche').checked = true;
+        //                }
+        //            },
+        //            error: function () {
+        //                alert("Dynamic content load failed.");
+        //            }
+        //        });
+                
+
+        //    }
+
+        //}
+        function ValideHoraire() {
+            debugger;
+            if (document.getElementById('lundi').checked == true) {
+                var lundi = $("#lundi").val();
+            }
+            else {
+                var lundi = "";
+            }
+            if (document.getElementById('Mardi').checked == true) {
+                var Mardi = $("#Mardi").val();
+            }
+            else {
+                var Mardi = "";
+            }
+            if (document.getElementById('Mercredi').checked == true) {
+                var Mercredi = $("#Mercredi").val();
+            }
+            else {
+                var Mercredi = "";
+            }
+            if (document.getElementById('jeudi').checked == true) {
+                var jeudi = $("#jeudi").val();
+            }
+            else {
+                var jeudi = "";
+            }
+            if (document.getElementById('vendredi').checked == true) {
+                var vendredi = $("#vendredi").val();
+            }
+            else {
+                var vendredi = "";
+            }
+            if (document.getElementById('Samedi').checked == true) {
+                var Samedi = $("#Samedi").val();
+            }
+            else {
+                var Samedi = "";
+            }
+            if (document.getElementById('Dimanche').checked == true) {
+                var Dimanche = $("#Dimanche").val();
+            }
+            else {
+                var Dimanche = "";
+            }
+            //if (document.getElementById('affComId').checked == true) {
+            //    var Horaire = $("#affComId").val();
+            //}
+            var Horaire = $('#idcheck').val();
+            alert(Horaire);
+            var data = {
+                lundi: lundi,
+                Mardi: Mardi,
+                Mercredi: Mercredi,
+                jeudi: jeudi,
+                vendredi: vendredi,
+                Samedi: Samedi,
+                Dimanche: Dimanche,
+                Horaire: Horaire,
+
+            };
+            $.ajax({
+                type: 'POST',
+                url: "/Tableau_Horaire/AddLineHoraire",
+                data: data,
+                success: function (response) {
+                    alert("hhh");
+                }
+            });
+        }
+    </script>
+}

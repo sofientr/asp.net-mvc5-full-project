@@ -1,0 +1,526 @@
+﻿<link href="~/Content/select2.min.css" rel="stylesheet" type="text/css" />
+
+@model Inspinia_MVC5.Models.SS_FACADE
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<style type="text/css">
+
+    #Tableau {
+        width: 2000px;
+    }
+
+    .divScroll {
+        overflow: auto;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>SS_FACADE</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.ID)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ID_FAC, "ID_FAC", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("ID_FAC", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ID_FAC, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PTHT, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PTHT, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.PTHT, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PTTC, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PTTC, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.PTTC, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TOTSURFACE, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TOTSURFACE, "TOTSURFACE", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TOTSURFACE, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TYPE_SS_FACADE, "TYPE_SS_FACADE", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("TYPE_SS_FACADE", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.TYPE_SS_FACADE, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.CATEGORIE, "CATEGORIE", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("CATEGORIE", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CATEGORIE, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+    <div class="ibox ">
+        <div class="ibox-title">
+            <h5>Description</h5>
+            <span class="label label-primary">D</span>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+
+
+            </div>
+
+        </div>
+        <div class="ibox-content">
+
+            <div class="divScroll">
+
+                <table class="table table-striped table-bordered table-hover dataTables-example" id="Tableau">
+                    <thead>
+                        <tr>
+                            <th style="width:150px;">
+                                DESIGNATION
+                            </th>
+                            <th>
+                                LONG
+                            </th>
+                            <th>
+                                LARGE
+                            </th>
+
+                            <th style="width:150px;">
+                                EP
+                            </th>
+
+                            <th style="width:90px;">
+                                QTE
+                            </th>
+                            <th>
+                                % chute
+                            </th>
+                            <th>
+                                Surface
+                            </th>
+                            <th>
+                                PUHT
+                            </th>
+
+                            <th>
+                                PTHT
+                            </th>
+                            <th style="width:90px;">
+                                TVA
+                            </th>
+
+                            <th>
+                                TTC
+                            </th>
+                            <th>
+                            </th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+
+
+                        <tr>
+                            <td>
+                                <select class="form-control" id="DESIGNATION">
+                                    <option value="Cote">Cote</option>
+                                    <option value="BAS">BAS</option>
+                                    <option value="LATTE HAUT">LATTE HAUT</option>
+                                    <option value="ETAGERE">ETAGERE</option>
+                                    <option value="FOND">FOND</option>
+                                    <option value="COUVRE CH">COUVRE CH</option>
+                                    <option value="MDF 18">MDF 18</option>
+                                    <option value="LAQUE">LAQUE</option>
+                                    <option value=" C CHANT"> C CHANT</option>
+                                    <option value="FINO">FINO</option>
+                                    <option value=" C CHANT"> C CHANT</option>
+                                    <option value="FINO">FINO</option>
+                                    <option value="FINO">PVC</option>
+                                    <option value="PLAQUAGE">PLAQUAGE</option>
+
+
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" id="LONG" value="0" min="0" />
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" id="LARGE" value="0" min="0" />
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" id="EP" value="0" min="0" />
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" id="QuantiteProduit" value="1" min="1" />
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" id="CHUTTE" value="0" min="0" />
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" id="SURFACE" value="0" min="0" readonly />
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" id="PUHTProduit" value="0" min="0" />
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" id="PTHTProduit" value="0" readonly="true" />
+                            </td>
+                            <td>
+                                <select class="form-control" id="TVAProduit"><option>0</option></select>
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" id="TTCProduit" readonly="true" />
+                            </td>
+                            <td style="display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px;
+                                                       border-top-width: 0px;" required>
+                                <button class="btn btn-info btn-circle" type="button" onclick="AddRow()" id="FirstBTN">
+                                    <i class="fa fa-check"></i>
+                                </button>
+                                <button class="btn btn-warning btn-circle" type="button" disabled>
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+
+
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/plugins/dataTables")
+    @Scripts.Render("~/plugins/select2")
+
+    <script type="text/javascript">
+
+
+        $('#DESIGNATION').select2();
+        $('#TVAProduit').select2();
+       
+        RemplirTableau();
+        $('#TVAProduit').append($('<option>', {
+            value: "",
+            text: ""
+        }));
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/GetAllTVA",
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    $('#TVAProduit').append($('<option>', {
+                        value: item.Valeur_TVA,
+                        text: item.Valeur_TVA
+                    }));
+                });
+            }
+        });
+        $(document).on("click", "#Tableau tbody tr td", function (e) {
+            var index = this.cellIndex;
+            var html = this.innerText;
+            var Parent = this.parentNode.id;
+            var locked = $("#" + Parent).attr("data-locked");
+
+
+            var CELL_SURFACE = $("#Tableau tbody tr[id=" + Parent + "] td")[6];
+            var CELL_PUHT = $("#Tableau tbody tr[id=" + Parent + "] td")[7];
+            //    var CELL_REMISE = $("#Tableau tbody tr[id=" + Parent + "] td")[9];
+            var CELL_PTHT = $("#Tableau tbody tr[id=" + Parent + "] td")[8];
+            var CELL_TVA = $("#Tableau tbody tr[id=" + Parent + "] td")[9];
+            var CELL_PTTC = $("#Tableau tbody tr[id=" + Parent + "] td")[10];
+
+            var TXT_SURFACE = $(CELL_SURFACE).html();
+            var TXT_PUHT = $(CELL_PUHT).html();
+            //    var TXT_REMISE = $(CELL_REMISE).html();
+            var TXT_PTHT = $(CELL_PTHT).html();
+            var TXT_TVA = $(CELL_TVA).html();
+            var TXT_PTCT = $(CELL_PTTC).html();
+
+            if (index == 7 && $(this).html().indexOf("number") < 0 && locked != "true") {
+                $(this).html("");
+                $(this).append("<input type='number' class='form-control' id='NEW_PUHT' value='" + html + "' data-modif='edited'>");
+                $(CELL_PTHT).html("");
+                $(CELL_PTHT).append("<strong id='NEW_PTHT'>" + TXT_PTHT + "</strong>");
+                $(CELL_PTTC).html("");
+                $(CELL_PTTC).append("<strong id='NEW_PTCT'>" + TXT_PTCT + "</strong>");
+                $(CELL_SURFACE).html("");
+                $(CELL_SURFACE).append("<strong id='NEW_SURFACE'>" + TXT_SURFACE + "</strong>");
+                $(CELL_TVA).html("");
+                $(CELL_TVA).append("<strong id='NEW_TVA'>" + TXT_TVA + "</strong>");
+                //-----------------------------------------------------------------
+
+
+                $("#BtnRow_" + Parent).attr("disabled", false);
+                LockRow(Parent);
+
+
+            }
+
+        });
+
+        $(document).on("keyup", "input[type=number][data-modif!=edited]", function (e) {
+            var Qte = $("#QuantiteProduit").val();
+            Qte = parseFloat(Qte);
+            var LONG = $("#LONG").val();
+            LONG = parseFloat(LONG);
+            var LARGE = $("#LARGE").val();
+            LARGE = parseFloat(LARGE);
+            var CHUTTE = $("#CHUTTE").val();
+            CHUTTE = parseFloat(CHUTTE);
+            var SURFACE = LONG * LARGE * Qte * CHUTTE;
+            SURFACE = parseFloat(SURFACE);
+            $('#SURFACE').val(SURFACE.toFixed(3));
+            var PRIX_VENTE_HT = parseFloat($('#PUHTProduit').val());
+
+            var PTHTProduit = SURFACE * PRIX_VENTE_HT;
+            $('#PTHTProduit').val(PTHTProduit.toFixed(3));
+            var TVA = $('#TVAProduit').val();
+            TVA = parseFloat(TVA);
+            var MontantTVA = PTHTProduit * (TVA / 100);
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#TTCProduit').val(TTCProduit.toFixed(3));
+
+        });
+        $(document).on("keydown", "input[type=number][data-modif!=edited]", function (e) {
+            var Qte = $("#QuantiteProduit").val();
+            Qte = parseFloat(Qte);
+            var LONG = $("#LONG").val();
+            LONG = parseFloat(LONG);
+            var LARGE = $("#LARGE").val();
+            LARGE = parseFloat(LARGE);
+            var CHUTTE = $("#CHUTTE").val();
+            CHUTTE = parseFloat(CHUTTE);
+            var SURFACE = LONG * LARGE * Qte * CHUTTE;
+            SURFACE = parseFloat(SURFACE);
+            $('#SURFACE').val(SURFACE.toFixed(3));
+            var PRIX_VENTE_HT = parseFloat($('#PUHTProduit').val());
+
+            var PTHTProduit = SURFACE * PRIX_VENTE_HT;
+            $('#PTHTProduit').val(PTHTProduit.toFixed(3));
+            var TVA = $('#TVAProduit').val();
+            TVA = parseFloat(TVA);
+            var MontantTVA = PTHTProduit * (TVA / 100);
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#TTCProduit').val(TTCProduit.toFixed(3));
+
+        });
+        $(document).on("keyup", "input[data-modif=edited]", function (e) {
+            var SURFACE = parseFloat($('#NEW_SURFACE').text());
+            var PRIX_VENTE_HT = parseFloat($('#NEW_PUHT').val());
+
+            var PTHTProduit = SURFACE * PRIX_VENTE_HT;
+            $('#NEW_PTHT').text(PTHTProduit.toFixed(3));
+            var TVA = $('#NEW_TVA').text();
+            TVA = parseFloat(TVA);
+            var MontantTVA = PTHTProduit * (TVA / 100);
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#NEW_PTCT').text(TTCProduit.toFixed(3));
+
+        });
+        $(document).on("keydown", "input[data-modif=edited]", function (e) {
+            var SURFACE = parseFloat($('#NEW_SURFACE').text());
+            var PRIX_VENTE_HT = parseFloat($('#NEW_PUHT').val());
+
+            var PTHTProduit = SURFACE * PRIX_VENTE_HT;
+            $('#NEW_PTHT').text(PTHTProduit.toFixed(3));
+            var TVA = $('#NEW_TVA').text();
+            TVA = parseFloat(TVA);
+            var MontantTVA = PTHTProduit * (TVA / 100);
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#NEW_PTCT').text(TTCProduit.toFixed(3));
+        });
+        $(document).on("change", "#TVAProduit", function (e) {
+            var Qte = $("#QuantiteProduit").val();
+            Qte = parseFloat(Qte);
+            var LONG = $("#LONG").val();
+            LONG = parseFloat(LONG);
+            var LARGE = $("#LARGE").val();
+            LARGE = parseFloat(LARGE);
+            var CHUTTE = $("#CHUTTE").val();
+            CHUTTE = parseFloat(CHUTTE);
+            var SURFACE = LONG * LARGE * Qte * CHUTTE;
+            SURFACE = parseFloat(SURFACE);
+            $('#SURFACE').val(SURFACE.toFixed(3));
+            var PRIX_VENTE_HT = parseFloat($('#PUHTProduit').val());
+
+            var PTHTProduit = SURFACE * PRIX_VENTE_HT;
+            PTHTProduit = parseFloat(PTHTProduit);
+            $('#PTHTProduit').val(PTHTProduit.toFixed(3));
+            var TVA = $('#TVAProduit').val();
+            TVA = parseFloat(TVA);
+            var MontantTVA = PTHTProduit * (TVA / 100);
+            var TTCProduit = PTHTProduit + MontantTVA;
+            $('#TTCProduit').val(TTCProduit.toFixed(3));
+        });
+        function AddRow() {
+
+            var DESIGNATION = $('#DESIGNATION').val();
+            //var DESIGNATION = $("#DESIGNATION option:selected").text();
+            var LONG = $("#LONG").val();
+            var LARGE = $("#LARGE").val();
+            var EP = $("#EP").val();
+            var CHUTTE = $("#CHUTTE").val();
+            var SURFACE = $("#SURFACE").val();
+            var QTE = $('#QuantiteProduit').val();
+            var PUHT_Produit = $('#PUHTProduit').val();
+            var PTHT_Produit = $('#PTHTProduit').val();
+            var TVA_Produit = $('#TVAProduit').val();
+            var TTC_Produit = $('#TTCProduit').val();
+            var data = {
+                DESIGNATION: DESIGNATION,
+                LONG: LONG,
+                LARGE: LARGE,
+                EP: EP,
+                QTE: QTE,
+                CHUTTE: CHUTTE,
+                SURFACE: SURFACE,
+                PUHT_Produit: PUHT_Produit,
+                PTHT_Produit: PTHT_Produit,
+                TVA_Produit: TVA_Produit,
+                TTC_Produit: TTC_Produit
+            };
+            $.ajax({
+                type: 'POST',
+                url: "/SS_FACADE/AddLineSSCAT",
+                data: data,
+                success: function (response) {
+                    RemplirTableau();
+                }
+            });
+
+        }
+        function RemplirTableau() {
+            $("#Tableau tbody").empty();
+            $.ajax({
+                type: 'POST',
+                url: "/SS_FACADE/GetAllLineSSCat",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        var line = "<tr id='" + item.ID + "'><td>" + item.DESIGNATION + "</td><td>" + item.LONG + "</td><td>" + item.LARGE + "</td><td>" + item.EP + "</td><td>" + item.QTE + "</td><td>" + item.CHUTTE + "</td><td>" + item.SURFACE + "</td><td>" + item.PUHT + "</td><td>" + item.PTHT + "</td><td>" + item.TVA + "</td><td>" + item.TTC + "</td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+                        $("#Tableau tbody").append(line);
+                    });
+                    $("#Tableau tfoot").replaceWith("<tfoot> <tr> <td> <select class='form-control' id='DESIGNATION'><option value='Cote'>Cote</option><option value = 'BAS'>BAS</option ><option value='LATTE HAUT'>LATTE HAUT</option><option value='ETAGERE'>ETAGERE</option><option value='FOND'>FOND</option><option value='COUVRE CH'>COUVRE CH</option> </select> </td> <td> <input type='number' class='form-control' id='LONG'value='0' min='0'/> </td><td> <input type='number' class='form-control' id='LARGE'value='0' min='0'/></td> <td> <input type='number' class='form-control' id='EP' value='0' min='0'/></td><td> <input type='number' class='form-control' id='QuantiteProduit' value='1' min='1'/> </td><td> <input type='number' class='form-control' id='CHUTTE' value='0' min='0'/></td><td><input type='number' class='form-control' id='SURFACE'  value='0' min='0' readonly/> </td> <td> <input type='number' class='form-control' id='PUHTProduit' min='0'/> </td><td> <input type='number' class='form-control' id='PTHTProduit' readonly='true' /> </td> <td> <select class='form-control' id='TVAProduit'></select> </td> <td> <input type='number' class='form-control' id='TTCProduit' readonly='true' /> </td> <td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='AddRow()'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' disabled> <i class='fa fa-times'></i> </button> </td> </tr> </tfoot>");
+                    $('#DESIGNATION').select2();
+                    $('#TVAProduit').select2();
+                    RemplirListe();
+
+                }
+            });
+
+            UpdatePrice();
+
+        }
+        function RemplirListe() {
+            $('#TVAProduit').append($('<option>', {
+                value: "",
+                text: ""
+            }));
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/GetAllTVA",
+                success: function (response) {
+                    $.each(response, function (i, item) {
+                        $('#TVAProduit').append($('<option>', {
+                            value: item.Valeur_TVA,
+                            text: item.Valeur_TVA
+                        }));
+                    });
+                }
+            });
+
+        }
+        function UpdatePrice() {
+
+            $.ajax({
+                type: 'POST',
+                url: "/SS_FACADE/UpdatePriceCaisson",
+                success: function (response) {
+                    var totalHT = response.totalHT;
+                    var totalTC = response.totalTC;
+                    var totalSURFACE = response.totalSURFACE;
+                    totalHT = totalHT.toString();
+                    totalHT = totalHT.replace(".", ",");
+                    totalTC = totalTC.toString();
+                    totalTC = totalTC.replace(".", ",");
+                    totalSURFACE = totalSURFACE.toString();
+                    totalSURFACE = totalSURFACE.replace(".", ",");
+                    $("#PTHT").val(totalHT);
+                    $("#PTTC").val(totalTC);
+                    $("#TOTSURFACE").val(totalSURFACE);
+
+                }
+            });
+        }
+        function EditRow(parampassed) {
+            var ID_Produit = parampassed;
+            var PUHT_Produit = $('#NEW_PUHT').val();
+            var PTHT_Produit = $('#NEW_PTHT').text();
+            var TTC_Produit = $('#NEW_PTCT').text();
+            var data = {
+                ID_Produit: ID_Produit,
+                PUHT_Produit: PUHT_Produit,
+                PTHT_Produit: PTHT_Produit,
+                TTC_Produit: TTC_Produit
+            };
+            $.ajax({
+                type: 'POST',
+                data: data,
+                url: "/CAISSONs/EditLineCaisson",
+                success: function (response) {
+                    RemplirTableau();
+                }
+            });
+        }
+        function DeleteRow(parampassed) {
+            $.ajax({
+                type: 'POST',
+                url: "/SS_FACADE/DeleteLineCaisson?parampassed=" + parampassed,
+                success: function (response) {
+                    RemplirTableau();
+                }
+            });
+        }
+        function LockRow(parampassed) {
+            $("#Tableau tbody tr").each(function (i, item) {
+                if ($(this).attr("id") != parampassed) {
+                    $(this).attr("data-locked", true);
+                }
+            });
+        }
+    </script>
+}

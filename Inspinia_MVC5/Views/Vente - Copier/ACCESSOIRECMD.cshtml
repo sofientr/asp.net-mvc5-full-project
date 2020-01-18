@@ -1,0 +1,467 @@
+﻿<link href="~/Content/select2.min.css" rel="stylesheet" type="text/css" />
+@*@model IEnumerable<Inspinia_MVC5.Models.DESCRIPTION_ACCESOIRE>*@
+<style type="text/css">
+    #TabACC {
+        width: 1000px;
+    }
+</style>
+
+@*<input type="number" class="form-control" id="PTHT" name="PTHT" value="0" readonly="true" />
+    <input type="number" class="form-control" id="PTTC" name="PTTC" value="" readonly="true" />*@
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+@*<table class="table table-striped table-bordered table-hover dataTables-example" id="TabACC">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+        <th>
+            Article
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PUHT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PTHT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PTTC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TVA)
+        </th>*@
+@*<th>
+        @Html.DisplayNameFor(model => model.ID_ACC)
+    </th>*@
+@*<th>
+        @Html.DisplayNameFor(model => model.ID_ART)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.ID_SSCAT)
+    </th>*@
+@*<th></th>
+        </tr>
+
+    @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Designation)
+                </td>
+                @{
+                    Inspinia_MVC5.Models.MED_TRABELSI db12 = new Inspinia_MVC5.Models.MED_TRABELSI();
+                    List<Inspinia_MVC5.Models.Prix_Achat> prixAchat = db12.Prix_Achat.Where(f => f.Sous_Categorie == item.ID_SSCAT).ToList();
+                    Inspinia_MVC5.Models.Prix_Achat prixAchat2 = db12.Prix_Achat.Where(f => f.Product_ID == item.ID_ART).FirstOrDefault();
+
+                }
+                <td>*@
+@*<select class="form-control" id="Article">
+        @if (prixAchat != null)
+        {
+            foreach (Inspinia_MVC5.Models.Prix_Achat art in prixAchat)
+            {
+                <option id="@item.ID_SSCAT" value="@art.Product_ID">@art.Libelle</option>
+            }
+        }
+    </select>*@
+@*@prixAchat2.Libelle
+    </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QTE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PUHT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PTHT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PTTC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TVA)*@
+@*</td>
+    <td>
+             @Html.DisplayFor(modelItem => item.ID_ACC)
+         </td>*@
+@*<td>
+        @Html.DisplayFor(modelItem => item.ID_ART)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_SSCAT)
+    </td>*@
+@*<td>*@
+@*@Html.ActionLink("Edit", "Edit", new { id = item.ID })*@
+@*@Html.ActionLink("Details", "Details", new { id = item.ID }) |
+    @Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+@*</td>
+        </tr>
+    }
+
+    </table>*@
+<div class="ibox ">
+    <div class="ibox-title">
+        <h5>Description @ViewBag.Acc</h5>
+        <span class="label label-primary">DA</span>
+        <div class="ibox-tools">
+            <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+
+
+        </div>
+        <input type='number' id='PTHT' disabled />
+        <input type='number' id='PTTC' disabled />
+    </div>
+    <div class="ibox-content">
+
+
+        <table class="table table-striped table-bordered table-hover dataTables-example" id="TabACC">
+            <thead>
+                <tr>
+                    <th>
+                        DESIGNATION
+                    </th>
+                    <th>
+                        Article
+                    </th>
+                    <th>
+                        QTE
+                    </th>
+
+                    <th>
+                        PUHT
+                    </th>
+
+                    <th>
+                        PTHT
+                    </th>
+                    <th>
+                        TVA
+                    </th>
+
+                    <th>
+                        TTC
+                    </th>
+                    <th>
+                    </th>
+
+                </tr>
+
+            </thead>
+            <tbody></tbody>
+            @*<tfoot>
+
+
+            </tfoot>*@
+        </table>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ActionLink("Valider", "FormCommande", new { Mode = ViewBag.Mode, Code = ViewBag.Code, Date = ViewBag.Date1, numero = ViewBag.numero, designation = ViewBag.designation, modePaiement = ViewBag.modePaiement, client = ViewBag.client, codeClient = ViewBag.codeClient, Tiers = ViewBag.Tiers, remise = ViewBag.remise, IdAffaireCommercial = ViewBag.IdAffaireCommercial, CAISSON = ViewBag.CAISSON , SSCAISSON = ViewBag.SSCAISSON, LIB_SSCAISSON = ViewBag.LIB_SSCAISSON, TYPCAISSON= ViewBag.TYPCAISSON, IDTYPCAISSON= ViewBag.IDTYPCAISSON }, null)
+            </div>
+        </div>
+        @*<button onclick="valider();">Valider</button>*@
+    </div>
+  
+
+</div>
+
+@*@section Styles {
+        @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    }
+    @section Scripts {
+        @Scripts.Render("~/plugins/dataTables")*@
+<script>
+    var LignesCuisine= "@ViewBag.LignesCuisine";
+    $("#TabACC tbody").empty();
+    $.ajax({
+        type: 'POST',
+        url: "/Vente/GetAllLineACC?LignesCuisine=" + LignesCuisine,
+        success: function (response) {
+            $.each(response, function (i, item) {
+                var line = "<tr id='" + item.ID + "'><td id='" + item.IDDESIGNATION + "'>" + item.DESIGNATION + "</td><td id='" + item.IDArticle + "'>" + item.Article + "</td><td>" + item.QTE + "</td><td>" + item.PUHT + "</td><td>" + item.PTHT + "</td><td>" + item.TVA + "</td><td>" + item.TTC + "</td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+                $("#TabACC tbody").append(line);
+            });
+            //var line1 = "<tr><td></td><td></td><td></td></td><td></td><td></td><td>THT</td><td><input type='number' id='PTHT' disabled /></td></tr>";
+            //$("#TabACC tbody").append(line1);
+            //var line2 = "<tr><td></td><td></td><td></td></td><td></td><td></td><td>TTC</td><td><input type='number' id='PTTC'disabled /></td></tr>";
+            //$("#TabACC tbody").append(line2);
+            //$("#TabACC tfoot").replaceWith("<tfoot> <tr> <td> <select class='form-control' id='DESIGNATION'></select> </td> <td> <select class='form-control' id='Article'></select> </td><td><input type='number' class='form-control' id='QuantiteProduit' value='1' min='1'/> </td> <td> <input type='number' class='form-control' id='PUHTProduit' min='0'/> </td><td> <input type='number' class='form-control' id='PTHTProduit' readonly='true' /> </td> <td> <select class='form-control' id='TVAProduit'></select> </td> <td> <input type='number' class='form-control' id='TTCProduit' readonly='true' /> </td> <td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='AddRow()'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' disabled> <i class='fa fa-times'></i> </button> </td> </tr> </tfoot>");
+
+        }
+    });
+    UpdatePrice();
+      $(document).on("change", "#NEW_ARTICLE", function (e)
+        {
+            var selectedItemValue = $(this).val();
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: '@Url.Action("GetPUArticle", "ACCESSOIREs")',
+                data: { "id": selectedItemValue },
+                success: function (data) {
+
+                    $("#NEW_PUHT").val(data);
+                    var Qte = $("#NEW_QTE").text();
+                    Qte = parseFloat(Qte);
+                    data = parseFloat(data);
+                    var PTHTProduit = Qte * data;
+                    $('#NEW_PTHT').text(PTHTProduit.toFixed(3));
+                    var TVA = $('#NEW_TVA').text();
+                    TVA = parseFloat(TVA);
+                    var MontantTVA = (PTHTProduit * TVA) / 100;
+                    var TTCProduit = PTHTProduit + MontantTVA;
+                    $('#NEW_PTCT').text(TTCProduit.toFixed(3));
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Found error to load Article!!.');
+                }
+            });
+        });
+    $(document).on("keyup", "input[data-modif=edited]", function (e) {
+        var SURFACE = parseFloat($('#NEW_QTE').text());
+        var PRIX_VENTE_HT = parseFloat($('#NEW_PUHT').val());
+
+        var PTHTProduit = SURFACE * PRIX_VENTE_HT;
+        $('#NEW_PTHT').text(PTHTProduit.toFixed(3));
+        var TVA = $('#NEW_TVA').text();
+        TVA = parseFloat(TVA);
+        var MontantTVA = PTHTProduit * (TVA / 100);
+        var TTCProduit = PTHTProduit + MontantTVA;
+        $('#NEW_PTCT').text(TTCProduit.toFixed(3));
+
+    });
+    $(document).on("keydown", "input[data-modif=edited]", function (e) {
+        var SURFACE = parseFloat($('#NEW_QTE').text());
+        var PRIX_VENTE_HT = parseFloat($('#NEW_PUHT').val());
+
+        var PTHTProduit = SURFACE * PRIX_VENTE_HT;
+        $('#NEW_PTHT').text(PTHTProduit.toFixed(3));
+        var TVA = $('#NEW_TVA').text();
+        TVA = parseFloat(TVA);
+        var MontantTVA = PTHTProduit * (TVA / 100);
+        var TTCProduit = PTHTProduit + MontantTVA;
+        $('#NEW_PTCT').text(TTCProduit.toFixed(3));
+    });
+    $(document).on("click", "#TabACC tbody tr td", function (e) {
+        var index = this.cellIndex;
+        var html = this.innerText;
+        var Parent = this.parentNode.id;
+        var locked = $("#" + Parent).attr("data-locked");
+
+        var CELL_DES = $("#TabACC tbody tr[id=" + Parent + "] td")[0];
+        var CELL_ARTICLE = $("#TabACC tbody tr[id=" + Parent + "] td")[1];
+        var CELL_QTE = $("#TabACC tbody tr[id=" + Parent + "] td")[2];
+        var CELL_PUHT = $("#TabACC tbody tr[id=" + Parent + "] td")[3];
+        //  var CELL_REMISE = $("#Tableau tbody tr[id=" + Parent + "] td")[9];
+        var CELL_PTHT = $("#TabACC tbody tr[id=" + Parent + "] td")[4];
+        var CELL_TVA = $("#TabACC tbody tr[id=" + Parent + "] td")[5];
+        var CELL_PTTC = $("#TabACC tbody tr[id=" + Parent + "] td")[6];
+
+        var TXT_DES = $(CELL_DES).html();
+        var TXT_ARTICLE = $(CELL_ARTICLE).html();
+        var TXT_QTE = $(CELL_QTE).html();
+        var TXT_PUHT = $(CELL_PUHT).html();
+        //var TXT_REMISE = $(CELL_REMISE).html();
+        var TXT_PTHT = $(CELL_PTHT).html();
+        var TXT_TVA = $(CELL_TVA).html();
+        var TXT_PTCT = $(CELL_PTTC).html();
+
+        if (index == 1 && $(this).html().indexOf("number") < 0 && locked != "true") {
+            $(this).html("");
+            $(this).append("<select type='number' class='form-control' id='NEW_ARTICLE' value='" + html + "' data-modif='edited'><option>" + html + "</option></select>");
+
+            $(CELL_PTHT).html("");
+            $(CELL_PTHT).append("<strong id='NEW_PTHT'>" + TXT_PTHT + "</strong>");
+            $(CELL_PTTC).html("");
+            $(CELL_PTHT).append("<strong id='NEW_PUHT'>" + TXT_PUHT + "</strong>");
+            $(CELL_PTTC).html("");
+            $(CELL_PTTC).append("<strong id='NEW_PTCT'>" + TXT_PTCT + "</strong>");
+            $(CELL_QTE).html("");
+            $(CELL_QTE).append("<strong id='NEW_QTE'>" + TXT_QTE + "</strong>");
+            $(CELL_TVA).html("");
+            $(CELL_TVA).append("<strong id='NEW_TVA'>" + TXT_TVA + "</strong>");
+            $(CELL_DES).html("");
+            $(CELL_DES).append("<strong id='NEW_DES'>" + TXT_DES + "</strong>");
+            //-----------------------------------------------------------------
+
+            //$("#NEW_ARTICLE").select2();
+            $("#BtnRow_" + Parent).attr("disabled", false);
+            LockRow(Parent);
+            //var art = $("#NEW_ARTICLE").text();
+            //if (art == "")
+            //{ 
+            RemplirListeNewArt();
+            //}
+            //ChangeNewArt();
+
+        }
+
+        if (index == 3 && $(this).html().indexOf("number") < 0 && locked != "true") {
+            $(this).html("");
+            $(this).append("<input type='number' class='form-control' id='NEW_PUHT' value='" + html + "' data-modif='edited'>");
+            $(CELL_PTHT).html("");
+            $(CELL_PTHT).append("<strong id='NEW_PTHT'>" + TXT_PTHT + "</strong>");
+            $(CELL_PTTC).html("");
+            $(CELL_PTTC).append("<strong id='NEW_PTCT'>" + TXT_PTCT + "</strong>");
+            $(CELL_QTE).html("");
+            $(CELL_QTE).append("<strong id='NEW_QTE'>" + TXT_QTE + "</strong>");
+            $(CELL_TVA).html("");
+            $(CELL_TVA).append("<strong id='NEW_TVA'>" + TXT_TVA + "</strong>");
+            //-----------------------------------------------------------------
+            $(CELL_ARTICLE).html("");
+            $(CELL_ARTICLE).append("<select type='number' class='form-control' id='NEW_ARTICLE' value='" + TXT_ARTICLE + "' data-modif='edited'><option>" + TXT_ARTICLE + "</option></select>");
+
+            $("#BtnRow_" + Parent).attr("disabled", false);
+            LockRow(Parent);
+            RemplirListeNewArt();
+
+        }
+
+    });
+    function RemplirTableauAcc()
+    {
+       @*var CAISSON= "@ViewBag.CAISSON";*@
+    $("#TabACC tbody").empty();
+    $.ajax({
+        type: 'POST',
+        url: "/Vente/GetAllLineACC?LignesCuisine=" + LignesCuisine,
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    var line = "<tr id='" + item.ID + "'><td id='" + item.IDDESIGNATION + "'>" + item.DESIGNATION + "</td><td id='" + item.IDArticle + "'>" + item.Article + "</td><td>" + item.QTE + "</td><td>" + item.PUHT + "</td><td>" + item.PTHT + "</td><td>" + item.TVA + "</td><td>" + item.TTC + "</td><td style='display: flex; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px;'> <button class='btn btn-info btn-circle' type='button' onclick='EditRow(\"" + item.ID + "\")' disabled id='BtnRow_" + item.ID + "'> <i class='fa fa-check'></i> </button> <button class='btn btn-warning btn-circle' type='button' onclick='DeleteRow(\"" + item.ID + "\")'> <i class='fa fa-times'></i> </button> </td></tr>";
+                    $("#TabACC tbody").append(line);
+                });
+                //var line1 = "<tr><td colspan='5'></td><td>THT</td><td><input type='number' id='PTHT' disabled /></td></tr>";
+                //$("#TabACC tbody").append(line1);
+                //var line2 = "<tr><td colspan='5'></td><td>TTC</td><td><input type='number' id='PTTC'disabled /></td></tr>";
+                //$("#TabACC tbody").append(line2);
+            }
+            
+        });
+        UpdatePrice();
+
+    }
+    function valider()
+    {
+        debugger;
+        var ptht = $("#PTHT").val();
+        //var ptht = "1,2";
+         var mode = "@ViewBag.Mode";
+        var code = "@ViewBag.Code";
+        var Date = "@ViewBag.Date";
+        var numero="@ViewBag.numeroo";
+        var designation = decodeHtml("@ViewBag.designation");
+        var modePaiement = decodeHtml("@ViewBag.modePaiement");
+        var client = decodeHtml("@ViewBag.client");
+        var codeClient="@ViewBag.codeClient";
+        var Tiers = decodeHtml("@ViewBag.Tiers");
+        var remise = decodeHtml("@ViewBag.remise");
+        var IdAffaireCommercial = "@ViewBag.IdAffaireCommercial";
+        var SSCAISSON = "@ViewBag.SSCAISSON";
+        var CAISSON= "@ViewBag.CAISSON";
+        var IDTYPCAISSON= "@ViewBag.IDTYPCAISSON";
+        var QuantiteCAISSON = "@ViewBag.QuantiteCAISSON";
+        var LIB_SSCAISSON = "@ViewBag.LIB_SSCAISSON"; 
+            $.ajax({
+                type: 'POST',
+                url: "/Vente/EditSessionCuisine?SSCAISSON=" + SSCAISSON + "&ptht=" + ptht,
+                success: function (response) {
+                    window.location.href = "/Vente/FormDevis?Mode=" + mode + "&Code=" + code + "&Date=" + Date + "&numero=" + numero + "&designation=" + designation + "&modePaiement=" + modePaiement + "&client=" + client + "&codeClient=" + codeClient + "&Tiers=" + Tiers + "&remise=" + remise + "&IdAffaireCommercial=" + IdAffaireCommercial + "&PTHTACC=" + response + "&IDTYPCAISSON=" + IDTYPCAISSON + "&SSCAISSON=" + SSCAISSON + "&QuantiteCAISSON=" + QuantiteCAISSON + "&LIB_SSCAISSON=" + LIB_SSCAISSON;
+                }
+            });
+    
+        
+    }
+    function UpdatePrice() {
+
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/UpdatePriceACCESSOIREs?LignesCuisine=" + LignesCuisine,
+            success: function (response)
+            {
+                debugger;
+                var totalHT = response.totalHT;
+                var totalTC = response.totalTC;
+
+                totalHT = parseFloat(totalHT);
+                //totalHT = totalHT.replace(",", ".")
+                totalTC = parseFloat(totalTC);
+                //totalTC = totalTC.replace(",", ",")
+                $("#PTHT").val(totalHT);
+                $("#PTTC").val(totalTC);
+
+            }
+        });
+    }
+    function DeleteRow(parampassed) {
+        $.ajax({
+            type: 'POST',
+            url: "/Vente/DeleteLineACCESSOIREs?parampassed=" + parampassed + "&LignesCuisine=" + LignesCuisine,
+            success: function (response) {
+                RemplirTableauAcc();
+            }
+        });
+    }
+    function EditRow(parampassed) {
+        var ID_Produit = parampassed;
+        var IDARTICLE = $('#NEW_ARTICLE').val();
+        var ARTICLE = $('#NEW_ARTICLE option:selected').text();
+        var PTHT_Produit = $('#NEW_PTHT').text();
+        var PUHT_Produit = $('#NEW_PUHT').text();
+        var PTHT_Produit = $('#NEW_PTHT').text();
+        var TTC_Produit = $('#NEW_PTCT').text();
+        var NEW_TVA = $('#NEW_TVA').text();
+        var data = {
+            ID_Produit: ID_Produit,
+            IDARTICLE: IDARTICLE,
+            ARTICLE: ARTICLE,
+            PUHT_Produit: PUHT_Produit,
+            PTHT_Produit: PTHT_Produit,
+            TTC_Produit: TTC_Produit,
+            NEW_TVA: NEW_TVA,
+            LignesCuisine: LignesCuisine,
+        };
+        $.ajax({
+            type: 'POST',
+            data: data,
+            url: "/Vente/EditLineACCESSOIRE",
+            success: function (response) {
+                RemplirTableauAcc();
+            }
+        });
+    }
+    function LockRow(parampassed) {
+        $("#TabACC tbody tr").each(function (i, item) {
+            if ($(this).attr("id") != parampassed) {
+                $(this).attr("data-locked", true);
+            }
+        });
+    }
+    function RemplirListeNewArt() {
+        //var selectedItemValue = "Supp étagère";
+        var selectedItemValue = $("#NEW_DES").text();
+        var ddlProducts = $("#NEW_ARTICLE");
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url: '@Url.Action("GetNewArticleByCategoryId", "ACCESSOIREs")',
+            data: { "id": selectedItemValue },
+            success: function (data) {
+                ddlProducts.html('');
+                $.each(data, function (id, option) {
+                    ddlProducts.append($('<option style="width:100px; height:50px;"></option>').val(option.id).html(option.name));
+                });
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Found error to load Article!!.');
+            }
+        });
+    }
+
+</script>
+@*}*@

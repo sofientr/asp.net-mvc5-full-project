@@ -1,0 +1,191 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.RETENUE_S_FOURNISSEURS>
+
+@*@{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<link href="~/Content/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+<link href="~/Content/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
+<link href="~/Content/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
+<link href="~/Content/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+    #Tableau {
+        width: 1175px;
+    }
+
+    .divScroll {
+        overflow: auto;
+    }
+</style>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>
+            Retenues FOURNISSEURS
+        </h2>
+        <ol class="breadcrumb">
+            <li><a>Achat</a> </li>
+            <li class="active"><strong>Retenues FOURNISSEURS</strong> </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                @using (Html.BeginForm("DeclarationRetenue", "RETENUE_S_FOURNISSEURS", new { Mode = ViewBag.Mode, Code = ViewBag.Code }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <div class="ibox-title" style="padding-top: 4px;">
+                        <h5 style="padding-top: 10px;">
+                            Liste des Retenues fournisseurs
+                        </h5>
+                        <div class="col-lg-3">
+                            <div class="input-group date">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                <input type="text" class="form-control" name="date2" id="date2" disabled>
+                            </div>
+
+                        </div>
+                        <div class="ibox-tools">
+                            <button class="btn btn-success " type="button" onclick="location.href='@Url.Action("Create", "RETENUE_S_FOURNISSEURS")'">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;&nbsp;<span class="bold">Ajouter</span>
+                            </button>
+                            <button class="btn btn-primary " type="button" id="PrintBtn">
+                                <i class="fa fa-print" aria-hidden="true"></i>&nbsp;&nbsp;<span class="bold">Imprimer</span>
+                            </button>
+                            <input type="submit" class="btn btn-primary pull-right" value="declaration" onclick="return confirm('Voulez vous déclarer cet Retenue ?')" id="declaration" />
+
+                        </div>
+                    </div>
+                    <div class="divScroll">
+                        <table class="table table-striped table-bordered table-hover dataTables-example"
+                               id="Tableau">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    @*<th>
+                                        @Html.DisplayNameFor(model => model.FACTURES_FOURNISSEURS.CODE)
+                                    </th>*@
+                                    @*<th>
+                                            @Html.DisplayNameFor(model => model.TTC)
+                                        </th>*@
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Retenue)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Date_Retenue)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Montant_Brut)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Taux_Retenue)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Montant_net)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Declaration)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Date_Declaration)
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" value="@item.ID" />
+                                        </td>
+                                        @*<td>
+                                            @Html.DisplayFor(modelItem => item.FACTURES_FOURNISSEURS.CODE)
+                                        </td>*@
+                                        @*<td>
+                                                @Html.DisplayFor(modelItem => item.TTC)
+                                            </td>*@
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Retenue)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Date_Retenue)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Montant_Brut)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Taux_Retenue)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Montant_net)
+                                        </td>
+                                        <td>
+                                            @*@Html.DisplayFor(modelItem => item.Declaration)*@
+                                            @if (item.Declaration == true)
+                                            {
+                                                <span class="label label-primary">DECLARÉE</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="label label-danger">NON DECLAREE</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            @*@Html.DisplayFor(modelItem => item.Date_Declaration)*@
+                                            @if (item.Date_Declaration != null)
+                                            {
+                                                @String.Format("{0:MM/yyyy}", item.Date_Declaration)
+                                            }
+                                        </td>
+
+                                        <td>
+                                            @*@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })|*@
+                                            @Html.ActionLink("Retenue", "PrintRetenue", new { id = item.ID_FACT })
+                                           
+                                        </td>
+                                    </tr>
+                                }
+
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/plugins/dataPicker")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#date2").datepicker({
+                format: 'dd/mm/yyyy'
+            });
+        });
+        function check(elee) {
+            var date2 = $('#date2').val();
+            if (elee.checked && date2 != "") {
+                document.getElementById('declaration').disabled = false;
+                document.getElementById('date2').disabled = false;
+
+            }
+            else {
+                document.getElementById('declaration').disabled = true;
+                document.getElementById('date2').disabled = false;
+
+            }
+        }
+       
+    </script>
+}

@@ -1,0 +1,90 @@
+﻿@model Inspinia_MVC5.Models.SocieteLogo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SocieteLogo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_Societe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_Societe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.logo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MF)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IBAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IBAN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RIB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RIB)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Agence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agence)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

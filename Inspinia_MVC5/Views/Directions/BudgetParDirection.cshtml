@@ -1,0 +1,130 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.Direction>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Index</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Direction</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+        
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <form method="post" action="">
+                <fieldset>
+                    <div class="ibox-content">
+
+
+                        <div class="form-group" id="data_1">
+                            <label class="font-noraml"><h5> Choisir une année :</h5></label>
+                            <select name="ann" id="ann" class="form-control m-b">
+                                <option>2015</option>
+                                <option>2016</option>
+                                <option>2017</option>
+                                <option>2018</option>
+                                <option>2019</option>
+
+                            </select>
+                            <button type="submit" class="btn btn-primary"><strong>OK</strong></button>
+
+
+                        </div>
+
+                    </div>
+
+                </fieldset>
+
+            </form>
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Liste par Direction</h5>
+                   
+                </div>
+                <div class="ibox-content">
+                    @if (IsPost)
+                    {
+
+                        decimal TotalDA = 0;
+                        decimal TotalDT = 0;
+                        decimal TotalDF = 0;
+                        decimal TotalDC = 0;
+                        string ann1 = Request.Form["ann"];
+
+                        foreach (var item in Model)
+                        {
+                            if (item.Nom.Equals("da") && ann1.Equals("" + item.Année))
+                            {
+                                TotalDA = TotalDA + (decimal)item.Budget;
+                            }
+
+
+
+                            else if (item.Nom.Equals("dt") && ann1.Equals("" + item.Année))
+                            {
+                                TotalDT = TotalDT + (decimal)item.Budget;
+                            }
+
+
+                            else if (item.Nom.Equals("df") && ann1.Equals("" + item.Année))
+                            {
+                                TotalDF = TotalDF + (decimal)item.Budget;
+                            }
+
+                            else
+                                 if (item.Nom.Equals("dc") && ann1.Equals("" + item.Année))
+                            {
+                                TotalDC = TotalDC + (decimal)item.Budget;
+                            }
+
+                        }
+
+                    <table class="table table-striped">
+                        <tr>
+                            <th>
+                               Direction Achat
+                            </th>
+                            <th>
+                                Direction Technique
+                            </th>
+                            <th>
+                                Direction Finance
+                            </th>
+                            <th>
+                                Direction Comptable
+                            </th>
+                            
+                           
+                          
+                        </tr>
+
+                        <tr>
+                            <td>
+                            @TotalDA
+                            </td>
+                            <td>
+                                @TotalDT
+                            </td>
+                            <td>
+                                @TotalDF
+                            </td>
+                            <td>
+                                @TotalDC
+                            </td>
+                            </tr>
+
+</table>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

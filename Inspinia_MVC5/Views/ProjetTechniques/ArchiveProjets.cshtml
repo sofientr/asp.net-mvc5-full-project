@@ -1,0 +1,305 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.ProjetTechniques>
+
+@{
+    ViewBag.Title = "Index";
+    Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+
+
+}
+
+
+<script>
+
+    function checkAll(ele) {
+        var checkboxes = document.getElementsByTagName('input');
+        if (ele.checked) {
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].type == 'checkbox') {
+                    checkboxes[i].checked = true;
+                }
+            }
+        } else {
+            for (var i = 0; i < checkboxes.length; i++) {
+                console.log(i)
+                if (checkboxes[i].type == 'checkbox') {
+                    checkboxes[i].checked = false;
+                }
+            }
+        }
+    }
+</script>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="~/Scripts/jquery.tokeninput.js"></script>
+<link href="~/Content/token-input.css" rel="stylesheet" />
+<link href="~/Content/token-input-facebook.css" rel="stylesheet" />
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("input[type=button]").click(function () {
+            alert("Would submit: " + $(this).siblings("input[type=text]").val());
+        });
+    });
+</script>
+
+
+
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Index</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>ProjetTechnique</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInUp">
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Liste des projets clôturés</h5>
+                    <div class="ibox-tools">
+                        <a href="Index" class="btn btn-primary btn-xs">Liste des projets en cours</a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="project-list ex3">
+
+                        <table class="table table-hover">
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    if (item.Statut == "Cloturé" )
+                                    {
+                                        List<Inspinia_MVC5.Models.Tasks> task_progress = db.Tasks.Where(t => t.ProjetTechniquesID == item.ProjetTechniqueId && t.ParentId == null).ToList();
+
+                                        double avg = 0.0;
+                                        int avg_int = 0;
+                                        if (task_progress != null)
+                                        {
+                                            decimal sum = 0;
+                                            foreach (Inspinia_MVC5.Models.Tasks t in task_progress)
+                                            {
+                                                sum = sum + t.Progress;
+                                            }
+                                            if (sum > 0)
+                                            {
+                                                avg = (double)(sum / task_progress.Count()) * 100;
+                                                avg_int = (int)avg;
+                                            };
+                                        }
+
+
+                                        <tr>
+                                            <td class="project-status">
+                                                @if (item.Statut == "Initié")
+                                                {
+                                                    <span class="label label-warning"> Initié</span>
+
+                                                }
+                                                @if (item.Statut == "Demarré")
+                                                {
+                                                    <span class="label label-primary"> Démarré</span>
+                                                }
+                                                @if (item.Statut == "Cloturé")
+                                                {
+                                                    <span class="label label-danger">Cloturé</span>
+
+                                                }
+                                            </td>
+                                            <td class="project-title">
+                                                <a href="@Url.Action("Details", "ProjetTechniques", new { id = item.ProjetTechniqueId })">@Html.DisplayFor(modelItem => item.ReferenceTech)</a>
+                                                <br />
+                                                <small>Démarrage: @item.DateDebut.ToString("dd MMMM yyyy")</small><br />
+                                                <small>Fin: @item.DateFin.ToString("dd MMMM yyyy")</small>
+
+
+                                            </td>
+                                            <td class="project-completion">
+                                                @if (avg == 0)
+                                                {
+                                                    <small>Avancement: 0%</small>
+                                                }
+                                                else
+                                                {
+                                                    <small>Avancement: @avg.ToString("#.##")%</small>
+
+                                                }
+                                                <div class="progress progress-mini">
+                                                    <div style="width: @avg_int%;" class="progress-bar"></div>
+                                                </div>
+                                            </td>
+
+                                            <td class="project-people">
+                                                <a href=""><img alt="image" class="img-circle" src="~/Images/a3.jpg"></a>
+                                                <a href=""><img alt="image" class="img-circle" src="~/Images/a1.jpg"></a>
+                                                <a href=""><img alt="image" class="img-circle" src="~/Images/a2.jpg"></a>
+                                                <a href=""><img alt="image" class="img-circle" src="~/Images/a4.jpg"></a>
+                                                <a href=""><img alt="image" class="img-circle" src="~/Images/a5.jpg"></a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a href="Details/@item.ProjetTechniqueId" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> Visualiser </a>
+                                                <a href="Edit/@item.ProjetTechniqueId" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Modifier </a>
+                                                @*<a href="Delete/@item.ProjetTechniqueId" class="btn btn-white btn-sm"><i class="fa fa-trash"></i> Supprimer </a>*@
+
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/jeditable")
+    @Scripts.Render("~/plugins/dataTables")
+    <style>
+        div.ex1 {
+            /*background-color: lightblue;
+        height: 40px;
+        width: 200px;*/
+            overflow-y: scroll;
+        }
+
+        div.ex2 {
+            /*background-color: lightblue;
+        height: 40px;
+        width: 200px;*/
+            overflow-y: hidden;
+        }
+
+        div.ex3 {
+            /*background-color: lightblue;*/
+            height: 550px;
+            width: 1050px;
+            overflow-y: auto;
+        }
+
+        div.ex4 {
+            background-color: lightblue;
+            height: 40px;
+            width: 200px;
+            overflow-y: visible;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.dataTables-example').DataTable({
+                dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    { extend: 'copy' },
+                    { extend: 'csv', title: 'Projet Technique' },
+                    { extend: 'excel', title: 'Projet Technique' },
+                    { extend: 'pdf', title: 'Projet Technique' },
+
+                    {
+                        extend: 'print',
+                        customize: function (win) {
+                            $(win.document.body).addClass('white-bg');
+                            $(win.document.body).css('font-size', '10px');
+
+                            $(win.document.body).find('table')
+                                .addClass('compact')
+                                .css('font-size', 'inherit');
+                        }
+                    }
+                ]
+
+            });
+
+            /* Init DataTables */
+            var oTable = $('#editable').dataTable();
+
+            /* Apply the jEditable handlers to the table */
+            oTable.$('td').editable('../example_ajax.php', {
+                "callback": function (sValue, y) {
+                    var aPos = oTable.fnGetPosition(this);
+                    oTable.fnUpdate(sValue, aPos[0], aPos[1]);
+                },
+                "submitdata": function (value, settings) {
+                    return {
+                        "row_id": this.parentNode.getAttribute('id'),
+                        "column": oTable.fnGetPosition(this)[2]
+                    };
+                },
+
+                "width": "90%",
+                "height": "100%"
+            });
+
+
+        });
+
+
+    </script>
+
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+
+
+        var PartielView1 = '/ProjetTechniques/AffectationPerso';
+        $(function () {
+            $(".MODULE1").click(function () {
+                debugger;
+                var $buttonClicked = $(this);
+                var options = { "backdrop": "static", keyboard: true };
+                $.ajax({
+                    type: "GET",
+                    url: PartielView1,
+                    contentType: "application/json; charset=utf-8",
+                    data: "",
+                    datatype: "json",
+                    async: true,
+                    success: function (data) {
+                        debugger;
+                        $('#myModalContent').html(data);
+                        $('#myModal').modal(options);
+                        $('#myModal').modal('show');
+
+                    },
+                    error: function () {
+                        alert("Dynamic content load failed.");
+                    }
+                });
+            });
+
+            $("#closbtn").click(function () {
+                $('#myModal').modal('hide');
+            });
+        });
+
+
+
+
+
+    </script>
+}
+
+
+

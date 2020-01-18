@@ -1,0 +1,113 @@
+﻿@model Inspinia_MVC5.Models.Fournisseur
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    
+    
+    
+    
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Edit Fournisseur</h5>
+                    </div>
+                    <div class="ibox-content">
+    
+    				@using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+    
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.FRSID)
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.NOM, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NOM)
+                    @Html.ValidationMessageFor(model => model.NOM)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.ADRESSE, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ADRESSE)
+                    @Html.ValidationMessageFor(model => model.ADRESSE)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.TEL, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TEL)
+                    @Html.ValidationMessageFor(model => model.TEL)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.FAX, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FAX)
+                    @Html.ValidationMessageFor(model => model.FAX)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.EMAIL, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EMAIL)
+                    @Html.ValidationMessageFor(model => model.EMAIL)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.RC, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.RC)
+                    @Html.ValidationMessageFor(model => model.RC)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.MF, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MF)
+                    @Html.ValidationMessageFor(model => model.MF)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+    				@Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-white"})
+                </div>
+            </div>
+        </div>
+    }
+    
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    
+    
+</body>
+</html>

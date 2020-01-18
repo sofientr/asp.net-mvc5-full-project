@@ -1,0 +1,195 @@
+﻿@model Inspinia_MVC5.Models.Inscription
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Edit</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+            <li class="active">
+                <strong>Edit</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>
+<!----->
+<!----->
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Edit Inscription</h5>
+                </div>
+                <div class="ibox-content">
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+
+                            @Html.ValidationSummary(true)
+                            @Html.HiddenFor(model => model.InsriID)
+                            <!---NOM-->
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.NOM, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.NOM)
+                                    @Html.ValidationMessageFor(model => model.NOM)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Email)
+                                    @Html.ValidationMessageFor(model => model.Email)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @Html.HiddenFor(model => model.etat, new { Value = "1" })
+                                </div>
+                            </div>
+
+                            @{
+                                Session["nm"] = Model.NOM;
+
+                                Session["emai"] = Model.Email;
+                                Session["etat"] = Model.etat;
+
+                            }
+
+                            @{
+                                var r = new Random();
+                                var randomNumber = r.Next();
+                                var randomNumberLessThan1000 = r.Next(1000);
+                                var name = ViewBag.Nom;
+                                var valueCodeAcces = "" + name + randomNumberLessThan1000;
+                            }
+                            <div class="form-group">
+                                <label class="control-label col-md-2">
+                                    CODE_ACCES
+                                </label>
+                                <div class="col-md-10">
+
+                                    <input class="form-control" type="text" name="CODE_ACCES" id="CODE_ACCES" Value="@valueCodeAcces" readonly />
+                                </div>
+                            </div>
+
+
+                         
+                            <div class="form-group">
+                                <label class="control-label col-md-2">
+                                    Direction
+                                </label>
+                                <div class="col-md-10">
+                               
+                                    <select class="form-control" name="direc" id="direc" required><option></option></select>
+
+                                    <div class="col-lg-1" style="padding-left: 0px;padding-right: 0px;">
+                                        <a href="javascript:void(0);" class="DIRECTION"><button class="btn btn-outline btn-primary dim" type="button"><i class="fa fa-plus"></i></button></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="WithPrint" id="WithPrint" required />
+                            <div id='myModal' class='modal'>
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div id='myModalContent'>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                @*@Html.LabelFor(model => model.Tel, new { @class = "control-label col-md-2" })*@
+                                <div class="control-label col-md-2"><b>N° de téléphone</b></div>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="text" name="Tel" id="Tel" Value="" />
+
+                                </div>
+                            </div>
+                            <input type="submit" value="Valider" class="btn btn-primary" />
+
+
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Styles {
+    @Styles.Render("~/plugins/select2")
+
+}
+@section Scripts {
+    @Scripts.Render("~/plugins/select2")
+    <script type="text/javascript">
+        //$(document).ready(function () {
+            ////$('#direc').append($('<option>', {
+            ////    value: "",
+            ////    text: ""
+            ////}));
+            $.ajax({
+                type: 'GET',
+                url: "/Societes/GetAllSociete",
+                success: function (data) {
+                    //debugger;
+                    $.each(data, function (i, item) {
+                        $('#direc').append($('<option>', {
+                            value: item,
+                            text: item
+                        }));
+                    });
+                }
+            });
+        //});
+      $(function () {
+            $(".DIRECTION").click(function () {
+                var id = "@ViewBag.id";
+                var PartielView1 = "/Inscriptions/AddDirection?id=" + id;
+                var $buttonClicked = $(this);
+                var options = { "backdrop": "static", keyboard: true };
+                $.ajax({
+                    type: "GET",
+                    url: PartielView1,
+                    contentType: "application/json; charset=utf-8",
+                    data: "",
+                    datatype: "json",
+                    success: function (data) {
+                        $('#myModalContent').html(data);
+                        $('#myModal').modal(options);
+                        $('#myModal').modal('show');
+
+                    },
+                    error: function () {
+                        alert("Dynamic content load failed.");
+                    }
+                });
+            });
+
+            $("#closbtn").click(function () {
+                $('#myModal').modal('hide');
+            });
+
+      });
+
+    </script>
+}

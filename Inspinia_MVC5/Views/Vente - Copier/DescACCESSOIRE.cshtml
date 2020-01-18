@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.DESCRIPTION_ACCESOIRE>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PUHT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PTHT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PTTC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TVA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_ACC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_ART)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_SSCAT)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Designation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PUHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PTHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PTTC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TVA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_ACC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_ART)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_SSCAT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

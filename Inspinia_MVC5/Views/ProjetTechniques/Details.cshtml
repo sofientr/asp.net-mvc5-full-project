@@ -1,0 +1,545 @@
+﻿@model Inspinia_MVC5.Models.ProjetTechniques
+
+@{
+
+    ViewBag.Title = "Details";
+    Inspinia_MVC5.Models.MED_TRABELSI db = new Inspinia_MVC5.Models.MED_TRABELSI();
+    List<Inspinia_MVC5.Models.Tasks> task_progress = db.Tasks.Where(t => t.ProjetTechniquesID == Model.ProjetTechniqueId && t.ParentId == null).ToList();
+    List<Inspinia_MVC5.Models.Tasks> task_list = db.Tasks.Where(t => t.ProjetTechniquesID == Model.ProjetTechniqueId).ToList();
+
+    double avg = 0;
+    int avg_int = 0;
+    double cout_reel = Model.CoutReel;
+    double cout_planifie = Model.Cout;
+    if (task_progress != null)
+    {
+        decimal sum = 0;
+        foreach (Inspinia_MVC5.Models.Tasks t in task_progress)
+        {
+            sum = sum + t.Progress;
+        }
+        if (sum > 0)
+        {
+            avg = (double)(sum / task_progress.Count()) * 100;
+            avg_int = (int)avg;
+        };
+    }
+    if (task_list != null)
+    {
+        foreach (Inspinia_MVC5.Models.Tasks t in task_list)
+        {
+            if (t.owner_id != 0)
+            {
+                cout_planifie +=(double) (t.duration_planning * db.Personnels.Find(t.owner_id).Cout_hor);
+                cout_reel +=(double) (t.Duration * db.Personnels.Find(t.owner_id).Cout_hor);
+            }
+        }
+    }
+
+}
+
+@*<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Details</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+            <li class="active">
+                <strong>Details</strong>
+            </li>
+        </ol>
+    </div>
+</div>*@
+<style>
+    div.ex1 {
+        /*background-color: lightblue;
+        height: 40px;
+        width: 200px;*/
+        overflow-y: scroll;
+    }
+
+    div.ex2 {
+        /*background-color: lightblue;
+        height: 40px;
+        width: 200px;*/
+        overflow-y: hidden;
+    }
+
+    div.ex3 {
+        /*background-color: lightblue;*/
+        height: 700px;
+        width: 1200px;
+        overflow-y: auto;
+    }
+
+    div.ex4 {
+        background-color: lightblue;
+        height: 40px;
+        width: 200px;
+        overflow-y: visible;
+    }
+</style>
+
+
+
+@*<div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Details ProjetTechnique</h5>
+                    </div>
+                    <div class="ibox-content">
+
+
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ReferenceTech)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ReferenceTech)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Designation)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Designation)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DateDebut)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DateDebut)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DateFin)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DateFin)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Cout)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Cout)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ClientId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ClientId)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.PersonnelId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.PersonnelId)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Statut)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Statut)
+                            </dd>
+
+                        </dl>
+
+
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.ProjetTechniqueId }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-white" })
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+
+
+
+
+
+@*<div id="cont">*@
+    <div>
+        <div class="wrapper wrapper-content animated fadeInUp">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="m-b-md">
+                                <a href="../Edit/@Model.ProjetTechniqueId" class="btn btn-white btn-xs pull-right fa fa-edit">Modifier le projet</a>
+                                <a href="../ParametrageSem/@Model.ProjetTechniqueId" class="btn btn-white btn-xs pull-right fa fa-gear">Paramétrer les horaires de travail</a>
+                                <a href="../Index" class="btn btn-xs pull-right btn-default">Retour aux projets techniques</a>
+                                <h2>Détails du projet @Model.Designation</h2>
+                            </div>
+                            <dl class="dl-horizontal">
+                                <dt>Status:</dt>
+                                @if (Model.Statut == "Initié")
+                                {
+                                    <dd><span class="label label-warning"> @Html.DisplayFor(model => model.Statut)</span></dd>
+
+                                }
+                                @if (Model.Statut == "Démarré")
+                                {
+                                    <dd><span class="label label-primary"> @Html.DisplayFor(model => model.Statut)</span></dd>
+                                }
+                                @if (Model.Statut == "Cloturé")
+                                {
+                                    <dd><span class="label label-danger"> @Html.DisplayFor(model => model.Statut)</span></dd>
+
+                                }
+
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <dl class="dl-horizontal">
+
+                                <dt>Responsable:</dt>
+                                <dd>
+                                    @db.Personnels.First(p => p.PersonnelId == Model.PersonnelId).Nom
+                                </dd>
+                                <dt>Client:</dt>
+                                <dd>
+                                    <a href="#" class="text-navy">
+                                        @db.CLIENTS.First(c => c.ID == Model.ClientId).NOM
+                                    </a>
+                                </dd>
+
+                            </dl>
+                        </div>
+                        <div class="col-lg-7" id="cluster_info">
+                            <dl class="dl-horizontal">
+
+                                <dt>Date début Planifié:</dt>
+                                <dd>@Model.DateDebut.ToString("dd MMMM yyyy")</dd>
+                                <dt>Date fin Planifié:</dt>
+                                <dd>@Model.DateFin.ToString("dd MMMM yyyy") </dd>
+                                <dt>Date début Réalisé:</dt>
+                                <dd>@Model.DateDebutReel.ToString("dd MMMM yyyy")</dd>
+                                <dt>Date fin Réalisé:</dt>
+                                <dd>@Model.DateFinReel.ToString("dd MMMM yyyy") </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <dl class="dl-horizontal">
+                                <dt>Avancement:</dt>
+                                <dd>
+
+
+                                    <div class="progress progress-striped active m-b-sm">
+                                        <div style="width: @avg_int%;" class="progress-bar"></div>
+                                    </div>
+                                    <small>Progrés d'avancement du projet <strong>@avg.ToString("#.##")%</strong>. </small>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="widget style1">
+                        <div class="row">
+                            <div class="col-xs-4 text-center">
+                                <i class="fa fa-trophy fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8 text-right">
+                                <span> Cout Planifié du projet </span>
+                                <h2 class="font-bold">@cout_planifie DT</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget style1">
+                        <div class="row">
+                            <div class="col-xs-4 text-center">
+                                <i class="fa fa-trophy fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8 text-right">
+                                <span> Cout réel du projet </span>
+                                <h2 class="font-bold">@cout_reel DT</h2>
+                            </div>
+                        </div>
+                    </div>
+                    @*@Html.ActionLink("Planification", "GanttPlanification", new { id = Model.ProjetTechniqueId }, new { @class = "btn btn-primary btn-sm" })*@
+                    @Html.ActionLink("Diagramme de Planification", "HeuresPlanification", new { id = Model.ProjetTechniqueId }, new { @class = "btn btn-primary btn-sm" })
+
+                    @*@Html.ActionLink("Realisation", "GanttRealisation", new { id = Model.ProjetTechniqueId }, new { @class = "btn btn-primary btn-sm" })*@
+                    @Html.ActionLink("Diagramme de Réalisation", "Heures", new { id = Model.ProjetTechniqueId }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Comparer", "Compare", new { id = Model.ProjetTechniqueId }, new { @class = "btn btn-primary btn-sm" })
+
+                    <div class="row m-t-sm">
+                        <div class="col-lg-12">
+                            <div class="panel blank-panel">
+                                <div class="panel-heading">
+                                    <div class="panel-options">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#tab-1" data-toggle="tab">Tâches</a></li>
+                                            <li class=""><a href="#tab-2" data-toggle="tab">Participants</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="tab-1">
+                                            <div class="ibox-content">
+
+                                                <table class="table table-striped table-bordered table-hover dataTables-example">
+                                                    <thead>
+                                                        <tr>
+
+                                                            <th>
+                                                                Nom
+                                                            </th>
+                                                            <th>
+                                                                Date Début planifiée
+                                                            </th>
+                                                            <th>
+                                                                Date fin planifiée
+                                                            </th>
+                                                            <th>
+                                                                Durée planifiée
+                                                            </th>
+                                                            <th>
+                                                                Employé
+                                                            </th>
+                                                            <th>
+                                                                Progrés actuel
+                                                            </th>
+                                                            <th>
+                                                                Date début réel
+                                                            </th>
+                                                            <th>
+                                                                date fin réel
+                                                            </th>
+                                                            <th>
+                                                                retard
+                                                            </th>
+
+                                                        </tr>
+                                                    </thead>
+
+                                                    @foreach (var item in task_list)
+                                                    {
+                                                        <tr>
+
+                                                            <td>
+                                                                @item.Text
+                                                            </td>
+                                                            <td>
+                                                                @item.planned_start
+                                                            </td>
+                                                            <td>
+                                                                @item.planned_end
+                                                            </td>
+                                                            <td>
+                                                                @item.duration_h_planning
+                                                            </td>
+                                                            <td>
+                                                                @db.Personnels.Find(item.owner_id).Nom
+                                                            </td>
+                                                            <td>
+                                                                @(item.Progress * 100)%
+                                                            </td>
+                                                            <td>
+                                                                @item.StartDate
+                                                            </td>
+                                                            <td>
+                                                                @item.EndDate
+                                                            </td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                    }
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="tab-pane" id="tab-2">
+                                            @{
+                                                List<Inspinia_MVC5.Models.Personnels> pers = db.Personnels.ToList();
+
+                                                List<Inspinia_MVC5.Models.Personnels> list_pers = new List<Inspinia_MVC5.Models.Personnels>();
+                                                Boolean test;
+                                                foreach (Inspinia_MVC5.Models.Personnels p in pers)
+                                                {
+
+                                                    test = false;
+                                                    foreach (Inspinia_MVC5.Models.Tasks t in task_list)
+                                                    {
+                                                        if ((p.PersonnelId == t.owner_id) && test == false)
+                                                        {
+                                                            list_pers.Add(p);
+                                                            test = true;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            <table class="table table-striped">
+                                                <tr>
+                                                    <th>
+                                                        Nom
+                                                    </th>
+                                                    <th>
+                                                        Rôle
+                                                    </th>
+                                                    <th>
+                                                        Charge total
+                                                    </th>
+                                                    <th></th>
+                                                </tr>
+
+                                                @foreach (var item in list_pers)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @item.Nom
+                                                        </td>
+                                                        <td>
+                                                            @item.Role
+                                                        </td>
+                                                        <td>
+                                                            @*@foreach (Inspinia_MVC5.Models.Task task in Inspinia_MVC5.Models.Tas)*@
+                                                            @{
+                                                                double sum2 = 0;
+                                                                List<Inspinia_MVC5.Models.Tasks> sous = task_list.FindAll(p => p.owner_id == item.PersonnelId);
+                                                                foreach (Inspinia_MVC5.Models.Tasks tsk in sous)
+                                                                {
+                                                                    sum2 +=(double)( tsk.Duration * item.Cout_hor);
+                                                                }
+                                                            }                                   @sum2
+                                                        </td>
+                                                        <td>
+                                                            @Html.ActionLink("Details", "Details", new { id = item.PersonnelId }, new { @class = "btn btn-primary btn-sm" })
+                                                            @Html.ActionLink("Edit", "Edit", new { id = item.PersonnelId }, new { @class = "btn btn-white btn-sm" })
+                                                            @Html.ActionLink("Delete", "Delete", new { id = item.PersonnelId }, new { @class = "btn btn-white btn-sm" })
+                                                        </td>
+                                                    </tr>
+                                                }
+
+                                            </table>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@*</div>*@
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    #overflowTest {
+        /*background: #4CAF50;
+        color: white;
+        padding: 15px;
+        width: 90%;
+        height: 100px;*/
+        overflow: auto;
+        /*border: 1px solid #ccc;*/
+    }
+</style>
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/jeditable")
+    @Scripts.Render("~/plugins/dataTables")
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('.dataTables-example').DataTable({
+                dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    { extend: 'copy' },
+                    { extend: 'csv', title: 'Projet Technique' },
+                    { extend: 'excel', title: 'Projet Technique' },
+                    { extend: 'pdf', title: 'Projet Technique' },
+
+                    {
+                        extend: 'print',
+                        customize: function (win) {
+                            $(win.document.body).addClass('white-bg');
+                            $(win.document.body).css('font-size', '10px');
+
+                            $(win.document.body).find('table')
+                                .addClass('compact')
+                                .css('font-size', 'inherit');
+                        }
+                    }
+                ]
+
+            });
+
+
+
+            /* Init DataTables */
+            var oTable = $('#editable').dataTable();
+
+            /* Apply the jEditable handlers to the table */
+            oTable.$('td').editable('../example_ajax.php', {
+                "callback": function (sValue, y) {
+                    var aPos = oTable.fnGetPosition(this);
+                    oTable.fnUpdate(sValue, aPos[0], aPos[1]);
+                },
+                "submitdata": function (value, settings) {
+                    return {
+                        "row_id": this.parentNode.getAttribute('id'),
+                        "column": oTable.fnGetPosition(this)[2]
+                    };
+                },
+
+                "width": "90%",
+                "height": "100%"
+            });
+
+
+        });
+
+
+</script>
+
+}
+
+
+
+
+

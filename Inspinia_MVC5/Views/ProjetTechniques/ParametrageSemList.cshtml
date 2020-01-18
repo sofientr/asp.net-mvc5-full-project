@@ -1,0 +1,209 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.ParametrageSemaines>
+
+@{
+    ViewBag.Title = "ParametrageSemList";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>ParametrageSemList</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>ParametrageSemaine</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>List of ParametrageSemaine</h5>
+                    <div class="ibox-tools">
+                        @*@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-xs"})*@
+                        <button class="btn btn-success " type="button" onclick="location.href='@Url.Action("Create","ParametrageSemaines",null, null)'">
+                            <i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;&nbsp;<span class="bold">Ajouter</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <table class="table table-striped table-bordered table-hover dataTables-example">
+                        <thead>
+                            <tr>
+
+                                <th>
+                                Date Debut
+                                </th>
+                                <th>
+                                    Date Fin
+                                </th>
+                                @*<th>
+                                        @Html.DisplayNameFor(model => model.JourId)
+                                    </th>*@
+                                <th>
+                                   Jour
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.jourTravail)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.doubleSeance)
+                                </th>*@
+                                <th>
+                                    Debut seance1
+                                </th>
+                                <th>
+                                    Fin seance1
+                                </th>
+                                <th>
+                                    Debut seance2
+                                </th>
+                                <th>
+                                    Fin seance2
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td id="Date_Deb">
+                                        @*@Html.DisplayFor(modelItem => item.Date_Deb)*@
+                                        @String.Format("{0:d}", item.Date_Deb)
+                                        
+                                    </td>
+                                    <td>
+                                        @*@Html.DisplayFor(modelItem => item.Date_Fin)*@
+                                        @String.Format("{0:d}", item.Date_Fin)
+                                    </td>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.JourId)
+                                        </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.JourLibelle)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.jourTravail)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.doubleSeance)
+                                    </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.seance1Debut)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.seance1Fin)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.seance2Debut)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.seance2Fin)
+                                    </td>
+
+                                    <td>
+                                       
+                                        @Html.ActionLink("Edit", "EditParametrageSem", new { id = item.Id }, new { @class = "btn btn-white btn-sm" })
+                                    </td>
+                                </tr>
+                            }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+@section Scripts {
+    @Scripts.Render("~/plugins/dataTables")
+    <script type="text/javascript">
+        //$(document).ready(function () {
+
+        //    $('.dataTables-example').DataTable({
+        //        pageLength: 25,
+        //        dom: '<"html5buttons"B>lTfgitp',
+        //        buttons: [
+        //            { extend: 'copy' },
+        //            { extend: 'csv', title: 'liste Tableau des Horaires' },
+        //            { extend: 'excel', title: 'liste Tableau des Horaires' },
+        //            { extend: 'pdf', title: 'liste Tableau des Horaires' },
+
+        //            {
+        //                extend: 'print',
+        //                customize: function (win) {
+        //                    $(win.document.body).addClass('white-bg');
+        //                    $(win.document.body).css('font-size', '10px');
+
+        //                    $(win.document.body).find('table')
+        //                        .addClass('compact')
+        //                        .css('font-size', 'inherit');
+        //                }
+        //            }
+        //        ]
+
+        //    });
+
+
+
+        //});
+        $(document).ready(function () {
+            debugger;
+            var groupColumn = 0;
+
+
+            var table = $('.dataTables-example').DataTable({
+                "columnDefs": [
+                    { "visible": false, "targets": groupColumn }
+                   
+                ],
+                "order": [[groupColumn, 'asc']],
+                "displayLength": 50,
+              
+                  "drawCallback": function (settings) {
+                    var api = this.api();
+                    var rows = api.rows({ page: 'current' }).nodes();
+                    var last = null;
+
+                    api.column(groupColumn, { page: 'current' }).data().each(function (group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before(
+                                '<tr class="group" style="background-color:#18a689;color:white"><td colspan="9">' + 'DE ' + group + ' A ' + '</td></tr>'
+                            );
+
+                            last = group;
+                        }
+                    }
+                    );
+                }
+            });
+
+            // Order by the grouping
+            $('.dataTables-example tbody').on('click', 'tr.group', function () {
+                var currentOrder = table.order()[0];
+                if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
+                    table.order([groupColumn, 'desc']).draw();
+                }
+                else {
+                    table.order([groupColumn, 'asc']).draw();
+                }
+            });
+        });
+
+       
+
+    </script>
+}
+
+

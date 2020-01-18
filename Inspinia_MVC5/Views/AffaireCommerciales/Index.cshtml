@@ -1,0 +1,417 @@
+﻿@model IEnumerable<Inspinia_MVC5.Models.AffaireCommerciales>
+
+
+<style type="text/css">
+
+    .divScroll {
+        overflow: auto;
+    }
+    #Tableau {
+        width: 3000px;
+    }
+</style>
+ 
+<script>
+
+    function checkAll(ele) {
+        var checkboxes = document.getElementsByTagName('input');
+        if (ele.checked) {
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].type == 'checkbox') {
+                    checkboxes[i].checked = true;
+                }
+            }
+        } else {
+            for (var i = 0; i < checkboxes.length; i++) {
+                console.log(i)
+                if (checkboxes[i].type == 'checkbox') {
+                    checkboxes[i].checked = false;
+                }
+            }
+        }
+    }
+</script>
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Affaires Commerciales</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight" id="overflowTest">
+    <div class="divScroll">
+        <div class="col-lg-12">
+            <div class="row">
+
+                <div class="ibox float-e-margins" style="width:3050px;">
+                    <div class="ibox-title">
+                        <h5>liste des Affaires Commerciales</h5>
+                        <div class="ibox-tools">
+                            @Html.ActionLink("Ajouter", "Create", null, new { @class = "btn btn-primary btn-xs" })
+                        </div>
+                    </div>
+
+                    <form action="Index" method="post">
+                        <div class="ibox-content">
+
+                            <table class="table table-striped table-bordered table-hover dataTables-example" id="Tableau">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @*<INPUT type="checkbox" onchange="checkAll(this)" name="chk[]" />*@
+                                        </th>
+                                        <th>
+                                            Réf Affaire
+                                        </th>
+                                        <th>
+                                            Réf Client
+                                        </th>
+                                        <th>
+                                            Ref Offre de prix
+                                        </th>
+                                        <th>
+                                            Projet
+                                        </th>
+                                        <th>
+                                            Client
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Description)
+                                        </th>
+
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.EtatSoum)
+                                        </th>
+                                        <th>Délai de Soumission</th>
+                                        <th>Date_de_Soumission </th>
+
+
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Importance)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.NbHeurePrepOffre)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.faisabilite)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.DateConsultation)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.AffaireObtenue)
+                                        </th>
+
+                                        <th>
+                                            Responsable Commercial
+                                        </th>
+                                        <th>
+                                            Responsable Technique
+                                        </th>
+                                        <th>
+                                            Coordinateur Commercial
+                                        </th>
+                                        <th>
+                                            Coordinateur Réalisation
+                                        </th>
+                                        @*<th>
+            Réf Réalisation
+        </th>
+        <th>
+            Date Commande
+        </th>
+
+
+        <th>
+            Mode Paiement
+        </th>
+        <th>
+            Date Paiement
+        </th>*@
+                                        <th>
+
+                                        </th>
+                                    </tr>
+									</thead>
+
+                                    @foreach (var item in Model)
+                                    {
+                                    <tr>
+                                        <td>
+                                            @{
+                                                Inspinia_MVC5.Models.MED_TRABELSI db11 = new Inspinia_MVC5.Models.MED_TRABELSI();
+                                                Inspinia_MVC5.Models.DEVIS_CLIENTS DEVIS_CLIENTS = db11.DEVIS_CLIENTS.Where(t => t.Id_AffaireCommerciale == item.AffaireCommercialeId).FirstOrDefault();
+                                                Inspinia_MVC5.Models.PROJET_TECHNIQUE PROJET_TECHNIQUE = db11.PROJET_TECHNIQUE.Where(t => t.Id_AffaireCommerciale == item.AffaireCommercialeId).FirstOrDefault();
+
+
+                                            }
+                                            @if (item.AffaireObtenue == "Obtenue" && (DEVIS_CLIENTS != null) && (PROJET_TECHNIQUE == null))
+                                            {
+                                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" value="@Html.DisplayFor(modelItem => item.AffaireCommercialeId)" onchange="check(this)"/>
+                                            }
+                                            else
+                                            {
+                                                <input type="checkbox" class="chkCheckboxId btn btn-primary btn-xs" name="affComId" value="@Html.DisplayFor(modelItem => item.AffaireCommercialeId)" disabled />
+
+                                            }
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Reference)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CLIENTS.CODE)
+                                        </td>
+                                        <td>
+                                            @if (DEVIS_CLIENTS != null)
+                                            {
+
+                                                <a onclick="Devis(@DEVIS_CLIENTS.ID)">@DEVIS_CLIENTS.CODE</a>
+
+                                            }
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Designation)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CLIENTS.NOM)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Description)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EtatSoum)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Delai_de_Soumission)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Date_de_Soumission)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Importance)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NbHeurePrepOffre)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.faisabilite)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DateConsultation)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.AffaireObtenue)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Personnels3.Nom)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Personnels.Nom)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Personnels1.Nom)
+                                        </td>
+
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Personnels2.Nom)
+
+                                        </td>
+                                        @*<td></td>
+        <td>
+            @{
+                Inspinia_MVC5.Models.MED_TRABELSI db11 = new Inspinia_MVC5.Models.MED_TRABELSI();
+                Inspinia_MVC5.Models.DEVIS_CLIENTS DEVIS_CLIENTS = db11.DEVIS_CLIENTS.Where(t => t.Id_AffaireCommerciale == item.AffaireCommercialeId).FirstOrDefault();
+
+                if (DEVIS_CLIENTS != null)
+                {
+                    Inspinia_MVC5.Models.COMMANDES_CLIENTS COMMANDES_CLIENTS = db11.COMMANDES_CLIENTS.Where(t => t.DEVIS_CLIENT == DEVIS_CLIENTS.ID).FirstOrDefault();
+                    if (COMMANDES_CLIENTS != null)
+                    {
+                        @COMMANDES_CLIENTS.DATE
+                    }
+
+                }
+            }
+        </td>
+
+        <td>
+            @{
+                if (DEVIS_CLIENTS != null)
+                {
+                    @DEVIS_CLIENTS.MODE_PAIEMENT
+                }
+            }
+        </td>
+        <td></td>*@
+
+                                        <td>
+
+                                            @*@Html.ActionLink("Details", "Details", new { id = item.AffaireCommercialeId }, new { @class = "btn btn-primary btn-xs" })
+        @Html.ActionLink("Edit", "Edit", new { id = item.AffaireCommercialeId }, new { @class = "btn btn-white btn-xs" })
+        @Html.ActionLink("Delete", "Delete", new { id = item.AffaireCommercialeId }, new { @class = "btn btn-white btn-xs" })*@
+                                            @if (PROJET_TECHNIQUE != null)
+                                            {
+                                                <button class="btn btn-primary btn-circle" type="button" onclick="location.href='@Url.Action("Edit", "AffaireCommerciales", new { id = item.AffaireCommercialeId }, null)'" disabled>
+                                                    <i class="fa fa-pencil-square-o" style="margin-right: 2px;"></i>
+                                                </button>
+                                            }
+                                            else
+                                            { <button class="btn btn-primary btn-circle" type="button" onclick="location.href='@Url.Action("Edit", "AffaireCommerciales", new { id = item.AffaireCommercialeId }, null)'">
+                                                    <i class="fa fa-pencil-square-o" style="margin-right: 2px;"></i>
+                                                </button>
+
+                                            }
+                                            @if (PROJET_TECHNIQUE != null)
+                                            {
+                                                <button class="btn btn-info btn-circle" type="button" onclick="location.href='@Url.Action("Delete", "AffaireCommerciales", new {id = item.AffaireCommercialeId}, null)'" disabled>
+                                                    <i class="fa fa-trash" style="margin-right: 2px;"></i>
+                                                </button>
+                                            }
+                                            else
+                                            {
+                                                <button class="btn btn-info btn-circle" type="button" onclick="location.href='@Url.Action("Delete", "AffaireCommerciales", new {id = item.AffaireCommercialeId}, null)'">
+                                                    <i class="fa fa-trash" style="margin-right: 2px;"></i>
+                                                </button>
+                                            }
+                                            <button class="btn btn-warning btn-circle" type="button" onclick="location.href='@Url.Action("Details", "AffaireCommerciales", new {id = item.AffaireCommercialeId}, null)'">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                            @if (DEVIS_CLIENTS != null)
+                                            {
+                                                @*@Html.ActionLink("InvoicePrint", "InvoicePrint", "Vente", new { CODE = DEVIS_CLIENTS.ID }, new { @class = "btn btn-white btn-xs" })*@
+                                                <button class="btn btn-circle btn-info" type="button" onclick="InvoicePrint(@DEVIS_CLIENTS.ID)">
+                                                    <i class="fa fa-paste" aria-hidden="true"></i>
+                                                </button>
+                                            }
+                                            @*else
+            {
+        <button class="btn btn-success " type="button" onclick="location.href='@Url.Action("FormDevis", "Vente", new { Mode = "Create", Code = "-1", IdAffaireCommercial = item.AffaireCommercialeId }, null)'">
+            <i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;&nbsp;<span class="bold">Devis</span>
+        </button>
+            }*@
+                                        </td>
+                                    </tr>
+                                    }
+
+                            </table>
+                            <div class="ibox-tools">
+                                <input type="submit" class="btn btn-success btn-xs" id="Convertir" value="Convertir vers un Projet Technique" onclick="return confirm('vous voulez convertir ce projet?')" disabled/>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<style>
+    #overflowTest {
+        /*background: #4CAF50;
+        color: white;
+        padding: 15px;
+        width: 90%;
+        height: 100px;*/
+        overflow: auto;
+        /*border: 1px solid #ccc;*/
+    }
+</style>
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/jeditable")
+    @Scripts.Render("~/plugins/dataTables")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.dataTables-example').DataTable({
+                dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    { extend: 'copy' },
+                    { extend: 'csv', title: 'Projet Technique' },
+                    { extend: 'excel', title: 'Projet Technique' },
+                    { extend: 'pdf', title: 'Projet Technique' },
+
+                    {
+                        extend: 'print',
+                        customize: function (win) {
+                            $(win.document.body).addClass('white-bg');
+                            $(win.document.body).css('font-size', '10px');
+
+                            $(win.document.body).find('table')
+                                .addClass('compact')
+                                .css('font-size', 'inherit');
+                        }
+                    }
+                ]
+
+            });
+
+
+
+            /* Init DataTables */
+            var oTable = $('#editable').dataTable();
+
+            /* Apply the jEditable handlers to the table */
+            oTable.$('td').editable('../example_ajax.php', {
+                "callback": function (sValue, y) {
+                    var aPos = oTable.fnGetPosition(this);
+                    oTable.fnUpdate(sValue, aPos[0], aPos[1]);
+                },
+                "submitdata": function (value, settings) {
+                    return {
+                        "row_id": this.parentNode.getAttribute('id'),
+                        "column": oTable.fnGetPosition(this)[2]
+                    };
+                },
+
+                "width": "90%",
+                "height": "100%"
+            });
+
+
+        });
+        function InvoicePrint(param)
+        {
+            window.open("/Vente/InvoicePrint?CODE=" + param, '_blank');
+        }
+        function Devis(id) {
+            window.open("/Vente/FormDevis?Mode=Edit&Code=" + id);
+        }
+        function check(elee) {
+
+            if (elee.checked) {
+                document.getElementById('Convertir').disabled = false;
+
+            }
+            else {
+                document.getElementById('Convertir').disabled = true;
+
+            }
+        }
+    </script>
+
+}
+
+
+

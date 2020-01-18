@@ -1,0 +1,133 @@
+﻿<link href="~/Content/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+<link href="~/Content/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
+<link href="~/Content/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
+@model Inspinia_MVC5.Models.SocieteLogo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SocieteLogo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_Societe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_Societe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.logo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MF)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RIB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RIB)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IBAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IBAN)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @*<button class="btn btn-info  dim" type="button" style="width : 40px" onclick="Delete(@ViewBag.id);" >
+                    <i class="fa fa-trash" style="margin-right: 2px;"></i>
+                </button>*@
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+    <input type="button" value="Delete" onclick="Delete(@ViewBag.id)" class="btn btn-default" /> 
+
+</div>
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+
+}
+@section Scripts {
+    <script type="text/javascript" src="~/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.responsive.js"></script>
+    <script type="text/javascript" src="~/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+    @Scripts.Render("~/plugins/dataTables")
+    @Scripts.Render("~/plugins/sweetAlert")
+
+    <script type="text/javascript">
+        function Delete(MyValue) {
+            var id = MyValue;
+
+
+
+            $.ajax({
+                type: 'POST',
+                url: "/SocieteLogoes/DeleteConfirmed?id=" + id,
+                success: function (response) {
+                    if (response == "NO") {
+                        alert("Attention!vous pouvez pas supprimer cette societe ,failed");
+                        
+                            window.location.href = "/SocieteLogoes/Index";
+                       
+                    }
+                    else {
+                        alert("Supprimer! L'opération est terminée avec succés.success");
+                        
+                            window.location.href = "/SocieteLogoes/Index";
+                        
+                    }
+                }
+
+            });
+
+
+        }
+    </script>
+}
